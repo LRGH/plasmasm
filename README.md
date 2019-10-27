@@ -249,3 +249,7 @@ or Ubuntu is python-pyparsing.
     `SPARC_AMOCO.py`
     contain the CPU implementations; the filename is `CPU_BACKEND.py`
     for an implementation of CPU based on BACKEND.
+
+## Development status
+
+[![Build Status](https://travis-ci.org/LRGH/plasmasm.svg?branch=master)](https://travis-ci.org/LRGH/plasmasm)

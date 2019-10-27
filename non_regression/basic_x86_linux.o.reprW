@@ -1,0 +1,31 @@
+<Symbol 'main' section='.text', type='function', bind='globl', size=22, address=0>
+    ENDER True -- NXT None
+    CFG None
+'I386_MIASM.InstructionRW'>0 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+'I386_MIASM.InstructionRW'>1 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+'I386_MIASM.InstructionRW'>3 [None]subl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionRW'>6 [None]movl      $0, -4(%ebp)
+	 R['ebp'] W['MEM']
+'I386_MIASM.InstructionRW'>13 [None]addl      $66, -4(%ebp)
+	 R['MEM', 'ebp'] W['MEM', 'af', 'cf', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionRW'>17 [None]movl      -4(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+'I386_MIASM.InstructionRW'>20 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+'I386_MIASM.InstructionRW'>21 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 dst=[None]
+
+<Symbol 'a00.c' bind='file'>
+
+<Symbol 'main+22' section='.text', type='padding', address=22>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3',endianess:'<',eh_frame_size:56,eh_frame_relocs:{32: (('ELF', 3, 2), {'section': '.text', 'address': 0})},container:'ELF',compiler:'gcc'

@@ -1,0 +1,22 @@
+<Symbol 'main' section='.text', type='function', bind='globl', size=22, address=0>
+    ENDER True -- NXT None
+    CFG None
+'I386_MIASM.InstructionCFG'>0 [None][] push {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>1 [None][] mov {5:1,ad:False,size:u32} {4:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>3 [None][] sub {4:1,ad:False,size:u32} {ad:False,imm:uint32(0x10),size:u32} 
+'I386_MIASM.InstructionCFG'>6 [None][] mov {5:1,ad:u32,imm:uint32(0xfffffffc),size:u32,txt:ebp+imm} {ad:False,imm:uint32(0x0),size:u32} 
+'I386_MIASM.InstructionCFG'>13 [None][] add {5:1,ad:u32,imm:uint32(0xfffffffc),size:u32,txt:ebp+imm} {ad:False,imm:uint32(0x42),size:u32} 
+'I386_MIASM.InstructionCFG'>17 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xfffffffc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>20 [None][] leave 
+'I386_MIASM.InstructionCFG'>21 [ret][] ret 
+
+<Symbol 'a00.c' bind='file'>
+
+<Symbol 'main+22' section='.text', type='padding', address=22>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3',endianess:'<',eh_frame_size:56,eh_frame_relocs:{32: (('ELF', 3, 2), {'section': '.text', 'address': 0})},container:'ELF',compiler:'gcc'

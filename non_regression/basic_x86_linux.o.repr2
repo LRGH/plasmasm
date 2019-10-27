@@ -1,0 +1,22 @@
+<Symbol 'main' section='.text', type='function', bind='globl', size=22, address=0>
+    ENDER True -- NXT None
+    CFG None
+'I386_AMOCO.InstructionCFG'>0 [None]pushl     %ebp [ia32_rm32]
+'I386_AMOCO.InstructionCFG'>1 [None]movl      %esp, %ebp [ia32_reg_32]
+'I386_AMOCO.InstructionCFG'>3 [None]subl      $16, %esp [ia32_ptr_iwd]
+'I386_AMOCO.InstructionCFG'>6 [None]movl      $0, -4(%ebp) [ia32_ptr_iwd]
+'I386_AMOCO.InstructionCFG'>13 [None]addl      $66, -4(%ebp) [ia32_ptr_iwd]
+'I386_AMOCO.InstructionCFG'>17 [None]movl      -4(%ebp), %eax [ia32_reg_32_inv]
+'I386_AMOCO.InstructionCFG'>20 [None]leave      [ia32_nooperand]
+'I386_AMOCO.InstructionCFG'>21 [ret]ret        [ia32_nooperand]
+
+<Symbol 'a00.c' bind='file'>
+
+<Symbol 'main+22' section='.text', type='padding', address=22>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3',endianess:'<',eh_frame_size:56,eh_frame_relocs:{32: (('ELF', 3, 2), {'section': '.text', 'address': 0})},container:'ELF',compiler:'gcc'

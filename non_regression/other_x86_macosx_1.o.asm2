@@ -1,0 +1,2535 @@
+	.section       __TEXT,__text,regular,pure_instructions
+	.align 4, 0x90
+	.globl	_jpeg_resync_to_restart
+_jpeg_resync_to_restart:
+	pushl     %ebp
+	movl      %esp, %ebp
+	pushl     %ebx
+	pushl     %edi
+	pushl     %esi
+	subl      $28, %esp
+	movl      8(%ebp), %ecx
+	movl      12(%ebp), %edi
+	movl      (%ecx), %eax
+	movl      472(%ecx), %esi
+	movl      $121, 20(%eax)
+	movl      %esi, 24(%eax)
+	movl      %edi, 28(%eax)
+	subl      $8, %esp
+	pushl     $-1
+	pushl     %ecx
+	call      *4(%eax)
+L0000002D:
+	addl      $16, %esp
+	leal      1(%edi), %eax
+	andl      $7, %eax
+	orl       $208, %eax
+	leal      2(%edi), %ebx
+	andl      $7, %ebx
+	orl       $208, %ebx
+	leal      7(%edi), %edx
+	andl      $7, %edx
+	orl       $208, %edx
+	addl      $6, %edi
+	andl      $7, %edi
+	orl       $208, %edi
+	movl      %edi, -32(%ebp)
+	movl      %eax, -28(%ebp)
+	movl      %ebx, -24(%ebp)
+	movl      %edx, -20(%ebp)
+	jmp       L00000082
+L0000006D:
+	.align 4, 0x90
+L00000070:
+	movl      472(%esi), %esi
+	movl      -32(%ebp), %edi
+	movl      -28(%ebp), %eax
+	movl      -24(%ebp), %ebx
+	movl      -20(%ebp), %edx
+L00000082:
+	cmpl      $192, %esi
+	setl      -13(%ebp)
+	movl      %esi, %ecx
+	andl      $-8, %ecx
+	cmpl      %eax, %esi
+	sete      %ah
+	cmpl      %ebx, %esi
+	sete      %bh
+	cmpl      %edx, %esi
+	sete      %bl
+	cmpl      %edi, %esi
+	sete      %al
+	cmpl      $208, %ecx
+	setne     %cl
+	movb      -13(%ebp), %dl
+	orb       %dl, %ah
+	orb       %cl, %ah
+	xorl      %ecx, %ecx
+	andb      %ah, %dl
+	sete      %cl
+	orl       $2, %ecx
+	orb       %bl, %al
+	movzbl    %al, %edi
+	incl      %edi
+	testb     %dl, %dl
+	sete      %bl
+	orb       %bh, %ah
+	cmovne    %ecx, %edi
+	jne       L000000E0
+L000000D1:
+	incb      %al
+	movl      %eax, %ebx
+	jmp       L000000F0
+L000000D7:
+	.align 4, 0x90
+L000000E0:
+	orb       $2, %bl
+	.align 4, 0x90
+L000000F0:
+	movl      8(%ebp), %eax
+	movl      %eax, %ecx
+	movl      (%ecx), %eax
+	movl      $97, 20(%eax)
+	movl      %esi, 24(%eax)
+	movl      %edi, 28(%eax)
+	subl      $8, %esp
+	pushl     $4
+	pushl     %ecx
+	call      *4(%eax)
+L0000010D:
+	addl      $16, %esp
+	movl      %ebx, %ecx
+	andb      $3, %cl
+	movl      $1, %eax
+	cmpb      $3, %cl
+	je        L00000155
+L0000011F:
+	cmpb      $2, %cl
+	je        L00000130
+L00000124:
+	cmpb      $1, %cl
+	jne       L000000F0
+L00000129:
+	jmp       L00000148
+L0000012B:
+	.align 4, 0x90
+L00000130:
+	movl      8(%ebp), %esi
+	movl      %esi, %ecx
+	call      _next_marker
+L0000013A:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	jne       L00000070
+L00000146:
+	jmp       L00000155
+L00000148:
+	movl      8(%ebp), %ecx
+	movl      $0, 472(%ecx)
+L00000155:
+	addl      $28, %esp
+	popl      %esi
+	popl      %edi
+	popl      %ebx
+	popl      %ebp
+	ret       
+L0000015D:
+	.align 4, 0x90
+_next_marker:
+	pushl     %ebp
+	movl      %esp, %ebp
+	pushl     %ebx
+	pushl     %edi
+	pushl     %esi
+	subl      $28, %esp
+	movl      24(%ecx), %edi
+	movl      (%edi), %ebx
+	movl      4(%edi), %esi
+	movl      %ecx, -16(%ebp)
+	jmp       L00000185
+L00000176:
+	.align 4, 0x90
+L00000180:
+	movl      %ebx, (%edi)
+	movl      %esi, 4(%edi)
+L00000185:
+	testl     %esi, %esi
+	jne       L000001A3
+L00000189:
+	movl      %ecx, (%esp)
+	call      *12(%edi)
+L0000018F:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000251
+L0000019B:
+	movl      (%edi), %ebx
+	movl      4(%edi), %esi
+	movl      -16(%ebp), %ecx
+L000001A3:
+	decl      %esi
+	cmpb      $-1, (%ebx)
+	leal      1(%ebx), %ebx
+	je        L000001C0
+L000001AC:
+	movl      496(%ecx), %eax
+	incl      24(%eax)
+	jmp       L00000180
+L000001B7:
+	.align 4, 0x90
+L000001C0:
+	testl     %esi, %esi
+	jne       L000001DA
+L000001C4:
+	movl      %ecx, (%esp)
+	call      *12(%edi)
+L000001CA:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000251
+L000001D2:
+	movl      (%edi), %ebx
+	movl      4(%edi), %esi
+	movl      -16(%ebp), %ecx
+L000001DA:
+	decl      %esi
+	movzbl    (%ebx), %eax
+	incl      %ebx
+	cmpl      $255, %eax
+	je        L000001C0
+L000001E6:
+	movl      496(%ecx), %edx
+	movl      %eax, -20(%ebp)
+	movl      %edx, -24(%ebp)
+	movl      24(%edx), %eax
+	movl      -20(%ebp), %edx
+	testb     %dl, %dl
+	jne       L0000020A
+L000001FC:
+	addl      $2, %eax
+	movl      -24(%ebp), %edx
+	movl      %eax, 24(%edx)
+	jmp       L00000180
+L0000020A:
+	testl     %eax, %eax
+	je        L0000023E
+L0000020E:
+	movl      (%ecx), %edx
+	movl      $116, 20(%edx)
+	movl      %eax, 24(%edx)
+	movl      -20(%ebp), %eax
+	movl      %eax, 28(%edx)
+	movl      %ecx, (%esp)
+	movl      $-1, 4(%esp)
+	call      *4(%edx)
+L0000022E:
+	movl      -16(%ebp), %ecx
+	movl      496(%ecx), %eax
+	movl      $0, 24(%eax)
+L0000023E:
+	movl      -20(%ebp), %eax
+	movl      %eax, 472(%ecx)
+	movl      %ebx, (%edi)
+	movl      %esi, 4(%edi)
+	movl      $1, %eax
+L00000251:
+	addl      $28, %esp
+	popl      %esi
+	popl      %edi
+	popl      %ebx
+	popl      %ebp
+	ret       
+# ----------------------
+	.align 4, 0x90
+	.globl	_jinit_marker_reader
+_jinit_marker_reader:
+	pushl     %ebp
+	movl      %esp, %ebp
+	pushl     %edi
+	pushl     %esi
+	call      L0000026A
+L0000026A:
+	popl      %edi
+	movl      8(%ebp), %esi
+	movl      4(%esi), %eax
+	subl      $4, %esp
+	pushl     $172
+	pushl     $0
+	pushl     %esi
+	call      *(%eax)
+L0000027E:
+	addl      $16, %esp
+	movl      %eax, 496(%esi)
+	leal      _reset_marker_reader-L0000026A(%edi), %ecx
+	movl      %ecx, (%eax)
+	leal      _read_markers-L0000026A(%edi), %ecx
+	movl      %ecx, 4(%eax)
+	leal      _read_restart_marker-L0000026A(%edi), %ecx
+	movl      %ecx, 8(%eax)
+	leal      _skip_variable-L0000026A(%edi), %ecx
+	movl      %ecx, 28(%eax)
+	xorps     %xmm0, %xmm0
+	movups    %xmm0, 96(%eax)
+	movl      $0, 112(%eax)
+	movd      %ecx, %xmm1
+	pshufd    $0, %xmm1, %xmm1
+	movdqu    %xmm1, 36(%eax)
+	movl      $0, 116(%eax)
+	movl      %ecx, 52(%eax)
+	movl      $0, 120(%eax)
+	movdqu    %xmm1, 56(%eax)
+	movups    %xmm0, 124(%eax)
+	movdqu    %xmm1, 72(%eax)
+	movups    %xmm0, 140(%eax)
+	movl      $0, 156(%eax)
+	movl      %ecx, 92(%eax)
+	movl      $0, 160(%eax)
+	leal      _get_interesting_appn-L0000026A(%edi), %ecx
+	movl      %ecx, 32(%eax)
+	movl      %ecx, 88(%eax)
+	movl      496(%esi), %eax
+	movl      $0, 216(%esi)
+	movl      $0, 144(%esi)
+	movl      $0, 472(%esi)
+	movl      $0, 12(%eax)
+	movl      $0, 16(%eax)
+	movl      $0, 24(%eax)
+	movl      $0, 164(%eax)
+	popl      %esi
+	popl      %edi
+	popl      %ebp
+	ret       
+L00000356:
+	.align 4, 0x90
+_reset_marker_reader:
+	pushl     %ebp
+	movl      %esp, %ebp
+	movl      8(%ebp), %eax
+	movl      496(%eax), %ecx
+	movl      $0, 216(%eax)
+	movl      $0, 144(%eax)
+	movl      $0, 472(%eax)
+	movl      $0, 12(%ecx)
+	movl      $0, 16(%ecx)
+	movl      $0, 24(%ecx)
+	movl      $0, 164(%ecx)
+	popl      %ebp
+	ret       
+L000003AB:
+	.align 4, 0x90
+_read_markers:
+	pushl     %ebp
+	movl      %esp, %ebp
+	pushl     %ebx
+	pushl     %edi
+	pushl     %esi
+	subl      $604, %esp
+	call      L000003C1
+L000003C1:
+	popl      %eax
+	movl      8(%ebp), %esi
+	movl      %eax, -588(%ebp)
+	movl      L___stack_chk_guard$non_lazy_ptr-L000003C1(%eax), %eax
+	movl      %eax, -592(%ebp)
+	movl      (%eax), %eax
+	movl      %eax, -16(%ebp)
+	movl      472(%esi), %edi
+	jmp       L000003FC
+L000003E4:
+	.align 4, 0x90
+L000003F0:
+	movl      $0, 472(%esi)
+	xorl      %edi, %edi
+L000003FC:
+	testl     %edi, %edi
+	jne       L000004D0
+L00000404:
+	movl      496(%esi), %eax
+	cmpl      $0, 12(%eax)
+	je        L0000042E
+L00000410:
+	movl      %esi, %ecx
+	call      _next_marker
+L00000417:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000423:
+	movl      472(%esi), %edi
+	jmp       L000004D0
+L0000042E:
+	movl      24(%esi), %edi
+	movl      4(%edi), %ebx
+	testl     %ebx, %ebx
+	jne       L00000450
+L00000438:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	call      *12(%edi)
+L00000441:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L0000044D:
+	movl      4(%edi), %ebx
+L00000450:
+	movl      (%edi), %esi
+	decl      %ebx
+	movzbl    (%esi), %edx
+	movl      %edi, -568(%ebp)
+	je        L00000461
+L0000045E:
+	incl      %esi
+	jmp       L00000487
+L00000461:
+	movl      %edx, -572(%ebp)
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	call      *12(%edi)
+L00000470:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L0000047C:
+	movl      (%edi), %esi
+	movl      4(%edi), %ebx
+	movl      -572(%ebp), %edx
+L00000487:
+	decl      %ebx
+	movb      (%esi), %al
+	incl      %esi
+	movzbl    %al, %edi
+	cmpb      $-1, %dl
+	jne       L00000497
+L00000493:
+	cmpb      $-40, %al
+	je        L000004B0
+L00000497:
+	movl      8(%ebp), %eax
+	movl      %eax, %ecx
+	movl      (%ecx), %eax
+	movl      $53, 20(%eax)
+	movl      %edx, 24(%eax)
+	movl      %edi, 28(%eax)
+	movl      %ecx, (%esp)
+	call      *(%eax)
+L000004B0:
+	movl      8(%ebp), %eax
+	movl      %edi, 472(%eax)
+	movl      -568(%ebp), %ecx
+	movl      %esi, (%ecx)
+	movl      %ebx, 4(%ecx)
+	movl      %eax, %esi
+	.align 4, 0x90
+L000004D0:
+	leal      -1(%edi), %eax
+	cmpl      $253, %eax
+	ja        L00000542
+L000004DA:
+	movl      -588(%ebp), %ecx
+	movl      L00000CE8-L000003C1(%ecx,%eax,4), %eax
+	addl      %ecx, %eax
+	jmp       *%eax
+L000004EB:
+	movl      496(%esi), %eax
+	movl      %esi, (%esp)
+	call      *-864(%eax,%edi,4)
+L000004FB:
+	jmp       L000005C0
+L00000500:
+	movl      (%esi), %eax
+	movl      $92, 20(%eax)
+	movl      %edi, 24(%eax)
+	movl      %esi, (%esp)
+	movl      $1, 4(%esp)
+	call      *4(%eax)
+L0000051A:
+	jmp       L000003F0
+L0000051F:
+	movl      (%esi), %eax
+	movl      $60, 20(%eax)
+L00000528:
+	movl      %edi, 24(%eax)
+	movl      %esi, (%esp)
+	call      *(%eax)
+L00000530:
+	jmp       L000003F0
+L00000535:
+	movl      %esi, (%esp)
+	movl      $0, 8(%esp)
+	jmp       L0000059B
+L00000542:
+	movl      (%esi), %eax
+	movl      $68, 20(%eax)
+	jmp       L00000528
+L0000054D:
+	movl      %esi, (%esp)
+	movl      $0, 8(%esp)
+	jmp       L000005B0
+L0000055A:
+	movl      24(%esi), %edi
+	movl      4(%edi), %ebx
+	testl     %ebx, %ebx
+	jne       L00000578
+L00000564:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	call      *12(%edi)
+L0000056D:
+	testl     %eax, %eax
+	je        L00000CC9
+L00000575:
+	movl      4(%edi), %ebx
+L00000578:
+	movl      (%edi), %edx
+	movzbl    (%edx), %esi
+	decl      %ebx
+	movl      %edi, -568(%ebp)
+	je        L0000066E
+L0000058A:
+	incl      %edx
+	jmp       L00000684
+L00000590:
+	movl      %esi, (%esp)
+	movl      $1, 8(%esp)
+L0000059B:
+	movl      $0, 4(%esp)
+	jmp       L000005B8
+L000005A5:
+	movl      %esi, (%esp)
+	movl      $1, 8(%esp)
+L000005B0:
+	movl      $1, 4(%esp)
+L000005B8:
+	call      _get_sof
+L000005BD:
+	.align 4, 0x90
+L000005C0:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	jne       L000003F0
+L000005CC:
+	jmp       L00000CCB
+L000005D1:
+	movl      %esi, (%esp)
+	call      _get_dac
+L000005D9:
+	jmp       L000005C0
+L000005DB:
+	movl      %esi, (%esp)
+	call      _get_soi
+L000005E3:
+	jmp       L000005C0
+L000005E5:
+	movl      24(%esi), %ecx
+	movl      4(%ecx), %ebx
+	testl     %ebx, %ebx
+	jne       L00000608
+L000005EF:
+	movl      %esi, (%esp)
+	movl      %ecx, %esi
+	call      *12(%esi)
+L000005F7:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000603:
+	movl      4(%esi), %ebx
+	movl      %esi, %ecx
+L00000608:
+	movl      (%ecx), %edx
+	movzbl    (%edx), %edi
+	decl      %ebx
+	je        L0000090E
+L00000614:
+	incl      %edx
+	jmp       L0000092C
+L0000061A:
+	movl      %esi, (%esp)
+	call      _skip_variable
+L00000622:
+	jmp       L000005C0
+L00000624:
+	movl      24(%esi), %ebx
+	movl      4(%ebx), %edi
+	testl     %edi, %edi
+	jne       L00000643
+L0000062E:
+	movl      %esi, (%esp)
+	call      *12(%ebx)
+L00000634:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000640:
+	movl      4(%ebx), %edi
+L00000643:
+	movl      %ebx, %esi
+	movl      (%esi), %ebx
+	movzbl    (%ebx), %ecx
+	decl      %edi
+	movl      %esi, -568(%ebp)
+	je        L00000B99
+L00000657:
+	incl      %ebx
+	jmp       L00000BBF
+L0000065D:
+	movl      496(%esi), %eax
+	movl      %esi, (%esp)
+	call      *28(%eax)
+L00000669:
+	jmp       L000005C0
+L0000066E:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	call      *12(%edi)
+L00000677:
+	testl     %eax, %eax
+	je        L00000CC9
+L0000067F:
+	movl      (%edi), %edx
+	movl      4(%edi), %ebx
+L00000684:
+	shll      $8, %esi
+	decl      %ebx
+	movzbl    (%edx), %eax
+	incl      %edx
+	orl       %esi, %eax
+	addl      $-2, %eax
+	cmpl      $17, %eax
+	jl        L000008E0
+L0000069A:
+	movl      %eax, -576(%ebp)
+	testl     %ebx, %ebx
+	jne       L000006C0
+L000006A4:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      -568(%ebp), %edi
+	call      *12(%edi)
+L000006B3:
+	testl     %eax, %eax
+	je        L00000CC9
+L000006BB:
+	movl      (%edi), %edx
+	movl      4(%edi), %ebx
+L000006C0:
+	movzbl    (%edx), %esi
+	movl      8(%ebp), %eax
+	movl      %eax, %ecx
+	movl      (%ecx), %eax
+	movl      $80, 20(%eax)
+	movl      %esi, -580(%ebp)
+	movl      %esi, 24(%eax)
+	movl      %ecx, (%esp)
+	movl      $1, 4(%esp)
+	movl      %edx, %esi
+	call      *4(%eax)
+L000006EA:
+	movl      %esi, %edx
+	movw      $0, -50(%ebp)
+	decl      %ebx
+	incl      %edx
+	xorl      %ecx, %ecx
+	movl      $1, %edi
+	.align 4, 0x90
+L00000700:
+	testl     %ebx, %ebx
+	jne       L00000724
+L00000704:
+	movl      %ecx, %esi
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      -568(%ebp), %ebx
+	call      *12(%ebx)
+L00000715:
+	testl     %eax, %eax
+	je        L00000CC9
+L0000071D:
+	movl      (%ebx), %edx
+	movl      4(%ebx), %ebx
+	movl      %esi, %ecx
+L00000724:
+	movzbl    (%edx), %eax
+	movw      %ax, -50(%ebp,%edi,2)
+	addl      %eax, %ecx
+	incl      %edi
+	decl      %ebx
+	incl      %edx
+	cmpl      $17, %edi
+	jl        L00000700
+L00000736:
+	movl      %edx, %esi
+	addl      $-17, -576(%ebp)
+	movl      8(%ebp), %eax
+	movl      %eax, %edi
+	movl      (%edi), %eax
+	pmovsxwd  -48(%ebp), %xmm0
+	movdqu    %xmm0, 24(%eax)
+	pmovsxwd  -40(%ebp), %xmm0
+	movdqu    %xmm0, 40(%eax)
+	movl      $86, 20(%eax)
+	movl      %edi, (%esp)
+	movl      $2, 4(%esp)
+	movl      %ecx, -572(%ebp)
+	call      *4(%eax)
+L00000777:
+	movl      (%edi), %eax
+	pmovsxwd  -32(%ebp), %xmm0
+	movdqu    %xmm0, 24(%eax)
+	pmovsxwd  -24(%ebp), %xmm0
+	movdqu    %xmm0, 40(%eax)
+	movl      $86, 20(%eax)
+	movl      %edi, (%esp)
+	movl      $2, 4(%esp)
+	call      *4(%eax)
+L000007A4:
+	movl      -572(%ebp), %ecx
+	cmpl      $256, %ecx
+	jg        L000007BA
+L000007B2:
+	cmpl      %ecx, -576(%ebp)
+	jge       L000007D3
+L000007BA:
+	movl      8(%ebp), %eax
+	movl      %eax, %ecx
+	movl      (%ecx), %eax
+	movl      $8, 20(%eax)
+	movl      %ecx, (%esp)
+	call      *(%eax)
+L000007CD:
+	movl      -572(%ebp), %ecx
+L000007D3:
+	testl     %ecx, %ecx
+	jle       L00000818
+L000007D7:
+	xorl      %edi, %edi
+	.align 4, 0x90
+L000007E0:
+	testl     %ebx, %ebx
+	jne       L00000806
+L000007E4:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      -568(%ebp), %ebx
+	call      *12(%ebx)
+L000007F3:
+	testl     %eax, %eax
+	je        L00000CC9
+L000007FB:
+	movl      (%ebx), %esi
+	movl      4(%ebx), %ebx
+	movl      -572(%ebp), %ecx
+L00000806:
+	decl      %ebx
+	movzbl    (%esi), %eax
+	incl      %esi
+	movw      %ax, -562(%ebp,%edi,2)
+	incl      %edi
+	cmpl      %ecx, %edi
+	jl        L000007E0
+L00000818:
+	movl      %esi, -584(%ebp)
+	movl      -580(%ebp), %edi
+	leal      -16(%edi), %eax
+	movl      %edi, %ecx
+	andl      $16, %ecx
+	cmove     %edi, %eax
+	testl     %ecx, %ecx
+	movl      8(%ebp), %ecx
+	movl      %ecx, %edx
+	leal      132(%edx,%edi,4), %ecx
+	leal      180(%edx,%edi,4), %edi
+	cmovne    %ecx, %edi
+	cmpl      $4, %eax
+	jb        L00000862
+L0000084C:
+	movl      8(%ebp), %ecx
+	movl      %ecx, %edx
+	movl      (%edx), %ecx
+	movl      $30, 20(%ecx)
+	movl      %eax, 24(%ecx)
+	movl      %edx, (%esp)
+	call      *(%ecx)
+L00000862:
+	movl      -576(%ebp), %esi
+	subl      -572(%ebp), %esi
+	movl      (%edi), %eax
+	testl     %eax, %eax
+	jne       L00000881
+L00000874:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	call      _jpeg_alloc_huff_table
+L0000087F:
+	movl      %eax, (%edi)
+L00000881:
+	movzwl    -18(%ebp), %ecx
+	movw      %cx, 32(%eax)
+	movsd     -26(%ebp), %xmm0
+	movsd     %xmm0, 24(%eax)
+	movsd     -34(%ebp), %xmm0
+	movsd     %xmm0, 16(%eax)
+	movsd     -50(%ebp), %xmm0
+	movsd     -42(%ebp), %xmm1
+	movsd     %xmm1, 8(%eax)
+	movsd     %xmm0, (%eax)
+	movl      (%edi), %eax
+	addl      $34, %eax
+	leal      -562(%ebp), %ecx
+	movl      %ecx, 4(%esp)
+	movl      %eax, (%esp)
+	movl      $512, 8(%esp)
+	call      _memcpy
+L000008CF:
+	cmpl      $16, %esi
+	movl      %esi, %eax
+	movl      -584(%ebp), %edx
+	jg        L0000069A
+L000008E0:
+	testl     %eax, %eax
+	je        L000008FB
+L000008E4:
+	movl      8(%ebp), %eax
+	movl      %eax, %ecx
+	movl      (%ecx), %eax
+	movl      $11, 20(%eax)
+	movl      %ecx, (%esp)
+	movl      %edx, %esi
+	call      *(%eax)
+L000008F9:
+	movl      %esi, %edx
+L000008FB:
+	movl      -568(%ebp), %eax
+	movl      %edx, (%eax)
+	movl      %ebx, 4(%eax)
+	movl      8(%ebp), %esi
+	jmp       L000003F0
+L0000090E:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      %ecx, %esi
+	call      *12(%esi)
+L00000919:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000925:
+	movl      (%esi), %edx
+	movl      4(%esi), %ebx
+	movl      %esi, %ecx
+L0000092C:
+	shll      $8, %edi
+	decl      %ebx
+	movzbl    (%edx), %eax
+	incl      %edx
+	movl      %edx, -580(%ebp)
+	orl       %edi, %eax
+	cmpl      $3, %eax
+	leal      -2(%eax), %eax
+	movl      %ecx, -576(%ebp)
+	jb        L00000B69
+L0000094E:
+	movl      %eax, -584(%ebp)
+	testl     %ebx, %ebx
+	jne       L0000097A
+L00000958:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      %ecx, %esi
+	call      *12(%esi)
+L00000963:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L0000096F:
+	movl      (%esi), %eax
+	movl      %eax, -580(%ebp)
+	movl      4(%esi), %ebx
+L0000097A:
+	movl      -580(%ebp), %eax
+	movzbl    (%eax), %edi
+	movl      %edi, %ecx
+	shrl      $4, %ecx
+	andl      $15, %edi
+	movl      8(%ebp), %esi
+	movl      (%esi), %eax
+	movl      $81, 20(%eax)
+	movl      %edi, 24(%eax)
+	movl      %ecx, -572(%ebp)
+	movl      %ecx, 28(%eax)
+	movl      %esi, (%esp)
+	movl      $1, 4(%esp)
+	call      *4(%eax)
+L000009B1:
+	cmpl      $4, %edi
+	jb        L000009C7
+L000009B6:
+	movl      (%esi), %eax
+	movl      $31, 20(%eax)
+	movl      %edi, 24(%eax)
+	movl      %esi, (%esp)
+	call      *(%eax)
+L000009C7:
+	movl      164(%esi,%edi,4), %eax
+	movl      %eax, -568(%ebp)
+	testl     %eax, %eax
+	jne       L000009F2
+L000009D8:
+	movl      8(%ebp), %eax
+	movl      %eax, %esi
+	movl      %esi, (%esp)
+	call      _jpeg_alloc_quant_table
+L000009E5:
+	movl      %eax, -568(%ebp)
+	movl      %eax, 164(%esi,%edi,4)
+L000009F2:
+	decl      %ebx
+	movl      -580(%ebp), %ecx
+	incl      %ecx
+	xorl      %edi, %edi
+	.align 4, 0x90
+L00000A00:
+	cmpl      $0, -572(%ebp)
+	je        L00000A40
+L00000A09:
+	testl     %ebx, %ebx
+	jne       L00000A2D
+L00000A0D:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      -576(%ebp), %esi
+	call      *12(%esi)
+L00000A1C:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000A28:
+	movl      (%esi), %ecx
+	movl      4(%esi), %ebx
+L00000A2D:
+	movzbl    (%ecx), %esi
+	decl      %ebx
+	je        L00000A70
+L00000A33:
+	incl      %ecx
+	jmp       L00000A92
+L00000A36:
+	.align 4, 0x90
+L00000A40:
+	testl     %ebx, %ebx
+	jne       L00000A64
+L00000A44:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      -576(%ebp), %esi
+	call      *12(%esi)
+L00000A53:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000A5F:
+	movl      (%esi), %ecx
+	movl      4(%esi), %ebx
+L00000A64:
+	movzbl    (%ecx), %eax
+	jmp       L00000A9A
+L00000A69:
+	.align 4, 0x90
+L00000A70:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      -576(%ebp), %ebx
+	call      *12(%ebx)
+L00000A7F:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000A8B:
+	movl      (%ebx), %ecx
+	movl      4(%ebx), %eax
+	movl      %eax, %ebx
+L00000A92:
+	shll      $8, %esi
+	movzbl    (%ecx), %eax
+	orl       %esi, %eax
+L00000A9A:
+	movl      %ecx, %esi
+	movl      -588(%ebp), %ecx
+	movl      L_jpeg_natural_order$non_lazy_ptr-L000003C1(%ecx), %ecx
+	movl      (%ecx,%edi,4), %ecx
+	movl      -568(%ebp), %edx
+	movl      %eax, (%edx,%ecx,4)
+	incl      %edi
+	decl      %ebx
+	incl      %esi
+	cmpl      $64, %edi
+	movl      %esi, %ecx
+	jl        L00000A00
+L00000AC2:
+	movl      %ecx, -580(%ebp)
+	movl      8(%ebp), %esi
+	movl      (%esi), %eax
+	cmpl      $2, 104(%eax)
+	jl        L00000B3D
+L00000AD3:
+	movl      $8, %edi
+	jmp       L00000AE5
+L00000ADA:
+	.align 4, 0x90
+L00000AE0:
+	movl      (%esi), %eax
+	addl      $8, %edi
+L00000AE5:
+	movl      -568(%ebp), %edx
+	movl      -32(%edx,%edi,4), %ecx
+	movl      %ecx, 24(%eax)
+	movl      -28(%edx,%edi,4), %ecx
+	movl      %ecx, 28(%eax)
+	movl      -24(%edx,%edi,4), %ecx
+	movl      %ecx, 32(%eax)
+	movl      -20(%edx,%edi,4), %ecx
+	movl      %ecx, 36(%eax)
+	movl      -16(%edx,%edi,4), %ecx
+	movl      %ecx, 40(%eax)
+	movl      -12(%edx,%edi,4), %ecx
+	movl      %ecx, 44(%eax)
+	movl      -8(%edx,%edi,4), %ecx
+	movl      %ecx, 48(%eax)
+	movl      -4(%edx,%edi,4), %ecx
+	movl      %ecx, 52(%eax)
+	movl      $93, 20(%eax)
+	movl      %esi, (%esp)
+	movl      $2, 4(%esp)
+	call      *4(%eax)
+L00000B38:
+	cmpl      $63, %edi
+	jle       L00000AE0
+L00000B3D:
+	cmpl      $0, -572(%ebp)
+	movl      $-129, %eax
+	movl      $-65, %ecx
+	cmove     %ecx, %eax
+	movl      -584(%ebp), %ecx
+	addl      %eax, %ecx
+	movl      %ecx, %eax
+	testl     %eax, %eax
+	movl      -576(%ebp), %ecx
+	jg        L0000094E
+L00000B69:
+	testl     %eax, %eax
+	je        L00000B86
+L00000B6D:
+	movl      8(%ebp), %eax
+	movl      %eax, %ecx
+	movl      (%ecx), %eax
+	movl      $11, 20(%eax)
+	movl      %ecx, (%esp)
+	call      *(%eax)
+L00000B80:
+	movl      -576(%ebp), %ecx
+L00000B86:
+	movl      -580(%ebp), %eax
+	movl      %eax, (%ecx)
+	movl      %ebx, 4(%ecx)
+	movl      8(%ebp), %esi
+	jmp       L000003F0
+L00000B99:
+	movl      %ecx, -572(%ebp)
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	call      *12(%esi)
+L00000BA8:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000BB4:
+	movl      (%esi), %ebx
+	movl      4(%esi), %edi
+	movl      -572(%ebp), %ecx
+L00000BBF:
+	shll      $8, %ecx
+	decl      %edi
+	movzbl    (%ebx), %eax
+	orl       %ecx, %eax
+	cmpl      $4, %eax
+	je        L00000BE0
+L00000BCD:
+	movl      8(%ebp), %eax
+	movl      %eax, %ecx
+	movl      (%ecx), %eax
+	movl      $11, 20(%eax)
+	movl      %ecx, (%esp)
+	call      *(%eax)
+L00000BE0:
+	testl     %edi, %edi
+	je        L00000BE7
+L00000BE4:
+	incl      %ebx
+	jmp       L00000C07
+L00000BE7:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      -568(%ebp), %esi
+	call      *12(%esi)
+L00000BF6:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000C02:
+	movl      (%esi), %ebx
+	movl      4(%esi), %edi
+L00000C07:
+	movzbl    (%ebx), %eax
+	decl      %edi
+	je        L00000C10
+L00000C0D:
+	incl      %ebx
+	jmp       L00000C3C
+L00000C10:
+	movl      %eax, -572(%ebp)
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      -568(%ebp), %esi
+	call      *12(%esi)
+L00000C25:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000C31:
+	movl      (%esi), %ebx
+	movl      4(%esi), %edi
+	movl      -572(%ebp), %eax
+L00000C3C:
+	shll      $8, %eax
+	decl      %edi
+	movzbl    (%ebx), %esi
+	incl      %ebx
+	orl       %eax, %esi
+	movl      8(%ebp), %eax
+	movl      %eax, %ecx
+	movl      (%ecx), %eax
+	movl      $82, 20(%eax)
+	movl      %esi, 24(%eax)
+	movl      %ecx, (%esp)
+	movl      $1, 4(%esp)
+	call      *4(%eax)
+L00000C65:
+	movl      8(%ebp), %ecx
+	movl      %esi, 324(%ecx)
+	movl      -568(%ebp), %eax
+	movl      %ebx, (%eax)
+	movl      %ecx, %esi
+	movl      %edi, 4(%eax)
+	jmp       L000003F0
+L00000C80:
+	movl      (%esi), %eax
+	movl      $85, 20(%eax)
+	movl      %esi, (%esp)
+	movl      $1, 4(%esp)
+	call      *4(%eax)
+L00000C97:
+	movl      $0, 472(%esi)
+	movl      $2, %eax
+	jmp       L00000CCB
+L00000CA8:
+	movl      %esi, (%esp)
+	call      _get_sos
+L00000CB0:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00000CCB
+L00000CB8:
+	movl      $0, 472(%esi)
+	movl      $1, %eax
+	jmp       L00000CCB
+L00000CC9:
+	xorl      %eax, %eax
+L00000CCB:
+	movl      -592(%ebp), %ecx
+	movl      (%ecx), %ecx
+	cmpl      -16(%ebp), %ecx
+	jne       L00000CE3
+L00000CD8:
+	addl      $604, %esp
+	popl      %esi
+	popl      %edi
+	popl      %ebx
+	popl      %ebp
+	ret       
+L00000CE3:
+	call      ___stack_chk_fail
+	.align 2, 0x90
+L00000CE8:
+	.long	L00000500-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000535-L000003C1
+	.long	L00000535-L000003C1
+	.long	L0000054D-L000003C1
+	.long	L0000051F-L000003C1
+	.long	L0000055A-L000003C1
+	.long	L0000051F-L000003C1
+	.long	L0000051F-L000003C1
+	.long	L0000051F-L000003C1
+	.long	L0000051F-L000003C1
+	.long	L00000590-L000003C1
+	.long	L000005A5-L000003C1
+	.long	L0000051F-L000003C1
+	.long	L000005D1-L000003C1
+	.long	L0000051F-L000003C1
+	.long	L0000051F-L000003C1
+	.long	L0000051F-L000003C1
+	.long	L00000500-L000003C1
+	.long	L00000500-L000003C1
+	.long	L00000500-L000003C1
+	.long	L00000500-L000003C1
+	.long	L00000500-L000003C1
+	.long	L00000500-L000003C1
+	.long	L00000500-L000003C1
+	.long	L00000500-L000003C1
+	.long	L000005DB-L000003C1
+	.long	L00000C80-L000003C1
+	.long	L00000CA8-L000003C1
+	.long	L000005E5-L000003C1
+	.long	L0000061A-L000003C1
+	.long	L00000624-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L000004EB-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L00000542-L000003C1
+	.long	L0000065D-L000003C1
+_read_restart_marker:
+	pushl     %ebp
+	movl      %esp, %ebp
+	pushl     %esi
+	pushl     %eax
+	movl      8(%ebp), %esi
+	movl      472(%esi), %eax
+	testl     %eax, %eax
+	jne       L00001107
+L000010F2:
+	movl      %esi, %ecx
+	call      _next_marker
+L000010F9:
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00001169
+L00001101:
+	movl      472(%esi), %eax
+L00001107:
+	movl      496(%esi), %ecx
+	movl      20(%ecx), %ecx
+	leal      208(%ecx), %edx
+	cmpl      %edx, %eax
+	jne       L0000113E
+L0000111A:
+	movl      (%esi), %eax
+	movl      $98, 20(%eax)
+	movl      %ecx, 24(%eax)
+	subl      $8, %esp
+	pushl     $3
+	pushl     %esi
+	call      *4(%eax)
+L0000112F:
+	addl      $16, %esp
+	movl      $0, 472(%esi)
+	jmp       L00001154
+L0000113E:
+	movl      24(%esi), %eax
+	subl      $8, %esp
+	pushl     %ecx
+	pushl     %esi
+	call      *20(%eax)
+L00001149:
+	addl      $16, %esp
+	movl      %eax, %ecx
+	xorl      %eax, %eax
+	testl     %ecx, %ecx
+	je        L00001169
+L00001154:
+	movl      496(%esi), %eax
+	movl      20(%eax), %ecx
+	incl      %ecx
+	andl      $7, %ecx
+	movl      %ecx, 20(%eax)
+	movl      $1, %eax
+L00001169:
+	addl      $4, %esp
+	popl      %esi
+	popl      %ebp
+	ret       
+L0000116F:
+	.align 4, 0x90
+_skip_variable:
+	pushl     %ebp
+	movl      %esp, %ebp
+	pushl     %ebx
+	pushl     %edi
+	pushl     %esi
+	subl      $28, %esp
+	movl      8(%ebp), %edx
+	movl      24(%edx), %ebx
+	movl      4(%ebx), %esi
+	testl     %esi, %esi
+	jne       L0000119D
+L00001186:
+	movl      %edx, %edi
+	movl      %edx, (%esp)
+	call      *12(%ebx)
+L0000118E:
+	xorl      %esi, %esi
+	testl     %eax, %eax
+	je        L00001222
+L00001198:
+	movl      4(%ebx), %esi
+	movl      %edi, %edx
+L0000119D:
+	movl      (%ebx), %edi
+	movzbl    (%edi), %ecx
+	decl      %esi
+	je        L000011AB
+L000011A5:
+	movl      %ebx, -20(%ebp)
+	incl      %edi
+	jmp       L000011C8
+L000011AB:
+	movl      %ecx, -16(%ebp)
+	movl      %edx, (%esp)
+	call      *12(%ebx)
+L000011B4:
+	xorl      %esi, %esi
+	testl     %eax, %eax
+	je        L00001222
+L000011BA:
+	movl      (%ebx), %edi
+	movl      %ebx, -20(%ebp)
+	movl      4(%ebx), %esi
+	movl      8(%ebp), %edx
+	movl      -16(%ebp), %ecx
+L000011C8:
+	shll      $8, %ecx
+	decl      %esi
+	movzbl    (%edi), %ebx
+	incl      %edi
+	orl       %ecx, %ebx
+	movl      (%edx), %eax
+	movl      $91, 20(%eax)
+	movl      472(%edx), %ecx
+	movl      %ecx, 24(%eax)
+	leal      -2(%ebx), %ecx
+	movl      %ecx, -16(%ebp)
+	movl      %ecx, 28(%eax)
+	movl      %edx, (%esp)
+	movl      $1, 4(%esp)
+	call      *4(%eax)
+L000011FB:
+	movl      -20(%ebp), %eax
+	movl      %edi, (%eax)
+	movl      %esi, 4(%eax)
+	movl      $1, %esi
+	cmpl      $3, %ebx
+	jb        L00001222
+L0000120D:
+	movl      8(%ebp), %eax
+	movl      %eax, %edx
+	movl      24(%edx), %eax
+	movl      -16(%ebp), %ecx
+	movl      %ecx, 4(%esp)
+	movl      %edx, (%esp)
+	call      *16(%eax)
+L00001222:
+	movl      %esi, %eax
+	addl      $28, %esp
+	popl      %esi
+	popl      %edi
+	popl      %ebx
+	popl      %ebp
+	ret       
+L0000122C:
+	.align 4, 0x90
+_get_interesting_appn:
+	pushl     %ebp
+	movl      %esp, %ebp
+	pushl     %ebx
+	pushl     %edi
+	pushl     %esi
+	subl      $60, %esp
+	call      L0000123E
+L0000123E:
+	popl      %eax
+	movl      8(%ebp), %ecx
+	movl      L___stack_chk_guard$non_lazy_ptr-L0000123E(%eax), %eax
+	movl      %eax, -52(%ebp)
+	movl      (%eax), %eax
+	movl      %eax, -16(%ebp)
+	movl      24(%ecx), %ecx
+	movl      4(%ecx), %edx
+	testl     %edx, %edx
+	jne       L00001274
+L0000125A:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      %ecx, %edi
+	call      *12(%edi)
+L00001265:
+	xorl      %esi, %esi
+	testl     %eax, %eax
+	je        L00001460
+L0000126F:
+	movl      4(%edi), %edx
+	movl      %edi, %ecx
+L00001274:
+	movl      (%ecx), %esi
+	movzbl    (%esi), %ebx
+	decl      %edx
+	je        L0000127F
+L0000127C:
+	incl      %esi
+	jmp       L0000129B
+L0000127F:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      %ecx, %edi
+	call      *12(%edi)
+L0000128A:
+	xorl      %esi, %esi
+	testl     %eax, %eax
+	je        L00001460
+L00001294:
+	movl      (%edi), %esi
+	movl      4(%edi), %edx
+	movl      %edi, %ecx
+L0000129B:
+	shll      $8, %ebx
+	movzbl    (%esi), %eax
+	orl       %ebx, %eax
+	xorl      %ebx, %ebx
+	cmpl      $2, %eax
+	leal      -2(%eax), %edi
+	movl      $0, %eax
+	cmova     %edi, %eax
+	movl      %edi, -40(%ebp)
+	cmpl      $13, %edi
+	movl      $14, %edi
+	cmovle    %eax, %edi
+	decl      %edx
+	incl      %esi
+	testl     %edi, %edi
+	movl      %edi, -36(%ebp)
+	je        L00001301
+L000012CA:
+	.align 4, 0x90
+L000012D0:
+	testl     %edx, %edx
+	jne       L000012F3
+L000012D4:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      %ecx, %edi
+	call      *12(%edi)
+L000012DF:
+	xorl      %esi, %esi
+	testl     %eax, %eax
+	je        L00001460
+L000012E9:
+	movl      (%edi), %esi
+	movl      4(%edi), %edx
+	movl      %edi, %ecx
+	movl      -36(%ebp), %edi
+L000012F3:
+	movzbl    (%esi), %eax
+	movb      %al, -30(%ebp,%ebx)
+	incl      %ebx
+	decl      %edx
+	incl      %esi
+	cmpl      %edi, %ebx
+	jb        L000012D0
+L00001301:
+	movl      -40(%ebp), %eax
+	subl      %edi, %eax
+	movl      %eax, %edi
+	movl      8(%ebp), %eax
+	movl      472(%eax), %eax
+	cmpl      $238, %eax
+	movl      %edx, -48(%ebp)
+	movl      %ecx, %ebx
+	je        L00001342
+L0000131D:
+	cmpl      $224, %eax
+	jne       L00001403
+L00001328:
+	movl      %edi, 4(%esp)
+	movl      -36(%ebp), %eax
+	movl      %eax, (%esp)
+	leal      -30(%ebp), %edx
+	movl      8(%ebp), %ecx
+	call      _examine_app0
+L0000133D:
+	jmp       L0000143D
+L00001342:
+	cmpl      $12, -36(%ebp)
+	jb        L0000141B
+L0000134C:
+	cmpb      $65, -30(%ebp)
+	jne       L0000141B
+L00001356:
+	cmpb      $100, -29(%ebp)
+	jne       L0000141B
+L00001360:
+	cmpb      $111, -28(%ebp)
+	jne       L0000141B
+L0000136A:
+	cmpb      $98, -27(%ebp)
+	jne       L0000141B
+L00001374:
+	cmpb      $101, -26(%ebp)
+	jne       L0000141B
+L0000137E:
+	movzbl    -25(%ebp), %eax
+	shll      $8, %eax
+	movzbl    -24(%ebp), %ecx
+	orl       %eax, %ecx
+	movl      %ecx, -36(%ebp)
+	movzbl    -23(%ebp), %eax
+	shll      $8, %eax
+	movzbl    -22(%ebp), %ecx
+	orl       %eax, %ecx
+	movl      %ecx, -40(%ebp)
+	movzbl    -21(%ebp), %eax
+	shll      $8, %eax
+	movzbl    -20(%ebp), %ecx
+	orl       %eax, %ecx
+	movzbl    -19(%ebp), %eax
+	movl      %eax, -44(%ebp)
+	movl      8(%ebp), %eax
+	movl      (%eax), %eax
+	movl      -36(%ebp), %edx
+	movl      %edx, 24(%eax)
+	movl      -40(%ebp), %edx
+	movl      %edx, 28(%eax)
+	movl      %ecx, 32(%eax)
+	movl      -44(%ebp), %ecx
+	movzwl    %cx, %ecx
+	movl      %ecx, -36(%ebp)
+	movl      %ecx, 36(%eax)
+	movl      $76, 20(%eax)
+	movl      8(%ebp), %ecx
+	movl      %ecx, (%esp)
+	movl      $1, 4(%esp)
+	call      *4(%eax)
+L000013EA:
+	movl      8(%ebp), %eax
+	movl      $1, 348(%eax)
+	movl      -36(%ebp), %ecx
+	movw      %cx, 352(%eax)
+	jmp       L0000143D
+L00001403:
+	movl      8(%ebp), %ecx
+	movl      %ecx, %edx
+	movl      (%edx), %ecx
+	movl      $68, 20(%ecx)
+	movl      %eax, 24(%ecx)
+	movl      %edx, (%esp)
+	call      *(%ecx)
+L00001419:
+	jmp       L0000143D
+L0000141B:
+	movl      8(%ebp), %eax
+	movl      %eax, %ecx
+	movl      (%ecx), %eax
+	movl      $78, 20(%eax)
+	movl      -40(%ebp), %edx
+	movl      %edx, 24(%eax)
+	movl      %ecx, (%esp)
+	movl      $1, 4(%esp)
+	call      *4(%eax)
+L0000143D:
+	movl      %esi, (%ebx)
+	movl      -48(%ebp), %eax
+	movl      %eax, 4(%ebx)
+	movl      $1, %esi
+	testl     %edi, %edi
+	jle       L00001460
+L0000144E:
+	movl      8(%ebp), %eax
+	movl      %eax, %ecx
+	movl      24(%ecx), %eax
+	movl      %edi, 4(%esp)
+	movl      %ecx, (%esp)
+	call      *16(%eax)
+L00001460:
+	movl      -52(%ebp), %eax
+	movl      (%eax), %eax
+	cmpl      -16(%ebp), %eax
+	jne       L00001474
+L0000146A:
+	movl      %esi, %eax
+	addl      $60, %esp
+	popl      %esi
+	popl      %edi
+	popl      %ebx
+	popl      %ebp
+	ret       
+L00001474:
+	call      ___stack_chk_fail
+# ----------------------
+	.align 4, 0x90
+	.globl	_jpeg_save_markers
+_jpeg_save_markers:
+	pushl     %ebp
+	movl      %esp, %ebp
+	pushl     %ebx
+	pushl     %edi
+	pushl     %esi
+	call      L0000148B
+L0000148B:
+	popl      %edi
+	movl      12(%ebp), %eax
+	movl      8(%ebp), %edx
+	movl      16(%ebp), %ecx
+	movl      4(%edx), %esi
+	movl      48(%esi), %ebx
+	addl      $-20, %ebx
+	cmpl      %ecx, %ebx
+	cmovg     %ecx, %ebx
+	movl      496(%edx), %ecx
+	testl     %ebx, %ebx
+	je        L000014C6
+L000014AD:
+	cmpl      $224, %eax
+	jne       L000014E6
+L000014B4:
+	cmpl      $14, %ebx
+	jae       L000014E6
+L000014B9:
+	leal      _save_marker-L0000148B(%edi), %edi
+	movl      $14, %esi
+	jmp       L0000151B
+L000014C6:
+	cmpl      $238, %eax
+	leal      _get_interesting_appn-L0000148B(%edi), %esi
+	leal      _skip_variable-L0000148B(%edi), %edi
+	cmove     %esi, %edi
+	cmpl      $224, %eax
+	cmove     %esi, %edi
+	xorl      %esi, %esi
+	jmp       L000014FF
+L000014E6:
+	cmpl      $12, %ebx
+	movl      $12, %esi
+	cmovae    %ebx, %esi
+	cmpl      $238, %eax
+	cmovne    %ebx, %esi
+	leal      _save_marker-L0000148B(%edi), %edi
+L000014FF:
+	cmpl      $254, %eax
+	jne       L0000150E
+L00001506:
+	movl      %edi, 28(%ecx)
+	movl      %esi, 96(%ecx)
+	jmp       L00001529
+L0000150E:
+	movl      %eax, %ebx
+	andl      $-16, %ebx
+	cmpl      $224, %ebx
+	jne       L0000152E
+L0000151B:
+	movl      %edi, -864(%ecx,%eax,4)
+	movl      %esi, -796(%ecx,%eax,4)
+L00001529:
+	popl      %esi
+	popl      %edi
+	popl      %ebx
+	popl      %ebp
+	ret       
+L0000152E:
+	movl      (%edx), %ecx
+	movl      $68, 20(%ecx)
+	movl      %eax, 24(%ecx)
+	movl      (%ecx), %eax
+	popl      %esi
+	popl      %edi
+	popl      %ebx
+	popl      %ebp
+	jmp       *%eax
+L00001542:
+	.align 4, 0x90
+_save_marker:
+	pushl     %ebp
+	movl      %esp, %ebp
+	pushl     %ebx
+	pushl     %edi
+	pushl     %esi
+	subl      $60, %esp
+	movl      8(%ebp), %ebx
+	movl      24(%ebx), %ecx
+	movl      496(%ebx), %esi
+	movl      164(%esi), %edi
+	movl      (%ecx), %edx
+	testl     %edi, %edi
+	movl      4(%ecx), %eax
+	movl      %ecx, -36(%ebp)
+	movl      %esi, -40(%ebp)
+	je        L000015A0
+L0000157A:
+	movl      168(%esi), %ebx
+	movl      %edi, -32(%ebp)
+	movl      -32(%ebp), %edi
+	movl      12(%edi), %edi
+	movl      %edi, -24(%ebp)
+	movl      -32(%ebp), %edi
+	movl      16(%edi), %edi
+	addl      %ebx, %edi
+	movl      $0, -28(%ebp)
+	jmp       L00001696
+L000015A0:
+	testl     %eax, %eax
+	jne       L000015C1
+L000015A4:
+	movl      %ebx, %edi
+	movl      %ebx, (%esp)
+	movl      %ecx, %esi
+	call      *12(%esi)
+L000015AE:
+	movl      %esi, %ecx
+	xorl      %esi, %esi
+	testl     %eax, %eax
+	je        L000019DA
+L000015BA:
+	movl      (%ecx), %edx
+	movl      4(%ecx), %eax
+	movl      %edi, %ebx
+L000015C1:
+	movzbl    (%edx), %edi
+	decl      %eax
+	je        L000015CA
+L000015C7:
+	incl      %edx
+	jmp       L000015E6
+L000015CA:
+	movl      %ebx, (%esp)
+	movl      %ecx, %esi
+	call      *12(%esi)
+L000015D2:
+	movl      %esi, %ecx
+	xorl      %esi, %esi
+	testl     %eax, %eax
+	je        L000019DA
+L000015DE:
+	movl      (%ecx), %edx
+	movl      4(%ecx), %eax
+	movl      8(%ebp), %ebx
+L000015E6:
+	shll      $8, %edi
+	decl      %eax
+	movzbl    (%edx), %esi
+	incl      %edx
+	orl       %edi, %esi
+	addl      $-2, %esi
+	movl      %eax, -16(%ebp)
+	movl      %esi, -28(%ebp)
+	js        L000019E4
+L000015FF:
+	movl      4(%ebx), %eax
+	movl      472(%ebx), %ecx
+	movl      %edx, -20(%ebp)
+	movl      -40(%ebp), %edi
+	leal      96(%edi), %edx
+	cmpl      $254, %ecx
+	leal      -796(%edi,%ecx,4), %ecx
+	cmove     %edx, %ecx
+	movl      (%ecx), %edi
+	cmpl      %edi, %esi
+	cmovb     %esi, %edi
+	leal      20(%edi), %ecx
+	movl      %ebx, (%esp)
+	movl      %ecx, 8(%esp)
+	movl      $1, 4(%esp)
+	call      *4(%eax)
+L0000163D:
+	movl      -36(%ebp), %ecx
+	movl      -20(%ebp), %edx
+	movl      %eax, %ebx
+	movl      $0, (%ebx)
+	movl      8(%ebp), %eax
+	movzwl    472(%eax), %eax
+	movw      %ax, 4(%ebx)
+	movl      -16(%ebp), %eax
+	movl      %esi, 8(%ebx)
+	movl      -40(%ebp), %esi
+	movl      %edi, -24(%ebp)
+	movl      %edi, 12(%ebx)
+	leal      20(%ebx), %edi
+	movl      %edi, 16(%ebx)
+	movl      %ebx, -32(%ebp)
+	movl      %ebx, 164(%esi)
+	movl      $0, 168(%esi)
+	xorl      %ebx, %ebx
+	jmp       L00001696
+L00001685:
+	.align 4, 0x90
+L00001690:
+	movl      -20(%ebp), %edx
+	movl      -44(%ebp), %ebx
+L00001696:
+	cmpl      -24(%ebp), %ebx
+	jae       L00001831
+L0000169F:
+	movl      %edx, (%ecx)
+	movl      %eax, 4(%ecx)
+	movl      %ebx, 168(%esi)
+	testl     %eax, %eax
+	jne       L000016CD
+L000016AE:
+	movl      8(%ebp), %eax
+	movl      %eax, (%esp)
+	movl      %ecx, %esi
+	call      *12(%esi)
+L000016B9:
+	movl      %esi, %ecx
+	xorl      %esi, %esi
+	testl     %eax, %eax
+	je        L000019DA
+L000016C5:
+	movl      (%ecx), %edx
+	movl      4(%ecx), %eax
+	movl      -40(%ebp), %esi
+L000016CD:
+	movl      %edx, -20(%ebp)
+	movl      %ebx, -44(%ebp)
+	subl      -24(%ebp), %ebx
+	jae       L00001690
+L000016D8:
+	testl     %eax, %eax
+	je        L00001690
+L000016DC:
+	movl      %eax, -16(%ebp)
+	negl      %eax
+	cmpl      %eax, %ebx
+	movl      %ebx, %edx
+	cmovb     %eax, %edx
+	negl      %edx
+	cmpl      $32, %edx
+	jb        L000017E0
+L000016F3:
+	movl      %edx, %esi
+	andl      $-32, %esi
+	movl      %esi, -48(%ebp)
+	je        L000017E0
+L00001701:
+	movl      %edx, -52(%ebp)
+	cmpl      %eax, %ebx
+	movl      %ebx, %ecx
+	cmovb     %eax, %ecx
+	movl      -20(%ebp), %edx
+	movl      %edx, %esi
+	subl      %ecx, %esi
+	cmpl      %esi, %edi
+	jae       L00001722
+L00001716:
+	movl      %edi, %esi
+	subl      %ecx, %esi
+	cmpl      %esi, %edx
+	jb        L000017E3
+L00001722:
+	cmpl      %eax, %ebx
+	cmovb     %eax, %ebx
+	movl      $-32, %esi
+	subl      %ebx, %esi
+	movl      %esi, %ecx
+	shrl      $5, %ecx
+	incl      %ecx
+	xorl      %eax, %eax
+	andl      $3, %ecx
+	je        L00001758
+L0000173B:
+	negl      %ecx
+	xorl      %eax, %eax
+	.align 4, 0x90
+L00001740:
+	movups    (%edx,%eax), %xmm0
+	movups    16(%edx,%eax), %xmm1
+	movups    %xmm0, (%edi,%eax)
+	movups    %xmm1, 16(%edi,%eax)
+	addl      $32, %eax
+	incl      %ecx
+	jne       L00001740
+L00001758:
+	cmpl      $96, %esi
+	movl      -44(%ebp), %ebx
+	jb        L000017B9
+L00001760:
+	movl      -48(%ebp), %edx
+	subl      %eax, %edx
+	leal      112(%edi,%eax), %ecx
+	movl      -20(%ebp), %esi
+	leal      112(%esi,%eax), %eax
+L00001770:
+	movups    -112(%eax), %xmm0
+	movups    -96(%eax), %xmm1
+	movups    %xmm0, -112(%ecx)
+	movups    %xmm1, -96(%ecx)
+	movups    -80(%eax), %xmm0
+	movups    -64(%eax), %xmm1
+	movups    %xmm0, -80(%ecx)
+	movups    %xmm1, -64(%ecx)
+	movups    -48(%eax), %xmm0
+	movups    -32(%eax), %xmm1
+	movups    %xmm0, -48(%ecx)
+	movups    %xmm1, -32(%ecx)
+	movups    -16(%eax), %xmm0
+	movups    (%eax), %xmm1
+	movups    %xmm0, -16(%ecx)
+	movups    %xmm1, (%ecx)
+	subl      $-128, %ecx
+	subl      $-128, %eax
+	addl      $-128, %edx
+	jne       L00001770
+L000017B9:
+	movl      -16(%ebp), %eax
+	movl      -48(%ebp), %ecx
+	subl      %ecx, %eax
+	movl      -20(%ebp), %edx
+	addl      %ecx, %edx
+	addl      %ecx, %edi
+	addl      %ecx, %ebx
+	cmpl      -52(%ebp), %ecx
+	movl      -40(%ebp), %esi
+	movl      -36(%ebp), %ecx
+	je        L00001696
+L000017D9:
+	jmp       L000017E9
+L000017DB:
+	.align 4, 0x90
+L000017E0:
+	movl      -20(%ebp), %edx
+L000017E3:
+	movl      -16(%ebp), %eax
+	movl      -44(%ebp), %ebx
+L000017E9:
+	movl      %edx, %esi
+	movl      %eax, -16(%ebp)
+	decl      %eax
+	xorl      %edx, %edx
+	.align 4, 0x90
+L00001800:
+	movzbl    (%esi,%edx), %ecx
+	movb      %cl, (%edi,%edx)
+	leal      1(%ebx,%edx), %ecx
+	cmpl      -24(%ebp), %ecx
+	leal      1(%edx), %ecx
+	jae       L00001819
+L00001813:
+	cmpl      %edx, %eax
+	movl      %ecx, %edx
+	jne       L00001800
+L00001819:
+	movl      -16(%ebp), %eax
+	subl      %ecx, %eax
+	movl      %esi, %edx
+	addl      %ecx, %edx
+	addl      %ecx, %edi
+	addl      %ecx, %ebx
+	movl      -40(%ebp), %esi
+	movl      -36(%ebp), %ecx
+	jmp       L00001696
+L00001831:
+	cmpl      $0, -32(%ebp)
+	movl      %eax, -16(%ebp)
+	movl      8(%ebp), %ebx
+	je        L00001878
+L0000183D:
+	movl      360(%ebx), %eax
+	testl     %eax, %eax
+	je        L00001863
+L00001847:
+	movl      %ecx, %edi
+	.align 4, 0x90
+L00001850:
+	movl      %eax, %ecx
+	movl      (%ecx), %eax
+	testl     %eax, %eax
+	jne       L00001850
+L00001858:
+	movl      -32(%ebp), %eax
+	movl      %eax, (%ecx)
+	movl      %edi, %ecx
+	movl      %eax, %edi
+	jmp       L0000186C
+L00001863:
+	movl      -32(%ebp), %edi
+	movl      %edi, 360(%ebx)
+L0000186C:
+	movl      8(%edi), %eax
+	movl      16(%edi), %edi
+	subl      -24(%ebp), %eax
+	movl      %eax, -28(%ebp)
+L00001878:
+	movl      $0, 164(%esi)
+	movl      472(%ebx), %eax
+	cmpl      $238, %eax
+	je        L000018B9
+L0000188F:
+	movl      %edx, %esi
+	cmpl      $224, %eax
+	jne       L00001969
+L0000189C:
+	movl      -28(%ebp), %eax
+	movl      %eax, 4(%esp)
+	movl      -24(%ebp), %ecx
+	movl      %ecx, (%esp)
+	movl      %ebx, %ecx
+	movl      %edi, %edx
+	movl      %eax, %edi
+	call      _examine_app0
+L000018B4:
+	jmp       L0000198E
+L000018B9:
+	movl      %edx, -20(%ebp)
+	movl      -24(%ebp), %edx
+	cmpl      $12, %edx
+	jb        L00001996
+L000018C8:
+	cmpb      $65, (%edi)
+	jne       L00001996
+L000018D1:
+	cmpb      $100, 1(%edi)
+	jne       L00001996
+L000018DB:
+	cmpb      $111, 2(%edi)
+	jne       L00001996
+L000018E5:
+	cmpb      $98, 3(%edi)
+	jne       L00001996
+L000018EF:
+	cmpb      $101, 4(%edi)
+	jne       L00001996
+L000018F9:
+	movzbl    5(%edi), %eax
+	shll      $8, %eax
+	movzbl    6(%edi), %ecx
+	orl       %eax, %ecx
+	movzbl    7(%edi), %eax
+	shll      $8, %eax
+	movzbl    8(%edi), %edx
+	orl       %eax, %edx
+	movzbl    9(%edi), %eax
+	shll      $8, %eax
+	movzbl    10(%edi), %esi
+	orl       %eax, %esi
+	movzbl    11(%edi), %eax
+	movl      (%ebx), %edi
+	movl      %ecx, 24(%edi)
+	movl      %edx, 28(%edi)
+	movl      %esi, 32(%edi)
+	movzwl    %ax, %esi
+	movl      %esi, 36(%edi)
+	movl      $76, 20(%edi)
+	movl      %ebx, (%esp)
+	movl      $1, 4(%esp)
+	call      *4(%edi)
+L0000194A:
+	movl      $1, 348(%ebx)
+	movw      %si, 352(%ebx)
+	movl      -36(%ebp), %ecx
+	movl      -20(%ebp), %esi
+	movl      -16(%ebp), %eax
+	movl      -28(%ebp), %edi
+	jmp       L000019BF
+L00001969:
+	movl      (%ebx), %ecx
+	movl      $91, 20(%ecx)
+	movl      %eax, 24(%ecx)
+	movl      -28(%ebp), %edi
+	movl      -24(%ebp), %eax
+	addl      %edi, %eax
+	movl      %eax, 28(%ecx)
+	movl      %ebx, (%esp)
+	movl      $1, 4(%esp)
+	call      *4(%ecx)
+L0000198E:
+	movl      -16(%ebp), %eax
+	movl      -36(%ebp), %ecx
+	jmp       L000019BF
+L00001996:
+	movl      (%ebx), %eax
+	movl      $78, 20(%eax)
+	movl      -28(%ebp), %edi
+	addl      %edi, %edx
+	movl      %edx, 24(%eax)
+	movl      %ebx, (%esp)
+	movl      $1, 4(%esp)
+	movl      %ecx, %esi
+	call      *4(%eax)
+L000019B7:
+	movl      %esi, %ecx
+	movl      -20(%ebp), %esi
+	movl      -16(%ebp), %eax
+L000019BF:
+	movl      %esi, (%ecx)
+	movl      %eax, 4(%ecx)
+	movl      $1, %esi
+	testl     %edi, %edi
+	jle       L000019DA
+L000019CD:
+	movl      24(%ebx), %eax
+	movl      %edi, 4(%esp)
+	movl      %ebx, (%esp)
+	call      *16(%eax)
+L000019DA:
+	movl      %esi, %eax
+	addl      $60, %esp
+	popl      %esi
+	popl      %edi
+	popl      %ebx
+	popl      %ebp
+	ret       
+L000019E4:
+	movl      $0, -24(%ebp)
+	xorl      %edi, %edi
+	movl      -40(%ebp), %esi
+	jmp       L00001878
+L000019F5:
+	.align 4, 0x90
+_examine_app0:
+	pushl     %ebp
+	movl      %esp, %ebp
+	pushl     %ebx
+	pushl     %edi
+	pushl     %esi
+	subl      $12, %esp
+	movl      %edx, %edi
+	movl      %ecx, %esi
+	movl      8(%ebp), %eax
+	movl      12(%ebp), %ebx
+	addl      %eax, %ebx
+	cmpl      $14, %eax
+	jb        L00001AB5
+L00001A1E:
+	cmpb      $74, (%edi)
+	jne       L00001AD7
+L00001A27:
+	cmpb      $70, 1(%edi)
+	jne       L00001ABF
+L00001A31:
+	cmpb      $73, 2(%edi)
+	jne       L00001ABF
+L00001A3B:
+	cmpb      $70, 3(%edi)
+	jne       L00001ABF
+L00001A41:
+	cmpb      $0, 4(%edi)
+	jne       L00001ABF
+L00001A47:
+	movl      $1, 328(%esi)
+	movzbl    5(%edi), %eax
+	movzwl    %ax, %eax
+	movl      %eax, -16(%ebp)
+	movw      %ax, 332(%esi)
+	movzbl    6(%edi), %eax
+	movw      %ax, 334(%esi)
+	movzbl    7(%edi), %ecx
+	movl      %ecx, -20(%ebp)
+	movw      %cx, 336(%esi)
+	movzbl    8(%edi), %ecx
+	shll      $8, %ecx
+	movzbl    9(%edi), %edx
+	orl       %ecx, %edx
+	movl      %edx, 340(%esi)
+	movzbl    10(%edi), %ecx
+	shll      $8, %ecx
+	movzbl    11(%edi), %edx
+	orl       %ecx, %edx
+	movl      %edx, 344(%esi)
+	movl      -16(%ebp), %edx
+	cmpl      $1, %edx
+	jne       L00001B1A
+L00001AA9:
+	movl      $1, -16(%ebp)
+	jmp       L00001B51
+L00001AB5:
+	cmpl      $6, %eax
+	jb        L00001AD7
+L00001ABA:
+	cmpb      $74, (%edi)
+	jne       L00001AD7
+L00001ABF:
+	cmpb      $70, 1(%edi)
+	jne       L00001AD7
+L00001AC5:
+	cmpb      $88, 2(%edi)
+	jne       L00001AD7
+L00001ACB:
+	cmpb      $88, 3(%edi)
+	jne       L00001AD7
+L00001AD1:
+	cmpb      $0, 4(%edi)
+	je        L00001AF4
+L00001AD7:
+	movl      (%esi), %eax
+	movl      $77, 20(%eax)
+L00001AE0:
+	movl      %ebx, 24(%eax)
+L00001AE3:
+	subl      $8, %esp
+	pushl     $1
+	pushl     %esi
+	call      *4(%eax)
+L00001AEC:
+	addl      $28, %esp
+L00001AEF:
+	popl      %esi
+	popl      %edi
+	popl      %ebx
+	popl      %ebp
+	ret       
+L00001AF4:
+	movb      5(%edi), %al
+	cmpb      $19, %al
+	je        L00001BE7
+L00001AFF:
+	cmpb      $17, %al
+	je        L00001BF5
+L00001B07:
+	cmpb      $16, %al
+	jne       L00001C03
+L00001B0F:
+	movl      (%esi), %eax
+	movl      $108, 20(%eax)
+	jmp       L00001AE0
+L00001B1A:
+	movl      (%esi), %ecx
+	movl      $119, 20(%ecx)
+	movl      %edx, 24(%ecx)
+	movzwl    %ax, %eax
+	movl      %eax, 28(%ecx)
+	subl      $8, %esp
+	pushl     $-1
+	pushl     %esi
+	call      *4(%ecx)
+L00001B35:
+	addl      $16, %esp
+	movl      332(%esi), %eax
+	movswl    %ax, %ecx
+	movl      %ecx, -16(%ebp)
+	shrl      $16, %eax
+	movw      336(%esi), %cx
+	movl      %ecx, -20(%ebp)
+L00001B51:
+	movl      (%esi), %ecx
+	movl      -16(%ebp), %edx
+	movl      %edx, 24(%ecx)
+	cwtl      
+	movl      %eax, 28(%ecx)
+	movl      340(%esi), %eax
+	movl      %eax, 32(%ecx)
+	movl      344(%esi), %eax
+	movl      %eax, 36(%ecx)
+	movl      -20(%ebp), %eax
+	cwtl      
+	movl      %eax, 40(%ecx)
+	movl      $87, 20(%ecx)
+	subl      $8, %esp
+	pushl     $1
+	pushl     %esi
+	call      *4(%ecx)
+L00001B86:
+	addl      $16, %esp
+	movb      12(%edi), %al
+	movb      13(%edi), %cl
+	movl      %ecx, %edx
+	orb       %al, %dl
+	je        L00001BBE
+L00001B95:
+	movl      (%esi), %eax
+	movl      $90, 20(%eax)
+	movzbl    12(%edi), %ecx
+	movl      %ecx, 24(%eax)
+	movzbl    13(%edi), %ecx
+	movl      %ecx, 28(%eax)
+	subl      $8, %esp
+	pushl     $1
+	pushl     %esi
+	call      *4(%eax)
+L00001BB5:
+	addl      $16, %esp
+	movb      12(%edi), %al
+	movb      13(%edi), %cl
+L00001BBE:
+	addl      $-14, %ebx
+	movzbl    %al, %eax
+	movzbl    %cl, %ecx
+	imull     %eax, %ecx
+	leal      (%ecx,%ecx,2), %eax
+	cmpl      %eax, %ebx
+	jne       L00001BD9
+L00001BD1:
+	addl      $12, %esp
+	jmp       L00001AEF
+L00001BD9:
+	movl      (%esi), %eax
+	movl      $88, 20(%eax)
+	jmp       L00001AE0
+L00001BE7:
+	movl      (%esi), %eax
+	movl      $110, 20(%eax)
+	jmp       L00001AE0
+L00001BF5:
+	movl      (%esi), %eax
+	movl      $109, 20(%eax)
+	jmp       L00001AE0
+L00001C03:
+	movl      (%esi), %eax
+	movl      $89, 20(%eax)
+	movzbl    5(%edi), %ecx
+	movl      %ecx, 24(%eax)
+	movl      %ebx, 28(%eax)
+	jmp       L00001AE3
+# ----------------------
+	.section       __IMPORT,__pointers,non_lazy_symbol_pointers
+L___stack_chk_guard$non_lazy_ptr:
+	.indirect_symbol ___stack_chk_guard
+	.long	0
+# ----------------------
+L_jpeg_natural_order$non_lazy_ptr:
+	.indirect_symbol _jpeg_natural_order
+	.long	0
+# ----------------------
+
+.subsections_via_symbols

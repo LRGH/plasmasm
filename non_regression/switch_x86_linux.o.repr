@@ -1,0 +1,904 @@
+<Symbol 'PyToken_OneChar' section='.text', type='function', bind='globl', size=107, address=0>
+    ENDER False -- NXT .L0000000E
+    CFG .L00000064
+    CFG .L0000000E
+    GRAPH_NXT .L0000000E
+    GRAPH_NXT .L00000064
+    GRAPH_PRV main
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>0 [None][] push {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>1 [None][] mov {5:1,ad:False,size:u32} {4:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>3 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0x8),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>6 [None][] sub {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x25),size:u32} 
+'I386_MIASM.InstructionCFG'>9 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x59),size:u32} 
+'I386_MIASM.InstructionCFG'>12 [jcc][] ja {ad:False,size:u32,symb__intern__:{.L00000064:1}} 
+
+<Symbol '.L0000000E' section='.text', address=14>
+    ENDER True -- NXT None
+    CFG .L00000017
+    CFG .L0000001E
+    CFG .L00000025
+    CFG .L0000002C
+    CFG .L00000033
+    CFG .L0000003A
+    CFG .L00000041
+    CFG .L00000048
+    CFG .L0000004F
+    CFG .L00000056
+    CFG .L0000005D
+    CFG .L00000064
+    GRAPH_NXT .L00000017
+    GRAPH_NXT .L0000001E
+    GRAPH_NXT .L00000025
+    GRAPH_NXT .L0000002C
+    GRAPH_NXT .L00000033
+    GRAPH_NXT .L0000003A
+    GRAPH_NXT .L00000041
+    GRAPH_NXT .L00000048
+    GRAPH_NXT .L0000004F
+    GRAPH_NXT .L00000056
+    GRAPH_NXT .L0000005D
+    GRAPH_NXT .L00000064
+    GRAPH_PRV PyToken_OneChar
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>14 [None][] mov {0:1,ad:False,size:u32} {0:4,ad:u32,size:u32,symb__intern__:{.LC00000000:1},txt:eax*4+imm} 
+'I386_MIASM.InstructionCFG'>21 [jmp][] jmp {0:1,ad:False,size:u32} 
+
+<Symbol '.L00000017' section='.text', address=23>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>23 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0xb),size:u32} 
+'I386_MIASM.InstructionCFG'>28 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L0000001E' section='.text', address=30>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>30 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x15),size:u32} 
+'I386_MIASM.InstructionCFG'>35 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L00000025' section='.text', address=37>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>37 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x16),size:u32} 
+'I386_MIASM.InstructionCFG'>42 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L0000002C' section='.text', address=44>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>44 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x17),size:u32} 
+'I386_MIASM.InstructionCFG'>49 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L00000033' section='.text', address=51>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>51 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x18),size:u32} 
+'I386_MIASM.InstructionCFG'>56 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L0000003A' section='.text', address=58>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>58 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x19),size:u32} 
+'I386_MIASM.InstructionCFG'>63 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L00000041' section='.text', address=65>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>65 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x1a),size:u32} 
+'I386_MIASM.InstructionCFG'>70 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L00000048' section='.text', address=72>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>72 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x1b),size:u32} 
+'I386_MIASM.InstructionCFG'>77 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L0000004F' section='.text', address=79>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>79 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x21),size:u32} 
+'I386_MIASM.InstructionCFG'>84 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L00000056' section='.text', address=86>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>86 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x20),size:u32} 
+'I386_MIASM.InstructionCFG'>91 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L0000005D' section='.text', address=93>
+    ENDER True -- NXT None
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>93 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x32),size:u32} 
+'I386_MIASM.InstructionCFG'>98 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000069:1}} 
+
+<Symbol '.L00000064' section='.text', address=100>
+    ENDER False -- NXT .L00000069
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_PRV .L0000000E
+    GRAPH_PRV PyToken_OneChar
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>100 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x33),size:u32} 
+
+<Symbol '.L00000069' section='.text', address=105>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_NXT .L000001A4
+    GRAPH_PRV .L00000017
+    GRAPH_PRV .L0000001E
+    GRAPH_PRV .L00000025
+    GRAPH_PRV .L0000002C
+    GRAPH_PRV .L00000033
+    GRAPH_PRV .L0000003A
+    GRAPH_PRV .L00000041
+    GRAPH_PRV .L00000048
+    GRAPH_PRV .L0000004F
+    GRAPH_PRV .L00000056
+    GRAPH_PRV .L0000005D
+    GRAPH_PRV .L00000064
+-- STACK00 ['.L000001A4']
+'I386_MIASM.InstructionCFG'>105 [None][] pop {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>106 [ret][] ret 
+
+<Symbol 'PyToken_TwoChars' section='.text', type='function', bind='globl', size=295, address=107>
+    ENDER False -- NXT .L0000007D
+    CFG .L0000018B
+    CFG .L0000007D
+    GRAPH_NXT .L0000007D
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L000001A4
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>107 [None][] push {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>108 [None][] mov {5:1,ad:False,size:u32} {4:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>110 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0x8),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>113 [None][] sub {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x21),size:u32} 
+'I386_MIASM.InstructionCFG'>116 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x5b),size:u32} 
+'I386_MIASM.InstructionCFG'>119 [jcc][] ja {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L0000007D' section='.text', address=125>
+    ENDER True -- NXT None
+    CFG .L00000086
+    CFG .L0000009D
+    CFG .L000000B4
+    CFG .L000000DC
+    CFG .L000000F3
+    CFG .L0000010A
+    CFG .L00000129
+    CFG .L00000148
+    CFG .L00000159
+    CFG .L0000016A
+    CFG .L0000017B
+    CFG .L0000018B
+    GRAPH_NXT .L00000086
+    GRAPH_NXT .L0000009D
+    GRAPH_NXT .L000000B4
+    GRAPH_NXT .L000000DC
+    GRAPH_NXT .L000000F3
+    GRAPH_NXT .L0000010A
+    GRAPH_NXT .L00000129
+    GRAPH_NXT .L00000148
+    GRAPH_NXT .L00000159
+    GRAPH_NXT .L0000016A
+    GRAPH_NXT .L0000017B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV PyToken_TwoChars
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>125 [None][] mov {0:1,ad:False,size:u32} {0:4,ad:u32,size:u32,symb__intern__:{.LC00000168:1},txt:eax*4+imm} 
+'I386_MIASM.InstructionCFG'>132 [jmp][] jmp {0:1,ad:False,size:u32} 
+
+<Symbol '.L00000086' section='.text', address=134>
+    ENDER False -- NXT .L0000008E
+    CFG .L00000098
+    CFG .L0000008E
+    GRAPH_NXT .L0000008E
+    GRAPH_NXT .L00000098
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>134 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>137 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>140 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L00000098:1}} 
+
+<Symbol '.L0000008E' section='.text', address=142>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L00000086
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>142 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x1c),size:u32} 
+'I386_MIASM.InstructionCFG'>147 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L00000098' section='.text', address=152>
+    ENDER True -- NXT None
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L00000086
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>152 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L0000009D' section='.text', address=157>
+    ENDER False -- NXT .L000000A5
+    CFG .L000000AF
+    CFG .L000000A5
+    GRAPH_NXT .L000000A5
+    GRAPH_NXT .L000000AF
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>157 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>160 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>163 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L000000AF:1}} 
+
+<Symbol '.L000000A5' section='.text', address=165>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L0000009D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>165 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x1d),size:u32} 
+'I386_MIASM.InstructionCFG'>170 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L000000AF' section='.text', address=175>
+    ENDER True -- NXT None
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L0000009D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>175 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L000000B4' section='.text', address=180>
+    ENDER False -- NXT .L000000BC
+    CFG .L000000C3
+    CFG .L000000BC
+    GRAPH_NXT .L000000BC
+    GRAPH_NXT .L000000C3
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>180 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>183 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>186 [jcc][] je {ad:False,size:u32,symb__intern__:{.L000000C3:1}} 
+
+<Symbol '.L000000BC' section='.text', address=188>
+    ENDER False -- NXT .L000000C1
+    CFG .L000000CD
+    CFG .L000000C1
+    GRAPH_NXT .L000000C1
+    GRAPH_NXT .L000000CD
+    GRAPH_PRV .L000000B4
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>188 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3e),size:u32} 
+'I386_MIASM.InstructionCFG'>191 [jcc][] je {ad:False,size:u32,symb__intern__:{.L000000CD:1}} 
+
+<Symbol '.L000000C1' section='.text', address=193>
+    ENDER True -- NXT None
+    CFG .L000000D7
+    GRAPH_NXT .L000000D7
+    GRAPH_PRV .L000000BC
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>193 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L000000D7:1}} 
+
+<Symbol '.L000000C3' section='.text', address=195>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L000000B4
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>195 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x1f),size:u32} 
+'I386_MIASM.InstructionCFG'>200 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L000000CD' section='.text', address=205>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L000000BC
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>205 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x23),size:u32} 
+'I386_MIASM.InstructionCFG'>210 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L000000D7' section='.text', address=215>
+    ENDER True -- NXT None
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L000000C1
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>215 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L000000DC' section='.text', address=220>
+    ENDER False -- NXT .L000000E4
+    CFG .L000000EE
+    CFG .L000000E4
+    GRAPH_NXT .L000000E4
+    GRAPH_NXT .L000000EE
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>220 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>223 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>226 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L000000EE:1}} 
+
+<Symbol '.L000000E4' section='.text', address=228>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L000000DC
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>228 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x25),size:u32} 
+'I386_MIASM.InstructionCFG'>233 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L000000EE' section='.text', address=238>
+    ENDER True -- NXT None
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L000000DC
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>238 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L000000F3' section='.text', address=243>
+    ENDER False -- NXT .L000000FB
+    CFG .L00000105
+    CFG .L000000FB
+    GRAPH_NXT .L000000FB
+    GRAPH_NXT .L00000105
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>243 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>246 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>249 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L00000105:1}} 
+
+<Symbol '.L000000FB' section='.text', address=251>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L000000F3
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>251 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x26),size:u32} 
+'I386_MIASM.InstructionCFG'>256 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L00000105' section='.text', address=261>
+    ENDER True -- NXT None
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L000000F3
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>261 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L0000010A' section='.text', address=266>
+    ENDER False -- NXT .L00000112
+    CFG .L00000119
+    CFG .L00000112
+    GRAPH_NXT .L00000112
+    GRAPH_NXT .L00000119
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>266 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>269 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x2a),size:u32} 
+'I386_MIASM.InstructionCFG'>272 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000119:1}} 
+
+<Symbol '.L00000112' section='.text', address=274>
+    ENDER False -- NXT .L00000117
+    CFG .L00000120
+    CFG .L00000117
+    GRAPH_NXT .L00000117
+    GRAPH_NXT .L00000120
+    GRAPH_PRV .L0000010A
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>274 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>277 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000120:1}} 
+
+<Symbol '.L00000117' section='.text', address=279>
+    ENDER True -- NXT None
+    CFG .L00000127
+    GRAPH_NXT .L00000127
+    GRAPH_PRV .L00000112
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>279 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000127:1}} 
+
+<Symbol '.L00000119' section='.text', address=281>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L0000010A
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>281 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x24),size:u32} 
+'I386_MIASM.InstructionCFG'>286 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L00000120' section='.text', address=288>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L00000112
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>288 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x27),size:u32} 
+'I386_MIASM.InstructionCFG'>293 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L00000127' section='.text', address=295>
+    ENDER True -- NXT None
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L00000117
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>295 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L00000129' section='.text', address=297>
+    ENDER False -- NXT .L00000131
+    CFG .L00000138
+    CFG .L00000131
+    GRAPH_NXT .L00000131
+    GRAPH_NXT .L00000138
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>297 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>300 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x2f),size:u32} 
+'I386_MIASM.InstructionCFG'>303 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000138:1}} 
+
+<Symbol '.L00000131' section='.text', address=305>
+    ENDER False -- NXT .L00000136
+    CFG .L0000013F
+    CFG .L00000136
+    GRAPH_NXT .L00000136
+    GRAPH_NXT .L0000013F
+    GRAPH_PRV .L00000129
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>305 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>308 [jcc][] je {ad:False,size:u32,symb__intern__:{.L0000013F:1}} 
+
+<Symbol '.L00000136' section='.text', address=310>
+    ENDER True -- NXT None
+    CFG .L00000146
+    GRAPH_NXT .L00000146
+    GRAPH_PRV .L00000131
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>310 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000146:1}} 
+
+<Symbol '.L00000138' section='.text', address=312>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L00000129
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>312 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x30),size:u32} 
+'I386_MIASM.InstructionCFG'>317 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L0000013F' section='.text', address=319>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L00000131
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>319 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x28),size:u32} 
+'I386_MIASM.InstructionCFG'>324 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L00000146' section='.text', address=326>
+    ENDER True -- NXT None
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L00000136
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>326 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L00000148' section='.text', address=328>
+    ENDER False -- NXT .L00000150
+    CFG .L00000157
+    CFG .L00000150
+    GRAPH_NXT .L00000150
+    GRAPH_NXT .L00000157
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>328 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>331 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>334 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L00000157:1}} 
+
+<Symbol '.L00000150' section='.text', address=336>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L00000148
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>336 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x2b),size:u32} 
+'I386_MIASM.InstructionCFG'>341 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L00000157' section='.text', address=343>
+    ENDER True -- NXT None
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L00000148
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>343 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L00000159' section='.text', address=345>
+    ENDER False -- NXT .L00000161
+    CFG .L00000168
+    CFG .L00000161
+    GRAPH_NXT .L00000161
+    GRAPH_NXT .L00000168
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>345 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>348 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>351 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L00000168:1}} 
+
+<Symbol '.L00000161' section='.text', address=353>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L00000159
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>353 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x29),size:u32} 
+'I386_MIASM.InstructionCFG'>358 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L00000168' section='.text', address=360>
+    ENDER True -- NXT None
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L00000159
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>360 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L0000016A' section='.text', address=362>
+    ENDER False -- NXT .L00000172
+    CFG .L00000179
+    CFG .L00000172
+    GRAPH_NXT .L00000172
+    GRAPH_NXT .L00000179
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>362 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>365 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>368 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L00000179:1}} 
+
+<Symbol '.L00000172' section='.text', address=370>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L0000016A
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>370 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x2a),size:u32} 
+'I386_MIASM.InstructionCFG'>375 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L00000179' section='.text', address=377>
+    ENDER True -- NXT None
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L0000016A
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>377 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000018B:1}} 
+
+<Symbol '.L0000017B' section='.text', address=379>
+    ENDER False -- NXT .L00000183
+    CFG .L0000018A
+    CFG .L00000183
+    GRAPH_NXT .L00000183
+    GRAPH_NXT .L0000018A
+    GRAPH_PRV .L0000007D
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>379 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>382 [None][] cmp {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x3d),size:u32} 
+'I386_MIASM.InstructionCFG'>385 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L0000018A:1}} 
+
+<Symbol '.L00000183' section='.text', address=387>
+    ENDER True -- NXT None
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L0000017B
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>387 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x2c),size:u32} 
+'I386_MIASM.InstructionCFG'>392 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000190:1}} 
+
+<Symbol '.L0000018A' section='.text', address=394>
+    ENDER False -- NXT .L0000018B
+    CFG .L0000018B
+    GRAPH_NXT .L0000018B
+    GRAPH_PRV .L0000017B
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>394 [None][] nop 90
+
+<Symbol '.L0000018B' section='.text', address=395>
+    ENDER False -- NXT .L00000190
+    CFG .L00000190
+    GRAPH_NXT .L00000190
+    GRAPH_PRV .L0000007D
+    GRAPH_PRV .L00000098
+    GRAPH_PRV .L000000AF
+    GRAPH_PRV .L000000D7
+    GRAPH_PRV .L000000EE
+    GRAPH_PRV .L00000105
+    GRAPH_PRV .L00000127
+    GRAPH_PRV .L00000146
+    GRAPH_PRV .L00000157
+    GRAPH_PRV .L00000168
+    GRAPH_PRV .L00000179
+    GRAPH_PRV .L0000018A
+    GRAPH_PRV PyToken_TwoChars
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>395 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x33),size:u32} 
+
+<Symbol '.L00000190' section='.text', address=400>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_NXT .L000001B8
+    GRAPH_PRV .L0000008E
+    GRAPH_PRV .L000000A5
+    GRAPH_PRV .L000000C3
+    GRAPH_PRV .L000000CD
+    GRAPH_PRV .L000000E4
+    GRAPH_PRV .L000000FB
+    GRAPH_PRV .L00000119
+    GRAPH_PRV .L00000120
+    GRAPH_PRV .L00000138
+    GRAPH_PRV .L0000013F
+    GRAPH_PRV .L00000150
+    GRAPH_PRV .L00000161
+    GRAPH_PRV .L00000172
+    GRAPH_PRV .L00000183
+    GRAPH_PRV .L0000018B
+-- STACK00 ['.L000001B8']
+'I386_MIASM.InstructionCFG'>400 [None][] pop {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>401 [ret][] ret 
+
+<Symbol 'main' section='.text', type='function', bind='globl', size=46, address=402>
+    ENDER False -- NXT .L000001A4
+    CFG PyToken_OneChar
+    GRAPH_NXT PyToken_OneChar
+'I386_MIASM.InstructionCFG'>402 [None][] push {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>403 [None][] mov {5:1,ad:False,size:u32} {4:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>405 [None][] push {3:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>406 [None][] sub {4:1,ad:False,size:u32} {ad:False,imm:uint32(0x8),size:u32} 
+'I386_MIASM.InstructionCFG'>409 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0x8),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>412 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>415 [sub][] call {ad:False,size:u32,symb__intern__:{PyToken_OneChar:1}} 
+
+<Symbol '.L000001A4' section='.text', address=420>
+    ENDER False -- NXT .L000001B8
+    CFG PyToken_TwoChars
+    GRAPH_NXT PyToken_TwoChars
+    GRAPH_PRV .L00000069
+'I386_MIASM.InstructionCFG'>420 [None][] mov {3:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>422 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0x8),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>425 [None][] mov {4:1,ad:u32,imm:uint32(0x4),size:u32,txt:esp+imm} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>429 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0x8),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>432 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>435 [sub][] call {ad:False,size:u32,symb__intern__:{PyToken_TwoChars:1}} 
+
+<Symbol '.L000001B8' section='.text', address=440>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L00000190
+'I386_MIASM.InstructionCFG'>440 [None][] add {0:1,ad:False,size:u32} {3:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>442 [None][] add {4:1,ad:False,size:u32} {ad:False,imm:uint32(0x8),size:u32} 
+'I386_MIASM.InstructionCFG'>445 [None][] pop {3:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>446 [None][] pop {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>447 [ret][] ret 
+
+<Symbol '.LC00000000' section='.rodata', align=4, address=0>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.parse_bin.Constant4Byte'>0 (4, 'long', 'I') [<Symbol '.L00000033' section='.text', address=51>]
+'plasmasm.parse_bin.Constant4Byte'>4 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>8 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>12 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>16 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>20 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>24 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>28 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>32 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>36 (4, 'long', 'I') [<Symbol '.L0000002C' section='.text', address=44>]
+'plasmasm.parse_bin.Constant4Byte'>40 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>44 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>48 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>52 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>56 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>60 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>64 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>68 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>72 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>76 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>80 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>84 (4, 'long', 'I') [<Symbol '.L00000017' section='.text', address=23>]
+'plasmasm.parse_bin.Constant4Byte'>88 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>92 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>96 (4, 'long', 'I') [<Symbol '.L00000025' section='.text', address=37>]
+'plasmasm.parse_bin.Constant4Byte'>100 (4, 'long', 'I') [<Symbol '.L0000001E' section='.text', address=30>]
+'plasmasm.parse_bin.Constant4Byte'>104 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>108 (4, 'long', 'I') [<Symbol '.L0000005D' section='.text', address=93>]
+'plasmasm.parse_bin.Constant4Byte'>112 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>116 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>120 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>124 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>128 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>132 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>136 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>140 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>144 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>148 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>152 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>156 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>160 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>164 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>168 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>172 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>176 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>180 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>184 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>188 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>192 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>196 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>200 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>204 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>208 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>212 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>216 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>220 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>224 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>228 (4, 'long', 'I') [<Symbol '.L0000004F' section='.text', address=79>]
+'plasmasm.parse_bin.Constant4Byte'>232 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>236 (4, 'long', 'I') [<Symbol '.L0000003A' section='.text', address=58>]
+'plasmasm.parse_bin.Constant4Byte'>240 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>244 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>248 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>252 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>256 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>260 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>264 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>268 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>272 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>276 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>280 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>284 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>288 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>292 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>296 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>300 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>304 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>308 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>312 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>316 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>320 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>324 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>328 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>332 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>336 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>340 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>344 (4, 'long', 'I') [<Symbol '.L00000041' section='.text', address=65>]
+'plasmasm.parse_bin.Constant4Byte'>348 (4, 'long', 'I') [<Symbol '.L00000064' section='.text', address=100>]
+'plasmasm.parse_bin.Constant4Byte'>352 (4, 'long', 'I') [<Symbol '.L00000048' section='.text', address=72>]
+'plasmasm.parse_bin.Constant4Byte'>356 (4, 'long', 'I') [<Symbol '.L00000056' section='.text', address=86>]
+
+<Symbol '.LC00000168' section='.rodata', address=360>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.parse_bin.Constant4Byte'>360 (4, 'long', 'I') [<Symbol '.L0000009D' section='.text', address=157>]
+'plasmasm.parse_bin.Constant4Byte'>364 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>368 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>372 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>376 (4, 'long', 'I') [<Symbol '.L00000159' section='.text', address=345>]
+'plasmasm.parse_bin.Constant4Byte'>380 (4, 'long', 'I') [<Symbol '.L0000016A' section='.text', address=362>]
+'plasmasm.parse_bin.Constant4Byte'>384 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>388 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>392 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>396 (4, 'long', 'I') [<Symbol '.L0000010A' section='.text', address=266>]
+'plasmasm.parse_bin.Constant4Byte'>400 (4, 'long', 'I') [<Symbol '.L000000DC' section='.text', address=220>]
+'plasmasm.parse_bin.Constant4Byte'>404 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>408 (4, 'long', 'I') [<Symbol '.L000000F3' section='.text', address=243>]
+'plasmasm.parse_bin.Constant4Byte'>412 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>416 (4, 'long', 'I') [<Symbol '.L00000129' section='.text', address=297>]
+'plasmasm.parse_bin.Constant4Byte'>420 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>424 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>428 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>432 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>436 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>440 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>444 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>448 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>452 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>456 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>460 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>464 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>468 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>472 (4, 'long', 'I') [<Symbol '.L00000086' section='.text', address=134>]
+'plasmasm.parse_bin.Constant4Byte'>476 (4, 'long', 'I') [<Symbol '.L000000B4' section='.text', address=180>]
+'plasmasm.parse_bin.Constant4Byte'>480 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>484 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>488 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>492 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>496 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>500 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>504 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>508 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>512 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>516 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>520 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>524 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>528 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>532 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>536 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>540 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>544 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>548 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>552 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>556 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>560 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>564 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>568 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>572 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>576 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>580 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>584 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>588 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>592 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>596 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>600 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>604 (4, 'long', 'I') [<Symbol '.L0000017B' section='.text', address=379>]
+'plasmasm.parse_bin.Constant4Byte'>608 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>612 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>616 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>620 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>624 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>628 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>632 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>636 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>640 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>644 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>648 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>652 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>656 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>660 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>664 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>668 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>672 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>676 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>680 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>684 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>688 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>692 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>696 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>700 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>704 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>708 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>712 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>716 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>720 (4, 'long', 'I') [<Symbol '.L0000018B' section='.text', address=395>]
+'plasmasm.parse_bin.Constant4Byte'>724 (4, 'long', 'I') [<Symbol '.L00000148' section='.text', address=328>]
+
+<Symbol 'a28.c' bind='file'>
+
+<Symbol '.LC000002D8' section='.rodata', type='endofsymbol', address=728>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'main+46' section='.text', type='padding', address=448>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3',endianess:'<',eh_frame_size:124,eh_frame_relocs:{32: (('ELF', 3, 2), {'section': '.text', 'address': 0}), 64: (('ELF', 3, 2), {'section': '.text', 'address': 0}), 96: (('ELF', 3, 2), {'section': '.text', 'address': 0})},container:'ELF',compiler:'gcc'
