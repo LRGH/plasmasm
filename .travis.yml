@@ -11,8 +11,8 @@ python:
   # '2.6' # not in travis anymore
   # plasmasm with miasmX works with 2.3, 2.4 and 2.5 too, but they are not available in travis
   # plasmasm with amoco does not work with 2.6
-  # 'pypy3'
-  # 'pypy'
+  - 'pypy3'
+  - 'pypy'
 install:
   - pip install pyparsing
   - pip install tox-travis

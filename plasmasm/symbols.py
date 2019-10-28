@@ -190,8 +190,15 @@ class Symbol(object):
         self.size = size
     def set_align(self, align):
         self.align = align
-    def repr_attr(self, f):
+    def repr_attr(self, f, _stack={}):
         v = getattr(self, f)
+        # _stack is added to detect recursion loops
+        # not necessary with CPython, but necessary with Pypy
+        if v.__class__ == tuple:
+            if (self,f) in _stack:
+                return "%s=(...)" % f
+            else:
+                _stack[(self,f)] = 1
         if type(v) == dict:
             v = ','.join(["%s:%s"%(k,v[k])
                     for k in sorted(v.keys(),key=lambda a:str(a))])
