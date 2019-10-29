@@ -2,6 +2,11 @@
 from plasmasm.symbols import section_type, is_comm, compute_alignment
 from plasmasm.constants import Constant
 from plasmasm.symbols import comm_symbol_section
+try:
+    from plasmasm.python.compatibility import bin
+    from plasmasm.python.compatibility import sorted, reversed
+except ImportError:
+    pass
 
 def symbols_set_asm_format(symbols, asm_format):
     if not hasattr(symbols.arch, 'asm_format'):
@@ -298,9 +303,8 @@ def mk_asm_file(symbols, output_filename=None):
     if meta.get('compiler') == 'mingw':
         s_external = [_ for _ in symbols.symbols if not _ in symbols.bloc_set
             and hasattr(_, 'type')]
-        s_external.sort(key=lambda x:(getattr(x,'section',''), getattr(x,'address',0)))
-
-        for label in s_external:
+        for label in sorted(s_external,
+                key=lambda x:(getattr(x,'section',''), getattr(x,'address',0))):
             if not (hasattr(symbols, 'cds') and symbols.cds.hide_symbol(label.name)):
                 output += '\t.def\t%s;\t%s;\t.endef\n' % (label.name, label_def(label))
     if 'cfi_sections' in meta:

@@ -1,18 +1,44 @@
 language: python
-python:
-  - '3.8'
-  - '3.7'
-  - '3.6'
-  - '3.5'
-  - '3.4'
-  # '3.3' # not in travis anymore
-  # '3.2' # not in travis anymore
-  - '2.7'
-  # '2.6' # not in travis anymore
-  # plasmasm with miasmX works with 2.3, 2.4 and 2.5 too, but they are not available in travis
-  # plasmasm with amoco does not work with 2.6
-  - 'pypy3'
-  - 'pypy'
+jobs:
+  include:
+    - python: '3.7'
+    - python: 'pypy3'
+    - python: '2.7'
+    - python: 'pypy'
+    - dist: precise
+      python: '2.6'
+    - name: 'Python: 2.3'
+      # For python 2.3 almost everything is different: overwrite definitions
+      install:
+        - cd ..
+        - git clone https://github.com/LRGH/elfesteem
+        - git clone https://github.com/LRGH/miasmX
+        - curl -O https://www.python.org/ftp/python/2.3.7/Python-2.3.7.tgz
+        - tar xzf Python-2.3.7.tgz
+        - cd Python-2.3.7
+        # We need to disable FORTIFY_SOURCE to compile python 2.3
+        # cf. https://bugs.launchpad.net/ubuntu/+source/gcc-defaults/+bug/286334
+        - ./configure BASECFLAGS=-U_FORTIFY_SOURCE
+        - make
+        - export PATH=$(pwd):$PATH
+        - cd ../plasmasm
+        - python -c 'import sys;print(sys.version_info)'
+      script:
+        # Generate an ImportError, that will not happen later
+        - python -c 'from plasmasm import arch; BACKEND = arch.import_cpu_backend("I386", "MIASM")' || true
+        - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
+        # Simple tests to verify that dependencies are working
+        - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s
+        - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.att.s
+        - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.o
+        # tox and pytest don't work with python 2.3
+        - export PYTHONPATH=../elfesteem:../miasmX
+        - python non_regression/run_tests.py test_basic
+        - python non_regression/run_tests.py test_bin
+      after_success:
+        - true # coverage needs python >= 2.6
+    - python: '3.4'
+    - python: '3.8'
 install:
   - pip install pyparsing
   - pip install tox-travis

@@ -2,7 +2,7 @@
 import logging
 log = logging.getLogger("plasmasm")
 try:
-    from plasmasm.python.compatibility import set, sorted, one
+    from plasmasm.python.compatibility import set, sorted, reversed, one
 except ImportError:
     one = 1
 

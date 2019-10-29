@@ -1,7 +1,7 @@
 # Copyright (C) 2011-2020 Airbus, Louis.Granboulan@airbus.com
 import struct
 try:
-    from plasmasm.python.compatibility import set, sorted
+    from plasmasm.python.compatibility import set, sorted, reversed
 except ImportError:
     pass
 

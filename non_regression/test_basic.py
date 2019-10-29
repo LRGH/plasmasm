@@ -1,5 +1,8 @@
 # Copyright (C) 2011-2020 Airbus, Louis.Granboulan@airbus.com
-import pytest
+try:
+    import pytest
+except:
+    from run_tests import pytest
 import sys, os.path
 basedir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(basedir)
@@ -439,8 +442,24 @@ if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
                   if  not '_x64_' in f
                   and not '_sparc' in f
                   and k.get("cpu",None) != "/AMOCO" ]
+if sys.version_info[0] == 2 and sys.version_info[1] <= 3:
+    # Disply of negative int make some tests fail
+    all_tests = [ (f,s,k) for (f,s,k) in all_tests
+                  if s != 'dump'
+                  and not f in (
+                      'switch_x86_macosx_2.o',
+                      'other_x86_linux_2.o',
+                      'other_x86_linux_5.o',
+                      'other_x86_linux_23.o',
+                      'other_x86_linux_30.o',
+                      'other_x86_macosx.o',
+                      'other_x86_macosx_9.o',
+                      'sh_x86_linux_ubuntu1204',
+                      'minigzip_x86_linux',
+                      'minigzip_x86_linux_2',
+                      'aspell_x86_linux',
+                  ) ]
 
-@pytest.mark.parametrize("file, suffix, kargs", all_tests)
 def test_io(file, suffix, kargs):
     fd = open("non_regression/"+file,"rb")
     raw = fd.read()
@@ -453,3 +472,4 @@ def test_io(file, suffix, kargs):
         assert pool.to_objdump(filename="non_regression/"+file) + "\n" == res
     else:
         assert pool.to_asm() == res
+test_io = pytest.mark.parametrize("file, suffix, kargs", all_tests)(test_io)

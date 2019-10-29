@@ -13,7 +13,7 @@ from miasmX.arch import ia32_sem
 from miasmX.core.parse_ad import parse_ad
 from miasmX.expression import expression
 try:
-    from plasmasm.python.compatibility import set, sorted, one
+    from plasmasm.python.compatibility import set, sorted, one, reversed
 except ImportError:
     one = 1
 cpu_addrsize = 32

@@ -30,7 +30,6 @@ if not (sys.version_info[0] == 2 and sys.version_info[1] <= 6):
 fmt_a = {'asm_format':'att_syntax'}
 fmt_i = {'asm_format':'intel_syntax noprefix'}
 
-@pytest.mark.parametrize("instruction", i_list)
 def test_api_is_address(instruction):
     l = instruction("movl %eax, %ebx")
     assert l.txt(**fmt_i) == 'mov       ebx, eax'
@@ -50,8 +49,8 @@ def test_api_is_address(instruction):
         assert l.txt() == 'movl      (%rip), %ebx'
         assert l.api_is_address(0) == False
         assert l.api_is_address(1) == True
+test_api_is_address = pytest.mark.parametrize("instruction", i_list)(test_api_is_address)
 
-@pytest.mark.parametrize("instruction", i_list)
 def test_api_is_arg_size(instruction):
     l = instruction("movb %ah, %bh")
     assert l.api_is_arg_size(0, 8)  == True
@@ -78,10 +77,10 @@ def test_api_is_arg_size(instruction):
         assert l.api_is_arg_size(0, 16) == False
         assert l.api_is_arg_size(0, 32) == False
         assert l.api_is_arg_size(0, 64) == True
+test_api_is_arg_size = pytest.mark.parametrize("instruction", i_list)(test_api_is_arg_size)
 
 # NB: we can use str.format, which is only available since python2.6,
 # because pytest needs python2.6 too.
-@pytest.mark.parametrize("instruction", i_list)
 def test_api_same_base_reg(instruction):
     if instruction is i_x64_amoco: p = 'r'
     else:                          p = 'e'
@@ -93,8 +92,8 @@ def test_api_same_base_reg(instruction):
     if instruction is i_x64_amoco:
         m = instruction("movl (%eax), %rax")
         assert l.api_same_base_reg(1, m) == False
+test_api_same_base_reg = pytest.mark.parametrize("instruction", i_list)(test_api_same_base_reg)
 
-@pytest.mark.parametrize("instruction", i_list)
 def test_api_is_reg_in_arg(instruction):
     if instruction is i_x64_amoco: p = { 'a': 'rax', 'b': 'rbx' }
     else:                          p = { 'a': 'eax', 'b': 'ebx' }
@@ -104,8 +103,8 @@ def test_api_is_reg_in_arg(instruction):
     assert l.api_is_reg_in_arg(1, '{b}'.format(**p)) == False
     assert l.api_is_reg_in_arg(1, '0') == False
     assert l.api_is_reg_in_arg(0, 'mm1') == False
+test_api_is_reg_in_arg = pytest.mark.parametrize("instruction", i_list)(test_api_is_reg_in_arg)
 
-@pytest.mark.parametrize("instruction", i_list)
 def test_api_get_label(instruction):
     if instruction is i_x64_amoco: p = 'r'
     else:                          p = 'e'
@@ -121,8 +120,8 @@ def test_api_get_label(instruction):
     assert l.api_get_label(1) == (toto, None)
     l = instruction("movl toto-tata(%{0}ax), %ebx".format(p))
     assert l.api_get_label(1) == (toto, tata)
+test_api_get_label = pytest.mark.parametrize("instruction", i_list)(test_api_get_label)
 
-@pytest.mark.parametrize("instruction", i_list)
 def test__api_add_reg(instruction):
     if instruction is i_x64_amoco: p = { 'a': 'rax', 'b': 'rbx' }
     else:                          p = { 'a': 'eax', 'b': 'ebx' }
@@ -162,8 +161,8 @@ def test__api_add_reg(instruction):
     l.api_add_reg(0, p['a'])
     assert l.txt(**fmt_i) == 'mov       DWORD PTR [{a}+{a}*2], eax'.format(**p)
     assert l.txt(**fmt_a) == 'movl      %eax, (%{a},%{a},2)'.format(**p)
+test__api_add_reg = pytest.mark.parametrize("instruction", i_list)(test__api_add_reg)
 
-@pytest.mark.parametrize("instruction", i_list)
 def test_api_replace_reg(instruction):
     if instruction is i_x64_amoco: p = {'a':'rax','b':'rbx','c':'rcx','d':'rdx'}
     else:                          p = {'a':'eax','b':'ebx','c':'ecx','d':'edx'}
@@ -193,8 +192,8 @@ def test_api_replace_reg(instruction):
     l.api_replace_reg(p['a'], p['d'])
     assert l.txt(**fmt_i) == 'mov       DWORD PTR [{c}+{d}*2], ebx'.format(**p)
     assert l.txt(**fmt_a) == 'movl      %ebx, (%{c},%{d},2)'.format(**p)
+test_api_replace_reg = pytest.mark.parametrize("instruction", i_list)(test_api_replace_reg)
 
-@pytest.mark.parametrize("instruction", i_list)
 def test_api_set_imm_label(instruction):
     if instruction is i_x64_amoco: p = { 'b': 'rbx' }
     else:                          p = { 'b': 'ebx' }
@@ -243,3 +242,4 @@ def test_api_set_imm_label(instruction):
     l.api_set_imm_label(1, 10, label=toto)
     assert l.txt(**fmt_i) == 'mov       eax, OFFSET FLAT:toto+10'
     assert l.txt(**fmt_a) == 'movl      $toto+10, %eax'
+test_api_set_imm_label = pytest.mark.parametrize("instruction", i_list)(test_api_set_imm_label)

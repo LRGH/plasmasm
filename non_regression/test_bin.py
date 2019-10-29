@@ -1,5 +1,8 @@
 # Copyright (C) 2011-2020 Airbus, Louis.Granboulan@airbus.com
-import pytest
+try:
+    import pytest
+except:
+    from run_tests import pytest
 import sys, os.path
 basedir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(basedir)
@@ -18,7 +21,6 @@ if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
                   and not '_sparc' in f
                   and k.get("cpu",None) != "/AMOCO" ]
 
-@pytest.mark.parametrize("file, suffix, kargs", all_tests)
 def test_io(file, suffix, kargs):
     fd = open("non_regression/"+file,"rb")
     raw = fd.read()
@@ -28,3 +30,4 @@ def test_io(file, suffix, kargs):
     fd.close()
     pool = File().from_raw(raw, **kargs)
     assert pool.to_bin() == res
+test_io = pytest.mark.parametrize("file, suffix, kargs", all_tests)(test_io)

@@ -1,5 +1,8 @@
 # Copyright (C) 2011-2020 Airbus, Louis.Granboulan@airbus.com
-import pytest
+try:
+    import pytest
+except:
+    from run_tests import pytest
 import sys, os.path
 basedir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(basedir)
@@ -22,8 +25,11 @@ if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
                   if  not '_x64_' in f
                   and not '_sparc' in f
                   and k.get("cpu",None) != "/AMOCO" ]
+    try:    
+        from plasmasm.python.compatibility import sorted, reversed
+    except ImportError:
+        pass
 
-@pytest.mark.parametrize("file, suffix, kargs", all_tests)
 def test_io(file, suffix, kargs):
     pool = File().from_filename("non_regression/"+file, **kargs)
     fd = open("non_regression/"+file+"."+suffix,"r")
@@ -53,3 +59,4 @@ def test_io(file, suffix, kargs):
     rep += [ '' ]
     rep = '\n'.join(rep)
     assert rep == res
+test_io = pytest.mark.parametrize("file, suffix, kargs", all_tests)(test_io)

@@ -107,3 +107,13 @@ if sys.version_info[0] == 2 and sys.version_info[1] <= 3:
         return [ l[length-idx] for idx in range(1,length+1) ]
     import warnings
     warnings.simplefilter("ignore", FutureWarning)
+if sys.version_info[0] == 2 and sys.version_info[1] < 6:
+    # 'bin' appeared in python 2.6
+    def bin(x):
+        r = ''
+        while x > 0:
+            r = r+str(x%2)
+            x = x>>1
+        if r == '':
+            r = '0'
+        return '0b'+r
