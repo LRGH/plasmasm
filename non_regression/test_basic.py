@@ -126,6 +126,8 @@ all_tests = [
     ("constructor_x86_macosx.o",      "asm", {"cpu":"/AMOCO"}),
     ("constructor_x64_macosx.s",      "asm", {}),
     ("constructor_x64_macosx.o",      "asm", {}),
+    ("clang1001_x86_macosx.s",   "asm", {"cpu":"/MIASM"}),
+    ("clang1001_x86_macosx.s",   "asm", {"cpu":"/AMOCO"}),
 
     ("switch_x86_linux.att.s",   "asm", {"cpu":"/MIASM"}),
     ("switch_x86_linux.att.s",   "asm", {"cpu":"/AMOCO"}),

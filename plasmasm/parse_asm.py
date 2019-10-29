@@ -438,6 +438,7 @@ def parse_asm_file(symbols, txt):
                 symbols.set_meta(compiler = "clang")
                 continue
             if directive == 'build_version':
+                # Recent versions of clang, e.g. clang-1001
                 symbols.set_meta(compiler = "clang")
                 continue
             if directive in ('data_region','end_data_region'):
