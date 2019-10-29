@@ -1,9 +1,9 @@
 # Description
-Plasmasm is a framework that can do asm and binary manipulation in
+PlasmASM is a framework that can do asm and binary manipulation in
 a unified way.
 
 There are many other tools that are better suited for reverse-engineering.
-The goal of plasmasm is to enable automatic modification. One application
+The goal of PlasmASM is to enable automatic modification. One application
 is software obfuscation.
 
 # Short description of the framework
@@ -32,7 +32,7 @@ Either assembly or binary can be input and either assembly or binary
 can be output.
 
 When assembly is input and assembly is output, a use case is
-the insertion of plasmasm as an additional step during a
+the insertion of PlasmASM as an additional step during a
 compilation, after assembly generation and before object file
 generation.
 Another use case is conversion of x86 assembly from AT&T syntax
@@ -40,16 +40,16 @@ to Intel syntax, or the reverse.
 
 When binary is input and binary is output, a use case is the
 modification of a binary of unknown source. Note that because
-plasmasm binary generation is still full of bugs, it is often
-more robust to have plasmasm generate assembly and then to
+PlasmASM binary generation is still full of bugs, it is often
+more robust to have PlasmASM generate assembly and then to
 have as generate the binary.
 
-# How to use plasmasm
+# How to use PlasmASM
 
-## Command-line use of plasmasm
+## Command-line use of PlasmASM
 
 The file `disass.py` gives access to most functionalities of
-plasmasm: read asm or binary, output to asm that can be assembled
+PlasmASM: read asm or binary, output to asm that can be assembled
 by GNU as, output to objdump-like syntax which can be used to
 check the results of the binary parser, output of the internal
 representation of symbols and basic blocs
@@ -102,8 +102,8 @@ gcc -o ls ls.s -lrt -lacl -lselinux
 ```
 
 The file `testing_plasmasm.py` is very useful for non-regression tests.
-If takes .s or .o files as arguments, uses the parser of plasmasm and
-creates an assembly file with the `write_asm` module of plasmasm.
+If takes .s or .o files as arguments, uses the parser of PlasmASM and
+creates an assembly file with the `write_asm` module of PlasmASM.
 Then it uses the native compiler to create object files, and compares
 these object files with `objdump -drt` or `otool -tvj`
 Note that sometimes the assembler has bugs (e.g. GNU as 2.14 or 2.15
@@ -111,9 +111,9 @@ changes the order of the arguments of `test %reg, %reg`, while the same
 version of objdump is OK) and therefore there are special cases to make
 `testing_plasmasm.py` succeed in case of assembler bugs.
 
-## Use of plasmasm as a framework
+## Use of PlasmASM as a framework
 
-Once plasmasm has generated an internal representation of its input,
+Once PlasmASM has generated an internal representation of its input,
 this representation can be modified before generating some output.
 
 Examples will be provided, later...
@@ -138,15 +138,15 @@ the symbol pool.
 
 ## Python
 
-Plasmasm can work with python >= 2.3, including python 3.
-But some dependencies of plasmasm need recent python.
+PlasmASM can work with python >= 2.3, including python 3.
+But some dependencies of PlasmASM need recent python.
 
 ## Dependencies
 
-Plasmasm by itself does not include the analysis engine for any
+PlasmASM by itself does not include the analysis engine for any
 type of CPU: additional modules are needed.
 If they are not installed system-wide, it is recommended to install
-them in the parent directory of plasmasm.
+them in the parent directory of PlasmASM.
 
 - elfesteem
 
@@ -253,3 +253,4 @@ or Ubuntu is python-pyparsing.
 ## Development status
 
 [![Build Status](https://travis-ci.org/LRGH/plasmasm.svg?branch=master)](https://travis-ci.org/LRGH/plasmasm)
+[![codecov](https://codecov.io/gh/LRGH/plasmasm/branch/master/graph/badge.svg)](https://codecov.io/gh/LRGH/plasmasm)

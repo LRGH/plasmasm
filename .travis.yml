@@ -16,6 +16,7 @@ python:
 install:
   - pip install pyparsing
   - pip install tox-travis
+  - pip install coverage codecov
   - cd ..
   - git clone https://github.com/LRGH/elfesteem
   - git clone https://github.com/LRGH/miasmX
@@ -37,3 +38,5 @@ script:
   - python plasmasm/disass.py -c /AMOCO non_regression/basic_x86_linux.o || true
   # Run all non regression with tox
   - tox
+after_success:
+  - codecov
