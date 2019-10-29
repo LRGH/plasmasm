@@ -5,30 +5,31 @@ sys.path.insert(1, os.path.abspath(sys.path[0]+'/..'))
 from plasmasm.analyze_file import File
 
 def usage(long = False):
-    print >> sys.stderr, "disass.py [-hvaITtSrLWDobs] [-[CA]d dot] [-y type] [-c cpu] [-e ep] <input>"
+    sys.stderr.write("disass.py [-hvaITtSrLWDobs] [-[CA]d dot] [-y type] [-c cpu] [-e ep] <input>\n")
     if long:
-        print >> sys.stderr, \
-            "           -h: help\n", \
-            "           -v: verbose\n", \
-            "           -a: asm output (can be input to GNU as)\n", \
-            "             -I: Intel syntax for x86\n", \
-            "             -T: AT&T syntax for x86\n", \
-            "             -S: Group sections\n", \
-            "           -r: internal plasmasm representation\n", \
-            "             -L: all relevant fields for each asm line\n", \
-            "             -W: compute R/W registers and PIC storage\n", \
-            "             -D: compute dead registers\n", \
-            "           -o: objdump output (can be diff-ed with objdump -d)\n", \
-            "           -s: only the list of symbols\n", \
-            "           -b <output>: binary output\n", \
-            "             currently, only ELF relocatable\n", \
-            "           -d dot: prefix of .dot file containing graphs of functions\n", \
-            "             -C: CFG of the whole executable\n", \
-            "             -A: all graph arrows\n", \
-            "           -y type: type of container file (RAW, ELF, PE, MACH-32)\n", \
-            "           -c cpu: name of cpu (I386, PPC, SPARC)\n", \
-            "              or name of cpu backend (I386/MIASM, I386/AMOCO, ...)\n", \
-            "           -e ep: address or name of entrypoint(s)"
+        sys.stderr.write(
+            "           -h: help\n"
+            "           -v: verbose\n"
+            "           -a: asm output (can be input to GNU as)\n"
+            "             -I: Intel syntax for x86\n"
+            "             -T: AT&T syntax for x86\n"
+            "             -S: Group sections\n"
+            "           -r: internal plasmasm representation\n"
+            "             -L: all relevant fields for each asm line\n"
+            "             -W: compute R/W registers and PIC storage\n"
+            "             -D: compute dead registers\n"
+            "           -o: objdump output (can be diff-ed with objdump -d)\n"
+            "           -s: only the list of symbols\n"
+            "           -b <output>: binary output\n"
+            "             currently, only ELF relocatable\n"
+            "           -d dot: prefix of .dot file containing graphs of functions\n"
+            "             -C: CFG of the whole executable\n"
+            "             -A: all graph arrows\n"
+            "           -y type: type of container file (RAW, ELF, PE, MACH-32)\n"
+            "           -c cpu: name of cpu (I386, PPC, SPARC)\n"
+            "              or name of cpu backend (I386/MIASM, I386/AMOCO, ...)\n"
+            "           -e ep: address or name of entrypoint(s)\n"
+            )
     sys.exit(0)
 output = ''
 format = None
