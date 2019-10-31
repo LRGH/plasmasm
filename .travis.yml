@@ -33,7 +33,9 @@ jobs:
         - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.o
         # tox and pytest don't work with python 2.3
         - export PYTHONPATH=../elfesteem:../miasmX
-        - python non_regression/run_tests.py test_basic
+        - python non_regression/run_tests.py test_asm_basic
+        - python non_regression/run_tests.py test_asm_other
+        - python non_regression/run_tests.py test_asm_switch
         - python non_regression/run_tests.py test_bin
       after_success:
         - true # coverage needs python >= 2.6

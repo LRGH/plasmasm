@@ -11,174 +11,6 @@ from plasmasm.analyze_file import File
 sys.path.append(os.path.dirname(basedir)+'/elfesteem')
 
 all_tests = [
-    ("basic_x86_linux.intel.s", "asm", {"cpu":"/MIASM"}),
-    #("basic_x86_linux.intel.s", "asm", {"cpu":"/AMOCO"}), # no Intel for amoco
-    ("basic_x86_linux.att.s",   "asm", {"cpu":"/MIASM"}),
-    ("basic_x86_linux.att.s",   "asm", {"cpu":"/AMOCO"}),
-    ("basic_x86_linux.o",       "asm", {"cpu":"/MIASM"}),
-    ("basic_x86_linux.o",       "asm", {"cpu":"/AMOCO"}),
-    ("basic_x86_linux.o",       "dump",{"cpu":"/MIASM"}),
-    ("basic_x86_linux.out",     "asm", {"cpu":"/MIASM"}),
-    ("basic_x86_linux.out",     "asm", {"cpu":"/AMOCO"}),
-    ("basic_x86_linux.strip",   "asm", {"cpu":"/MIASM"}),
-    ("basic_x86_linux.strip",   "asm", {"cpu":"/AMOCO"}),
-    ("basic_x86_linux.mingw.s", "asm", {"cpu":"/MIASM"}),
-    #("basic_x86_linux.mingw.s", "asm", {"cpu":"/AMOCO"}), # no Intel for amoco
-    ("basic_x86_linux.obj",     "asm", {"cpu":"/MIASM"}),
-    ("basic_x86_linux.obj",     "asm", {"cpu":"/AMOCO"}),
-    ("basic_x86_linux.exe",     "asm", {"cpu":"/MIASM"}),
-    ("basic_x86_linux.exe",     "asm", {"cpu":"/AMOCO"}),
-    ("basic_x86_macosx.s",      "asm", {"cpu":"/MIASM"}),
-    ("basic_x86_macosx.s",      "asm", {"cpu":"/AMOCO"}),
-    ("basic_x86_macosx.o",      "asm", {"cpu":"/MIASM"}),
-    ("basic_x86_macosx.o",      "asm", {"cpu":"/AMOCO"}),
-    ("basic_x86_macosx.out",    "asm", {"cpu":"/MIASM"}),
-    ("basic_x86_macosx.out",    "asm", {"cpu":"/AMOCO"}),
-    ("basic_x86_macosx.strip",  "asm", {"cpu":"/MIASM"}), # Should detect main
-    ("basic_x86_macosx.strip",  "asm", {"cpu":"/AMOCO"}), # Should detect main
-    #("basic_x64_linux.intel.s", "asm", {}), # no Intel for amoco
-    ("basic_x64_linux.att.s",   "asm", {}),
-    ("basic_x64_linux.o",       "asm", {}),
-    #("basic_x64_linux.out",     "asm", {}),
-    #("basic_x64_linux.strip",   "asm", {}),
-    ("basic_x64_macosx.s",      "asm", {}),
-    ("basic_x64_macosx.o",      "asm", {}),
-    ("basic_x64_macosx.out",    "asm", {}),
-    ("basic_x64_macosx.strip",  "asm", {}), # Should detect main
-    ("basic_sparc.s",           "asm", {}),
-    ("basic_sparc.o",           "asm", {}),
-    #("basic_sparc.out",         "asm", {}),
-    #("basic_sparc.strip",       "asm", {}),
-
-    ("string_x86_linux.intel.s", "asm", {"cpu":"/MIASM"}),
-    ("string_x86_linux.att.s",   "asm", {"cpu":"/MIASM"}),
-    ("string_x86_linux.att.s",   "asm", {"cpu":"/AMOCO"}),
-    ("string_x86_linux.o",       "asm", {"cpu":"/MIASM"}),
-    ("string_x86_linux.o",       "asm", {"cpu":"/AMOCO"}),
-    ("string_x86_linux.out",     "asm", {"cpu":"/MIASM"}),
-    ("string_x86_linux.out",     "asm", {"cpu":"/AMOCO"}),
-    ("string_x86_linux.mingw.s", "asm", {"cpu":"/MIASM"}),
-    ("string_x86_linux.exe",     "asm", {"cpu":"/MIASM"}),
-    ("string_x86_linux.exe",     "asm", {"cpu":"/AMOCO"}),
-    ("string_sparc.s",           "asm", {}),
-    ("string_sparc.o",           "asm", {}),
-    ("string_sparc.out",         "asm", {}),
-    ("zero_x86_linux.att.s",   "asm", {"cpu":"/MIASM"}),
-    ("zero_x86_linux.att.s",   "asm", {"cpu":"/AMOCO"}),
-    ("zero_x86_linux.o",       "asm", {"cpu":"/MIASM"}),
-    ("zero_x86_linux.o",       "asm", {"cpu":"/AMOCO"}),
-    ("zero_x86_linux.out",     "asm", {"cpu":"/MIASM"}),
-    ("zero_x86_linux.out",     "asm", {"cpu":"/AMOCO"}),
-    ("zero_x86_linux.mingw.s", "asm", {"cpu":"/MIASM"}),
-    ("zero_x86_linux.exe",     "asm", {"cpu":"/MIASM"}),
-    ("zero_x86_linux.exe",     "asm", {"cpu":"/AMOCO"}),
-    ("zero_x86_macosx.s",      "asm", {"cpu":"/MIASM"}),
-    ("zero_x86_macosx.s",      "asm", {"cpu":"/AMOCO"}),
-    ("zero_x86_macosx.o",      "asm", {"cpu":"/MIASM"}),
-    ("zero_x86_macosx.o",      "asm", {"cpu":"/AMOCO"}),
-    ("zero_x86_macosx.out",    "asm", {"cpu":"/MIASM"}),
-    ("zero_x86_macosx.out",    "asm", {"cpu":"/AMOCO"}),
-    ("comm_x86_linux.intel.s", "asm", {"cpu":"/MIASM"}),
-    ("comm_x86_linux.att.s",   "asm", {"cpu":"/MIASM"}),
-    ("comm_x86_linux.att.s",   "asm", {"cpu":"/AMOCO"}),
-    ("comm_x86_linux.o",       "asm", {"cpu":"/MIASM"}),
-    ("comm_x86_linux.o",       "asm", {"cpu":"/AMOCO"}),
-    ("comm_x86_linux.out",     "asm", {"cpu":"/MIASM"}),
-    ("comm_x86_linux.out",     "asm", {"cpu":"/AMOCO"}),
-    ("comm_x86_linux.mingw.s", "asm", {"cpu":"/MIASM"}),
-    ("comm_x86_linux.exe",     "asm", {"cpu":"/MIASM"}),
-    ("comm_x86_linux.exe",     "asm", {"cpu":"/AMOCO"}),
-    ("comm_x86_macosx.s",      "asm", {"cpu":"/MIASM"}),
-    ("comm_x86_macosx.s",      "asm", {"cpu":"/AMOCO"}),
-    ("comm_x86_macosx.o",      "asm", {"cpu":"/MIASM"}),
-    ("comm_x86_macosx.o",      "asm2",{"cpu":"/AMOCO"}),
-    ("comm_x86_macosx.out",    "asm", {"cpu":"/MIASM"}),
-    ("comm_x86_macosx.out",    "asm2",{"cpu":"/AMOCO"}),
-    ("comm_sparc.s",           "asm", {}),
-    ("comm_sparc.out",         "asm", {}),
-    ("p2align_x86_linux.att.s",   "asm", {}),
-    ("p2align_x86_linux.o",       "asm", {}),
-    ("p2align_x86_linux.out",     "asm", {}),
-    ("p2align_x86_macosx.s",      "asm", {}),
-    ("p2align_x86_macosx.o",      "asm", {}),
-    ("weak_x86_linux.att.s",      "asm", {}),
-    ("weak_x86_linux.o",          "asm", {}),
-    ("weak_x86_linux.out",        "asm", {}),
-    ("weakref_x86_linux.att.s",   "asm", {}),
-    ("weakref_x86_linux.o",       "asm", {}),
-    ("weakref_x86_linux.out",     "asm", {}),
-    ("gnu_unique_x64_linux.att.s",   "asm", {}),
-    ("gnu_unique_x64_linux.o",       "asm", {}),
-    ("asm_x86_linux.s",       "asm", {"cpu":"/MIASM"}),
-    ("asm_x86_linux.s",       "asm", {"cpu":"/AMOCO"}),
-    ("asm_x86_linux.o",       "asm", {"cpu":"/MIASM"}),
-    ("asm_x86_linux.o",       "asm", {"cpu":"/AMOCO"}),
-    ("asm_x86_macosx.s",      "asm", {"cpu":"/MIASM"}),
-    ("asm_x86_macosx.s",      "asm2",{"cpu":"/AMOCO"}),
-    ("asm_x86_macosx.o",      "asm", {"cpu":"/MIASM"}),
-    ("asm_x86_macosx.o",      "asm2",{"cpu":"/AMOCO"}),
-    ("asm_x64_macosx.s",      "asm", {}),
-    ("asm_x64_macosx.o",      "asm", {}),
-    ("sattr_x86_macosx.s",      "asm", {"cpu":"/MIASM"}),
-    ("sattr_x86_macosx.s",      "asm", {"cpu":"/AMOCO"}),
-    ("sattr_x86_macosx.o",      "asm", {"cpu":"/MIASM"}),
-    ("sattr_x86_macosx.o",      "asm", {"cpu":"/AMOCO"}),
-    ("constructor_x86_macosx.s",      "asm", {"cpu":"/MIASM"}),
-    ("constructor_x86_macosx.s",      "asm", {"cpu":"/AMOCO"}),
-    ("constructor_x86_macosx.o",      "asm", {"cpu":"/MIASM"}),
-    ("constructor_x86_macosx.o",      "asm", {"cpu":"/AMOCO"}),
-    ("constructor_x64_macosx.s",      "asm", {}),
-    ("constructor_x64_macosx.o",      "asm", {}),
-    ("clang1001_x86_macosx.s",   "asm", {"cpu":"/MIASM"}),
-    ("clang1001_x86_macosx.s",   "asm", {"cpu":"/AMOCO"}),
-
-    ("switch_x86_linux.att.s",   "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_linux.att.s",   "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_linux.o",       "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_linux.o",       "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_linux.out",     "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_linux.out",     "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_linux_2.att.s", "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_linux_2.att.s", "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_linux_2.o",     "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_linux_2.o",     "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_linux_2.out",   "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_linux_2.out",   "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_linux_3.att.s", "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_linux_3.att.s", "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_linux_3.o",     "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_linux_3.o",     "asm", {"cpu":"/AMOCO"}),
-    #"switch_x86_linux_3.out",   "asm", {"cpu":"/MIASM"}), # FAIL
-    #"switch_x86_linux_3.out",   "asm", {"cpu":"/AMOCO"}), # FAIL
-    ("switch_x86_macosx.s",      "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_macosx.s",      "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_macosx.o",      "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_macosx.o",      "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_macosx_1.s",    "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_macosx_1.s",    "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_macosx_1.o",    "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_macosx_1.o",    "asm", {"cpu":"/AMOCO"}),
-    ("switch_x86_macosx_2.s",    "asm", {"cpu":"/MIASM"}),
-    #"switch_x86_macosx_2.s",    "asm", {"cpu":"/AMOCO"}), # very slow, 21s
-    ("switch_x86_macosx_2.o",    "asm", {"cpu":"/MIASM"}),
-    ("switch_x86_macosx_2.o",    "asm2",{"cpu":"/AMOCO"}),
-    ("switch_x64_linux.att.s",   "asm", {}),
-    ("switch_x64_linux.o",       "asm", {}),
-    ("switch_x64_linux.out",     "asm", {}),
-    ("switch_x64_linux_2.att.s", "asm", {}), # slow,  3s
-    ("switch_x64_linux_2.o",     "asm", {}),
-    ("switch_x64_linux_2.out",   "asm", {}), # slow,  5s
-    #"switch_x64_linux_3.att.s", "asm", {}), # very slow, 11s
-    ("switch_x64_linux_3.o",     "asm", {}), # slow,  3s
-    ("switch_x64_macosx.s",      "asm", {}),
-    ("switch_x64_macosx.o",      "asm", {}),
-    ("switch_x64_macosx_2.s",    "asm", {}),
-    ("switch_x64_macosx_2.o",    "asm", {}),
-    ("switch_x64_macosx_3.s",    "asm", {}),
-    ("switch_x64_macosx_3.o",    "asm", {}),
-    ("switch_x64_macosx_4.s",    "asm", {}), # slow,  5s
-    ("switch_x64_macosx_4.o",    "asm", {}),
-
     ("other_x86_linux.att.s",   "asm", {"cpu":"/MIASM"}),
     ("other_x86_linux.att.s",   "asm", {"cpu":"/AMOCO"}),
     ("other_x86_linux.o",       "asm", {"cpu":"/MIASM"}),
@@ -421,19 +253,6 @@ all_tests = [
     ("other_sparc_2.o",         "asm", {}),
     ("other_sparc_3.s",         "asm", {}),
     ("other_sparc_3.o",         "asm", {}),
-
-    # /bin/sh from Ubuntu 12.04
-    ("sh_x86_linux_ubuntu1204", "asm", {"cpu":"/MIASM"}), # very slow, 22s
-    ("sh_x86_linux_ubuntu1204", "asm2",{"cpu":"/AMOCO"}), # very slow, 21s
-    # minigzip from zlib 1.2.8 compiled for Debian 8.3
-    ("minigzip_x86_linux", "asm", {"cpu":"/MIASM"}), # very slow, 22s
-    ("minigzip_x86_linux", "asm2",{"cpu":"/AMOCO"}), # very slow, 15s
-    # minigzip from zlib 1.2.8 compiled for CentOS 4.8
-    ("minigzip_x86_linux_2", "asm", {"cpu":"/MIASM"}), # very slow, 22s
-    ("minigzip_x86_linux_2", "asm2",{"cpu":"/AMOCO"}), # very slow, 13s
-    # aspell 0.60.6.1 compiled for Debian 8.3
-    ("aspell_x86_linux", "asm", {"cpu":"/MIASM"}), # extremely slow, 77s
-    ("aspell_x86_linux", "asm", {"cpu":"/AMOCO"}), # very slow, 36s
 ]
 
 if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
@@ -443,21 +262,15 @@ if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
                   and not '_sparc' in f
                   and k.get("cpu",None) != "/AMOCO" ]
 if sys.version_info[0] == 2 and sys.version_info[1] <= 3:
-    # Disply of negative int make some tests fail
+    # Display of negative int make some tests fail
     all_tests = [ (f,s,k) for (f,s,k) in all_tests
-                  if s != 'dump'
-                  and not f in (
-                      'switch_x86_macosx_2.o',
+                  if not f in (
                       'other_x86_linux_2.o',
                       'other_x86_linux_5.o',
                       'other_x86_linux_23.o',
                       'other_x86_linux_30.o',
                       'other_x86_macosx.o',
                       'other_x86_macosx_9.o',
-                      'sh_x86_linux_ubuntu1204',
-                      'minigzip_x86_linux',
-                      'minigzip_x86_linux_2',
-                      'aspell_x86_linux',
                   ) ]
 
 def test_io(file, suffix, kargs):
@@ -468,8 +281,5 @@ def test_io(file, suffix, kargs):
     res = fd.read()
     fd.close()
     pool = File().from_raw(raw, rw=True, **kargs)
-    if suffix == "dump":
-        assert pool.to_objdump(filename="non_regression/"+file) + "\n" == res
-    else:
-        assert pool.to_asm() == res
+    assert pool.to_asm() == res
 test_io = pytest.mark.parametrize("file, suffix, kargs", all_tests)(test_io)
