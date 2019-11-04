@@ -1,0 +1,544 @@
+<Symbol '_I' section='.text', type='function', bind='globl', address=4199024>
+    ENDER True -- NXT None
+    CFG _I
+    GRAPH_NXT _I
+    GRAPH_PRV _H
+    GRAPH_PRV _I
+-- STACK00 ['0x401281-.text-_I']
+-- STACK01 ['0x401294-.text-_H']
+'I386_MIASM.InstructionCFG'>4199024 [None][] push {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4199025 [None][] mov {5:1,ad:False,size:u32} {4:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4199027 [None][] sub {4:1,ad:False,size:u32} {ad:False,imm:uint32(0x4),size:u32} 
+'I386_MIASM.InstructionCFG'>4199030 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0x8),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>4199033 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4199036 [sub][] call {ad:False,size:u32,symb__intern__:{_I:1}} 
+
+<Symbol 'L00401281' section='.text', address=4199041>
+    ENDER True -- NXT None
+    CFG None
+'I386_MIASM.InstructionCFG'>4199041 [None][] leave 
+'I386_MIASM.InstructionCFG'>4199042 [ret][] ret 
+
+<Symbol '_H' section='.text', type='function', bind='globl', address=4199043>
+    ENDER True -- NXT None
+    CFG _I
+    GRAPH_NXT _I
+'I386_MIASM.InstructionCFG'>4199043 [None][] push {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4199044 [None][] mov {5:1,ad:False,size:u32} {4:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4199046 [None][] sub {4:1,ad:False,size:u32} {ad:False,imm:uint32(0x4),size:u32} 
+'I386_MIASM.InstructionCFG'>4199049 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0x8),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>4199052 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4199055 [sub][] call {ad:False,size:u32,symb__intern__:{_I:1}} 
+
+<Symbol 'L00401294' section='.text', address=4199060>
+    ENDER True -- NXT None
+    CFG None
+'I386_MIASM.InstructionCFG'>4199060 [None][] leave 
+'I386_MIASM.InstructionCFG'>4199061 [ret][] ret 
+
+<Symbol '_main' section='.text', type='function', bind='globl', address=4199062>
+    ENDER False -- NXT L004012BB
+    CFG ___chkstk
+    GRAPH_NXT ___chkstk
+'I386_MIASM.InstructionCFG'>4199062 [None][] push {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4199063 [None][] mov {5:1,ad:False,size:u32} {4:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4199065 [None][] sub {4:1,ad:False,size:u32} {ad:False,imm:uint32(0x8),size:u32} 
+'I386_MIASM.InstructionCFG'>4199068 [None][] and {4:1,ad:False,size:u32} {ad:False,imm:uint32(0xfffffff0),size:u32} 
+'I386_MIASM.InstructionCFG'>4199071 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x0),size:u32} 
+'I386_MIASM.InstructionCFG'>4199076 [None][] add {0:1,ad:False,size:u32} {ad:False,imm:uint32(0xf),size:u32} 
+'I386_MIASM.InstructionCFG'>4199079 [None][] add {0:1,ad:False,size:u32} {ad:False,imm:uint32(0xf),size:u32} 
+'I386_MIASM.InstructionCFG'>4199082 [None][] shr {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x4),size:u32} 
+'I386_MIASM.InstructionCFG'>4199085 [None][] sal {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x4),size:u32} 
+'I386_MIASM.InstructionCFG'>4199088 [None][] mov {5:1,ad:u32,imm:uint32(0xfffffffc),size:u32,txt:ebp+imm} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4199091 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0xfffffffc),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>4199094 [sub][] call {ad:False,size:u32,symb__intern__:{__alloca:1}} 
+
+<Symbol 'L004012BB' section='.text', address=4199099>
+    ENDER False -- NXT L004012C0
+    CFG ___main
+    GRAPH_NXT ___main
+    GRAPH_PRV ___chkstk
+'I386_MIASM.InstructionCFG'>4199099 [sub][] call {ad:False,size:u32,symb__intern__:{___main:1}} 
+
+<Symbol 'L004012C0' section='.text', address=4199104>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV ___main
+'I386_MIASM.InstructionCFG'>4199104 [None][] leave 
+'I386_MIASM.InstructionCFG'>4199105 [ret][] ret 
+
+<Symbol 'CRT_fp10.c' bind='file'>
+
+<Symbol 'CRTfmode.c' bind='file'>
+
+<Symbol 'CRTglob.c' bind='file'>
+
+<Symbol 'b0.c' bind='file'>
+
+<Symbol 'cpu_features.c' bind='file'>
+
+<Symbol 'crtstuff.c' bind='file'>
+
+<Symbol 'fake' bind='file'>
+
+<Symbol 'gccmain.c' bind='file'>
+
+<Symbol 'libgcc2.c' bind='file'>
+
+<Symbol 'pseudo-reloc-list.c' bind='file'>
+
+<Symbol 'pseudo-reloc.c' bind='file'>
+
+<Symbol 'txtmode.c' bind='file'>
+
+<Symbol 'w32-shared-ptr.c' bind='file'>
+
+<Symbol 'kernel32.dll_AddAtomA' address=4214944>
+
+<Symbol 'kernel32.dll_ExitProcess' address=4214948>
+
+<Symbol 'kernel32.dll_FindAtomA' address=4214952>
+
+<Symbol 'kernel32.dll_GetAtomNameA' address=4214956>
+
+<Symbol 'kernel32.dll_SetUnhandledExceptionFilter' address=4214960>
+
+<Symbol 'msvcrt.dll___getmainargs' address=4214972>
+
+<Symbol 'msvcrt.dll___p__environ' address=4214976>
+
+<Symbol 'msvcrt.dll___p__fmode' address=4214980>
+
+<Symbol 'msvcrt.dll___set_app_type' address=4214984>
+
+<Symbol 'msvcrt.dll__assert' address=4214988>
+
+<Symbol 'msvcrt.dll__cexit' address=4214992>
+
+<Symbol 'msvcrt.dll__iob' address=4214996>
+
+<Symbol 'msvcrt.dll__onexit' address=4215000>
+
+<Symbol 'msvcrt.dll__setmode' address=4215004>
+
+<Symbol 'msvcrt.dll_abort' address=4215008>
+
+<Symbol 'msvcrt.dll_atexit' address=4215012>
+
+<Symbol 'msvcrt.dll_free' address=4215016>
+
+<Symbol 'msvcrt.dll_malloc' address=4215020>
+
+<Symbol 'msvcrt.dll_memset' address=4215024>
+
+<Symbol 'msvcrt.dll_signal' address=4215028>
+
+<Symbol '__argv' section='.bss', bind='globl', address=4210688, data='set:__bss_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__bss_start__' section='.bss', bind='globl', address=4210688>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__argc' section='.bss', bind='globl', address=4210692>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__CRT_fmode' section='.bss', bind='globl', address=4210696>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '_initialized' section='.bss', bind='local', address=4210704>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___cpu_features' section='.bss', bind='globl', address=4210720>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___w32_sharedptr_terminate' section='.bss', bind='globl', address=4210792>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___w32_sharedptr' section='.bss', bind='globl', address=4210808>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___w32_sharedptr_unexpected' section='.bss', bind='globl', address=4210824>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__bss_end__' section='.bss', bind='globl', address=4210872>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__CRT_glob' section='.data', bind='globl', address=4202496>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__fmode' section='.data', bind='globl', address=4202500>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__data_end__' section='.data', bind='globl', address=4202532>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__head_libkernel32_a' section='.idata', bind='globl', address=4214784>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__head_libmsvcrt_a' section='.idata', bind='globl', address=4214804>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__imp__AddAtomA@4' section='.idata', bind='globl', address=4214944>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV _AddAtomA@4
+
+<Symbol '__imp__ExitProcess@4' section='.idata', bind='globl', address=4214948>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV _ExitProcess@4
+
+<Symbol '__imp__FindAtomA@4' section='.idata', bind='globl', address=4214952>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV _FindAtomA@4
+
+<Symbol '__imp__GetAtomNameA@12' section='.idata', bind='globl', address=4214956>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV _GetAtomNameA@12
+
+<Symbol '__imp__SetUnhandledExceptionFilter@4' section='.idata', bind='globl', address=4214960>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV _SetUnhandledExceptionFilter@4
+
+<Symbol '__imp____getmainargs' section='.idata', bind='globl', address=4214972>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__imp____p__environ' section='.idata', bind='globl', address=4214976>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__imp____p__fmode' section='.idata', bind='globl', address=4214980>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__imp____set_app_type' section='.idata', bind='globl', address=4214984>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__imp___assert' section='.idata', bind='globl', address=4214988>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV __assert
+
+<Symbol '__imp___cexit' section='.idata', bind='globl', address=4214992>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV __cexit
+
+<Symbol '__imp___iob' section='.idata', bind='globl', address=4214996>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__imp___onexit' section='.idata', bind='globl', address=4215000>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__imp___setmode' section='.idata', bind='globl', address=4215004>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV __setmode
+
+<Symbol '__imp__abort' section='.idata', bind='globl', address=4215008>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV _abort
+
+<Symbol '__imp__atexit' section='.idata', bind='globl', address=4215012>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__imp__free' section='.idata', bind='globl', address=4215016>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV _free
+
+<Symbol '__imp__malloc' section='.idata', bind='globl', address=4215020>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV _malloc
+
+<Symbol '__imp__memset' section='.idata', bind='globl', address=4215024>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV _memset
+
+<Symbol '__imp__signal' section='.idata', bind='globl', address=4215028>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV _signal
+
+<Symbol '__libkernel32_a_iname' section='.idata', bind='globl', address=4215312>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__libmsvcrt_a_iname' section='.idata', bind='globl', address=4215388>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '_w32_atom_suffix' section='.rdata', bind='local', address=4206592>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__RUNTIME_PSEUDO_RELOC_LIST_END__' section='.rdata', bind='globl', address=4206784, data='set:___RUNTIME_PSEUDO_RELOC_LIST__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__RUNTIME_PSEUDO_RELOC_LIST__' section='.rdata', bind='globl', address=4206784, data='set:___RUNTIME_PSEUDO_RELOC_LIST__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___RUNTIME_PSEUDO_RELOC_LIST_END__' section='.rdata', bind='globl', address=4206784, data='set:___RUNTIME_PSEUDO_RELOC_LIST__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___RUNTIME_PSEUDO_RELOC_LIST__' section='.rdata', bind='globl', address=4206784>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___crt_xc_end__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___crt_xc_start__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___crt_xi_end__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___crt_xi_start__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___crt_xl_start__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___crt_xp_end__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___crt_xp_start__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___crt_xt_end__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___crt_xt_start__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___tls_end__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___tls_start__' section='.stab', bind='globl', address=4218880>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__end__' section='.stab', bind='globl', address=4218880, data='set:___tls_start__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__gnu_exception_handler@4' section='.text', type='function', bind='local', address=4198400>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___mingw_CRTStartup' section='.text', type='function', bind='local', address=4198684>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '_mainCRTStartup' section='.text', type='function', bind='globl', address=4198940>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '_WinMainCRTStartup' section='.text', type='function', bind='globl', address=4198960>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '_atexit' section='.text', type='function', bind='globl', address=4198980>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__onexit' section='.text', type='function', bind='globl', address=4198992>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___do_sjlj_init' section='.text', type='function', bind='globl', address=4199008>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___do_global_dtors' section='.text', type='function', bind='globl', address=4199108>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___do_global_ctors' section='.text', type='function', bind='globl', address=4199152>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___main' section='.text', type='function', bind='globl', address=4199232>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_NXT L004012C0
+    GRAPH_PRV L004012BB
+-- STACK00 ['L004012C0']
+
+<Symbol '__pei386_runtime_relocator' section='.text', type='function', bind='globl', address=4199264>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___cpu_features_init' section='.text', type='function', bind='globl', address=4199300>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__fpreset' section='.text', type='function', bind='globl', address=4199532, data='set:_fpreset'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '_fpreset' section='.text', type='function', bind='globl', address=4199532>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___w32_sharedptr_default_unexpected' section='.text', type='function', bind='local', address=4199552>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___w32_sharedptr_get' section='.text', type='function', bind='local', address=4199568>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___w32_sharedptr_initialize' section='.text', type='function', bind='globl', address=4199728>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___chkstk' section='.text', bind='globl', address=4200352>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_NXT L004012BB
+    GRAPH_PRV _main
+-- STACK00 ['L004012BB']
+
+<Symbol '__alloca' section='.text', bind='globl', address=4200352, data='set:___chkstk'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__cexit' section='.text', type='function', bind='globl', address=4200400>
+    ENDER True -- NXT None
+    CFG __imp___cexit
+    GRAPH_NXT __imp___cexit
+
+<Symbol '___p__environ' section='.text', type='function', bind='globl', address=4200408>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '_signal' section='.text', type='function', bind='globl', address=4200416>
+    ENDER True -- NXT None
+    CFG __imp__signal
+    GRAPH_NXT __imp__signal
+
+<Symbol '___p__fmode' section='.text', type='function', bind='globl', address=4200424>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__setmode' section='.text', type='function', bind='globl', address=4200432>
+    ENDER True -- NXT None
+    CFG __imp___setmode
+    GRAPH_NXT __imp___setmode
+
+<Symbol '___getmainargs' section='.text', type='function', bind='globl', address=4200440>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__assert' section='.text', type='function', bind='globl', address=4200448>
+    ENDER True -- NXT None
+    CFG __imp___assert
+    GRAPH_NXT __imp___assert
+
+<Symbol '_free' section='.text', type='function', bind='globl', address=4200456>
+    ENDER True -- NXT None
+    CFG __imp__free
+    GRAPH_NXT __imp__free
+
+<Symbol '_malloc' section='.text', type='function', bind='globl', address=4200464>
+    ENDER True -- NXT None
+    CFG __imp__malloc
+    GRAPH_NXT __imp__malloc
+
+<Symbol '_abort' section='.text', type='function', bind='globl', address=4200472>
+    ENDER True -- NXT None
+    CFG __imp__abort
+    GRAPH_NXT __imp__abort
+
+<Symbol '_memset' section='.text', type='function', bind='globl', address=4200480>
+    ENDER True -- NXT None
+    CFG __imp__memset
+    GRAPH_NXT __imp__memset
+
+<Symbol '_ExitProcess@4' section='.text', type='function', bind='globl', address=4200488>
+    ENDER True -- NXT None
+    CFG __imp__ExitProcess@4
+    GRAPH_NXT __imp__ExitProcess@4
+
+<Symbol '_SetUnhandledExceptionFilter@4' section='.text', type='function', bind='globl', address=4200496>
+    ENDER True -- NXT None
+    CFG __imp__SetUnhandledExceptionFilter@4
+    GRAPH_NXT __imp__SetUnhandledExceptionFilter@4
+
+<Symbol '_GetAtomNameA@12' section='.text', type='function', bind='globl', address=4200504>
+    ENDER True -- NXT None
+    CFG __imp__GetAtomNameA@12
+    GRAPH_NXT __imp__GetAtomNameA@12
+
+<Symbol '_AddAtomA@4' section='.text', type='function', bind='globl', address=4200512>
+    ENDER True -- NXT None
+    CFG __imp__AddAtomA@4
+    GRAPH_NXT __imp__AddAtomA@4
+
+<Symbol '_FindAtomA@4' section='.text', type='function', bind='globl', address=4200520>
+    ENDER True -- NXT None
+    CFG __imp__FindAtomA@4
+    GRAPH_NXT __imp__FindAtomA@4
+
+<Symbol '___sjlj_init_ctor' section='.text', type='function', bind='local', address=4200528>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__CTOR_LIST__' section='.text', bind='globl', address=4200544>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___CTOR_LIST__' section='.text', bind='globl', address=4200544, data='set:__CTOR_LIST__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__DTOR_LIST__' section='.text', bind='globl', address=4200556, data='set:___DTOR_LIST__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '___DTOR_LIST__' section='.text', bind='globl', address=4200556>
+    ENDER None -- NXT None
+    CFG None
+
+endianess:'<',container:'PE',compiler:'mingw'

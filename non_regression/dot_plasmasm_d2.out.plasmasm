@@ -1,0 +1,4 @@
+def helper(pool):
+    from plasmasm.helper import helper_common, helper_order
+    helper_order (pool, ['A', 'B', 'B']) # second 'B' is useless and ignored
+    helper_common(pool, ['A', 'B'])

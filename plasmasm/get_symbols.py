@@ -18,10 +18,10 @@ def get_dynsyms(e):
     elif hasattr(e, 'isPE') and e.isPE():
         imports = []
         for s in e.DirImport.impdesc:
-            libname = str(s.dlldescname.name.lower().encode('latin1'))
+            libname = s.dlldescname.name.lower()
             for ii, imp in enumerate(s.impbynames):
                 if hasattr(imp, 'name'):
-                    funcname = str(imp.name.encode('latin1'))
+                    funcname = imp.name
                 else:
                     funcname = str(imp)
                 imports.append( {
@@ -503,29 +503,18 @@ def get_reloc_symbol(pool, suffix, section, address):
 ################################################################
 
 if __name__ == "__main__":
-    import getopt, sys, os.path
+    import sys, os.path
     sys.path.insert(1, os.path.abspath(sys.path[0]+'/..'))
-    try:
-        opts, args = getopt.getopt(sys.argv[1:], "haITrLWDobsd:CAy:c:e:")
-        for opt, arg in opts:
-            usage()
-    except getopt.GetoptError:
-        msg = sys.exc_info()[1]
-        sys.stderr.write("ERROR: %s\n"%msg)
-        sys.exit(1)
-    if len(args) == 0:
+    if len(sys.argv) < 2:
         usage()
-    raw = open(args[0], 'rb').read()
+    raw = open(sys.argv[1], 'rb').read()
     from plasmasm.analyze_file import get_file_type
     file_type = get_file_type(raw)
     print("File of type %r"%file_type)
-    if file_type == 'ASM':
-        TODO
-    else:
-        from plasmasm.parse_bin import get_bin_virt
-        cpu, e = get_bin_virt(raw, file_type, None)
-        print("Binary for CPU %r"%cpu)
-        s_list, fields = get_symbols(e)
-        print("Symbols:")
-        for s in s_list:
-            print(' '.join([("%s="+_[1])%(_[0],s[_[0]]) for _ in fields]))
+    from plasmasm.parse_bin import get_bin_virt
+    cpu, e = get_bin_virt(raw, file_type, None)
+    print("Binary for CPU %r"%cpu)
+    s_list, fields = get_symbols(e)
+    print("Symbols:")
+    for s in s_list:
+        print(' '.join([("%s="+_[1])%(_[0],s[_[0]]) for _ in fields]))

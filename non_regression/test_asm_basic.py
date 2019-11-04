@@ -13,8 +13,10 @@ sys.path.append(os.path.dirname(basedir)+'/elfesteem')
 all_tests = [
     ("basic_x86_linux.intel.s", "asm", {"cpu":"/MIASM"}),
     #("basic_x86_linux.intel.s", "asm", {"cpu":"/AMOCO"}), # no Intel for amoco
+    ("basic_x86_linux.intel.s", "asm", {"cpu":"I386-intel"}),
     ("basic_x86_linux.att.s",   "asm", {"cpu":"/MIASM"}),
     ("basic_x86_linux.att.s",   "asm", {"cpu":"/AMOCO"}),
+    ("basic_x86_linux.att.s",   "asm", {"cpu":"I386-att"}),
     ("basic_x86_linux.o",       "asm", {"cpu":"/MIASM"}),
     ("basic_x86_linux.o",       "asm", {"cpu":"/AMOCO"}),
     ("basic_x86_linux.out",     "asm", {"cpu":"/MIASM"}),
@@ -44,6 +46,7 @@ all_tests = [
     ("basic_x64_macosx.o",      "asm", {}),
     ("basic_x64_macosx.out",    "asm", {}),
     ("basic_x64_macosx.strip",  "asm", {}), # Should detect main
+    ("basic_x86_macosx.intel.s","asm", {"cpu":"I386-intel"}),
     ("basic_sparc.s",           "asm", {}),
     ("basic_sparc.o",           "asm", {}),
     #("basic_sparc.out",         "asm", {}),

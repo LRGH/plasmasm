@@ -214,7 +214,7 @@ class ConstantZero(Constant):
     def txt(self):
         return '.zero\t%d' % self.type
     def pack(self):
-        return '\0' * self.type
+        return struct.pack("B", 0) * self.type
 
 class Constant1Byte(Constant):
     __slots__ = ()

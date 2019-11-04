@@ -5,8 +5,6 @@ jobs:
     - python: 'pypy3'
     - python: '2.7'
     - python: 'pypy'
-    - dist: precise
-      python: '2.6'
     - name: 'Python: 2.3'
       # For python 2.3 almost everything is different: overwrite definitions
       install:
@@ -39,6 +37,8 @@ jobs:
         - python non_regression/run_tests.py test_bin
       after_success:
         - true # coverage needs python >= 2.6
+    - dist: precise
+      python: '2.6'
     - python: '3.4'
     - python: '3.8'
 install:

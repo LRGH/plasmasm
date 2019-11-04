@@ -17,6 +17,11 @@ all_tests = [
     ("basic_x86_linux.o",       "reprW2",{"cpu":"/AMOCO","rw":True}),
     ("switch_x86_linux.o",      "repr",  {"cpu":"/MIASM"}),
     ("switch_x64_macosx.o",     "repr",  {}),
+    # Next one uses a .plasmasm helper to move symbols from BSS to COM
+    ("dot_plasmasm_b0.exe",     "repr", {}),
+    ("dot_plasmasm_c9.o",       "repr", {}),
+    ("dot_plasmasm_c9.out",     "repr", {}),
+    ("dot_plasmasm_d2.out",     "repr", {}),
 ]
 
 if sys.version_info[0] == 2 and sys.version_info[1] <= 6:

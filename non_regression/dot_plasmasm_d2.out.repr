@@ -1,0 +1,165 @@
+<Symbol 'A' section='COM', type='object', bind='globl', align=4, size=4, address=134520860>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>134520860 .zero	4
+
+<Symbol 'B' section='COM', type='object', bind='globl', align=4, size=4, address=134520856>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>134520856 .zero	4
+
+<Symbol 'main' section='.text', type='function', bind='globl', size=35, address=134513588>
+    ENDER True -- NXT None
+    CFG None
+'I386_MIASM.InstructionCFG'>134513588 [None][] push {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>134513589 [None][] mov {5:1,ad:False,size:u32} {4:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>134513591 [None][] mov {0:1,ad:False,size:u32} {ad:u32,size:u32,symb__intern__:{B:1}} 
+'I386_MIASM.InstructionCFG'>134513596 [None][] lea {1:1,ad:False,size:u32} {0:2,ad:True,size:True,txt:eax+eax} 
+'I386_MIASM.InstructionCFG'>134513599 [None][] mov {2:1,ad:False,size:u32} {ad:u32,size:u32,symb__intern__:{A:1},txt:imm} 
+'I386_MIASM.InstructionCFG'>134513605 [None][] mov {0:1,ad:False,size:u32} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>134513607 [None][] sal {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x2),size:u32} 
+'I386_MIASM.InstructionCFG'>134513610 [None][] add {0:1,ad:False,size:u32} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>134513612 [None][] neg {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>134513614 [None][] add {0:1,ad:False,size:u32} {1:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>134513616 [None][] mov {ad:u32,size:u32,symb__intern__:{A:1}} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>134513621 [None][] pop {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>134513622 [ret][] ret 
+
+<Symbol '_Jv_RegisterClasses' bind='weak'>
+
+<Symbol '__gmon_start__' bind='weak'>
+
+<Symbol '__libc_start_main' type='function', bind='globl'>
+
+<Symbol 'd2.c' bind='file'>
+
+<Symbol 'completed.6159' section='.bss', type='object', bind='local', size=1, address=134520848>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'completed.6159+1' section='.bss', type='endofsymbol', bind='local', address=134520849>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'dtor_idx.6161' section='.bss', type='object', bind='local', align=4, size=4, address=134520852>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'A+4' section='.bss', type='endofsymbol', bind='globl', address=134520864>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__CTOR_LIST__' section='.ctors', type='object', bind='local', size=0, address=134520596>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__init_array_end' section='.ctors', bind='local', size=0, address=134520596, data='set:__CTOR_LIST__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__init_array_start' section='.ctors', bind='local', size=0, address=134520596, data='set:__CTOR_LIST__'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__CTOR_END__' section='.ctors', type='object', bind='local', size=0, address=134520600>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__data_start' section='.data', bind='globl', size=0, address=134520840, data='set:data_start'>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'data_start' section='.data', bind='weak', size=0, address=134520840>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__dso_handle' section='.data', type='object', bind='globl', size=0, address=134520844>
+    ENDER False -- NXT None
+    CFG None
+
+<Symbol '__dso_handle+4' section='.data', type='padding', address=134520848>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__gmon_start__' section='.got', address=134520816>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '.rel.plt.__gmon_start__' section='.got.plt', address=134520832>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '.rel.plt.__libc_start_main' section='.got.plt', address=134520836>
+    ENDER None -- NXT None
+    CFG None
+    GRAPH_PRV __libc_start_main
+-- STACK00 ['0x8048321-.text-_start']
+
+<Symbol '_fp_hw' section='.rodata', type='object', bind='globl', align=4, size=4, address=134513832>
+    ENDER False -- NXT None
+    CFG None
+
+<Symbol '_IO_stdin_used' section='.rodata', type='object', bind='globl', size=4, address=134513836>
+    ENDER False -- NXT None
+    CFG None
+
+<Symbol '.LC080484B0' section='.rodata', type='endofsymbol', address=134513840>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__libc_start_main' section='.text', address=134513392>
+    ENDER True -- NXT None
+    CFG .rel.plt.__libc_start_main
+    GRAPH_NXT .rel.plt.__libc_start_main
+    GRAPH_PRV _start
+-- STACK00 ['0x8048321-.text-_start']
+
+<Symbol '_start' section='.text', type='function', bind='globl', size=0, address=134513408>
+    ENDER True -- NXT None
+    CFG __libc_start_main
+    GRAPH_NXT __libc_start_main
+
+<Symbol '__do_global_dtors_aux' section='.text', type='function', bind='local', size=0, address=134513456>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'frame_dummy' section='.text', type='function', bind='local', size=0, address=134513552>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '.L080483D7' section='.text', type='padding', address=134513623>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__libc_csu_init' section='.text', type='function', bind='globl', size=97, address=134513632>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__libc_csu_fini' section='.text', type='function', bind='globl', size=2, address=134513744>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__do_global_ctors_aux' section='.text', type='function', bind='local', size=0, address=134513760>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '__i686.get_pc_thunk.bx' section='.text.__i686.get_pc_thunk.bx', type='function', bind='globl', size=0, address=134513746>
+    ENDER True -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.ctors', '.ctors,"wa",@progbits')
+('.dtors', '.dtors,"wa",@progbits')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.eh_frame_hdr', '.eh_frame_hdr,"a",@progbits')
+('.fini', '.fini,"ax",@progbits')
+('.got', '.got,"wa",@progbits')
+('.got.plt', '.got.plt,"wa",@progbits')
+('.init', '.init,"ax",@progbits')
+('.interp', '.interp,"a",@progbits')
+('.jcr', '.jcr,"wa",@progbits')
+('.note.ABI-tag', '.note.ABI-tag,"a",@note')
+('.note.gnu.build-id', '.note.gnu.build-id,"a",@note')
+('.plt', '.plt,"ax",@progbits')
+('.text.__i686.get_pc_thunk.bx', '.text.__i686.get_pc_thunk.bx,"axG",@progbits,__i686.get_pc_thunk.bx,comdat')
+ident:'GCC: (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3',endianess:'<',eh_frame_size:196,eh_frame_relocs:{},container:'ELF',compiler:'gcc'

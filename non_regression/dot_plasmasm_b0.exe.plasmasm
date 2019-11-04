@@ -1,0 +1,5 @@
+def helper(pool):
+    from plasmasm.helper import helper_parse
+    # Recursive call in I means I and H never return
+    # We parse the whole functions, though
+    helper_parse(pool, [('.text', 0x401281), ('.text', 0x401294)])
