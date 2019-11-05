@@ -68,7 +68,7 @@ class Instruction(Line):
                 arg = getattr(self.miasm, argname)
                 break
         else:
-            print("Apply reloc '%s' on '%s'"%(label,self))
+            log.info("Apply reloc '%s' on '%s'", label, self)
             return
         setattr(self.miasm, argname, label)
 

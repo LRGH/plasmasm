@@ -311,7 +311,7 @@ class Symbol(object):
             while self.section != self.symbols.get_bloc(idx).section:
                 idx += 1
             if nxt != self.symbols.get_bloc(idx):
-                print("Next of %s set to %s instead of %s"%(self, nxt, self.symbols.blocs[idx]))
+                log.error("Next of %s set to %s instead of %s", self, nxt, self.symbols.blocs[idx])
     def set_flow(self, flow, force=False):
         if not self.flow in [ None, flow ] and not force:
             raise ValueError("Bloc %r already has a flow %r different of %r"%(self.name,self.flow,flow))
@@ -555,10 +555,10 @@ class Symbol(object):
                 # print "SPLIT at", line
                 return idx
             if line.offset > address:
-                print("ERROR: label is in the middle of an instruction")
+                log.error("label is in the middle of an instruction")
                 return None
         else:
-            print("ERROR: address %#x should be in the bloc of %s"%(address,self.display()))
+            log.error("address %#x should be in the bloc of %s", address, self.display())
             return None
 
 def compute_alignment(size, address):

@@ -321,6 +321,7 @@ class Instruction(Line, API_MIASM):
         if asm_format is None:
             asm_format = self.asm_format
         if self.precomputed_str.get(asm_format, None) is not None:
+            # bug in coverage? the next line is executed but does not show...
             return self.precomputed_str[asm_format]
         if asm_format == 'raw':
             txt = "%s %s "%(self.miasm.prefix,self.miasm.m.name)
@@ -641,7 +642,7 @@ def get_rw(cpu_sem, line):
     my_eip = cpu_sem.ExprInt(uint32(line.miasm.offset))
     exprs = get_instr_expr(line.miasm, my_eip, [])
     if exprs is None:
-        print("Emulation failed for line %r" % line)
+        log.error("Emulation failed for line %r", line)
     r = set()
     w = set()
     for e in exprs:

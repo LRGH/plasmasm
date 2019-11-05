@@ -20,7 +20,7 @@ def usage(long = False):
             "             -D: compute dead registers\n"
             "           -o: objdump output (can be diff-ed with objdump -d)\n"
             "           -s: only the list of symbols\n"
-            "           -b <output>: binary output\n"
+            "           -b: binary output\n"
             "             currently, only ELF relocatable\n"
             "           -d dot: prefix of .dot file containing graphs of functions\n"
             "             -C: CFG of the whole executable\n"
@@ -43,7 +43,7 @@ graph_type = 'FUNC'
 group_sections = False
 ep = []
 try:
-    opts, args = getopt.getopt(sys.argv[1:], "hvaITtSrLWDob:sd:CAy:c:e:")
+    opts, args = getopt.getopt(sys.argv[1:], "hvaITtSrLWDobsd:CAy:c:e:")
     for opt, arg in opts:
         if opt == '-h':
             usage(long=True)
@@ -66,7 +66,6 @@ try:
             output = 'objdump'
         elif opt == '-b':
             output = 'binary'
-            outfile = arg
         elif opt == '-s':
             output = 'symbols'
         elif opt == '-r':
@@ -179,6 +178,6 @@ if output == 'repr':
         print(tuple((s,pool.sections.asm_name[s])))
     print(','.join(["%s:%r"%(_,pool.meta[_]) for _ in reversed(sorted(pool.meta))]))
 if output == 'binary':
-    outfile_fd = open(outfile,'wb')
-    outfile_fd.write(pool.to_bin())
-    outfile_fd.close()
+    if sys.version_info[0] <= 2: stdout = sys.stdout
+    else:                        stdout = sys.stdout.buffer
+    stdout.write(pool.to_bin())
