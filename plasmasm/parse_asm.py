@@ -214,7 +214,7 @@ def parse_asm_file(symbols, txt):
                 continue
             #other attributes
             if directive in ['align']:
-                arguments = re.split(",\W*", rest)
+                arguments = re.split(r",\W*", rest)
                 cur_align[bloc.section] = int(arguments[0])
                 if symbols.meta.get('compiler') == 'clang':
                     cur_align[bloc.section] = 1<<cur_align[bloc.section]
@@ -270,7 +270,7 @@ def parse_asm_file(symbols, txt):
             if directive in ['ascii', 'asciz', 'string', 'ustring']:
                 value = line[line.find(r'"')+1:line.rfind(r'"')]
                 # Decode GNU as representation of strings into python string
-                value = value.replace(r'\\', '\B')
+                value = value.replace(r'\\', r'\B')
                 for v in range(0,4*8*8):
                     value = value.replace('\\%03o'%v, chr(v))
                 for v in range(0,8*8):
@@ -283,7 +283,7 @@ def parse_asm_file(symbols, txt):
                 value = value.replace(r'\f', '\f')
                 value = value.replace(r'\r', '\r')
                 value = value.replace(r'\"', '"')
-                value = value.replace('\B', '\\')
+                value = value.replace(r'\B', '\\')
                 if directive in ['asciz', 'string', 'ustring']:
                     value+="\x00"
                 if directive == 'ustring':
@@ -303,7 +303,7 @@ def parse_asm_file(symbols, txt):
                 continue
             if directive in constant_classes.keys():
                 value = [ ]
-                for v in re.split(",\W*", rest):
+                for v in re.split(r",\W*", rest):
                     try:
                         v = int(v, 0)
                     except ValueError:
@@ -470,7 +470,7 @@ def parse_asm_file(symbols, txt):
             if directive == 'symver':
                 # Syntax: weakref symbol, alias
                 NON_REGRESSION_FOUND
-                arguments = re.split(",\W*", rest)
+                arguments = re.split(r",\W*", rest)
                 if len(arguments) == 2:
                     dst = symbols.find_symbol(name = arguments[1])
                     props = { 'name': arguments[0] }
@@ -480,7 +480,7 @@ def parse_asm_file(symbols, txt):
             if directive == 'weakref':
                 # Syntax: weakref alias, symbol
                 # Renames alias as symbol, that will be its external name
-                arguments = re.split(",\W*", rest)
+                arguments = re.split(r",\W*", rest)
                 if len(arguments) == 2:
                     dst = symbols.find_symbol(name = arguments[0])
                     props = { 'name': arguments[1] }
@@ -492,7 +492,7 @@ def parse_asm_file(symbols, txt):
                 # Defines a new symbol, with an expression
                 # Same symbol section, address and type
                 # binding and size can be different
-                arguments = re.split(",\W*", rest)
+                arguments = re.split(r",\W*", rest)
                 if len(arguments) == 2:
                     dst = symbols.find_symbol(name = arguments[1])
                     props = { 'name': arguments[0] }
@@ -713,7 +713,7 @@ def guess_asm_cpu(symbols):
         return cpu[0]
     diff = opcodes.difference(cpu_opcodes[cpu])
     if len(diff) * 2 > len(opcodes):
-        log.warning("Guessing cpu: best guess is %s but too many opcodes are missing"%cpu)
+        log.warning("Guessing cpu: best guess is %s but too many opcodes are missing", cpu)
         return None
-    log.warning("Guessing cpu %s; additional opcodes are %s"%(cpu,sorted(list(diff))))
+    log.warning("Guessing cpu %s; additional opcodes are %s", cpu, sorted(list(diff)))
     return cpu

@@ -16,35 +16,10 @@ basedir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 if basedir == '': basedir = '.'
 sys.path.append(basedir+'/elfesteem')
 
-from plasmasm.constants import data_null, ConstantStr, ConstantZero
-from plasmasm.constants import Constant, Constant1Byte, Constant2Byte
-
 #NON_REGRESSION_FOUND = True # Define this variable to avoid raising errors
 
-# Variants with detection of immediate values, only for binary parsing
-from plasmasm.symbols import Line
-class Constant4Byte(Constant):
-    __slots__ = ()
-    numeric = (4, 'long', 'I')
-    def create_label_imm(self):
-        ''' Replace immediate values that may be labels '''
-        for idx, value in enumerate(self.value):
-            # Avoid false positives caused by long nops
-            if value in (0x90669066, 0x0026748D, 0x00401F0F):
-                return
-            label_imm = label_for_address(self.symbols, value)
-            if label_imm is not None:
-                self.value[idx] = label_imm
-    def create_label_rel(self):
-        ''' Replace relative addresses for call/jmp/jcc [n/a for constants] '''
-        pass
-    def labels(self):
-        ''' labels that are referenced in the line '''
-        return set([v for v in self.value if hasattr(v, 'name')])
-    post_init = Line.post_init
-class Constant8Byte(Constant4Byte):
-    __slots__ = ()
-    numeric = (8, 'quad', 'Q')
+from plasmasm.constants import data_null, ConstantStr, ConstantZero, \
+    Constant1Byte, Constant2Byte, Constant4Byte, Constant8Byte
 
 NumericConstant = {
     1: Constant1Byte,
@@ -112,8 +87,8 @@ def get_bin_virt(raw, file_type, cpu = None):
         error = sys.exc_info()[1]
         e = None
     if e is None:
-        log.error("ImportError: %s" % error)
-        log.error("Cannot work on %s files"%file_type)
+        log.error("ImportError: %s", error)
+        log.error("Cannot work on %s files", file_type)
         log.error("Please install https://github.com/LRGH/elfesteem")
         log.error("  for example by cloning the repository")
         log.error("  in the parent directory of plasmasm.")
@@ -260,7 +235,8 @@ def section_attributes_MACHO(e):
                     (macho.S_ATTR_DEBUG,               "debug"),
                 ] if s.sh.all_flags & mask
             ])
-        log.debug("%s%s -> %x %x", s.sh.name, attributes, s.sh.addr + s.sh.size, s.sh.all_flags)
+        log.debug("%s%s -> %x %x",
+            s.sh.name, attributes, s.sh.addr + s.sh.size, s.sh.all_flags)
         attr[s.sh.name] = (attributes, s.sh.addr + s.sh.size)
     return attr
 
@@ -840,7 +816,7 @@ def create_data_bloc(label, lab_done, job_done, ret_blocs):
         line = prv.lines[-1]
         if isinstance(line, Constant4Byte) and hasattr(line.value[0], 'name'):
             nxt = label.symbols.find_symbol(section=label.section, address=label.address+1)
-            log.info("rename %s to %s-%d (NOSPLIT)",label,nxt,1)
+            log.info("rename %s to %s-%d (NOSPLIT)", label, nxt, 1)
             label.rename("%s-%d"%(nxt.name,1), force=True)
             label.delete_bloc()
             return
@@ -949,9 +925,7 @@ def parse_data(data, size, label, ad=None):
         for r_ad, (r_type, r_data) in relocs:
             if r_ad != addr:
                 skip = r_ad - addr
-                add_lines = parse_data(data[:skip],skip,label,ad=addr)
-                for _ in add_lines: _.do_post_init()
-                lines.extend(add_lines)
+                lines.extend(parse_data(data[:skip],skip,label,ad=addr))
                 data = data[skip:]
                 addr += skip
             from plasmasm.get_symbols import reloc_suffixes
@@ -964,19 +938,17 @@ def parse_data(data, size, label, ad=None):
                 end = pool.find_symbol(section=sect, address=end_ad)
                 nxt = pool.find_symbol(section=sect, address=nxt_ad)
                 log.debug("%s merged after %s", end, label)
-                log.info("rename %s to %s-%d (RELOC)",end,nxt,nxt_ad-end_ad)
+                log.info("rename %s to %s-%d (RELOC)", end, nxt, nxt_ad-end_ad)
                 end.rename("%s-%d"%(nxt.name,nxt_ad-end_ad), force=True)
                 in_str, _ = pool.streams[sect]
                 data += in_str[end_ad:nxt_ad]
             v, = struct.unpack(endianess+ptrchar, data[:ptrsize])
             lines.append(PtrType(pool,v,section=sect,offset=addr))
-            lines[-1]._apply_relocs()
+            lines[-1].do_post_init()
             addr += ptrsize
             data = data[ptrsize:]
         if len(data):
-            add_lines = parse_data(data,len(data),label,ad=addr)
-            for _ in add_lines: _.do_post_init()
-            lines.extend(add_lines)
+            lines.extend(parse_data(data,len(data),label,ad=addr))
         return lines
     def is_mostly_printable(data):
         stripped = data.rstrip(data_null)
@@ -1192,7 +1164,8 @@ def create_switch_table(label, lab_done, job_done, ret_blocs):
         return False
     switch_base, ptr_size, tbl_size = label.switch_table
     if not hasattr(label, 'lines'):
-        log.debug("Create switch table %s [%d;%s;%s]",label,ptr_size,switch_base,tbl_size)
+        log.debug("Create switch table %s [%d;%s;%s]",
+            label, ptr_size, switch_base, tbl_size)
         label.insert_bloc()
         label.setlines([])
         prv = label.symbols.previous(label)
@@ -1393,7 +1366,8 @@ def create_text_bloc(label, lab_done, job_done, ret_blocs):
     if pos != in_str.offset:
         NON_REGRESSION_FOUND
         log.error("Invalid offset after %s", instr)
-        log.error("POS %d LEN %d END %d", instr.offset, instr.bytelen, in_str.offset)   
+        log.error("POS %d LEN %d END %d",
+            instr.offset, instr.bytelen, in_str.offset)   
     # Create nxt label, if needed
     if flow is not None and flow.endswith('jcc'):
         label_nxt = label.symbols.find_symbol(address = in_str.offset, section = label.section)
@@ -1420,12 +1394,12 @@ def rename_label(pool, old, new, addend, why=None):
         suffix = other.name[other.name.index(old.name)+len(old.name):]
         if   prefix == '' and suffix.startswith('@'):
             # Rename labels having relocation suffixes, too
-            log.info("rename %s to %s%s+%d (DEP A)",other,new,suffix,addend)
+            log.info("rename %s to %s%s+%d (DEP A)", other, new, suffix, addend)
             other.rename("%s%s+%d"%(new.name, suffix, addend), force=True)
         elif prefix == '' and suffix.startswith('+'):
             # Rename labels having shift
             offset = int(suffix[1:])
-            log.info("rename %s to %s+%d (DEP B)",other,new,addend+offset)
+            log.info("rename %s to %s+%d (DEP B)", other, new, addend+offset)
             other.rename("%s+%d"%(new.name, addend+offset), force=True)
         elif prefix == '' and suffix.startswith('-'):
             NON_REGRESSION_FOUND
@@ -1433,18 +1407,20 @@ def rename_label(pool, old, new, addend, why=None):
             # Rename labels having relocation suffixes and shift
             NON_REGRESSION_FOUND
             offset = int(prefix[:-1])
-            log.info("rename %s to %s%s+%d (DEP C)",other,new,suffix,addend+offset)
+            log.info("rename %s to %s%s+%d (DEP C)",
+                other, new, suffix, addend+offset)
             other.rename("%s%s+%d"%(new.name, suffix, addend+offset), force=True)
         elif suffix.startswith('.'):
             # e.g. old == .LC00000014 and other == .LC00000014.str1.1
             pass
         else:
-            log.error("[rename_label] %s %s ; %s %s", old, other, prefix, suffix)
+            log.error("[rename_label] %s %s ; %s %s",
+                old, other, prefix, suffix)
     if '@' in new.name:
         new_name = "%d+%s" % (addend, new.name)
     else:
         new_name = "%s+%d" % (new.name, addend)
-    log.info("rename %s to %s (%s)",old,new_name,why)
+    log.info("rename %s to %s (%s)", old, new_name, why)
     old.rename(new_name, force=True)
 
 def merge_into(nxt, label):
@@ -1454,7 +1430,8 @@ def merge_into(nxt, label):
         # This is a symptom of a bad analysis, which should be improved
         # It happens rarely; an example is gcmodule.o from python 2.4.5
         # compiled with gcc 4.6.3
-        log.warning("Next of '%s' is '%s' instead of '%s'", label, label.nxt, nxt)
+        log.warning("Next of '%s' is '%s' instead of '%s'",
+            label, label.nxt, nxt)
     size = nxt.address-label.address
     if hasattr(label, 'lines'):
         lines = []
@@ -1512,13 +1489,14 @@ def merge_data_blocs(symbols):
                 size = label.bytelen
                 if size > label.size:
                     log.warning("'%s' has symbol size %d < data size %d",
-                    label, label.size, size)
+                        label, label.size, size)
                     break
                 idx += 1
                 nxt = labels[idx]
                 if size != nxt.address-label.address or \
                         not hasattr(nxt, 'lines') or hasattr(nxt, 'bind'):
-                    log.error("Merge %r of size %s with next %r",label,size,nxt)
+                    log.error("Merge %r of size %s with next %r",
+                        label, size, nxt)
                     log.error("%s", label.display())
                     log.error("%s", nxt.display())
                     FAIL
@@ -1548,7 +1526,7 @@ def merge_data_blocs(symbols):
                     prv = labels[idx-1]
                     if hasattr(prv, 'lines') and (not hasattr(prv, 'size')
                         or getattr(prv, 'type', None) == 'padding'):
-                        log.debug("merge %r into %r",label,prv)
+                        log.debug("merge %r into %r", label, prv)
                         merge_into(label, prv)
                         data = prv.pack()
                         lines = parse_data(data, len(data), prv)
@@ -1561,7 +1539,7 @@ def merge_data_blocs(symbols):
                         # Probably a false positive, we don't rename
                         # this label
                         continue
-                log.info("rename %s to %s-1 (ARRAY)",label,nxt)
+                log.info("rename %s to %s-1 (ARRAY)", label, nxt)
                 label.rename("%s-1"%nxt.name, force=True)
 
 def address_in_function(symbols, section, address):

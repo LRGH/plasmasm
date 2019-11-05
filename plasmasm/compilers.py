@@ -55,7 +55,7 @@ def gcc_x64_start(label):
     if main.name == 'main':
         return True
     if not main.name.startswith('.L'):
-        log.warn("main is named %r"%main.name)
+        log.warning("main is named %r", main.name)
         return False
     # Stripped binary, we need to rename some symbols
     main.rename('main', force=True)
@@ -85,7 +85,7 @@ def gcc_x86_start(label):
     if main.name == 'main':
         return True
     if not main.name.startswith('.L'):
-        log.warn("main is named %r"%main.name)
+        log.warning("main is named %r", main.name)
         return False
     # Stripped binary, we need to rename some symbols
     main.rename('main', force=True)

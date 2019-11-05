@@ -31,7 +31,7 @@ Log.progress = lambda count, total=0, pfx='': None
 try:
     from amoco.arch.core import type_data_processing, type_control_flow, type_other, type_cpu_state, type_undefined
 except ImportError:
-    log.error("PATH %s"%sys.path)
+    log.error("PATH %s", sys.path)
     e = 'amoco backend not well installed: %s' % sys.exc_info()[1]
     log.error(e)
     raise ImportError(e)
@@ -669,7 +669,6 @@ class InstructionCFG(Instruction):
             self.flow = 'PIC'
     def evaluate_lines(self, lines, in_str):
         return evaluate_lines(self, lines, in_str)
-    post_init = Instruction.post_init + [ _set_flow, _set_dst ]
 
 def get_touched(e, indirect=False):
     # If indirect==True, registers read to determine addresses in e
@@ -911,7 +910,6 @@ class InstructionRW(InstructionCFG):
     def reg_name(r):
         return str(r)
     reg_name = staticmethod(reg_name)
-    post_init = InstructionCFG.post_init + [ _set_rw ]
 
 class InstructionDEAD(InstructionRW):
     __slots__ = ('pic', 'stack', 'dead', 'immutable')

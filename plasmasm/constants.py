@@ -155,7 +155,6 @@ class Constant(Line):
             res.append([pos,label,r_type])
         return res
     out_format = None
-    post_init = []
 
 def long_to_signed(x):
     if isinstance(x,int) and x > 2**31:
@@ -225,7 +224,23 @@ class Constant2Byte(Constant):
 class Constant4Byte(Constant):
     __slots__ = ()
     numeric = (4, 'long', 'I')
-class Constant8Byte(Constant):
+    def create_label_imm(self):
+        ''' Replace immediate values that may be labels '''
+        for idx, value in enumerate(self.value):
+            # Avoid false positives caused by x86 long nops
+            if value in (0x90669066, 0x0026748D, 0x00401F0F):
+                return
+            from plasmasm.parse_bin import label_for_address
+            label_imm = label_for_address(self.symbols, value)
+            if label_imm is not None:
+                self.value[idx] = label_imm
+    def create_label_rel(self):
+        ''' Replace relative addresses for call/jmp/jcc [n/a for constants] '''
+        pass
+    def labels(self):
+        ''' labels that are referenced in the line '''
+        return set([v for v in self.value if hasattr(v, 'name')])
+class Constant8Byte(Constant4Byte):
     __slots__ = ()
     numeric = (8, 'quad', 'Q')
 class ConstantUleb128(Constant):

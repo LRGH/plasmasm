@@ -823,7 +823,7 @@ class Symbols(object):
                     and getattr(o[-1], 'type', None) != 'padding':
                 nxt.append(o)
         for o in nxt:
-            log.warn("Object %s has nxt %s", [str(l) for l in o],o[-1].nxt)
+            log.warning("Object %s has nxt %s", [str(l) for l in o], o[-1].nxt)
         # reorder objects, based on the original section order, plus some hints
         # objects in .text.__i686.get_pc_thunk.* should be last
         # objects in __IMPORT,__pointers should be last, too
@@ -966,28 +966,31 @@ class Line(object):
             if hasattr(self, 'dst') and len(self.dst) != 0:
                 out += "\n\t dst=%s"%(self.dst)
         return out
-    def _apply_relocs(self):
-        ''' we need to find all relocations which change the content
-            of this instruction '''
-        if not hasattr(self, 'offset'): return
-        _, relocs = self.symbols.streams[self.section]
-        import bisect
-        start = bisect.bisect_left(relocs.sortedkeys, self.offset)
-        stop  = bisect.bisect_left(relocs.sortedkeys, self.offset+self.bytelen)
-        for pos in relocs.sortedkeys[start:stop]:
-            self.apply_reloc(pos, relocs[pos])
-    def _labels_relative(self):
-        ''' create labels for relative offsets when parsing a binary '''
-        if not hasattr(self, 'offset'): return
-        self.create_label_rel()
-    def _labels_immediate(self):
-        ''' create labels for immediate offsets when parsing a binary '''
-        if not hasattr(self, 'offset'): return
-        self.create_label_imm()
     def do_post_init(self):
-        ''' finalise the object '''
-        for func in self.post_init:
-            func(self)
+        if hasattr(self, 'offset'):
+            # when parsing a binary, we need to find all relocations which
+            # change the content of this instruction
+            _, relocs = self.symbols.streams[self.section]
+            keys = relocs.sortedkeys
+            import bisect
+            start = bisect.bisect_left(keys, self.offset)
+            stop  = bisect.bisect_left(keys, self.offset+self.bytelen)
+            for pos in keys[start:stop]:
+                # modify the argument impacted by the relocation
+                self.apply_reloc(pos, relocs[pos])
+        if hasattr(self, 'offset') and hasattr(self, 'create_label_rel'):
+            # when parsing a binary
+            # Replace relative addresses for call/jmp/jcc
+            self.create_label_rel()
+            # Replace immediate values that may be labels
+            self.create_label_imm()
+        if hasattr(self, '_set_flow'):
+            # when creating an InstructionCFG
+            self._set_flow()
+            self._set_dst()
+        if hasattr(self, '_set_rw'):
+            # when creating an InstructionRW
+            self._set_rw()
         return self
 
     def pack_reloc(self, label, is_reloc, is_relative):
@@ -1035,7 +1038,6 @@ class Line(object):
     # The following parameters may be re-defined
     flow = False
     long_display = False
-    post_init = [ _apply_relocs, _labels_relative, _labels_immediate ]
 
 section_for_type = {
     'function': ['text'],

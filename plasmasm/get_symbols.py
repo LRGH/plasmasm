@@ -354,13 +354,6 @@ try:
 except ImportError:
     pass
 
-elf_reloc_suffixes = {}
-for r_type in reloc_suffixes:
-    container_type, cpu, info = r_type
-    if container_type != 'ELF': continue
-    _, suffix = reloc_suffixes[r_type]
-    if suffix: elf_reloc_suffixes['@'+suffix] = (cpu, info)
-
 import logging
 log = logging.getLogger("plasmasm")
 def analyze_reloc(pool, reloc, offset, address, pos, bytelen):

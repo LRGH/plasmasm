@@ -20,6 +20,14 @@ cpu_addrsize = 32
 
 #NON_REGRESSION_FOUND = True # Define this variable to avoid raising errors
 
+from plasmasm.get_symbols import reloc_suffixes
+elf_reloc_suffixes = {}
+for r_type in reloc_suffixes:
+    container_type, cpu, info = r_type
+    if (container_type, cpu) != ('ELF', 3): continue
+    _, suffix = reloc_suffixes[r_type]
+    if suffix: elf_reloc_suffixes['@'+suffix] = (cpu, info)
+
 # Encapsulation of internals
 class API_MIASM(object):
     # API to access opname or prefix
@@ -305,11 +313,11 @@ class Instruction(Line, API_MIASM):
                 self.binary = None
         if hasattr(self.miasm, 'b') and self.miasm.b != self.binary:
             if not True in self.is_rel and not self.opname == 'nop':
-                log.warning("miasm should be be used to asm '%s'"%self)
+                log.warning("miasm should be be used to asm '%s'", self)
                 from plasmasm.python.compatibility import hexbytes
-                log.warning("orig=%r"%"".join(hexbytes(self.miasm.b)))
+                log.warning("orig=%r", "".join(hexbytes(self.miasm.b)))
                 for z in ac:
-                    log.warning("_asm=%r"%"".join(hexbytes(z[0])))
+                    log.warning("_asm=%r", "".join(hexbytes(z[0])))
                 log.warning("is_rel=%s", self.is_rel)
             # TODO: packing when reloc should use the symbol value
             self.binary = self.miasm.b
@@ -402,7 +410,6 @@ class Instruction(Line, API_MIASM):
             else:
                 log.error("Invalid symbols %s", a[x86_afs.symb])
         # Delete the suffix and find the corresponding symbol
-        from plasmasm.get_symbols import elf_reloc_suffixes
         for suffix in elf_reloc_suffixes:
             if suffix in label.name:
                 idx = label.name.index(suffix)
@@ -469,7 +476,6 @@ class Instruction(Line, API_MIASM):
             if label.name == '_GLOBAL_OFFSET_TABLE_':
                 r_type = (elf.EM_386, elf.R_386_GOTPC)
             else:
-                from plasmasm.get_symbols import elf_reloc_suffixes
                 for suffix in reversed(sorted(elf_reloc_suffixes)):
                     if suffix and label.name.endswith(suffix):
                         label = label.symbols.find_symbol(name=label.name[:-len(suffix)])
@@ -634,7 +640,6 @@ class InstructionCFG(Instruction):
             self.flow = 'PIC'
     def evaluate_lines(self, lines, in_str):
         return evaluate_lines(self, lines, in_str)
-    post_init = Instruction.post_init + [ _set_flow, _set_dst ]
 
 from miasmX.tools.modint import uint32, int32
 from miasmX.tools.emul_helper import get_instr_expr
@@ -693,7 +698,6 @@ class InstructionRW(InstructionCFG):
         else:
             return r
     reg_name = staticmethod(reg_name)
-    post_init = InstructionCFG.post_init + [ _set_rw ]
 
 class InstructionDEAD(InstructionRW):
     __slots__ = ('pic', 'stack', 'dead', 'immutable')

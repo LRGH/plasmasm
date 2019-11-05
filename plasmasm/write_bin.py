@@ -249,12 +249,12 @@ def mk_bin_file(symbols):
                 data += bloc.pack()
             size = len(data)
             if hasattr(label, 'size') and label.size != size:
-                log.warn("%s has size %d != %d", label, label.size, size)
+                log.warning("%s has size %d != %d", label, label.size, size)
                 # This might be cause by p2align directives
             else:
                 symbols.setattr(name = label.name, size = size)
-            if not hasattr(label, 'address') or type(label.address) != int:
-                log.warn("%s has no address", label)
+            if not hasattr(label, 'address'):
+                log.warning("%s has no address", label)
                 # This should have been addressed by symbols.resolve()
                 label.address = 0
                 symbols.setattr(name = label.name, address = 0)

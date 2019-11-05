@@ -94,7 +94,6 @@ class InstructionCFG(Instruction):
         else:
             raise ValueError("Flow %s unknown"%self.flow)
         self.dst = dst
-    post_init = Instruction.post_init + [ _set_flow, _set_dst ]
 
 """
 # No PPC semantic in miasm1
@@ -117,5 +116,4 @@ class InstructionRW(InstructionCFG):
         else:
             return r
     reg_name = classmethod(reg_name)
-    post_init = InstructionCFG.post_init + [ _set_rw ]
 """

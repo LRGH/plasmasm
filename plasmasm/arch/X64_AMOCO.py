@@ -650,7 +650,6 @@ class InstructionCFG(Instruction):
             self.flow = 'PIC'
     def evaluate_lines(self, lines, in_str):
         return evaluate_lines(self, lines, in_str)
-    post_init = Instruction.post_init + [ _set_flow, _set_dst ]
 
 def get_touched(e, indirect=False):
     # If indirect==True, registers read to determine addresses in e
@@ -727,7 +726,6 @@ class InstructionRW(InstructionCFG):
     def reg_name(r):
         return str(r)
     reg_name = staticmethod(reg_name)
-    post_init = InstructionCFG.post_init + [ _set_rw ]
 
 class InstructionDEAD(InstructionRW):
     __slots__ = ('pic', 'stack', 'dead', 'immutable')

@@ -1845,7 +1845,7 @@
 <Symbol 'R' section='.data', type='object', bind='globl', size=4, address=0>
     ENDER False -- NXT None
     CFG None
-'plasmasm.parse_bin.Constant4Byte'>0 (4, 'long', 'I') [<Symbol 'putchar' bind='globl'>]
+'plasmasm.constants.Constant4Byte'>0 (4, 'long', 'I') [<Symbol 'putchar' bind='globl'>]
 
 <Symbol '.LC00000000' section='.rodata', address=0>
     ENDER False -- NXT None
@@ -1905,11 +1905,11 @@
 <Symbol '.LC000000D4' section='.rodata', align=2, address=212>
     ENDER False -- NXT None
     CFG None
-'plasmasm.parse_bin.Constant4Byte'>212 (4, 'long', 'I') [<Symbol '.L00000694' section='.text', address=1684>]
-'plasmasm.parse_bin.Constant4Byte'>216 (4, 'long', 'I') [<Symbol '.L0000021D' section='.text', address=541>]
-'plasmasm.parse_bin.Constant4Byte'>220 (4, 'long', 'I') [<Symbol '.L000002F5' section='.text', address=757>]
-'plasmasm.parse_bin.Constant4Byte'>224 (4, 'long', 'I') [<Symbol '.L0000048B' section='.text', address=1163>]
-'plasmasm.parse_bin.Constant4Byte'>228 (4, 'long', 'I') [<Symbol '.L000005FF' section='.text', address=1535>]
+'plasmasm.constants.Constant4Byte'>212 (4, 'long', 'I') [<Symbol '.L00000694' section='.text', address=1684>]
+'plasmasm.constants.Constant4Byte'>216 (4, 'long', 'I') [<Symbol '.L0000021D' section='.text', address=541>]
+'plasmasm.constants.Constant4Byte'>220 (4, 'long', 'I') [<Symbol '.L000002F5' section='.text', address=757>]
+'plasmasm.constants.Constant4Byte'>224 (4, 'long', 'I') [<Symbol '.L0000048B' section='.text', address=1163>]
+'plasmasm.constants.Constant4Byte'>228 (4, 'long', 'I') [<Symbol '.L000005FF' section='.text', address=1535>]
 
 <Symbol 'X.2503' section='.bss', type='object', bind='local', align=4, size=4, address=0>
     ENDER False -- NXT None

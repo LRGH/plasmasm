@@ -246,13 +246,13 @@
 <Symbol 'L000000A8' section='__TEXT,__text', size=28, address=168, switch_table=(<Symbol 'L000000A8' section='__TEXT,__text', size=28, address=168, switch_table=(...), data='data_object:64'>, 4, 7), data='data_object:64'>
     ENDER True -- NXT None
     CFG None
-'plasmasm.parse_bin.Constant4Byte'>168 (4, 'long', 'I') [<Symbol 'L00000095-L000000A8' >]
-'plasmasm.parse_bin.Constant4Byte'>172 (4, 'long', 'I') [<Symbol 'L00000090-L000000A8' >]
-'plasmasm.parse_bin.Constant4Byte'>176 (4, 'long', 'I') [<Symbol 'L00000090-L000000A8' >]
-'plasmasm.parse_bin.Constant4Byte'>180 (4, 'long', 'I') [<Symbol 'L00000048-L000000A8' >]
-'plasmasm.parse_bin.Constant4Byte'>184 (4, 'long', 'I') [<Symbol 'L00000097-L000000A8' >]
-'plasmasm.parse_bin.Constant4Byte'>188 (4, 'long', 'I') [<Symbol 'L00000090-L000000A8' >]
-'plasmasm.parse_bin.Constant4Byte'>192 (4, 'long', 'I') [<Symbol 'L0000009E-L000000A8' >]
+'plasmasm.constants.Constant4Byte'>168 (4, 'long', 'I') [<Symbol 'L00000095-L000000A8' >]
+'plasmasm.constants.Constant4Byte'>172 (4, 'long', 'I') [<Symbol 'L00000090-L000000A8' >]
+'plasmasm.constants.Constant4Byte'>176 (4, 'long', 'I') [<Symbol 'L00000090-L000000A8' >]
+'plasmasm.constants.Constant4Byte'>180 (4, 'long', 'I') [<Symbol 'L00000048-L000000A8' >]
+'plasmasm.constants.Constant4Byte'>184 (4, 'long', 'I') [<Symbol 'L00000097-L000000A8' >]
+'plasmasm.constants.Constant4Byte'>188 (4, 'long', 'I') [<Symbol 'L00000090-L000000A8' >]
+'plasmasm.constants.Constant4Byte'>192 (4, 'long', 'I') [<Symbol 'L0000009E-L000000A8' >]
 
 <Symbol '_PyToken_TwoChars' section='__TEXT,__text', bind='globl', align='4, 0x90', address=208>
     ENDER False -- NXT L000000D9
@@ -498,21 +498,21 @@
 <Symbol 'L000001AC' section='__TEXT,__text', size=60, address=428, switch_table=(<Symbol 'L000001AC' section='__TEXT,__text', size=60, address=428, switch_table=(...), data='data_object:64'>, 4, 15), data='data_object:64'>
     ENDER True -- NXT None
     CFG None
-'plasmasm.parse_bin.Constant4Byte'>428 (4, 'long', 'I') [<Symbol 'L000000F5-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>432 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>436 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>440 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>444 (4, 'long', 'I') [<Symbol 'L0000014A-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>448 (4, 'long', 'I') [<Symbol 'L00000151-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>452 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>456 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>460 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>464 (4, 'long', 'I') [<Symbol 'L00000158-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>468 (4, 'long', 'I') [<Symbol 'L00000175-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>472 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>476 (4, 'long', 'I') [<Symbol 'L0000017C-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>480 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
-'plasmasm.parse_bin.Constant4Byte'>484 (4, 'long', 'I') [<Symbol 'L0000018D-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>428 (4, 'long', 'I') [<Symbol 'L000000F5-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>432 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>436 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>440 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>444 (4, 'long', 'I') [<Symbol 'L0000014A-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>448 (4, 'long', 'I') [<Symbol 'L00000151-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>452 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>456 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>460 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>464 (4, 'long', 'I') [<Symbol 'L00000158-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>468 (4, 'long', 'I') [<Symbol 'L00000175-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>472 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>476 (4, 'long', 'I') [<Symbol 'L0000017C-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>480 (4, 'long', 'I') [<Symbol 'L00000186-L000001AC' >]
+'plasmasm.constants.Constant4Byte'>484 (4, 'long', 'I') [<Symbol 'L0000018D-L000001AC' >]
 
 <Symbol '_main' section='__TEXT,__text', bind='globl', align='4, 0x90', address=496>
     ENDER False -- NXT L000001FE
@@ -815,13 +815,13 @@
 <Symbol 'L000002CC' section='__TEXT,__text', size=28, address=716, switch_table=(<Symbol 'L000002CC' section='__TEXT,__text', size=28, address=716, switch_table=(...), data='data_object:64'>, 4, 7), data='data_object:64'>
     ENDER True -- NXT None
     CFG None
-'plasmasm.parse_bin.Constant4Byte'>716 (4, 'long', 'I') [<Symbol 'L000002C5-L000002CC' >]
-'plasmasm.parse_bin.Constant4Byte'>720 (4, 'long', 'I') [<Symbol 'L00000290-L000002CC' >]
-'plasmasm.parse_bin.Constant4Byte'>724 (4, 'long', 'I') [<Symbol 'L00000290-L000002CC' >]
-'plasmasm.parse_bin.Constant4Byte'>728 (4, 'long', 'I') [<Symbol 'L00000243-L000002CC' >]
-'plasmasm.parse_bin.Constant4Byte'>732 (4, 'long', 'I') [<Symbol 'L000002B4-L000002CC' >]
-'plasmasm.parse_bin.Constant4Byte'>736 (4, 'long', 'I') [<Symbol 'L00000290-L000002CC' >]
-'plasmasm.parse_bin.Constant4Byte'>740 (4, 'long', 'I') [<Symbol 'L000002C0-L000002CC' >]
+'plasmasm.constants.Constant4Byte'>716 (4, 'long', 'I') [<Symbol 'L000002C5-L000002CC' >]
+'plasmasm.constants.Constant4Byte'>720 (4, 'long', 'I') [<Symbol 'L00000290-L000002CC' >]
+'plasmasm.constants.Constant4Byte'>724 (4, 'long', 'I') [<Symbol 'L00000290-L000002CC' >]
+'plasmasm.constants.Constant4Byte'>728 (4, 'long', 'I') [<Symbol 'L00000243-L000002CC' >]
+'plasmasm.constants.Constant4Byte'>732 (4, 'long', 'I') [<Symbol 'L000002B4-L000002CC' >]
+'plasmasm.constants.Constant4Byte'>736 (4, 'long', 'I') [<Symbol 'L00000290-L000002CC' >]
+'plasmasm.constants.Constant4Byte'>740 (4, 'long', 'I') [<Symbol 'L000002C0-L000002CC' >]
 
 <Symbol 'L00000048-L000000A8' >
 

@@ -162,8 +162,19 @@ if output.startswith('asm'):
 if output == 'objdump':
     print(pool.to_objdump(filename=args[0]))
 if output == 'symbols':
+    print("==== Symbols in the pool ====")
     for s in pool.symbols:
         print("%-5s %r" % (s in pool.bloc_set, s))
+    relocs={}
+    for pos, label, r_type, section in pool.list_relocs():
+        if not section in relocs:
+            relocs[section] = []
+        relocs[section].append((pos, label, r_type))
+    for section in relocs:
+        print("\nRelocation section '.rel%s' contains %d entries:"
+              % (section, len(relocs[section])))
+        for pos, label, r_type in relocs[section]:
+            print("%08x %02x %r" % (pos, r_type[1], label))
 if output == 'repr':
     try:
         from plasmasm.python.compatibility import sorted, reversed

@@ -281,12 +281,12 @@ class Instruction(Line):
 
 class InstructionCFG(Instruction):
     __slots__ = ('flow', 'dst')
-    def _set_flow(self, **context):
+    def _set_flow(self):
         if self.amoco.type == type_control_flow:
             self.flow = sparc_cfg_instr[self.opname](self)
         else:
             self.flow = None
-    def _set_dst(self, **context):
+    def _set_dst(self):
         if   self.flow is None:
             dst = []
         elif self.flow == 'D.ret':
@@ -298,7 +298,6 @@ class InstructionCFG(Instruction):
         self.dst = dst
     def evaluate_lines(self, lines, in_str):
         return evaluate_lines(self, lines, in_str)
-    post_init = Instruction.post_init + [ _set_flow, _set_dst ]
 
 def get_touched(e, indirect=False):
     # If indirect==True, registers read to determine addresses in e
@@ -360,7 +359,7 @@ def get_rw(m):
 from amoco.cas.mapper import mapper
 class InstructionRW(InstructionCFG):
     __slots__ = ('rw',)
-    def _set_rw(self, **context):
+    def _set_rw(self):
         if self.opname in ['save', 'restore']:
             r = set([env.psr,env.sp])
             r.update([reg for reg in env.r if not str(reg).startswith('g')])
@@ -375,7 +374,6 @@ class InstructionRW(InstructionCFG):
     def reg_name(self, r):
         return str(r)
     reg_name = classmethod(reg_name)
-    post_init = [ _set_rw ] + InstructionCFG.post_init
 
 class InstructionDEAD(InstructionRW):
     __slots__ = ('dead', 'immutable')
