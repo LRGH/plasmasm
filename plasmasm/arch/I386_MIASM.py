@@ -410,7 +410,8 @@ class Instruction(Line, API_MIASM):
             else:
                 log.error("Invalid symbols %s", a[x86_afs.symb])
         # Delete the suffix and find the corresponding symbol
-        for suffix in elf_reloc_suffixes:
+        for suffix in reversed(sorted(elf_reloc_suffixes)):
+            # reversed(sorted) to match GOTOFF before GOT
             if suffix in label.name:
                 idx = label.name.index(suffix)
                 name = label.name[0:idx]+label.name[idx+len(suffix):]
@@ -430,8 +431,10 @@ class Instruction(Line, API_MIASM):
             is_rel = True # Local symbol, will be in the relocation table
         elif section_type(section) in ['bss','data','rodata']:
             is_rel = True
+        elif self.opname == 'call' or self.opname.startswith('j'):
+            is_rel = (base.section != self.section)
         else:
-            is_rel = False # Label but not symbol
+            is_rel = True
         # Sanity checks
         if not is_rel and hasattr(label, 'address') and hasattr(label, 'reference'):
             log.error("Label is %r", label)
@@ -477,8 +480,11 @@ class Instruction(Line, API_MIASM):
                 r_type = (elf.EM_386, elf.R_386_GOTPC)
             else:
                 for suffix in reversed(sorted(elf_reloc_suffixes)):
-                    if suffix and label.name.endswith(suffix):
-                        label = label.symbols.find_symbol(name=label.name[:-len(suffix)])
+                    # reversed(sorted) to match GOTOFF before GOT
+                    if suffix in label.name:
+                        idx = label.name.index(suffix)
+                        name = label.name[0:idx]
+                        label = label.symbols.find_symbol(name=name)
                         r_type = elf_reloc_suffixes[suffix]
                         break
                 else:

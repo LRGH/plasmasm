@@ -194,12 +194,22 @@ def mk_bin_file(symbols):
         if s is None: continue
         for idx, (pos, label, r_type) in enumerate(relocs[section]):
             cpu, info = r_type
+            # For some symbols, the relocation shall refer to the start of
+            # the section, not to the symbol itself.
             l_sect = getattr(label, 'section', None)
-            if section_type(l_sect) in ['data','rodata','bss'] \
-                    and '.' in getattr(label, 'name', ''):
-                label = l_sect
-            elif section_type(section) == 'rodata' and r_type == (elf.EM_386, elf.R_386_32):
-                label = l_sect
+            if (cpu, info) == (elf.EM_386, elf.R_386_GOTOFF):
+                if section_type(section) == 'text' \
+                        and getattr(label, 'bind', None) == 'local' \
+                        and not label.name.startswith('.LC'):
+                    label = l_sect
+                elif not hasattr(label, 'bind'):
+                    label = l_sect
+            if (cpu, info) == (elf.EM_386, elf.R_386_32):
+                if not getattr(label, 'bind', None) == 'globl':
+                    label = l_sect
+            if (cpu, info) == (elf.EM_386, elf.R_386_PC32):
+                if not getattr(label, 'bind', 'globl') == 'globl':
+                    label = l_sect
             if label in label_idx:
                 info += label_idx[label] << 8
             s.content[8*idx] = elf.Rel32(parent=s, offset=pos, info=info).pack()

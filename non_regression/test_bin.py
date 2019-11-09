@@ -13,10 +13,14 @@ sys.path.append(os.path.dirname(basedir)+'/elfesteem')
 all_tests = [
     ("other_x86_linux_27.o",    "bin",  {"cpu":"/MIASM"}),
     ("comm_x86_linux.o",        "bin",  {}),
-    #"other_x86_linux.o",       "bin",  {}), # bugged .long value+15
-    #"other_x86_linux_11.o",    "bin",  {}), # bugged LCx@GOTOFF
-    #"other_x86_linux_16.o",    "bin",  {}), # bugged .long tata+18
+    #"weak_x86_linux.o",        "bin",  {}), # weak blocs missing
+    ("reloc_x86_linux.o",       "bin",  {}),
+    ("other_x86_linux.o",       "bin",  {}),
+    ("other_x86_linux_5.o",     "bin",  {}),
+    ("other_x86_linux_11.o",    "bin",  {}),
+    ("other_x86_linux_16.o",    "bin",  {}),
     ("other_x86_linux_26.o",    "bin",  {}),
+    ("other_x86_linux_39.o",    "bin",  {}),
 ]
 
 if sys.version_info[0] == 2 and sys.version_info[1] <= 6:

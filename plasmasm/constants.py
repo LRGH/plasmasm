@@ -69,8 +69,10 @@ class Constant(Line):
             size, int_type, fmt = self.numeric
             value = [ ]
             for v in self.value:
-                v = int(v) % (one << 8*self.align)
-                value.append(v)
+                if getattr(v, 'bind', None) == 'globl':
+                    value.append(0) # will be set by relocation
+                else:
+                    value.append(int(v) % (one << 8*self.align))
             self.binary = struct.pack(fmt*len(value), *value)
         else:
             self.binary = self.value
