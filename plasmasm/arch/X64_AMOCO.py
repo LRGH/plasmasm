@@ -355,6 +355,7 @@ class Instruction(Line, API_AMOCO):
         if end_of_instr > end_of_section:
             end_of_instr = end_of_section
         instr = cpu_amoco.disassemble(in_str[self.offset:end_of_instr])
+        log.debug("> %s", instr)
         if instr is None:
             instr = StubNone(self.offset, in_str[self.offset:self.offset+1])
         self.bytelen = instr.length
@@ -764,6 +765,7 @@ def evaluate_lines(instr, lines, in_str):
                 return (('Emulated too slow (cmov)',
                         line, print_machine(machine)), [None])
         try:
+            log.debug("EVAL %-20r %s", line.amoco.bytes, line)
             line.amoco(machine)
         except NotImplementedError:
             return (('Not implemented', line, print_machine(machine)), [None])
@@ -1048,8 +1050,8 @@ def remove_pic_offset(e, pool):
     if e._is_tst:
         label_l = remove_pic_offset(e.l, pool)
         label_r = remove_pic_offset(e.r, pool)
-        if label_l is None or label_r is None: return None
-        NON_REGRESSION_FOUND
+        if label_l is None or label_r is None:
+            return None
         return env.tst(e.tst, label_l, label_r)
     
     # M32[M32[M32[PIC_OFFSET+toto@GOT]]+cte]
@@ -1060,26 +1062,16 @@ def remove_pic_offset(e, pool):
             and e.a.base.a.base._is_mem:
         label = remove_pic_offset(e.a.base.a.base, pool)
         if label is None:
-            return
+            return None
         return env.mem(env.mem(label), disp=e.a.disp)
     
     # M32[M32[PIC_OFFSET+toto@GOTPCREL]+cte]
     # => M32[toto+cte]
     if e._is_mem and e.a.base._is_mem:
         label = remove_pic_offset(e.a.base, pool)
-        if label is None: return
+        if label is None:
+            return None
         return env.mem(label, disp=e.a.disp)
-    
-    # M32[M32[PIC_OFFSET+toto@GOT]+formula]
-    # => M32[toto+formula]
-    if e._is_mem \
-            and e.a.base._is_eqn \
-            and e.a.base.op.symbol == '+' \
-            and e.a.base.l._is_mem:
-        NON_REGRESSION_FOUND
-        label = remove_pic_offset(e.a.base.l, pool)
-        if label is None: return
-        return env.mem(label+e.a.base.r, disp=e.a.disp)
     
     if e._is_mem and not hasattr(e.a.disp, '_is_lab'):
         log.debug("BASE %s; DISP %s; TODO", e.a.base, e.a.disp)
@@ -1097,82 +1089,23 @@ def remove_pic_offset(e, pool):
             log.debug("PIC OFFSET [%s] LABEL %s", pic_data, label_name)
             return None
         return env.lab(pool.find_symbol(name = label_name), size=cpu_addrsize)
-    
-    # M32[PIC_OFFSET+toto@GOTOFF]
-    # => M32[toto]
-    if e._is_mem \
-            and e.a.disp._is_lab \
-            and e.a.disp.ref.name.endswith('@GOTOFF'):
-        NON_REGRESSION_FOUND
-        label = remove_pic_offset(e.a, pool)
-        if label is None: return
-        # Not sound: usually is a reference to somewhere in a data section
-        # that may change at runtime
-        return env.mem(label)
-    
-    # (PIC_OFFSET+toto@GOTOFF)
-    # => toto
-    if e._is_ptr \
-            and e.disp._is_lab \
-            and e.disp.ref.name.endswith('@GOTOFF'):
-        NON_REGRESSION_FOUND
-        label_name = e.disp.ref.name[:-7]
-        pic_data = e.base
-        if not check_pic_data(pic_data):
-            log.debug("PIC OFFSET [%s] LABEL %s", pic_data, label_name)
-            return None
-        return env.lab(pool.find_symbol(name = label_name), size=cpu_addrsize)
-    
-    # (PIC_OFFSET+M32[(INDEX_IN_TABLE+PIC_OFFSET)+toto@GOTOFF])
-    # (M32[(INDEX_IN_TABLE+PIC_OFFSET)+toto@GOTOFF]+PIC_OFFSET)
-    # => M32[toto+INDEX_IN_TABLE]
-    #    @GOTOFF will be removed later from the deref value
-    #    to make this work also with executables, we will need to change
-    #    our API and return the offset that will have to be substracted
-    if e._is_eqn and e.op.symbol == '+':
-        NON_REGRESSION_FOUND
-        if   e.r._is_mem: u = e.r; v = e.l
-        elif e.l._is_mem: u = e.l; v = e.r
-        else:
-            log.error("Unknown formula %s", e)
-            return None
-        if not (u.a.base._is_eqn
-            and u.a.disp._is_lab
-            and u.a.disp.ref.name.endswith('@GOTOFF')):
-            log.error("Unknown base %s", e)
-            return None
-        if not check_pic_data(v):
-            log.debug("PIC OFFSET [%s] LABEL %s", v, None)
-            return None
-        if   u.a.base.l == v: b = u.a.base.r
-        elif u.a.base.r == v: b = u.a.base.l
-        else:
-            log.error("BASE %s should never happen", u.a.base)
-            return None
-        label = u.a.disp.ref.name[:-7]
-        label = env.lab(pool.find_symbol(name = label), size=cpu_addrsize)
-        return env.mem(b, disp=label)
 
 def check_pic_data(pic):
     return pic._is_reg and not pic._is_lab and pic.ref == 'rip'
 
 def test_switch_array(address):
+    if not address._is_eqn:
+        return None
     # Expression of the form idx+(rip+L)
     # L is the label of the table
     # idx is a sign-extended 32-bit index
-    if not address._is_eqn:
-        return None
-    if not address.op.symbol == '+':
-        NON_REGRESSION_FOUND
-        return None
-    if not (address.r._is_ptr
+    if (address.op.symbol == '+'
+        # right part is rip+L
+        and address.r._is_ptr
         and check_pic_data(address.r.base)
         and address.r.disp._is_lab
-        ):
-        # Not rip+L
-        # where backward analysis needs that the switch table is resolved
-        return None
-    if not (address.l._is_cmp
+        # left part is a sign-extended 32-bit address
+        and address.l._is_cmp
         and sorted(address.l.parts.keys()) == [(0,32),(32,64)]
         and address.l.parts[(32,64)]._is_tst
         and address.l.parts[(32,64)].l._is_cst
@@ -1181,34 +1114,26 @@ def test_switch_array(address):
         and int(address.l.parts[(32,64)].r) == 0
         and address.l.parts[(32,64)].tst._is_slc
         ):
-        # Not sign-extended 32-bit index
-        NON_REGRESSION_FOUND
-        return None
-    L = address.r.disp.ref
-    idx = address.l.parts[(0,32)]
-    # idx is of the form M32[(r1*4)+(rip+L)]
-    if not (idx.a.disp == 0
-        and idx.a.base._is_eqn
-        and idx.a.base.op.symbol == '+'
-        and idx.a.base.r._is_ptr
-        and check_pic_data(idx.a.base.r.base)
-        and idx.a.base.r.disp._is_lab
-        and idx.a.base.r.disp.ref is address.r.disp.ref
-        ):
-        NON_REGRESSION_FOUND
-        log.debug("GCC64 SWITCH %s; invalid idx %s", L, idx)
-        return None
-    r1 = idx.a.base
-    if r1.l._is_ptr and r1.l.disp == 0:
-        NON_REGRESSION_FOUND
-        r1 = expressions.op(r1.op.symbol,r1.l.base,r1.r)
-    if     (r1.l._is_eqn
-        and r1.l.op.symbol == '*'
-        and r1.l.r._is_cst
-        and int(r1.l.r) == 4
-        ):
-        log.debug("SWITCH TABLE %s [%s*4]", L, r1.l.l)
-        return r1, L
+        L = address.r.disp.ref
+        idx = address.l.parts[(0,32)]
+        r1 = idx.a.base
+        if r1.l._is_ptr and r1.l.disp == 0:
+            NON_REGRESSION_FOUND
+            r1 = expressions.op(r1.op.symbol,r1.l.base,r1.r)
+        # idx is of the form M32[(val*4)+(rip+L)]
+        if (idx.a.disp == 0
+            and r1._is_eqn
+            and r1.op.symbol == '+'
+            and r1.r._is_ptr
+            and check_pic_data(r1.r.base)
+            and r1.r.disp._is_lab
+            and r1.r.disp.ref is address.r.disp.ref
+            and r1.l._is_eqn
+            and r1.l.op.symbol == '*'
+            and r1.l.r._is_cst
+            and int(r1.l.r) == 4
+            ):
+            log.debug("SWITCH TABLE %s [%s*4]", L, r1.l.l)
+            return r1, L
     NON_REGRESSION_FOUND
-    log.debug("SWITCH TABLE %s; invalid r1 %s", L, r1)
     return None

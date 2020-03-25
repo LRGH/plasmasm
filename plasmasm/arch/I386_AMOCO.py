@@ -1259,7 +1259,8 @@ def remove_pic_offset(e, pool):
     if e._is_tst:
         label_l = remove_pic_offset(e.l, pool)
         label_r = remove_pic_offset(e.r, pool)
-        if label_l is None or label_r is None: return None
+        if label_l is None or label_r is None:
+            return None
         return env.tst(e.tst, label_l, label_r)
     
     # M32[M32[M32[PIC_OFFSET+toto@GOT]]+cte]
@@ -1270,14 +1271,15 @@ def remove_pic_offset(e, pool):
             and e.a.base.a.base._is_mem:
         label = remove_pic_offset(e.a.base.a.base, pool)
         if label is None:
-            return
+            return None
         return env.mem(env.mem(label), disp=e.a.disp)
     
     # M32[M32[PIC_OFFSET+toto@GOT]+cte]
     # => M32[toto+cte]
     if e._is_mem and e.a.base._is_mem:
         label = remove_pic_offset(e.a.base, pool)
-        if label is None: return
+        if label is None:
+            return None
         return env.mem(label, disp=e.a.disp)
     
     # M32[M32[PIC_OFFSET+toto@GOT]+formula]
