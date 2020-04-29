@@ -24,11 +24,11 @@ jobs:
       script:
         # Generate an ImportError, that will not happen later
         - python -c 'from plasmasm import arch; BACKEND = arch.import_cpu_backend("I386", "MIASM")' || true
-        - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
+        - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
         # Simple tests to verify that dependencies are working
-        - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s
-        - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.att.s
-        - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.o
+        - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s
+        - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.att.s
+        - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o
         # tox and pytest don't work with python 2.3
         - export PYTHONPATH=../elfesteem:../miasmX
         - python non_regression/run_tests.py test_asm_basic
@@ -59,11 +59,11 @@ script:
   # To be investigated
   - python -c 'from plasmasm import arch; BACKEND = arch.import_cpu_backend("I386", "MIASM")' || true
   # Simple tests to verify that dependencies are working
-  - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
-  - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.att.s || true
-  - python plasmasm/disass.py -c /MIASM non_regression/basic_x86_linux.o || true
-  - python plasmasm/disass.py -c /AMOCO non_regression/basic_x86_linux.att.s || true
-  - python plasmasm/disass.py -c /AMOCO non_regression/basic_x86_linux.o || true
+  - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
+  - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.att.s || true
+  - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o || true
+  - python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.att.s || true
+  - python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.o || true
   # Run all non regression with tox
   - tox
 after_success:

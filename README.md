@@ -65,33 +65,33 @@ gcc -m32 a.c
 # Look at the assembly
 cat a.s
 # Disass.py can generate a valid assembly code
-python plasmasm/disass.py -a a.s # input asm, output asm
-python plasmasm/disass.py -aI a.s # input asm, output asm Intel syntax
-python plasmasm/disass.py -a a.o # input object, output asm
-python plasmasm/disass.py -a a.out # input executable, output asm
-python plasmasm/disass.py -c /MIASM -a a.o # with miasmX backend (default)
-python plasmasm/disass.py -c /AMOCO -a a.o # with amoco backend
+python tools/disass.py -a a.s # input asm, output asm
+python tools/disass.py -aI a.s # input asm, output asm Intel syntax
+python tools/disass.py -a a.o # input object, output asm
+python tools/disass.py -a a.out # input executable, output asm
+python tools/disass.py -c /MIASM -a a.o # with miasmX backend (default)
+python tools/disass.py -c /AMOCO -a a.o # with amoco backend
 # Same for 64-bit
 gcc -m64 -S -o a64.s a.c
 gcc -m64 -c -o a64.o a.c
 gcc -m64 -o a64.out a.c
-python plasmasm/disass.py -a a64.s # input asm, output asm (note that only amoco backend is available)
-python plasmasm/disass.py -aI a64.s # input asm, output asm Intel syntax
-python plasmasm/disass.py -a a64.o # input object, output asm
-python plasmasm/disass.py -a a64.out # input executable, output asm
+python tools/disass.py -a a64.s # input asm, output asm (note that only amoco backend is available)
+python tools/disass.py -aI a64.s # input asm, output asm Intel syntax
+python tools/disass.py -a a64.o # input object, output asm
+python tools/disass.py -a a64.out # input executable, output asm
 ```
 
 This is more complicated on a larger program
 ```
 # Default /bin/sh on Ubuntu 12.04
-python plasmasm/disass.py -a /bin/sh > sh.s
+python tools/disass.py -a /bin/sh > sh.s
 # It compiles
 gcc -o sh sh.s
 # Seems to be fully functional
 ./sh -c 'echo toto' # OK
 ./sh -c 'for i in a b; do echo $i; done' # OK
 # Default /bin/ls on Ubuntu 12.04
-python plasmasm/disass.py -a /bin/ls > ls.s
+python tools/disass.py -a /bin/ls > ls.s
 # It compiles (some packages are needed)
 apt-get install libacl1-dev
 apt-get install libselinux1-dev
