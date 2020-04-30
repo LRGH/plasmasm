@@ -37,6 +37,90 @@ jobs:
         - python non_regression/run_tests.py test_bin
       after_success:
         - true # coverage needs python >= 2.6
+    - name: 'zlib gcc 4.6 64-bit'
+      dist: precise
+      script:
+        - export PATH=$(pwd)/tools:$PATH
+        - curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
+        - tar xzf zlib-1.2.8.tar.gz
+        - cd zlib-1.2.8
+        - ./configure
+        - make clean; make test CC='compile.py -parse_asm gcc'
+        - make clean; make test CC='compile.py -parse_asm -rw -dead gcc'
+        - make clean; make test CC='compile.py -parse_obj gcc'
+      after_success:
+        - true # no coverage test
+    - name: 'zlib gcc 4.6 32-bit'
+      dist: precise
+      script:
+        - sudo apt-get install -y gcc-multilib
+        - export PATH=$(pwd)/tools:$PATH
+        - curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
+        - tar xzf zlib-1.2.8.tar.gz
+        - cd zlib-1.2.8
+        - ./configure
+        - make clean; make test CC='compile.py -parse_asm gcc -m32' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_asm -c/AMOCO gcc -m32' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_asm gcc -m32 -masm=intel' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_obj gcc -m32' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_obj -c/AMOCO gcc -m32' SFLAGS='-m32'
+      after_success:
+        - true # no coverage test
+    - name: 'zlib gcc 4.8 64-bit'
+      dist: trusty
+      script:
+        - export PATH=$(pwd)/tools:$PATH
+        - curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
+        - tar xzf zlib-1.2.8.tar.gz
+        - cd zlib-1.2.8
+        - ./configure
+        - make clean; make test CC='compile.py -parse_asm gcc'
+        - make clean; make test CC='compile.py -parse_asm -rw -dead gcc'
+        - make clean; make test CC='compile.py -parse_obj gcc'
+      after_success:
+        - true # no coverage test
+    - name: 'zlib gcc 4.8 32-bit'
+      dist: trusty
+      script:
+        - sudo apt-get install -y gcc-multilib
+        - export PATH=$(pwd)/tools:$PATH
+        - curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
+        - tar xzf zlib-1.2.8.tar.gz
+        - cd zlib-1.2.8
+        - ./configure
+        - make clean; make test CC='compile.py -parse_asm gcc -m32' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_asm -c/AMOCO gcc -m32' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_asm gcc -m32 -masm=intel' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_obj gcc -m32' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_obj -c/AMOCO gcc -m32' SFLAGS='-m32'
+      after_success:
+        - true # no coverage test
+    - name: 'zlib gcc 5.4 64-bit'
+      script:
+        - export PATH=$(pwd)/tools:$PATH
+        - curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
+        - tar xzf zlib-1.2.8.tar.gz
+        - cd zlib-1.2.8
+        - ./configure
+        - make clean; make test CC='compile.py -parse_asm gcc'
+        - make clean; make test CC='compile.py -parse_asm -rw -dead gcc'
+      after_success:
+        - true # no coverage test
+    - name: 'zlib gcc 5.4 32-bit'
+      script:
+        - sudo apt-get install -y gcc-multilib
+        - export PATH=$(pwd)/tools:$PATH
+        - curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
+        - tar xzf zlib-1.2.8.tar.gz
+        - cd zlib-1.2.8
+        - ./configure
+        - make clean; make test CC='compile.py -parse_asm gcc -m32' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_asm -c/AMOCO gcc -m32' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_asm gcc -m32 -masm=intel' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_obj gcc -m32' SFLAGS='-m32'
+        - make clean; make test CC='compile.py -parse_obj -c/AMOCO gcc -m32' SFLAGS='-m32'
+      after_success:
+        - true # no coverage test
     - dist: precise
       python: '2.6'
     - python: '3.4'

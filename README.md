@@ -116,7 +116,15 @@ version of objdump is OK) and therefore there are special cases to make
 Once PlasmASM has generated an internal representation of its input,
 this representation can be modified before generating some output.
 
-Examples will be provided, later...
+`compile.py` aims at making it easier to use PlasmASM in a compilation
+chain, where the intermediate result (assembly or object) of the
+compilation of each file can be automatically modified.
+With the syntax below, basic functions `-parse_asm` or `-parse_obj` can
+be used to check that plasmasm will work well for a given os + compiler.
+```
+make test CC='compile.py -parse_asm gcc'
+make test CC='compile.py -parse_obj gcc'
+```
 
 ## .plasmasm helper files
 

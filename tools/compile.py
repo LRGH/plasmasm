@@ -6,6 +6,7 @@ sys.path.insert(1, os.path.abspath(sys.path[0]+'/..'))
 from plasmasm.python.utils import spawn
 
 from tools.step2 import *
+from tools.step2_plasmasm import *
 
 def usage():
     sys.stderr.write("Syntax:\tcompile.py [-v] <step2 definition> <compiler command>\n")
