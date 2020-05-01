@@ -18,6 +18,7 @@ container_magic = {
     ( 0x4c,0x01 ):                     'COFF',
     ( 0xca,0xfe,0xba,0xbe ):           'JAVA',
     ( 0x09,0x2e ):                     'ASM', # e.g. \t.file or \t.section
+    ( 0x23,0x20,0x31,0x20 ):           'ASM', # starts with '# 1 '
     }
 def get_file_type(raw):
     if len(raw) == 0:
