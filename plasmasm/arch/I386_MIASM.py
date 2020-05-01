@@ -22,11 +22,12 @@ cpu_addrsize = 32
 
 from plasmasm.get_symbols import reloc_suffixes
 elf_reloc_suffixes = {}
-for r_type in reloc_suffixes:
+for r_type in sorted(reloc_suffixes):
     container_type, cpu, info = r_type
     if (container_type, cpu) != ('ELF', 3): continue
     _, suffix = reloc_suffixes[r_type]
-    if suffix: elf_reloc_suffixes['@'+suffix] = (cpu, info)
+    if suffix and not '@'+suffix in elf_reloc_suffixes:
+        elf_reloc_suffixes['@'+suffix] = (cpu, info)
 
 # Encapsulation of internals
 class API_MIASM(object):

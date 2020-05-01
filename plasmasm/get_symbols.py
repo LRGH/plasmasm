@@ -297,6 +297,7 @@ try:
         elf.R_386_32:           (32, None),
         elf.R_386_PC32:         (32, None),
         elf.R_386_GOT32:        (32, 'GOT'),
+        elf.R_386_GOT32X:       (32, 'GOT'),
         elf.R_386_PLT32:        (32, 'PLT'),
         # elf.R_386_COPY
         # elf.R_386_GLOB_DAT
@@ -339,6 +340,8 @@ try:
         elf.R_X86_64_32:          (32, None),
         elf.R_X86_64_32S:         (32, None),
         # https://docs.oracle.com/cd/E19120-01/open.solaris/819-0690/chapter7-2/index.html
+        elf.R_X86_64_REX_GOTPCRELX: (64, 'GOTPCREL'),
+        # https://groups.google.com/forum/#!topic/x86-64-abi/n9AWHogmVY0
         })
     add_elf('EM_PPC',{
         elf.R_PPC_ADDR16_HA: (32, None),
@@ -402,6 +405,7 @@ def analyze_reloc(pool, reloc, offset, address, pos, bytelen):
         elif r_type == ('ELF',elf.EM_386,elf.R_386_GOTPC):          offset -= 2
         elif r_type == ('ELF',elf.EM_X86_64,elf.R_386_PLT32):       offset += 4
         elif r_type == ('ELF',elf.EM_X86_64,elf.R_X86_64_GOTPCREL): offset += 4
+        elif r_type == ('ELF',elf.EM_X86_64,elf.R_X86_64_REX_GOTPCRELX): offset += 4
         elif r_type == ('ELF',elf.EM_X86_64,elf.R_X86_64_PC32):
             offset += bytelen-pos
         elif r_type == ('MACHO',macho.CPU_TYPE_X86_64,
