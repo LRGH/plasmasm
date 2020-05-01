@@ -155,19 +155,17 @@ if __name__ == "__main__":
             step1_command.insert(1, '-c')
     else:
         # generate assembly file
-        if '-S' in command:
-            step1_output = tmpdir + '/' + basefile + '.s'
+        step1_output = tmpdir + '/' + basefile + '.s'
+        if input_src.endswith('.s'):
+            step1_command = ['cp', input_src, step1_output]
+        elif '-S' in command:
             step1_command = command[:]
             step1_command[out_idx] = step1_output
         else:
-            step1_output = tmpdir + '/' + basefile + '.s'
-            if input_src.endswith('.s'):
-                step1_command = ['cp', input_src, step1_output]
-            else:
-                step1_command = [ _ for _ in command if not _.endswith('.a') ]
-                step1_command[out_idx] = step1_output
-                if '-c' in command: step1_command[command.index('-c')] = '-S'
-                else:               step1_command.insert(1, '-S')
+            step1_command = [ _ for _ in command if not _.endswith('.a') ]
+            step1_command[out_idx] = step1_output
+            if '-c' in command: step1_command[command.index('-c')] = '-S'
+            else:               step1_command.insert(1, '-S')
     spawn(step1_command)
    
     if '-gnatea' in step1_command:
@@ -197,6 +195,8 @@ if __name__ == "__main__":
     # Step 3: generation of the final output
     result = command[out_idx]
     if step2.obj_output and '-c' in command:
+        spawn(['cp', step2_output, result])
+    elif '-S' in command:
         spawn(['cp', step2_output, result])
     else:
         command_object = command[:]
