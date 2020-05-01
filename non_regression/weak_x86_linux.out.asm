@@ -56,7 +56,7 @@ _ZN4BaseD2Ev:
 	.size	_ZN4BaseD2Ev, .-_ZN4BaseD2Ev
 # ----------------------
 .L08048463:
-	.byte	144
+	.p2align 2
 # ----------------------
 	.weak	_ZN4TotoIvED2Ev
 	.type	_ZN4TotoIvED2Ev, @function

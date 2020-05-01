@@ -431,7 +431,7 @@
     GRAPH_PRV .L08048711
 -- STACK00 ['.L08048861', '0x8048da0-.text-.L08048D8C']
 -- STACK01 ['.L08048AD3']
-'I386_MIASM.InstructionCFG'>134514457 [None][] nop 90
+'plasmasm.constants.P2Align'>134514457 [None][.]nop 90[.p2align 1]
 
 <Symbol '.L0804871A' section='.text', address=134514458>
     ENDER False -- NXT .L08048724
@@ -1047,7 +1047,7 @@
     GRAPH_NXT .L080489F8
     GRAPH_PRV .L080489A8
 -- STACK00 ['0x8048da0-.text-.L08048D8C']
-'I386_MIASM.InstructionCFG'>134515191 [None][] nop 90
+'plasmasm.constants.P2Align'>134515191 [None][.]nop 90[.p2align 3]
 
 <Symbol '.L080489F8' section='.text', address=134515192>
     ENDER False -- NXT .L08048A25
@@ -1198,7 +1198,7 @@
     GRAPH_NXT .L08048AD8
     GRAPH_PRV .L08048A83
 -- STACK00 ['0x8048da0-.text-.L08048D8C']
-'I386_MIASM.InstructionCFG'>134515415 [None][] nop 90
+'plasmasm.constants.P2Align'>134515415 [None][.]nop 90[.p2align 3]
 
 <Symbol '.L08048AD8' section='.text', address=134515416>
     ENDER False -- NXT .L08048AFC
@@ -1255,7 +1255,7 @@
     GRAPH_NXT .L08048B16
     GRAPH_PRV .L08048DA5
 -- STACK00 ['0x8048da0-.text-.L08048D8C']
-'I386_MIASM.InstructionCFG'>134515477 [None][] nop 90
+'plasmasm.constants.P2Align'>134515477 [None][.]nop 90[.p2align 1]
 
 <Symbol '.L08048B16' section='.text', address=134515478>
     ENDER True -- NXT None
@@ -1631,7 +1631,7 @@
     GRAPH_NXT .L08048D28
     GRAPH_PRV .L08048CE8
 -- STACK00 ['0x8048da0-.text-.L08048D8C']
-'I386_MIASM.InstructionCFG'>134516007 [None][] nop 90
+'plasmasm.constants.P2Align'>134516007 [None][.]nop 90[.p2align 3]
 
 <Symbol '.L08048D28' section='.text', address=134516008>
     ENDER False -- NXT .L08048D38
@@ -1821,7 +1821,7 @@
     GRAPH_PRV .L08048DA0
     GRAPH_PRV .L08048DA2
 -- STACK00 ['0x8048da0-.text-.L08048D8C']
-'I386_MIASM.InstructionCFG'>134516215 [None][] nop 90
+'plasmasm.constants.P2Align'>134516215 [None][.]nop 90[.p2align 3]
 
 <Symbol '.L08048DF8' section='.text', address=134516216>
     ENDER False -- NXT .L08048E07

@@ -229,8 +229,6 @@ L00000291:
 	movl      $-1, %eax
 	cmove     %ecx, %eax
 	jmp       L000001AF
-L000002A3:
-	nop       
 	.align 2, 0x90
 L000002A4:
 	.long	L000001A0-L0000000E

@@ -426,7 +426,7 @@
     GRAPH_PRV .L0000016D
 -- STACK00 ['.L000002BD', '   0x7fc-.text-.L000007E8']
 -- STACK01 ['.L0000052F']
-'I386_MIASM.InstructionCFG'>373 [None][] nop 90
+'plasmasm.constants.P2Align'>373 [None][.]nop 90[.p2align 1]
 
 <Symbol '.L00000176' section='.text', address=374>
     ENDER False -- NXT .L00000180
@@ -1042,7 +1042,7 @@
     GRAPH_NXT .L00000454
     GRAPH_PRV .L00000404
 -- STACK00 ['   0x7fc-.text-.L000007E8']
-'I386_MIASM.InstructionCFG'>1107 [None][] nop 90
+'plasmasm.constants.P2Align'>1107 [None][.]nop 90[.p2align 2]
 
 <Symbol '.L00000454' section='.text', address=1108>
     ENDER False -- NXT .L00000481
@@ -1193,7 +1193,7 @@
     GRAPH_NXT .L00000534
     GRAPH_PRV .L000004DF
 -- STACK00 ['   0x7fc-.text-.L000007E8']
-'I386_MIASM.InstructionCFG'>1331 [None][] nop 90
+'plasmasm.constants.P2Align'>1331 [None][.]nop 90[.p2align 2]
 
 <Symbol '.L00000534' section='.text', address=1332>
     ENDER False -- NXT .L00000558
@@ -1250,7 +1250,7 @@
     GRAPH_NXT .L00000572
     GRAPH_PRV .L00000801
 -- STACK00 ['   0x7fc-.text-.L000007E8']
-'I386_MIASM.InstructionCFG'>1393 [None][] nop 90
+'plasmasm.constants.P2Align'>1393 [None][.]nop 90[.p2align 1]
 
 <Symbol '.L00000572' section='.text', address=1394>
     ENDER True -- NXT None
@@ -1626,7 +1626,7 @@
     GRAPH_NXT .L00000784
     GRAPH_PRV .L00000744
 -- STACK00 ['   0x7fc-.text-.L000007E8']
-'I386_MIASM.InstructionCFG'>1923 [None][] nop 90
+'plasmasm.constants.P2Align'>1923 [None][.]nop 90[.p2align 2]
 
 <Symbol '.L00000784' section='.text', address=1924>
     ENDER False -- NXT .L00000794
@@ -1816,7 +1816,7 @@
     GRAPH_PRV .L000007FC
     GRAPH_PRV .L000007FE
 -- STACK00 ['   0x7fc-.text-.L000007E8']
-'I386_MIASM.InstructionCFG'>2131 [None][] nop 90
+'plasmasm.constants.P2Align'>2131 [None][.]nop 90[.p2align 2]
 
 <Symbol '.L00000854' section='.text', address=2132>
     ENDER False -- NXT .L00000863

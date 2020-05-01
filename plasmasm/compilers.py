@@ -150,47 +150,17 @@ def gcc_hidden(symbols):
         label.delete_bloc()
 
 x86_long_nop_bytes = [
-    # some long nop generated when linking object files
-    '669066906690669066906690669090',
-    '6690669066906690669066906690',
-    '66906690669066906690669090',
-    '669066906690669066906690',
-    '6690669066906690669090',
-    '66906690669066906690',
-    '669066906690669090',
-    '6690669066906690',
-    '66906690669090',
-    '669066906690',
-    '6690669090',
-    '66906690',
-    '669090',
-    '90669066906690669066906690',
-    '906690',
     # gcc uses various instructions with no effect
     'eb0d90909090909090909090909090',
-    '908db426000000008dbc2700000000',
-    '8db426000000008dbc2700000000',
-    '908db6000000008dbf00000000',
-    '8db6000000008dbc2700000000',
-    '8db6000000008dbf00000000',
-    '8d7426008dbc2700000000',
-    '908d76008dbc2700000000',
-    '8d76008dbc2700000000',
     '89f68dbc2700000000',
-    '90908db42600000000',
-    '908db42600000000',
-    '908db600000000',
     '8db42600000000',
+    '8dbc2700000000',
+    '8dbf00000000',
     '8db600000000',
-    '908d742600',
     '8d742600',
     '8d7600',
     '8d36',
     '6690',
-    # gcc 64-bit can generate these sequences
-    '662e0f1f8400000000000f1f4000',
-    '662e0f1f8400000000000f1f00',
-    '662e0f1f84000000000090',
     # clang only uses 0f1f long nop
     '6666666666662e0f1f840000000000',
     '66666666662e0f1f840000000000',
@@ -205,19 +175,8 @@ x86_long_nop_bytes = [
     '0f1f440000',
     '0f1f4000',
     '0f1f00',
-    # gcc 64-bit
-    '9066666666662e0f1f840000000000',
-    '90666666662e0f1f840000000000',
-    '906666662e0f1f840000000000',
-    '9066662e0f1f840000000000',
-    '90662e0f1f840000000000',
-    '90660f1f840000000000',
-    '900f1f840000000000',
-    '900f1f8000000000',
-    '90660f1f440000',
-    '900f1f440000',
-    '900f1f4000',
     ]
+
 def x86_long_nop(symbols):
     # We need some hacks to make our non-regression tests work
     # GNU as 2.22 generation of conditional jumps depends a lot
@@ -242,6 +201,11 @@ def x86_long_nop(symbols):
     x86_nop = binascii.unhexlify('90')
     x86_jmp0d = binascii.unhexlify('eb0d')
     import struct
+    empty = struct.pack("")
+    def find_nop(data):
+        for nop in [x86_nop] + x86_long_nop:
+            if data.startswith(nop): return nop
+        return empty
     from plasmasm.constants import P2Align
     from plasmasm.symbols import section_type
     labels_with_long_nop = set()
@@ -275,29 +239,19 @@ def x86_long_nop(symbols):
             if hasattr(l, 'lines'):
                 continue
         pos_list = []
-        data = struct.pack("")
+        data = empty
         for line in label.lines:
             pos_list.append(len(data))
             data += line.pack()
-        while len(pos_list):
-            pos = pos_list.pop(0)
-            for long_nop in x86_long_nop:
-                if data[pos:].startswith(long_nop):
-                    labels_with_long_nop.add((label,pos,long_nop))
-                    # Skip positions covered by this long nop
-                    while len(pos_list) and pos_list[0] < pos+len(long_nop):
-                        pos_list.pop(0)
-                    # Only one long nop per bloc?
-                    pos_list = []
-                    break
-            else:
-                if data[pos:].startswith(x86_nop):
-                    # Detection of a sequence of nop
-                    end = pos
-                    while end < len(data) and data[end:end+1] == x86_nop:
-                        end += 1
-                    labels_with_nop.add((label,pos,x86_nop*(end-pos)))
-                    pos_list = []
+        for pos in pos_list:
+            long_nop = find_nop(data[pos:])
+            if long_nop:
+                while True:
+                    new_nop = find_nop(data[pos+len(long_nop):])
+                    long_nop += new_nop
+                    if not new_nop: break
+                labels_with_long_nop.add((label,pos,long_nop))
+                break
     if len(labels_with_long_nop) == 0:
         return
     # We have long nops: -O2 has been used, more specifically, one of
@@ -307,12 +261,12 @@ def x86_long_nop(symbols):
             labels_with_long_nop.union(labels_with_nop),
             key = lambda x:x[0].address):
         # Find the nop, and replace it
-        data = struct.pack("")
+        data = empty
         for idx in range(len(label.lines)):
             if len(data) == pos:
                 break
             data += label.lines[idx].pack()
-        data = struct.pack("")
+        data = empty
         for cnt in range(len(label.lines)-idx):
             data += label.lines[idx+cnt].pack()
             if len(data) >= len(long_nop):
@@ -321,8 +275,6 @@ def x86_long_nop(symbols):
             raise ValueError(label, pos, binascii.hexlify(long_nop),
                                idx, cnt, binascii.hexlify(data))
         # Replace the line with a p2align directive
-        for _ in range(cnt):
-            del label.lines[idx+1]
         offset = label.lines[idx].offset
         if symbols.get_meta().get('compiler', None) == 'gcc':
             end = offset + len(data)
@@ -331,9 +283,14 @@ def x86_long_nop(symbols):
             for lo_zero_bits in range(max_p2+1):
                 if end % (2<<lo_zero_bits) != 0:
                     break
+            if lo_zero_bits == 0:
+                # Don't convert this nop to p2align
+                continue
             align = ".p2align %s" % lo_zero_bits
         elif symbols.get_meta().get('compiler', None) == 'clang':
             align = ".align 4, 0x90"
+        for _ in range(cnt):
+            del label.lines[idx+1]
         label.lines[idx] = P2Align(symbols, align,
             section=label.section, offset=offset, binary=data)
         if symbols.get_meta().get('compiler', None) == 'gcc' \
