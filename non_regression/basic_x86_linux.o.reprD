@@ -1,0 +1,39 @@
+<Symbol 'main' section='.text', type='function', bind='globl', size=22, address=0>
+    ENDER True -- NXT None
+    CFG None
+'I386_MIASM.InstructionDEAD'>0 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'eax', 'ebp', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>3 [None]subl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>6 [None]movl      $0, -4(%ebp)
+	 R['ebp'] W['MEM']
+	 D['af', 'cf', 'eax', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>13 [None]addl      $66, -4(%ebp)
+	 R['MEM', 'ebp'] W['MEM', 'af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>17 [None]movl      -4(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['eax', 'eip', 'esp']
+'I386_MIASM.InstructionDEAD'>20 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>21 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol 'a00.c' bind='file'>
+
+<Symbol 'main+22' section='.text', type='padding', address=22>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3',endianess:'<',eh_frame_size:56,eh_frame_relocs:{32: (('ELF', 3, 2), {'section': '.text', 'address': 0})},container:'ELF',compiler:'gcc'

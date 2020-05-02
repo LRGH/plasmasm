@@ -1,0 +1,39 @@
+<Symbol 'main' section='.text', type='function', bind='globl', size=22, address=0>
+    ENDER True -- NXT None
+    CFG None
+'I386_AMOCO.InstructionDEAD'>0 [None]pushl     %ebp
+	 R['ebp', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+	 D['eax', 'eflags']
+'I386_AMOCO.InstructionDEAD'>1 [None]movl      %esp, %ebp
+	 R['eip', 'esp'] W['ebp', 'eip']
+	 D['eax', 'ebp', 'eflags']
+'I386_AMOCO.InstructionDEAD'>3 [None]subl      $16, %esp
+	 R['eip', 'esp'] W['eflags', 'eip', 'esp']
+	 D['eax', 'eflags']
+'I386_AMOCO.InstructionDEAD'>6 [None]movl      $0, -4(%ebp)
+	 R['ebp', 'eip'] W['MEM', 'eip']
+	 D['eax', 'eflags', 'esp']
+'I386_AMOCO.InstructionDEAD'>13 [None]addl      $66, -4(%ebp)
+	 R['MEM', 'ebp', 'eip'] W['MEM', 'eflags', 'eip']
+	 D['eax', 'eflags', 'esp']
+'I386_AMOCO.InstructionDEAD'>17 [None]movl      -4(%ebp), %eax
+	 R['MEM', 'ebp', 'eip'] W['eax', 'eip']
+	 D['eax', 'esp']
+'I386_AMOCO.InstructionDEAD'>20 [None]leave     
+	 R['MEM', 'ebp', 'eip'] W['ebp', 'eip', 'esp']
+	 D['esp']
+'I386_AMOCO.InstructionDEAD'>21 [ret]ret       
+	 R['MEM', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol 'a00.c' bind='file'>
+
+<Symbol 'main+22' section='.text', type='padding', address=22>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3',endianess:'<',eh_frame_size:56,eh_frame_relocs:{32: (('ELF', 3, 2), {'section': '.text', 'address': 0})},container:'ELF',compiler:'gcc'

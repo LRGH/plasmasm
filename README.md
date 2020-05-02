@@ -269,6 +269,10 @@ or Ubuntu is python-pyparsing.
   doing push/pop. This module tracks the red zone, so we can use
   the stack when modifying the code.
 
+- `dead_registers.py`
+  Dead registers are registers that are not used, and therefore
+  can be used when modifying the code.
+
 ## Development status
 
 [![Build Status](https://travis-ci.org/LRGH/plasmasm.svg?branch=master)](https://travis-ci.org/LRGH/plasmasm)

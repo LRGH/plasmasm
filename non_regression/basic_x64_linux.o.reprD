@@ -1,0 +1,43 @@
+<Symbol 'main' section='.text', type='function', bind='globl', size=20, address=0>
+    ENDER True -- NXT None
+    CFG None
+'X64_AMOCO.InstructionDEAD'>0 [None]pushq     %rbp
+	 R['rbp', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['rax', 'rflags']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>1 [None]movq      %rsp, %rbp
+	 R['rip', 'rsp'] W['rbp', 'rip']
+	 D['rax', 'rbp', 'rflags']
+	 STACK:{'%rbp': [0]}:()
+'X64_AMOCO.InstructionDEAD'>4 [None]movl      $0, -4(%rbp)
+	 R['rbp', 'rip'] W['MEM', 'rip']
+	 D['rax', 'rflags']
+	 STACK:{'%rbp': [0]}:(-4,)
+'X64_AMOCO.InstructionDEAD'>11 [None]addl      $66, -4(%rbp)
+	 R['MEM', 'rbp', 'rip'] W['MEM', 'rflags', 'rip']
+	 D['rax', 'rflags']
+	 STACK:{'%rbp': [0]}:(-4,)
+'X64_AMOCO.InstructionDEAD'>15 [None]movl      -4(%rbp), %eax
+	 R['MEM', 'rbp', 'rip'] W['rax', 'rip']
+	 D['rax']
+	 STACK:{'%rbp': [0]}:(-4,)
+'X64_AMOCO.InstructionDEAD'>18 [None]popq      %rbp
+	 R['MEM', 'rip', 'rsp'] W['rbp', 'rip', 'rsp']
+	 D['rbp']
+	 STACK:{'%rbp': [-8]}:(-12,)
+'X64_AMOCO.InstructionDEAD'>19 [ret]ret       
+	 R['MEM', 'rip', 'rsp'] W['rip', 'rsp']
+	 D[]
+	 STACK:{'%rbp': [-8]}:(-12,)
+	 dst=[None]
+
+<Symbol 'a00.c' bind='file'>
+
+<Symbol 'main+20' section='.text', type='padding', address=20>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4',endianess:'<',eh_frame_size:56,eh_frame_relocs:{32: (('ELF', 62, 2), {'section': '.text', 'address': 0})},container:'ELF',compiler:'gcc',PIC:'gcc4-m64'

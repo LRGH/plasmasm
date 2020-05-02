@@ -15,19 +15,27 @@ all_tests = [
     ("basic_x86_linux.o",       "repr2", {"cpu":"/AMOCO"}),
     ("basic_x86_linux.o",       "reprW", {"cpu":"/MIASM","rw":True}),
     ("basic_x86_linux.o",       "reprW2",{"cpu":"/AMOCO","rw":True}),
+    ("basic_x86_linux.o",       "reprD", {"cpu":"/MIASM","rw":True,"dead":True}),
+    ("basic_x86_linux.o",       "reprD2",{"cpu":"/AMOCO","rw":True,"dead":True}),
     ("switch_x86_linux.o",      "repr",  {"cpu":"/MIASM"}),
     ("other_x86_linux_25.o",    "repr",  {"cpu":"/MIASM"}),
     ("other_x86_linux_25.o",    "repr2", {"cpu":"/AMOCO"}),
     ("other_x86_linux_25.o",    "reprP", {"cpu":"/MIASM","rw":True,"pic":True}),
     ("other_x86_linux_25.o",    "reprP2",{"cpu":"/AMOCO","rw":True,"pic":True}),
+    ("other_x86_linux_25.o",    "reprD", {"cpu":"/MIASM","rw":True,"pic":True,"dead":True}),
+    ("other_x86_linux_25.o",    "reprD2",{"cpu":"/AMOCO","rw":True,"pic":True,"dead":True}),
     ("comm_x86_macosx.o",       "repr",  {"cpu":"/MIASM"}),
     ("comm_x86_macosx.o",       "repr2", {"cpu":"/AMOCO"}),
     ("comm_x86_macosx.o",       "reprP", {"cpu":"/MIASM","rw":True,"pic":True}),
     ("comm_x86_macosx.o",       "reprP2",{"cpu":"/AMOCO","rw":True,"pic":True}),
+    ("comm_x86_macosx.o",       "reprD", {"cpu":"/MIASM","rw":True,"pic":True,"dead":True}),
+    ("comm_x86_macosx.o",       "reprD2",{"cpu":"/AMOCO","rw":True,"pic":True,"dead":True}),
     ("basic_x64_linux.o",       "repr",  {}),
     ("basic_x64_linux.o",       "reprP", {"rw":True,"pic":True}),
+    ("basic_x64_linux.o",       "reprD", {"rw":True,"pic":True,"dead":True}),
     ("other_x64_linux_4.o",     "repr",  {}),
     ("other_x64_linux_4.o",     "reprP", {"rw":True,"pic":True}),
+    ("other_x64_linux_4.o",     "reprD", {"rw":True,"pic":True,"dead":True}),
     ("switch_x64_macosx.o",     "repr",  {}),
     # Next one uses a .plasmasm helper to move symbols from BSS to COM
     ("dot_plasmasm_b0.exe",     "repr", {}),
@@ -66,6 +74,9 @@ def test_io(file, suffix, kargs):
         analyze_PIC(pool)
         from staticasm.stack_tracking import analyze_stack
         analyze_stack(pool)
+    if "dead" in kargs:
+        from staticasm.dead_registers import analyze_dead
+        analyze_dead(pool)
     rep = [ _.display()
         for _ in pool.blocs ]
     rep += [ _.display()
