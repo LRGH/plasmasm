@@ -35,6 +35,11 @@ def helper_order(pool, symbols, last = False):
     else:
         pool.blocs = blocs + [ _ for _ in pool.blocs if not _ in blocs ]
 
+try:
+    from plasmasm.python.compatibility import set
+except ImportError:
+    pass
+
 def helper_parse(pool, entrypoints):
     # Parts of the binary file should be parsed
     from plasmasm.parse_bin import create_text_bloc

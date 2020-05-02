@@ -91,5 +91,9 @@ def test_io(file, suffix, kargs):
         for _ in reversed(sorted(pool.meta))]) ]
     rep += [ '' ]
     rep = '\n'.join(rep)
+    if sys.version_info[0] == 2 and sys.version_info[1] <= 3:
+        # long are displayed differently
+        import re
+        rep = re.sub('([0-9]+)L', '\\1', rep)
     assert rep == res
 test_io = pytest.mark.parametrize("file, suffix, kargs", all_tests)(test_io)

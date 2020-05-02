@@ -159,8 +159,12 @@ class Constant(Line):
     out_format = None
 
 def long_to_signed(x):
-    if isinstance(x,int) and x > 2**31:
-        return x-2**32
+    try:
+        if x > 2**31:
+            return x-2**32
+    except:
+        # Not an int or long
+        pass
     return x
 
 data_null = struct.pack("B",0)
