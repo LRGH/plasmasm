@@ -1,0 +1,54 @@
+<Symbol 'L_A$non_lazy_ptr' section='__IMPORT,__pointers', address=47, data='indirect_symbol:_A'>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.Constant4Byte'>47 (4, 'long', 'I') [0]
+
+<Symbol 'L_B$non_lazy_ptr' section='__IMPORT,__pointers', address=51, data='indirect_symbol:_B'>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.Constant4Byte'>51 (4, 'long', 'I') [0]
+
+<Symbol '_main' section='__TEXT,__text', bind='globl', align='4, 0x90', address=0>
+    ENDER False -- NXT L00000009
+    CFG L00000009
+    GRAPH_NXT L00000009
+'I386_AMOCO.InstructionCFG'>0 [None]pushl     %ebp [ia32_rm32]
+'I386_AMOCO.InstructionCFG'>1 [None]movl      %esp, %ebp [ia32_reg_32]
+'I386_AMOCO.InstructionCFG'>3 [None]pushl     %esi [ia32_rm32]
+'I386_AMOCO.InstructionCFG'>4 [PIC]call      L00000009 [ia32_imm_rel]
+
+<Symbol 'L00000009' section='__TEXT,__text', address=9>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV _main
+'I386_AMOCO.InstructionCFG'>9 [None]popl      %eax [ia32_rm32]
+'I386_AMOCO.InstructionCFG'>10 [None]movl      $0, %ecx [ia32_mov_adr]
+'I386_AMOCO.InstructionCFG'>15 [None]movl      L_A$non_lazy_ptr-L00000009(%eax), %edx [ia32_reg_32_inv]
+'I386_AMOCO.InstructionCFG'>21 [None]movl      L_B$non_lazy_ptr-L00000009(%eax), %eax [ia32_reg_32_inv]
+'I386_AMOCO.InstructionCFG'>27 [None]movl      (%eax), %eax [ia32_reg_32_inv]
+'I386_AMOCO.InstructionCFG'>29 [None]shll      $1, %eax [ia32_rm32_imm8]
+'I386_AMOCO.InstructionCFG'>32 [None]imull     $5, (%edx), %esi [ia32_reg_rm_wd]
+'I386_AMOCO.InstructionCFG'>38 [None]subl      %esi, %eax [ia32_reg_32]
+'I386_AMOCO.InstructionCFG'>40 [None]movl      %eax, (%edx) [ia32_reg_32]
+'I386_AMOCO.InstructionCFG'>42 [None]movl      %ecx, %eax [ia32_reg_32]
+'I386_AMOCO.InstructionCFG'>44 [None]popl      %esi [ia32_rm32]
+'I386_AMOCO.InstructionCFG'>45 [None]popl      %ebp [ia32_rm32]
+'I386_AMOCO.InstructionCFG'>46 [ret]ret        [ia32_nooperand]
+
+<Symbol '_A' section='COM', bind='globl', align=4, size=4, address=4>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>4 .zero	4
+
+<Symbol '_B' section='COM', bind='globl', align=4, size=4, address=5>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>5 .zero	4
+
+<Symbol 'L0000002F' section='__TEXT,__text', type='endofsymbol', address=47>
+    ENDER None -- NXT None
+    CFG None
+
+('__IMPORT,__pointers', '__IMPORT,__pointers,non_lazy_symbol_pointers')
+('__TEXT,__text', '__TEXT,__text,regular,pure_instructions')
+relocatable:True,endianess:'<',container:'Mach-O',compiler:'clang'

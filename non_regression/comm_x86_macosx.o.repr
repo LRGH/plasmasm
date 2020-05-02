@@ -1,0 +1,54 @@
+<Symbol 'L_A$non_lazy_ptr' section='__IMPORT,__pointers', address=47, data='indirect_symbol:_A'>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.Constant4Byte'>47 (4, 'long', 'I') [0]
+
+<Symbol 'L_B$non_lazy_ptr' section='__IMPORT,__pointers', address=51, data='indirect_symbol:_B'>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.Constant4Byte'>51 (4, 'long', 'I') [0]
+
+<Symbol '_main' section='__TEXT,__text', bind='globl', align='4, 0x90', address=0>
+    ENDER False -- NXT L00000009
+    CFG L00000009
+    GRAPH_NXT L00000009
+'I386_MIASM.InstructionCFG'>0 [None][] push {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>1 [None][] mov {5:1,ad:False,size:u32} {4:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>3 [None][] push {6:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4 [PIC][] call {ad:False,size:u32,symb__intern__:{L00000009:1}} 
+
+<Symbol 'L00000009' section='__TEXT,__text', address=9>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV _main
+'I386_MIASM.InstructionCFG'>9 [None][] pop {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>10 [None][] mov {1:1,ad:False,size:u32} {ad:False,imm:uint32(0x0),size:u32} 
+'I386_MIASM.InstructionCFG'>15 [None][] mov {2:1,ad:False,size:u32} {0:1,ad:u32,size:u32,symb__intern__:{L00000009:-1, L_A$non_lazy_ptr:1},txt:eax+imm} 
+'I386_MIASM.InstructionCFG'>21 [None][] mov {0:1,ad:False,size:u32} {0:1,ad:u32,size:u32,symb__intern__:{L00000009:-1, L_B$non_lazy_ptr:1},txt:eax+imm} 
+'I386_MIASM.InstructionCFG'>27 [None][] mov {0:1,ad:False,size:u32} {0:1,ad:u32,size:u32,txt:eax} 
+'I386_MIASM.InstructionCFG'>29 [None][] sal {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x1),size:u32} 
+'I386_MIASM.InstructionCFG'>32 [None][] imul {6:1,ad:False,size:u32} {2:1,ad:u32,size:u32,txt:edx} {ad:False,imm:uint32(0x5),size:u32} 
+'I386_MIASM.InstructionCFG'>38 [None][] sub {0:1,ad:False,size:u32} {6:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>40 [None][] mov {2:1,ad:u32,size:u32,txt:edx} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>42 [None][] mov {0:1,ad:False,size:u32} {1:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>44 [None][] pop {6:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>45 [None][] pop {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>46 [ret][] ret 
+
+<Symbol '_A' section='COM', bind='globl', align=4, size=4, address=4>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>4 .zero	4
+
+<Symbol '_B' section='COM', bind='globl', align=4, size=4, address=5>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>5 .zero	4
+
+<Symbol 'L0000002F' section='__TEXT,__text', type='endofsymbol', address=47>
+    ENDER None -- NXT None
+    CFG None
+
+('__IMPORT,__pointers', '__IMPORT,__pointers,non_lazy_symbol_pointers')
+('__TEXT,__text', '__TEXT,__text,regular,pure_instructions')
+relocatable:True,endianess:'<',container:'Mach-O',compiler:'clang'

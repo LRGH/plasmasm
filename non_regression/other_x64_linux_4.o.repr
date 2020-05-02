@@ -1,0 +1,1706 @@
+<Symbol 'P' section='.text', type='function', bind='globl', size=26, address=0>
+    ENDER False -- NXT .L0000000A
+    CFG __ctype_b_loc@PLT
+    GRAPH_NXT __ctype_b_loc@PLT
+'X64_AMOCO.InstructionCFG'>0 [None]pushq     %rbx [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>1 [None]movsbq    %dil, %rbx [ia32_movx]
+'X64_AMOCO.InstructionCFG'>5 [sub]call      __ctype_b_loc@PLT [ia32_imm_rel]
+
+<Symbol '.L0000000A' section='.text', address=10>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV __ctype_b_loc@PLT
+'X64_AMOCO.InstructionCFG'>10 [None]movq      (%rax), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>13 [None]movzwl    (%rax,%rbx,2), %eax [ia32_movx]
+'X64_AMOCO.InstructionCFG'>17 [None]popq      %rbx [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>18 [None]andw      $8192, %ax [ia32_eax_imm]
+'X64_AMOCO.InstructionCFG'>22 [None]movzwl    %ax, %eax [ia32_movx]
+'X64_AMOCO.InstructionCFG'>25 [ret]ret        [ia32_nooperand]
+
+<Symbol '.L0000001A' section='.text', type='padding', address=26>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>26 [None][.]nop 660f1f440000[.p2align 3]
+
+<Symbol 'D' section='.text', type='function', bind='globl', size=155, address=32>
+    ENDER False -- NXT .L00000030
+    CFG .L000000B0
+    CFG .L00000030
+    GRAPH_NXT .L00000030
+    GRAPH_NXT .L000000B0
+'X64_AMOCO.InstructionCFG'>32 [None]pushq     %r12 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>34 [None]testq     %rdi, %rdi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>37 [None]pushq     %rbp [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>38 [None]pushq     %rbx [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>39 [None]movq      %rdi, %rbx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>42 [jcc]je        .L000000B0 [ia32_imm_rel]
+
+<Symbol '.L00000030' section='.text', address=48>
+    ENDER False -- NXT .L00000038
+    CFG .L000000B7
+    CFG .L00000038
+    GRAPH_NXT .L00000038
+    GRAPH_NXT .L000000B7
+    GRAPH_PRV D
+'X64_AMOCO.InstructionCFG'>48 [None]movsbl    (%rdi), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>51 [None]testb     %dil, %dil [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>54 [jcc]je        .L000000B7 [ia32_imm_rel]
+
+<Symbol '.L00000038' section='.text', address=56>
+    ENDER True -- NXT None
+    CFG .L0000004D
+    GRAPH_NXT .L0000004D
+    GRAPH_PRV .L00000030
+'X64_AMOCO.InstructionCFG'>56 [None]movq      %rbx, %rbp [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>59 [jmp]jmp       .L0000004D [ia32_imm_rel]
+
+<Symbol '.L0000003D' section='.text', size=3, address=61>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>61 [None][.]nop 0f1f00[.p2align 3]
+
+<Symbol '.L00000040' section='.text', address=64>
+    ENDER False -- NXT .L0000004D
+    CFG .L00000056
+    CFG .L0000004D
+    GRAPH_NXT .L0000004D
+    GRAPH_NXT .L00000056
+    GRAPH_PRV .L00000052
+'X64_AMOCO.InstructionCFG'>64 [None]addq      $1, %rbp [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>68 [None]movsbl    (%rbp), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>72 [None]testb     %dil, %dil [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>75 [jcc]je        .L00000056 [ia32_imm_rel]
+
+<Symbol '.L0000004D' section='.text', address=77>
+    ENDER False -- NXT .L00000052
+    CFG P@PLT
+    GRAPH_NXT P@PLT
+    GRAPH_PRV .L00000038
+    GRAPH_PRV .L00000040
+'X64_AMOCO.InstructionCFG'>77 [sub]call      P@PLT [ia32_imm_rel]
+
+<Symbol '.L00000052' section='.text', address=82>
+    ENDER False -- NXT .L00000056
+    CFG .L00000040
+    CFG .L00000056
+    GRAPH_NXT .L00000040
+    GRAPH_NXT .L00000056
+    GRAPH_PRV P@PLT
+'X64_AMOCO.InstructionCFG'>82 [None]testl     %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>84 [jcc]je        .L00000040 [ia32_imm_rel]
+
+<Symbol '.L00000056' section='.text', address=86>
+    ENDER False -- NXT .L0000005C
+    CFG .L0000005C
+    GRAPH_NXT .L0000005C
+    GRAPH_PRV .L00000040
+    GRAPH_PRV .L00000052
+'X64_AMOCO.InstructionCFG'>86 [None]movq      %rbp, %rdi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>89 [None]subq      %rbx, %rdi [ia32_reg_32]
+
+<Symbol '.L0000005C' section='.text', address=92>
+    ENDER False -- NXT .L00000061
+    CFG malloc@PLT
+    GRAPH_NXT malloc@PLT
+    GRAPH_PRV .L00000056
+    GRAPH_PRV .L000000B7
+'X64_AMOCO.InstructionCFG'>92 [sub]call      malloc@PLT [ia32_imm_rel]
+
+<Symbol '.L00000061' section='.text', address=97>
+    ENDER False -- NXT .L00000069
+    CFG .L000000B0
+    CFG .L00000069
+    GRAPH_NXT .L00000069
+    GRAPH_NXT .L000000B0
+    GRAPH_PRV malloc@PLT
+'X64_AMOCO.InstructionCFG'>97 [None]testq     %rax, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>100 [None]movq      %rax, %r12 [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>103 [jcc]je        .L000000B0 [ia32_imm_rel]
+
+<Symbol '.L00000069' section='.text', address=105>
+    ENDER False -- NXT .L00000071
+    CFG .L0000009F
+    CFG .L00000071
+    GRAPH_NXT .L00000071
+    GRAPH_NXT .L0000009F
+    GRAPH_PRV .L00000061
+'X64_AMOCO.InstructionCFG'>105 [None]movsbl    (%rbx), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>108 [None]testb     %dil, %dil [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>111 [jcc]je        .L0000009F [ia32_imm_rel]
+
+<Symbol '.L00000071' section='.text', address=113>
+    ENDER True -- NXT None
+    CFG .L00000096
+    GRAPH_NXT .L00000096
+    GRAPH_PRV .L00000069
+'X64_AMOCO.InstructionCFG'>113 [None]movq      %rax, %rbp [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>116 [jmp]jmp       .L00000096 [ia32_imm_rel]
+
+<Symbol '.L00000076' section='.text', size=10, address=118>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>118 [None][.]nop 662e0f1f840000000000[.p2align 4]
+
+<Symbol '.L00000080' section='.text', address=128>
+    ENDER False -- NXT .L00000096
+    CFG .L0000009F
+    CFG .L00000096
+    GRAPH_NXT .L00000096
+    GRAPH_NXT .L0000009F
+    GRAPH_PRV .L0000009B
+'X64_AMOCO.InstructionCFG'>128 [None]movzbl    (%rbx), %eax [ia32_movx]
+'X64_AMOCO.InstructionCFG'>131 [None]addq      $1, %rbx [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>135 [None]addq      $1, %rbp [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>139 [None]movb      %al, -1(%rbp) [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>142 [None]movsbl    (%rbx), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>145 [None]testb     %dil, %dil [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>148 [jcc]je        .L0000009F [ia32_imm_rel]
+
+<Symbol '.L00000096' section='.text', address=150>
+    ENDER False -- NXT .L0000009B
+    CFG P@PLT
+    GRAPH_NXT P@PLT
+    GRAPH_PRV .L00000071
+    GRAPH_PRV .L00000080
+'X64_AMOCO.InstructionCFG'>150 [sub]call      P@PLT [ia32_imm_rel]
+
+<Symbol '.L0000009B' section='.text', address=155>
+    ENDER False -- NXT .L0000009F
+    CFG .L00000080
+    CFG .L0000009F
+    GRAPH_NXT .L00000080
+    GRAPH_NXT .L0000009F
+    GRAPH_PRV P@PLT
+'X64_AMOCO.InstructionCFG'>155 [None]testl     %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>157 [jcc]je        .L00000080 [ia32_imm_rel]
+
+<Symbol '.L0000009F' section='.text', address=159>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L00000069
+    GRAPH_PRV .L00000080
+    GRAPH_PRV .L0000009B
+'X64_AMOCO.InstructionCFG'>159 [None]popq      %rbx [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>160 [None]popq      %rbp [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>161 [None]movq      %r12, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>164 [None]popq      %r12 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>166 [ret]ret        [ia32_nooperand]
+
+<Symbol '.L000000A7' section='.text', size=9, address=167>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>167 [None][.]nop 660f1f840000000000[.p2align 4]
+
+<Symbol '.L000000B0' section='.text', address=176>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L00000061
+    GRAPH_PRV D
+'X64_AMOCO.InstructionCFG'>176 [None]popq      %rbx [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>177 [None]popq      %rbp [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>178 [None]xorl      %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>180 [None]popq      %r12 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>182 [ret]ret        [ia32_nooperand]
+
+<Symbol '.L000000B7' section='.text', address=183>
+    ENDER True -- NXT None
+    CFG .L0000005C
+    GRAPH_NXT .L0000005C
+    GRAPH_PRV .L00000030
+'X64_AMOCO.InstructionCFG'>183 [None]xorl      %edi, %edi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>185 [jmp]jmp       .L0000005C [ia32_imm_rel]
+
+<Symbol '.L000000BB' section='.text', type='padding', address=187>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>187 [None][.]nop 0f1f440000[.p2align 3]
+
+<Symbol 'l' section='.text', type='function', bind='globl', size=10, address=192>
+    ENDER True -- NXT None
+    CFG None
+'X64_AMOCO.InstructionCFG'>192 [None]movq      (%rdi), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>195 [None]movq      %rax, (%rsi) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>198 [None]movq      %rsi, (%rdi) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>201 [ret]ret        [ia32_nooperand]
+
+<Symbol '.L000000CA' section='.text', type='padding', address=202>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>202 [None][.]nop 660f1f440000[.p2align 3]
+
+<Symbol 'h' section='.text', type='function', bind='globl', size=225, address=208>
+    ENDER False -- NXT .L000000EE
+    CFG .L0000019A
+    CFG .L000000EE
+    GRAPH_NXT .L000000EE
+    GRAPH_NXT .L0000019A
+'X64_AMOCO.InstructionCFG'>208 [None]pushq     %r13 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>210 [None]movsbq    %dl, %rax [ia32_movx]
+'X64_AMOCO.InstructionCFG'>214 [None]leaq      (%rdi,%rax,8), %r13 [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>218 [None]pushq     %r12 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>220 [None]pushq     %rbp [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>221 [None]pushq     %rbx [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>222 [None]movq      %rsi, %rbx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>225 [None]subq      $8, %rsp [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>229 [None]testq     %rsi, %rsi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>232 [jcc]je        .L0000019A [ia32_imm_rel]
+
+<Symbol '.L000000EE' section='.text', address=238>
+    ENDER False -- NXT .L000000F7
+    CFG .L0000019A
+    CFG .L000000F7
+    GRAPH_NXT .L000000F7
+    GRAPH_NXT .L0000019A
+    GRAPH_PRV h
+'X64_AMOCO.InstructionCFG'>238 [None]cmpb      $0, (%rsi) [ia32_ptr_ib]
+'X64_AMOCO.InstructionCFG'>241 [jcc]je        .L0000019A [ia32_imm_rel]
+
+<Symbol '.L000000F7' section='.text', address=247>
+    ENDER False -- NXT .L00000100
+    CFG .L00000100
+    GRAPH_NXT .L00000100
+    GRAPH_PRV .L000000EE
+'plasmasm.constants.P2Align'>247 [None][.]nop 660f1f840000000000[.p2align 4]
+
+<Symbol '.L00000100' section='.text', address=256>
+    ENDER False -- NXT .L0000010A
+    CFG malloc@PLT
+    GRAPH_NXT malloc@PLT
+    GRAPH_PRV .L000000F7
+    GRAPH_PRV .L00000192
+'X64_AMOCO.InstructionCFG'>256 [None]movl      $24, %edi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>261 [sub]call      malloc@PLT [ia32_imm_rel]
+
+<Symbol '.L0000010A' section='.text', address=266>
+    ENDER False -- NXT .L00000116
+    CFG .L000001A7
+    CFG .L00000116
+    GRAPH_NXT .L00000116
+    GRAPH_NXT .L000001A7
+    GRAPH_PRV malloc@PLT
+'X64_AMOCO.InstructionCFG'>266 [None]testq     %rax, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>269 [None]movq      %rax, %r12 [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>272 [jcc]je        .L000001A7 [ia32_imm_rel]
+
+<Symbol '.L00000116' section='.text', address=278>
+    ENDER False -- NXT .L00000129
+    CFG D@PLT
+    GRAPH_NXT D@PLT
+    GRAPH_PRV .L0000010A
+'X64_AMOCO.InstructionCFG'>278 [None]movq      %rbx, %rdi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>281 [None]movq      $0, (%rax) [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>288 [None]leaq      8(%r13), %rbp [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>292 [sub]call      D@PLT [ia32_imm_rel]
+
+<Symbol '.L00000129' section='.text', address=297>
+    ENDER False -- NXT .L00000139
+    CFG l@PLT
+    GRAPH_NXT l@PLT
+    GRAPH_PRV D@PLT
+'X64_AMOCO.InstructionCFG'>297 [None]movq      %r13, %rdi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>300 [None]movq      %r12, %rsi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>303 [None]movq      %rax, 16(%r12) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>308 [sub]call      l@PLT [ia32_imm_rel]
+
+<Symbol '.L00000139' section='.text', address=313>
+    ENDER False -- NXT .L00000141
+    CFG .L00000154
+    CFG .L00000141
+    GRAPH_NXT .L00000141
+    GRAPH_NXT .L00000154
+    GRAPH_PRV l@PLT
+'X64_AMOCO.InstructionCFG'>313 [None]movsbl    (%rbx), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>316 [None]testb     %dil, %dil [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>319 [jcc]jne       .L00000154 [ia32_imm_rel]
+
+<Symbol '.L00000141' section='.text', address=321>
+    ENDER True -- NXT None
+    CFG .L00000185
+    GRAPH_NXT .L00000185
+    GRAPH_PRV .L00000139
+'X64_AMOCO.InstructionCFG'>321 [jmp]jmp       .L00000185 [ia32_imm_rel]
+
+<Symbol '.L00000143' section='.text', size=5, address=323>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>323 [None][.]nop 0f1f440000[.p2align 3]
+
+<Symbol '.L00000148' section='.text', address=328>
+    ENDER False -- NXT .L00000154
+    CFG .L00000185
+    CFG .L00000154
+    GRAPH_NXT .L00000154
+    GRAPH_NXT .L00000185
+    GRAPH_PRV .L00000159
+'X64_AMOCO.InstructionCFG'>328 [None]addq      $1, %rbx [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>332 [None]movsbl    (%rbx), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>335 [None]testb     %dil, %dil [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>338 [jcc]je        .L00000185 [ia32_imm_rel]
+
+<Symbol '.L00000154' section='.text', address=340>
+    ENDER False -- NXT .L00000159
+    CFG P@PLT
+    GRAPH_NXT P@PLT
+    GRAPH_PRV .L00000139
+    GRAPH_PRV .L00000148
+'X64_AMOCO.InstructionCFG'>340 [sub]call      P@PLT [ia32_imm_rel]
+
+<Symbol '.L00000159' section='.text', address=345>
+    ENDER False -- NXT .L0000015D
+    CFG .L00000148
+    CFG .L0000015D
+    GRAPH_NXT .L00000148
+    GRAPH_NXT .L0000015D
+    GRAPH_PRV P@PLT
+'X64_AMOCO.InstructionCFG'>345 [None]testl     %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>347 [jcc]je        .L00000148 [ia32_imm_rel]
+
+<Symbol '.L0000015D' section='.text', address=349>
+    ENDER False -- NXT .L00000165
+    CFG .L0000017C
+    CFG .L00000165
+    GRAPH_NXT .L00000165
+    GRAPH_NXT .L0000017C
+    GRAPH_PRV .L00000159
+'X64_AMOCO.InstructionCFG'>349 [None]movsbl    (%rbx), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>352 [None]testb     %dil, %dil [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>355 [jcc]jne       .L0000017C [ia32_imm_rel]
+
+<Symbol '.L00000165' section='.text', address=357>
+    ENDER True -- NXT None
+    CFG .L0000018A
+    GRAPH_NXT .L0000018A
+    GRAPH_PRV .L0000015D
+'X64_AMOCO.InstructionCFG'>357 [jmp]jmp       .L0000018A [ia32_imm_rel]
+
+<Symbol '.L00000167' section='.text', size=9, address=359>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>359 [None][.]nop 660f1f840000000000[.p2align 4]
+
+<Symbol '.L00000170' section='.text', address=368>
+    ENDER False -- NXT .L0000017C
+    CFG .L00000185
+    CFG .L0000017C
+    GRAPH_NXT .L0000017C
+    GRAPH_NXT .L00000185
+    GRAPH_PRV .L00000181
+'X64_AMOCO.InstructionCFG'>368 [None]addq      $1, %rbx [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>372 [None]movsbl    (%rbx), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>375 [None]testb     %dil, %dil [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>378 [jcc]je        .L00000185 [ia32_imm_rel]
+
+<Symbol '.L0000017C' section='.text', address=380>
+    ENDER False -- NXT .L00000181
+    CFG P@PLT
+    GRAPH_NXT P@PLT
+    GRAPH_PRV .L0000015D
+    GRAPH_PRV .L00000170
+'X64_AMOCO.InstructionCFG'>380 [sub]call      P@PLT [ia32_imm_rel]
+
+<Symbol '.L00000181' section='.text', address=385>
+    ENDER False -- NXT .L00000185
+    CFG .L00000170
+    CFG .L00000185
+    GRAPH_NXT .L00000170
+    GRAPH_NXT .L00000185
+    GRAPH_PRV P@PLT
+'X64_AMOCO.InstructionCFG'>385 [None]testl     %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>387 [jcc]jne       .L00000170 [ia32_imm_rel]
+
+<Symbol '.L00000185' section='.text', address=389>
+    ENDER False -- NXT .L0000018A
+    CFG .L0000019A
+    CFG .L0000018A
+    GRAPH_NXT .L0000018A
+    GRAPH_NXT .L0000019A
+    GRAPH_PRV .L00000141
+    GRAPH_PRV .L00000148
+    GRAPH_PRV .L00000170
+    GRAPH_PRV .L00000181
+'X64_AMOCO.InstructionCFG'>389 [None]testq     %rbx, %rbx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>392 [jcc]je        .L0000019A [ia32_imm_rel]
+
+<Symbol '.L0000018A' section='.text', address=394>
+    ENDER False -- NXT .L00000192
+    CFG .L0000019A
+    CFG .L00000192
+    GRAPH_NXT .L00000192
+    GRAPH_NXT .L0000019A
+    GRAPH_PRV .L00000165
+    GRAPH_PRV .L00000185
+'X64_AMOCO.InstructionCFG'>394 [None]cmpb      $0, (%rbx) [ia32_ptr_ib]
+'plasmasm.constants.P2Align'>397 [None][.]nop 0f1f00[.p2align 3]
+'X64_AMOCO.InstructionCFG'>400 [jcc]je        .L0000019A [ia32_imm_rel]
+
+<Symbol '.L00000192' section='.text', address=402>
+    ENDER True -- NXT None
+    CFG .L00000100
+    GRAPH_NXT .L00000100
+    GRAPH_PRV .L0000018A
+'X64_AMOCO.InstructionCFG'>402 [None]movq      %rbp, %r13 [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>405 [jmp]jmp       .L00000100 [ia32_imm_rel]
+
+<Symbol '.L0000019A' section='.text', address=410>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L000000EE
+    GRAPH_PRV .L00000185
+    GRAPH_PRV .L0000018A
+    GRAPH_PRV h
+'X64_AMOCO.InstructionCFG'>410 [None]addq      $8, %rsp [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>414 [None]xorl      %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>416 [None]popq      %rbx [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>417 [None]popq      %rbp [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>418 [None]popq      %r12 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>420 [None]popq      %r13 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>422 [ret]ret        [ia32_nooperand]
+
+<Symbol '.L000001A7' section='.text', address=423>
+    ENDER True -- NXT None
+    CFG exit@PLT
+    GRAPH_NXT exit@PLT
+    GRAPH_PRV .L0000010A
+'X64_AMOCO.InstructionCFG'>423 [None]movl      $1, %edi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>428 [sub]call      exit@PLT [ia32_imm_rel]
+
+<Symbol '.L000001B1' section='.text', type='padding', address=433>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>433 [None][.]nop 6666666666662e0f1f840000000000[.p2align 4]
+
+<Symbol 'k' section='.text', type='function', bind='globl', size=36, address=448>
+    ENDER False -- NXT .L000001CC
+    CFG .L000001D8
+    CFG .L000001CC
+    GRAPH_NXT .L000001CC
+    GRAPH_NXT .L000001D8
+'X64_AMOCO.InstructionCFG'>448 [None]movsbl    c.3562(%rip), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>455 [None]testb     %dil, %dil [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>458 [jcc]jne       .L000001D8 [ia32_imm_rel]
+
+<Symbol '.L000001CC' section='.text', address=460>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV k
+'X64_AMOCO.InstructionCFG'>460 [None]movb      $10, c.3562(%rip) [ia32_ptr_ib]
+'X64_AMOCO.InstructionCFG'>467 [ret]ret        [ia32_nooperand]
+
+<Symbol 'main' section='.text.startup', type='function', bind='globl', size=1256, address=0>
+    ENDER False -- NXT .L00000036.startup
+    CFG .L00000156.startup
+    CFG .L00000036.startup
+    GRAPH_NXT .L00000036.startup
+    GRAPH_NXT .L00000156.startup
+'X64_AMOCO.InstructionCFG'>0 [None]pushq     %r15 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>2 [None]pushq     %r14 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>4 [None]pushq     %r13 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>6 [None]pushq     %r12 [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>8 [None]pushq     %rbp [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>9 [None]pushq     %rbx [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>10 [None]subq      $392, %rsp [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>17 [None]movq      %rsi, 40(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>22 [None]movl      %edi, 24(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>26 [None]movq      %fs:40, %rsi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>35 [None]movq      %rsi, 376(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>43 [None]xorl      %esi, %esi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>45 [None]cmpl      $4, %edi [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>48 [jcc]ja        .L00000156.startup [ia32_imm_rel]
+
+<Symbol '.L00000036.startup' section='.text.startup', address=54>
+    ENDER True -- NXT None
+    CFG .L00000052.startup
+    CFG .L00000122.startup
+    CFG .L00000174.startup
+    CFG .L000002C4.startup
+    CFG .L0000038E.startup
+    GRAPH_NXT .L00000052.startup
+    GRAPH_NXT .L00000122.startup
+    GRAPH_NXT .L00000174.startup
+    GRAPH_NXT .L000002C4.startup
+    GRAPH_NXT .L0000038E.startup
+    GRAPH_PRV main
+'X64_AMOCO.InstructionCFG'>54 [None]leaq      .LC00000000(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>61 [None]movl      %edi, %edx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>63 [None]movslq    (%rax,%rdx,4), %rdx [ia32_movsxd]
+'X64_AMOCO.InstructionCFG'>67 [None]addq      %rdx, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>70 [jmp]jmp       *%rax [ia32_rm64]
+
+<Symbol '.L000001D4' section='.text', size=4, address=468>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>468 [None][.]nop 0f1f4000[.p2align 3]
+
+<Symbol '.L000001D8' section='.text', address=472>
+    ENDER True -- NXT None
+    CFG putchar
+    GRAPH_NXT putchar
+    GRAPH_PRV k
+'X64_AMOCO.InstructionCFG'>472 [None]movq      R@GOTPCREL(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>479 [None]movq      (%rax), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>482 [jmp]jmp       *%rax [ia32_rm64]
+
+<Symbol '.L00000048.startup' section='.text.startup', address=72>
+    ENDER False -- NXT .L00000052.startup
+    CFG .L00000052.startup
+    GRAPH_NXT .L00000052.startup
+    GRAPH_PRV .L00000122.startup
+'X64_AMOCO.InstructionCFG'>72 [None]movl      $1, i.3610(%rip) [ia32_ptr_iwd]
+
+<Symbol '.L00000052.startup' section='.text.startup', address=82>
+    ENDER False -- NXT .L00000061.startup
+    CFG calloc@PLT
+    GRAPH_NXT calloc@PLT
+    GRAPH_PRV .L00000036.startup
+    GRAPH_PRV .L00000048.startup
+'X64_AMOCO.InstructionCFG'>82 [None]movl      $8, %esi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>87 [None]movl      $384, %edi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>92 [sub]call      calloc@PLT [ia32_imm_rel]
+
+<Symbol '.L00000061.startup' section='.text.startup', address=97>
+    ENDER False -- NXT .L00000071.startup
+    CFG .L00000495.startup
+    CFG .L00000071.startup
+    GRAPH_NXT .L00000071.startup
+    GRAPH_NXT .L00000495.startup
+    GRAPH_PRV calloc@PLT
+'X64_AMOCO.InstructionCFG'>97 [None]testq     %rax, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>100 [None]movq      %rax, X.3567(%rip) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>107 [jcc]je        .L00000495.startup [ia32_imm_rel]
+
+<Symbol '.L00000071.startup' section='.text.startup', address=113>
+    ENDER False -- NXT .L00000086.startup
+    CFG fopen@PLT
+    GRAPH_NXT fopen@PLT
+    GRAPH_PRV .L00000061.startup
+'X64_AMOCO.InstructionCFG'>113 [None]movq      40(%rsp), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>118 [None]leaq      .LC7(%rip), %rsi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>125 [None]movq      8(%rax), %rdi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>129 [sub]call      fopen@PLT [ia32_imm_rel]
+
+<Symbol '.L00000086.startup' section='.text.startup', address=134>
+    ENDER False -- NXT .L00000094.startup
+    CFG .L00000495.startup
+    CFG .L00000094.startup
+    GRAPH_NXT .L00000094.startup
+    GRAPH_NXT .L00000495.startup
+    GRAPH_PRV fopen@PLT
+'X64_AMOCO.InstructionCFG'>134 [None]testq     %rax, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>137 [None]movq      %rax, 32(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>142 [jcc]je        .L00000495.startup [ia32_imm_rel]
+
+<Symbol '.L00000094.startup' section='.text.startup', address=148>
+    ENDER True -- NXT None
+    CFG .L000000AD.startup
+    GRAPH_NXT .L000000AD.startup
+    GRAPH_PRV .L00000086.startup
+'X64_AMOCO.InstructionCFG'>148 [None]leaq      112(%rsp), %rbx [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>153 [None]leaq      1(%rbx), %rbp [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>157 [jmp]jmp       .L000000AD.startup [ia32_imm_rel]
+
+<Symbol '.L0000009F.startup' section='.text.startup', size=1, address=159>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>159 [None][.]nop 90[.p2align 3]
+
+<Symbol '.L000000A0.startup' section='.text.startup', address=160>
+    ENDER False -- NXT .L000000AD.startup
+    CFG .L0000049F.startup
+    CFG .L000000AD.startup
+    GRAPH_NXT .L000000AD.startup
+    GRAPH_NXT .L0000049F.startup
+    GRAPH_PRV .L000000BF.startup
+'X64_AMOCO.InstructionCFG'>160 [None]movzbl    112(%rsp), %eax [ia32_movx]
+'X64_AMOCO.InstructionCFG'>165 [None]testb     %al, %al [ia32_reg_8]
+'X64_AMOCO.InstructionCFG'>167 [jcc]jne       .L0000049F.startup [ia32_imm_rel]
+
+<Symbol '.L000000AD.startup' section='.text.startup', address=173>
+    ENDER False -- NXT .L000000BF.startup
+    CFG fgets@PLT
+    GRAPH_NXT fgets@PLT
+    GRAPH_PRV .L00000094.startup
+    GRAPH_PRV .L000000A0.startup
+    GRAPH_PRV .L000004B1.startup
+'X64_AMOCO.InstructionCFG'>173 [None]movq      32(%rsp), %rdx [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>178 [None]movl      $256, %esi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>183 [None]movq      %rbx, %rdi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>186 [sub]call      fgets@PLT [ia32_imm_rel]
+
+<Symbol '.L000000BF.startup' section='.text.startup', address=191>
+    ENDER False -- NXT .L000000CC.startup
+    CFG .L000000A0.startup
+    CFG .L000000CC.startup
+    GRAPH_NXT .L000000A0.startup
+    GRAPH_NXT .L000000CC.startup
+    GRAPH_PRV fgets@PLT
+'X64_AMOCO.InstructionCFG'>191 [None]movl      12(%rsp), %esi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>195 [None]testq     %rax, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>198 [None]movl      %esi, 28(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>202 [jcc]jne       .L000000A0.startup [ia32_imm_rel]
+
+<Symbol '.L000000CC.startup' section='.text.startup', address=204>
+    ENDER False -- NXT .L000000D8.startup
+    CFG .L000000D8.startup
+    GRAPH_NXT .L000000D8.startup
+    GRAPH_PRV .L000000BF.startup
+    GRAPH_PRV .L00000270.startup
+'X64_AMOCO.InstructionCFG'>204 [None]movq      X.3567(%rip), %rdi [ia32_reg_32_inv]
+'plasmasm.constants.P2Align'>211 [None][.]nop 0f1f440000[.p2align 3]
+
+<Symbol '.L000000D8.startup' section='.text.startup', address=216>
+    ENDER False -- NXT .L000000E9.startup
+    CFG .L00000101.startup
+    CFG .L000000E9.startup
+    GRAPH_NXT .L000000E9.startup
+    GRAPH_NXT .L00000101.startup
+    GRAPH_PRV .L000000CC.startup
+    GRAPH_PRV .L00000101.startup
+'X64_AMOCO.InstructionCFG'>216 [None]movslq    12(%rsp), %rax [ia32_movsxd]
+'X64_AMOCO.InstructionCFG'>221 [None]leaq      (%rdi,%rax,8), %rsi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>225 [None]movq      (%rsi), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>228 [None]testq     %rax, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>231 [jcc]je        .L00000101.startup [ia32_imm_rel]
+
+<Symbol '.L000000E9.startup' section='.text.startup', address=233>
+    ENDER True -- NXT None
+    CFG .L000000F6.startup
+    GRAPH_NXT .L000000F6.startup
+    GRAPH_PRV .L000000D8.startup
+'X64_AMOCO.InstructionCFG'>233 [None]xorl      %ecx, %ecx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>235 [jmp]jmp       .L000000F6.startup [ia32_imm_rel]
+
+<Symbol '.L000000ED.startup' section='.text.startup', size=3, address=237>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>237 [None][.]nop 0f1f00[.p2align 3]
+
+<Symbol '.L000000F0.startup' section='.text.startup', address=240>
+    ENDER False -- NXT .L000000F6.startup
+    CFG .L000000F6.startup
+    GRAPH_NXT .L000000F6.startup
+    GRAPH_PRV .L000000F6.startup
+'X64_AMOCO.InstructionCFG'>240 [None]movq      %rax, %rcx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>243 [None]movq      %rdx, %rax [ia32_reg_32]
+
+<Symbol '.L000000F6.startup' section='.text.startup', address=246>
+    ENDER False -- NXT .L00000101.startup
+    CFG .L000000F0.startup
+    CFG .L00000101.startup
+    GRAPH_NXT .L000000F0.startup
+    GRAPH_NXT .L00000101.startup
+    GRAPH_PRV .L000000E9.startup
+    GRAPH_PRV .L000000F0.startup
+'X64_AMOCO.InstructionCFG'>246 [None]movq      (%rax), %rdx [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>249 [None]movq      %rcx, (%rax) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>252 [None]testq     %rdx, %rdx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>255 [jcc]jne       .L000000F0.startup [ia32_imm_rel]
+
+<Symbol '.L00000101.startup' section='.text.startup', address=257>
+    ENDER False -- NXT .L00000118.startup
+    CFG .L000000D8.startup
+    CFG .L00000118.startup
+    GRAPH_NXT .L000000D8.startup
+    GRAPH_NXT .L00000118.startup
+    GRAPH_PRV .L000000D8.startup
+    GRAPH_PRV .L000000F6.startup
+'X64_AMOCO.InstructionCFG'>257 [None]movq      %rax, (%rsi) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>260 [None]movl      12(%rsp), %eax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>264 [None]addl      $7, %eax [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>267 [None]movzbl    %al, %eax [ia32_movx]
+'X64_AMOCO.InstructionCFG'>270 [None]cmpl      28(%rsp), %eax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>274 [None]movl      %eax, 12(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>278 [jcc]jne       .L000000D8.startup [ia32_imm_rel]
+
+<Symbol '.L00000118.startup' section='.text.startup', address=280>
+    ENDER False -- NXT .L00000122.startup
+    CFG fclose@PLT
+    GRAPH_NXT fclose@PLT
+    GRAPH_PRV .L00000101.startup
+'X64_AMOCO.InstructionCFG'>280 [None]movq      32(%rsp), %rdi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>285 [sub]call      fclose@PLT [ia32_imm_rel]
+
+<Symbol '.L00000122.startup' section='.text.startup', address=290>
+    ENDER False -- NXT .L00000132.startup
+    CFG .L00000048.startup
+    CFG .L00000132.startup
+    GRAPH_NXT .L00000048.startup
+    GRAPH_NXT .L00000132.startup
+    GRAPH_PRV .L00000036.startup
+    GRAPH_PRV fclose@PLT
+'X64_AMOCO.InstructionCFG'>290 [None]movq      X.3567(%rip), %rcx [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>297 [None]testq     %rcx, %rcx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>300 [jcc]je        .L00000048.startup [ia32_imm_rel]
+
+<Symbol '.L00000132.startup' section='.text.startup', address=306>
+    ENDER False -- NXT .L0000013B.startup
+    CFG .L00000156.startup
+    CFG .L0000013B.startup
+    GRAPH_NXT .L0000013B.startup
+    GRAPH_NXT .L00000156.startup
+    GRAPH_PRV .L00000122.startup
+'X64_AMOCO.InstructionCFG'>306 [None]cmpl      $0, i.3610(%rip) [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>313 [jcc]je        .L00000156.startup [ia32_imm_rel]
+
+<Symbol '.L0000013B.startup' section='.text.startup', address=315>
+    ENDER False -- NXT .L0000014F.startup
+    CFG memmove@PLT
+    GRAPH_NXT memmove@PLT
+    GRAPH_PRV .L00000132.startup
+'X64_AMOCO.InstructionCFG'>315 [None]movq      (%rcx), %rbx [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>318 [None]leaq      8(%rcx), %rsi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>322 [None]movl      $2040, %edx [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>327 [None]movq      %rcx, %rdi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>330 [sub]call      memmove@PLT [ia32_imm_rel]
+
+<Symbol '.L0000014F.startup' section='.text.startup', address=335>
+    ENDER False -- NXT .L00000156.startup
+    CFG .L00000156.startup
+    GRAPH_NXT .L00000156.startup
+    GRAPH_PRV memmove@PLT
+'X64_AMOCO.InstructionCFG'>335 [None]movq      %rbx, 2040(%rax) [ia32_reg_32]
+
+<Symbol '.L00000156.startup' section='.text.startup', address=342>
+    ENDER False -- NXT .L00000174.startup
+    CFG .L000002AD.startup
+    CFG .L00000174.startup
+    GRAPH_NXT .L00000174.startup
+    GRAPH_NXT .L000002AD.startup
+    GRAPH_PRV .L00000132.startup
+    GRAPH_PRV .L0000014F.startup
+    GRAPH_PRV main
+'X64_AMOCO.InstructionCFG'>342 [None]movq      40(%rsp), %rsi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>347 [None]movq      16(%rsi), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>351 [None]leaq      1(%rax), %rdx [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>355 [None]movq      %rdx, 16(%rsi) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>359 [None]movsbl    (%rax), %r14d [ia32_movx]
+'X64_AMOCO.InstructionCFG'>363 [None]testl     %r14d, %r14d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>366 [jcc]je        .L000002AD.startup [ia32_imm_rel]
+
+<Symbol '.L00000174.startup' section='.text.startup', address=372>
+    ENDER True -- NXT None
+    CFG .L000001AD.startup
+    GRAPH_NXT .L000001AD.startup
+    GRAPH_PRV .L00000036.startup
+    GRAPH_PRV .L00000156.startup
+    GRAPH_PRV .L00000389.startup
+'X64_AMOCO.InstructionCFG'>372 [None]xorl      %r12d, %r12d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>375 [None]xorl      %ecx, %ecx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>377 [None]movl      $-1840700269, %esi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>382 [jmp]jmp       .L000001AD.startup [ia32_imm_rel]
+
+<Symbol '.L00000180.startup' section='.text.startup', address=384>
+    ENDER False -- NXT .L00000186.startup
+    CFG .L000001B7.startup
+    CFG .L00000186.startup
+    GRAPH_NXT .L00000186.startup
+    GRAPH_NXT .L000001B7.startup
+    GRAPH_PRV .L000001AD.startup
+'X64_AMOCO.InstructionCFG'>384 [None]cmpl      $38, %r12d [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>388 [jcc]jg        .L000001B7.startup [ia32_imm_rel]
+
+<Symbol '.L00000186.startup' section='.text.startup', address=390>
+    ENDER False -- NXT .L000001A9.startup
+    CFG .L000001A9.startup
+    GRAPH_NXT .L000001A9.startup
+    GRAPH_PRV .L00000180.startup
+'X64_AMOCO.InstructionCFG'>390 [None]movl      %r12d, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>393 [None]imull     %esi [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>395 [None]movl      %r12d, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>398 [None]sarl      $31, %eax [ia32_rm32_imm8]
+'X64_AMOCO.InstructionCFG'>401 [None]addl      %r12d, %edx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>404 [None]sarl      $2, %edx [ia32_rm32_imm8]
+'X64_AMOCO.InstructionCFG'>407 [None]subl      %eax, %edx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>409 [None]leal      0(,%rdx,8), %eax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>416 [None]subl      %edx, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>418 [None]movl      %r12d, %edx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>421 [None]subl      %eax, %edx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>423 [None]subl      %edx, %ecx [ia32_reg_32]
+
+<Symbol '.L000001A9.startup' section='.text.startup', address=425>
+    ENDER False -- NXT .L000001AD.startup
+    CFG .L000001AD.startup
+    GRAPH_NXT .L000001AD.startup
+    GRAPH_PRV .L00000186.startup
+    GRAPH_PRV .L000001B2.startup
+'X64_AMOCO.InstructionCFG'>425 [None]addl      $1, %r12d [ia32_ptr_iwd]
+
+<Symbol '.L000001AD.startup' section='.text.startup', address=429>
+    ENDER False -- NXT .L000001B2.startup
+    CFG .L00000180.startup
+    CFG .L000001B2.startup
+    GRAPH_NXT .L00000180.startup
+    GRAPH_NXT .L000001B2.startup
+    GRAPH_PRV .L00000174.startup
+    GRAPH_PRV .L000001A9.startup
+'X64_AMOCO.InstructionCFG'>429 [None]cmpl      $9, %ecx [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>432 [jcc]jg        .L00000180.startup [ia32_imm_rel]
+
+<Symbol '.L000001B2.startup' section='.text.startup', address=434>
+    ENDER True -- NXT None
+    CFG .L000001A9.startup
+    GRAPH_NXT .L000001A9.startup
+    GRAPH_PRV .L000001AD.startup
+'X64_AMOCO.InstructionCFG'>434 [None]addl      $1, %ecx [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>437 [jmp]jmp       .L000001A9.startup [ia32_imm_rel]
+
+<Symbol '.L000001B7.startup' section='.text.startup', address=439>
+    ENDER False -- NXT .L000001D3.startup
+    CFG .L0000024B.startup
+    CFG .L000001D3.startup
+    GRAPH_NXT .L000001D3.startup
+    GRAPH_NXT .L0000024B.startup
+    GRAPH_PRV .L00000180.startup
+'X64_AMOCO.InstructionCFG'>439 [None]movq      X.3567(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>446 [None]movslq    %r14d, %rdx [ia32_movsxd]
+'X64_AMOCO.InstructionCFG'>449 [None]addl      $1, %r12d [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>453 [None]movq      (%rax,%rdx,8), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>457 [None]testq     %rax, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>460 [None]movq      %rax, 16(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>465 [jcc]je        .L0000024B.startup [ia32_imm_rel]
+
+<Symbol '.L000001D3.startup' section='.text.startup', address=467>
+    ENDER False -- NXT .L000001E0.startup
+    CFG .L000001E0.startup
+    GRAPH_NXT .L000001E0.startup
+    GRAPH_PRV .L000001B7.startup
+'X64_AMOCO.InstructionCFG'>467 [None]movq      R@GOTPCREL(%rip), %r13 [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>474 [None]movq      16(%rsp), %rax [ia32_reg_32_inv]
+'plasmasm.constants.P2Align'>479 [None][.]nop 90[.p2align 3]
+
+<Symbol '.L000001E0.startup' section='.text.startup', address=480>
+    ENDER False -- NXT .L000001E4.startup
+    CFG .L000001E4.startup
+    GRAPH_NXT .L000001E4.startup
+    GRAPH_PRV .L000001D3.startup
+    GRAPH_PRV .L00000239.startup
+'X64_AMOCO.InstructionCFG'>480 [None]movq      16(%rax), %rbp [ia32_reg_32_inv]
+
+<Symbol '.L000001E4.startup' section='.text.startup', address=484>
+    ENDER False -- NXT .L000001ED.startup
+    CFG .L00000230.startup
+    CFG .L000001ED.startup
+    GRAPH_NXT .L000001ED.startup
+    GRAPH_NXT .L00000230.startup
+    GRAPH_PRV .L000001E0.startup
+    GRAPH_PRV .L00000205.startup
+'X64_AMOCO.InstructionCFG'>484 [None]movsbl    (%rbp), %edx [ia32_movx]
+'X64_AMOCO.InstructionCFG'>488 [None]cmpl      %edx, %r12d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>491 [jcc]jg        .L00000230.startup [ia32_imm_rel]
+
+<Symbol '.L000001ED.startup' section='.text.startup', address=493>
+    ENDER False -- NXT .L00000200.startup
+    CFG .L00000200.startup
+    GRAPH_NXT .L00000200.startup
+    GRAPH_PRV .L000001E4.startup
+    GRAPH_PRV .L00000227.startup
+'X64_AMOCO.InstructionCFG'>493 [None]subl      %r12d, %edx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>496 [None]addq      $1, %rbp [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>500 [None]movl      $6, %ebx [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>505 [None]movl      %edx, %r15d [ia32_reg_32]
+'plasmasm.constants.P2Align'>508 [None][.]nop 0f1f4000[.p2align 3]
+
+<Symbol '.L00000200.startup' section='.text.startup', address=512>
+    ENDER False -- NXT .L00000205.startup
+    CFG .L0000020E.startup
+    CFG .L00000205.startup
+    GRAPH_NXT .L00000205.startup
+    GRAPH_NXT .L0000020E.startup
+    GRAPH_PRV .L000001ED.startup
+    GRAPH_PRV .L00000222.startup
+'X64_AMOCO.InstructionCFG'>512 [None]testl     %r15d, %r15d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>515 [jcc]jne       .L0000020E.startup [ia32_imm_rel]
+
+<Symbol '.L00000205.startup' section='.text.startup', address=517>
+    ENDER False -- NXT .L0000020E.startup
+    CFG .L000001E4.startup
+    CFG .L0000020E.startup
+    GRAPH_NXT .L000001E4.startup
+    GRAPH_NXT .L0000020E.startup
+    GRAPH_PRV .L00000200.startup
+'X64_AMOCO.InstructionCFG'>517 [None]movsbl    (%rbp), %eax [ia32_movx]
+'X64_AMOCO.InstructionCFG'>521 [None]cmpl      %eax, %r12d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>524 [jcc]jg        .L000001E4.startup [ia32_imm_rel]
+
+<Symbol '.L0000020E.startup' section='.text.startup', address=526>
+    ENDER False -- NXT .L00000222.startup
+    CFG None
+    GRAPH_PRV .L00000200.startup
+    GRAPH_PRV .L00000205.startup
+'X64_AMOCO.InstructionCFG'>526 [None]movl      %r15d, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>529 [None]sarl      $1, %r15d [ia32_rm32_op2]
+'X64_AMOCO.InstructionCFG'>532 [None]andl      $1, %eax [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>535 [None]leal      (%rax,%rax), %ecx [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>538 [None]leal      32(%rax,%rcx), %edi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>542 [sub]call      *(%r13) [ia32_rm64]
+
+<Symbol '.L00000222.startup' section='.text.startup', address=546>
+    ENDER False -- NXT .L00000227.startup
+    CFG .L00000200.startup
+    CFG .L00000227.startup
+    GRAPH_NXT .L00000200.startup
+    GRAPH_NXT .L00000227.startup
+'X64_AMOCO.InstructionCFG'>546 [None]subl      $1, %ebx [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>549 [jcc]jne       .L00000200.startup [ia32_imm_rel]
+
+<Symbol '.L00000227.startup' section='.text.startup', address=551>
+    ENDER False -- NXT .L00000230.startup
+    CFG .L000001ED.startup
+    CFG .L00000230.startup
+    GRAPH_NXT .L000001ED.startup
+    GRAPH_NXT .L00000230.startup
+    GRAPH_PRV .L00000222.startup
+'X64_AMOCO.InstructionCFG'>551 [None]movsbl    (%rbp), %edx [ia32_movx]
+'X64_AMOCO.InstructionCFG'>555 [None]cmpl      %edx, %r12d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>558 [jcc]jle       .L000001ED.startup [ia32_imm_rel]
+
+<Symbol '.L00000230.startup' section='.text.startup', address=560>
+    ENDER False -- NXT .L00000239.startup
+    CFG None
+    GRAPH_PRV .L000001E4.startup
+    GRAPH_PRV .L00000227.startup
+'X64_AMOCO.InstructionCFG'>560 [None]movl      $10, %edi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>565 [sub]call      *(%r13) [ia32_rm64]
+
+<Symbol '.L00000239.startup' section='.text.startup', address=569>
+    ENDER False -- NXT .L0000024B.startup
+    CFG .L000001E0.startup
+    CFG .L0000024B.startup
+    GRAPH_NXT .L000001E0.startup
+    GRAPH_NXT .L0000024B.startup
+'X64_AMOCO.InstructionCFG'>569 [None]movq      16(%rsp), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>574 [None]movq      (%rax), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>577 [None]testq     %rax, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>580 [None]movq      %rax, 16(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>585 [jcc]jne       .L000001E0.startup [ia32_imm_rel]
+
+<Symbol '.L0000024B.startup' section='.text.startup', address=587>
+    ENDER False -- NXT .L00000256.startup
+    CFG .L00000368.startup
+    CFG .L00000256.startup
+    GRAPH_NXT .L00000256.startup
+    GRAPH_NXT .L00000368.startup
+    GRAPH_PRV .L000001B7.startup
+    GRAPH_PRV .L00000239.startup
+'X64_AMOCO.InstructionCFG'>587 [None]cmpl      $1, 24(%rsp) [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>592 [jcc]jle       .L00000368.startup [ia32_imm_rel]
+
+<Symbol '.L00000256.startup' section='.text.startup', address=598>
+    ENDER False -- NXT .L00000264.startup
+    CFG .L000002AD.startup
+    CFG .L00000264.startup
+    GRAPH_NXT .L00000264.startup
+    GRAPH_NXT .L000002AD.startup
+    GRAPH_PRV .L0000024B.startup
+'X64_AMOCO.InstructionCFG'>598 [None]movq      40(%rsp), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>603 [None]movq      16(%rax), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>607 [None]cmpb      $0, (%rax) [ia32_ptr_ib]
+'X64_AMOCO.InstructionCFG'>610 [jcc]je        .L000002AD.startup [ia32_imm_rel]
+
+<Symbol '.L00000264.startup' section='.text.startup', address=612>
+    ENDER True -- NXT None
+    CFG .L000004B6.startup
+    GRAPH_NXT .L000004B6.startup
+    GRAPH_PRV .L00000256.startup
+'X64_AMOCO.InstructionCFG'>612 [jmp]jmp       .L000004B6.startup [ia32_imm_rel]
+
+<Symbol '.L00000269.startup' section='.text.startup', size=7, address=617>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>617 [None][.]nop 0f1f8000000000[.p2align 4]
+
+<Symbol '.L00000270.startup' section='.text.startup', address=624>
+    ENDER False -- NXT .L0000028D.startup
+    CFG .L000000CC.startup
+    CFG .L0000028D.startup
+    GRAPH_NXT .L000000CC.startup
+    GRAPH_NXT .L0000028D.startup
+    GRAPH_PRV .L000002AD.startup
+'X64_AMOCO.InstructionCFG'>624 [None]movslq    %r14d, %rax [ia32_movsxd]
+'X64_AMOCO.InstructionCFG'>627 [None]salq      $3, %rax [ia32_rm32_imm8]
+'X64_AMOCO.InstructionCFG'>631 [None]addq      %rax, X.3567(%rip) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>638 [None]movl      %r14d, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>641 [None]andl      $7, %eax [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>644 [None]cmpl      $3, %eax [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>647 [jcc]jg        .L000000CC.startup [ia32_imm_rel]
+
+<Symbol '.L0000028D.startup' section='.text.startup', address=653>
+    ENDER False -- NXT .L000002A6.startup
+    CFG _IO_putc@PLT
+    GRAPH_NXT _IO_putc@PLT
+    GRAPH_PRV .L00000270.startup
+'X64_AMOCO.InstructionCFG'>653 [None]movq      stdout@GOTPCREL(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>660 [None]leal      -1(%r14), %ebx [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>664 [None]subl      $43, %r14d [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>668 [None]movl      %ebx, %edi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>670 [None]movq      (%rax), %rsi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>673 [sub]call      _IO_putc@PLT [ia32_imm_rel]
+
+<Symbol '.L000002A6.startup' section='.text.startup', address=678>
+    ENDER False -- NXT .L000002AD.startup
+    CFG .L000002AD.startup
+    GRAPH_NXT .L000002AD.startup
+    GRAPH_PRV _IO_putc@PLT
+'X64_AMOCO.InstructionCFG'>678 [None]testb     $7, %bl [ia32_ptr_ib]
+'X64_AMOCO.InstructionCFG'>681 [None]cmovne    %ebx, %r14d [ia32_CMOVcc]
+
+<Symbol '.L000002AD.startup' section='.text.startup', address=685>
+    ENDER False -- NXT .L000002BD.startup
+    CFG .L00000270.startup
+    CFG .L000002BD.startup
+    GRAPH_NXT .L00000270.startup
+    GRAPH_NXT .L000002BD.startup
+    GRAPH_PRV .L00000156.startup
+    GRAPH_PRV .L00000256.startup
+    GRAPH_PRV .L000002A6.startup
+    GRAPH_PRV .L000004D5.startup
+'X64_AMOCO.InstructionCFG'>685 [None]addl      $1, 24(%rsp) [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>690 [None]movl      24(%rsp), %eax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>694 [None]subl      $1, %eax [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>697 [None]testl     %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>699 [jcc]jle       .L00000270.startup [ia32_imm_rel]
+
+<Symbol '.L000002BD.startup' section='.text.startup', address=701>
+    ENDER True -- NXT None
+    CFG exit@PLT
+    GRAPH_NXT exit@PLT
+    GRAPH_PRV .L000002AD.startup
+    GRAPH_PRV .L00000377.startup
+    GRAPH_PRV .L0000047E.startup
+'X64_AMOCO.InstructionCFG'>701 [None]xorl      %edi, %edi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>703 [sub]call      exit@PLT [ia32_imm_rel]
+
+<Symbol '.L000002C4.startup' section='.text.startup', address=708>
+    ENDER False -- NXT .L00000335.startup
+    CFG calloc@PLT
+    GRAPH_NXT calloc@PLT
+    GRAPH_PRV .L00000036.startup
+'X64_AMOCO.InstructionCFG'>708 [None]leaq      .LC0(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>715 [None]movl      $8, %esi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>720 [None]movl      $384, %edi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>725 [None]movq      $0, 104(%rsp) [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>734 [None]leaq      48(%rsp), %rbx [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>739 [None]movq      %rax, 48(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>744 [None]leaq      .LC1(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>751 [None]movq      %rax, 56(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>756 [None]leaq      .LC2(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>763 [None]movq      %rax, 64(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>768 [None]leaq      .LC3(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>775 [None]movq      %rax, 72(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>780 [None]leaq      .LC4(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>787 [None]movq      %rax, 80(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>792 [None]leaq      .LC5(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>799 [None]movq      %rax, 88(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>804 [None]leaq      .LC6(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>811 [None]movq      %rax, 96(%rsp) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>816 [sub]call      calloc@PLT [ia32_imm_rel]
+
+<Symbol '.L00000335.startup' section='.text.startup', address=821>
+    ENDER False -- NXT .L00000345.startup
+    CFG .L00000495.startup
+    CFG .L00000345.startup
+    GRAPH_NXT .L00000345.startup
+    GRAPH_NXT .L00000495.startup
+    GRAPH_PRV calloc@PLT
+'X64_AMOCO.InstructionCFG'>821 [None]testq     %rax, %rax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>824 [None]movq      %rax, X.3567(%rip) [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>831 [jcc]je        .L00000495.startup [ia32_imm_rel]
+
+<Symbol '.L00000345.startup' section='.text.startup', address=837>
+    ENDER False -- NXT .L00000348.startup
+    CFG .L00000348.startup
+    GRAPH_NXT .L00000348.startup
+    GRAPH_PRV .L00000335.startup
+'plasmasm.constants.P2Align'>837 [None][.]nop 0f1f00[.p2align 3]
+
+<Symbol '.L00000348.startup' section='.text.startup', address=840>
+    ENDER False -- NXT .L00000362.startup
+    CFG h@PLT
+    GRAPH_NXT h@PLT
+    GRAPH_PRV .L00000345.startup
+    GRAPH_PRV .L00000362.startup
+'X64_AMOCO.InstructionCFG'>840 [None]movq      (%rbx), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>843 [None]movq      X.3567(%rip), %rdi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>850 [None]addq      $8, %rbx [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>854 [None]movsbl    (%rax), %edx [ia32_movx]
+'X64_AMOCO.InstructionCFG'>857 [None]leaq      1(%rax), %rsi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>861 [sub]call      h@PLT [ia32_imm_rel]
+
+<Symbol '.L00000362.startup' section='.text.startup', address=866>
+    ENDER False -- NXT .L00000368.startup
+    CFG .L00000348.startup
+    CFG .L00000368.startup
+    GRAPH_NXT .L00000348.startup
+    GRAPH_NXT .L00000368.startup
+    GRAPH_PRV h@PLT
+'X64_AMOCO.InstructionCFG'>866 [None]cmpq      $0, (%rbx) [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>870 [jcc]jne       .L00000348.startup [ia32_imm_rel]
+
+<Symbol '.L00000368.startup' section='.text.startup', address=872>
+    ENDER False -- NXT .L00000377.startup
+    CFG _IO_getc@PLT
+    GRAPH_NXT _IO_getc@PLT
+    GRAPH_PRV .L0000024B.startup
+    GRAPH_PRV .L00000362.startup
+'X64_AMOCO.InstructionCFG'>872 [None]movq      stdin@GOTPCREL(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>879 [None]movq      (%rax), %rdi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>882 [sub]call      _IO_getc@PLT [ia32_imm_rel]
+
+<Symbol '.L00000377.startup' section='.text.startup', address=887>
+    ENDER False -- NXT .L00000382.startup
+    CFG .L000002BD.startup
+    CFG .L00000382.startup
+    GRAPH_NXT .L000002BD.startup
+    GRAPH_NXT .L00000382.startup
+    GRAPH_PRV _IO_getc@PLT
+'X64_AMOCO.InstructionCFG'>887 [None]testl     %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>889 [None]movl      %eax, %r14d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>892 [jcc]js        .L000002BD.startup [ia32_imm_rel]
+
+<Symbol '.L00000382.startup' section='.text.startup', address=898>
+    ENDER False -- NXT .L00000389.startup
+    CFG k@PLT
+    GRAPH_NXT k@PLT
+    GRAPH_PRV .L00000377.startup
+'X64_AMOCO.InstructionCFG'>898 [None]xorl      %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>900 [sub]call      k@PLT [ia32_imm_rel]
+
+<Symbol '.L00000389.startup' section='.text.startup', address=905>
+    ENDER True -- NXT None
+    CFG .L00000174.startup
+    GRAPH_NXT .L00000174.startup
+    GRAPH_PRV k@PLT
+'X64_AMOCO.InstructionCFG'>905 [jmp]jmp       .L00000174.startup [ia32_imm_rel]
+
+<Symbol '.L0000038E.startup' section='.text.startup', address=910>
+    ENDER False -- NXT .L000003A8.startup
+    CFG .L000003A8.startup
+    GRAPH_NXT .L000003A8.startup
+    GRAPH_PRV .L00000036.startup
+'X64_AMOCO.InstructionCFG'>910 [None]leaq      112(%rsp), %rbx [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>915 [None]movl      $34, %ecx [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>920 [None]xorl      %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>922 [None]xorl      %r13d, %r13d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>925 [None]movq      %rbx, %rdi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>928 [None]movq      %rbx, %r12 [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>931 [None]rep stosb      [ia32_strings]
+'plasmasm.constants.P2Align'>933 [None][.]nop 0f1f00[.p2align 3]
+
+<Symbol '.L000003A8.startup' section='.text.startup', address=936>
+    ENDER False -- NXT .L000003B1.startup
+    CFG .L00000429.startup
+    CFG .L000003B1.startup
+    GRAPH_NXT .L000003B1.startup
+    GRAPH_NXT .L00000429.startup
+    GRAPH_PRV .L0000038E.startup
+    GRAPH_PRV .L000003FE.startup
+'X64_AMOCO.InstructionCFG'>936 [None]cmpl      $200, %r13d [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>943 [jcc]je        .L00000429.startup [ia32_imm_rel]
+
+<Symbol '.L000003B1.startup' section='.text.startup', address=945>
+    ENDER False -- NXT .L000003C0.startup
+    CFG _IO_getc@PLT
+    GRAPH_NXT _IO_getc@PLT
+    GRAPH_PRV .L000003A8.startup
+    GRAPH_PRV .L00000420.startup
+'X64_AMOCO.InstructionCFG'>945 [None]movq      stdin@GOTPCREL(%rip), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>952 [None]movq      (%rax), %rdi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>955 [sub]call      _IO_getc@PLT [ia32_imm_rel]
+
+<Symbol '.L000003C0.startup' section='.text.startup', address=960>
+    ENDER False -- NXT .L000003CB.startup
+    CFG .L000004DA.startup
+    CFG .L000003CB.startup
+    GRAPH_NXT .L000003CB.startup
+    GRAPH_NXT .L000004DA.startup
+    GRAPH_PRV _IO_getc@PLT
+'X64_AMOCO.InstructionCFG'>960 [None]cmpl      $10, %eax [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>963 [None]movl      %eax, %ebp [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>965 [jcc]je        .L000004DA.startup [ia32_imm_rel]
+
+<Symbol '.L000003CB.startup' section='.text.startup', address=971>
+    ENDER False -- NXT .L000003D0.startup
+    CFG .L000003FE.startup
+    CFG .L000003D0.startup
+    GRAPH_NXT .L000003D0.startup
+    GRAPH_NXT .L000003FE.startup
+    GRAPH_PRV .L000003C0.startup
+'X64_AMOCO.InstructionCFG'>971 [None]cmpl      $32, %eax [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>974 [jcc]je        .L000003FE.startup [ia32_imm_rel]
+
+<Symbol '.L000003D0.startup' section='.text.startup', address=976>
+    ENDER False -- NXT .L000003D9.startup
+    CFG .L000004DA.startup
+    CFG .L000003D9.startup
+    GRAPH_NXT .L000003D9.startup
+    GRAPH_NXT .L000004DA.startup
+    GRAPH_PRV .L000003CB.startup
+'X64_AMOCO.InstructionCFG'>976 [None]cmpl      $-1, %eax [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>979 [jcc]je        .L000004DA.startup [ia32_imm_rel]
+
+<Symbol '.L000003D9.startup' section='.text.startup', address=985>
+    ENDER False -- NXT .L000003FE.startup
+    CFG .L000003FE.startup
+    GRAPH_NXT .L000003FE.startup
+    GRAPH_PRV .L000003D0.startup
+'X64_AMOCO.InstructionCFG'>985 [None]movl      $715827883, %eax [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>990 [None]movl      %r13d, %ecx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>993 [None]imull     %r13d [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>996 [None]movl      %r13d, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>999 [None]sarl      $31, %eax [ia32_rm32_imm8]
+'X64_AMOCO.InstructionCFG'>1002 [None]subl      %eax, %edx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1004 [None]leal      (%rdx,%rdx,2), %eax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>1007 [None]addl      %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1009 [None]subl      %eax, %ecx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1011 [None]movl      $1, %eax [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>1016 [None]sall      %cl, %eax [ia32_rm32_op2]
+'X64_AMOCO.InstructionCFG'>1018 [None]orb       %al, (%r12) [ia32_reg_8]
+
+<Symbol '.L000003FE.startup' section='.text.startup', address=1022>
+    ENDER False -- NXT .L0000041C.startup
+    CFG .L000003A8.startup
+    CFG .L0000041C.startup
+    GRAPH_NXT .L000003A8.startup
+    GRAPH_NXT .L0000041C.startup
+    GRAPH_PRV .L000003CB.startup
+    GRAPH_PRV .L000003D9.startup
+'X64_AMOCO.InstructionCFG'>1022 [None]addl      $1, %r13d [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>1026 [None]movl      $715827883, %eax [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>1031 [None]imull     %r13d [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>1034 [None]movl      %r13d, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1037 [None]sarl      $31, %eax [ia32_rm32_imm8]
+'X64_AMOCO.InstructionCFG'>1040 [None]subl      %eax, %edx [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1042 [None]leal      (%rdx,%rdx,2), %eax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>1045 [None]addl      %eax, %eax [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1047 [None]cmpl      %eax, %r13d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1050 [jcc]jne       .L000003A8.startup [ia32_imm_rel]
+
+<Symbol '.L0000041C.startup' section='.text.startup', address=1052>
+    ENDER False -- NXT .L00000420.startup
+    CFG .L00000420.startup
+    GRAPH_NXT .L00000420.startup
+    GRAPH_PRV .L000003FE.startup
+'X64_AMOCO.InstructionCFG'>1052 [None]addq      $1, %r12 [ia32_ptr_iwd]
+
+<Symbol '.L00000420.startup' section='.text.startup', address=1056>
+    ENDER False -- NXT .L00000429.startup
+    CFG .L000003B1.startup
+    CFG .L00000429.startup
+    GRAPH_NXT .L000003B1.startup
+    GRAPH_NXT .L00000429.startup
+    GRAPH_PRV .L0000041C.startup
+    GRAPH_PRV .L00000487.startup
+'X64_AMOCO.InstructionCFG'>1056 [None]cmpl      $200, %r13d [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>1063 [jcc]jne       .L000003B1.startup [ia32_imm_rel]
+
+<Symbol '.L00000429.startup' section='.text.startup', address=1065>
+    ENDER False -- NXT .L00000434.startup
+    CFG .L00000434.startup
+    GRAPH_NXT .L00000434.startup
+    GRAPH_PRV .L000003A8.startup
+    GRAPH_PRV .L00000420.startup
+'X64_AMOCO.InstructionCFG'>1065 [None]movl      $10, %ebp [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>1070 [None]movl      $199, %r12d [ia32_mov_adr]
+
+<Symbol '.L00000434.startup' section='.text.startup', address=1076>
+    ENDER False -- NXT .L00000451.startup
+    CFG putchar
+    GRAPH_NXT putchar
+    GRAPH_PRV .L00000429.startup
+    GRAPH_PRV .L000004E3.startup
+'X64_AMOCO.InstructionCFG'>1076 [None]movq      40(%rsp), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>1081 [None]movq      R@GOTPCREL(%rip), %r13 [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>1088 [None]xorl      %r14d, %r14d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1091 [None]movq      %rbx, %r15 [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1094 [None]movq      8(%rax), %rax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>1098 [None]movsbl    (%rax), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>1101 [sub]call      *(%r13) [ia32_rm64]
+
+<Symbol '.L00000451.startup' section='.text.startup', address=1105>
+    ENDER False -- NXT .L00000458.startup
+    CFG .L00000458.startup
+    GRAPH_NXT .L00000458.startup
+    GRAPH_PRV putchar
+'plasmasm.constants.P2Align'>1105 [None][.]nop 0f1f8000000000[.p2align 3]
+
+<Symbol '.L00000458.startup' section='.text.startup', address=1112>
+    ENDER False -- NXT .L0000046B.startup
+    CFG None
+    GRAPH_PRV .L00000451.startup
+    GRAPH_PRV .L0000046B.startup
+'X64_AMOCO.InstructionCFG'>1112 [None]movsbl    (%r15), %edi [ia32_movx]
+'X64_AMOCO.InstructionCFG'>1116 [None]addl      $6, %r14d [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>1120 [None]addq      $1, %r15 [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>1124 [None]addl      $43, %edi [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>1127 [sub]call      *(%r13) [ia32_rm64]
+
+<Symbol '.L0000046B.startup' section='.text.startup', address=1131>
+    ENDER False -- NXT .L00000475.startup
+    CFG .L00000458.startup
+    CFG .L00000475.startup
+    GRAPH_NXT .L00000458.startup
+    GRAPH_NXT .L00000475.startup
+'X64_AMOCO.InstructionCFG'>1131 [None]cmpl      %r14d, %r12d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1134 [None]movb      $0, -1(%r15) [ia32_ptr_ib]
+'X64_AMOCO.InstructionCFG'>1139 [jcc]jge       .L00000458.startup [ia32_imm_rel]
+
+<Symbol '.L00000475.startup' section='.text.startup', address=1141>
+    ENDER False -- NXT .L0000047E.startup
+    CFG None
+    GRAPH_PRV .L0000046B.startup
+'X64_AMOCO.InstructionCFG'>1141 [None]movl      $10, %edi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>1146 [sub]call      *(%r13) [ia32_rm64]
+
+<Symbol '.L0000047E.startup' section='.text.startup', address=1150>
+    ENDER False -- NXT .L00000487.startup
+    CFG .L000002BD.startup
+    CFG .L00000487.startup
+    GRAPH_NXT .L000002BD.startup
+    GRAPH_NXT .L00000487.startup
+    GRAPH_PRV .L000004DA.startup
+'X64_AMOCO.InstructionCFG'>1150 [None]cmpl      $-1, %ebp [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>1153 [jcc]je        .L000002BD.startup [ia32_imm_rel]
+
+<Symbol '.L00000487.startup' section='.text.startup', address=1159>
+    ENDER True -- NXT None
+    CFG .L00000420.startup
+    GRAPH_NXT .L00000420.startup
+    GRAPH_PRV .L0000047E.startup
+'X64_AMOCO.InstructionCFG'>1159 [None]leaq      111(%rsp), %r12 [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>1164 [None]xorl      %r13d, %r13d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1167 [None]addq      $1, %r12 [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>1171 [jmp]jmp       .L00000420.startup [ia32_imm_rel]
+
+<Symbol '.L00000495.startup' section='.text.startup', address=1173>
+    ENDER True -- NXT None
+    CFG exit@PLT
+    GRAPH_NXT exit@PLT
+    GRAPH_PRV .L00000061.startup
+    GRAPH_PRV .L00000086.startup
+    GRAPH_PRV .L00000335.startup
+'X64_AMOCO.InstructionCFG'>1173 [None]movl      $1, %edi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>1178 [sub]call      exit@PLT [ia32_imm_rel]
+
+<Symbol '.L0000049F.startup' section='.text.startup', address=1183>
+    ENDER False -- NXT .L000004B1.startup
+    CFG h@PLT
+    GRAPH_NXT h@PLT
+    GRAPH_PRV .L000000A0.startup
+'X64_AMOCO.InstructionCFG'>1183 [None]movq      X.3567(%rip), %rdi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>1190 [None]movsbl    %al, %edx [ia32_movx]
+'X64_AMOCO.InstructionCFG'>1193 [None]movq      %rbp, %rsi [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1196 [sub]call      h@PLT [ia32_imm_rel]
+
+<Symbol '.L000004B1.startup' section='.text.startup', address=1201>
+    ENDER True -- NXT None
+    CFG .L000000AD.startup
+    GRAPH_NXT .L000000AD.startup
+    GRAPH_PRV h@PLT
+'X64_AMOCO.InstructionCFG'>1201 [jmp]jmp       .L000000AD.startup [ia32_imm_rel]
+
+<Symbol '.L000004B6.startup' section='.text.startup', address=1206>
+    ENDER False -- NXT .L000004C6.startup
+    CFG putchar
+    GRAPH_NXT putchar
+    GRAPH_PRV .L00000264.startup
+'X64_AMOCO.InstructionCFG'>1206 [None]movq      R@GOTPCREL(%rip), %r13 [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>1213 [None]movl      $10, %edi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>1218 [sub]call      *(%r13) [ia32_rm64]
+
+<Symbol '.L000004C6.startup' section='.text.startup', address=1222>
+    ENDER False -- NXT .L000004D5.startup
+    CFG main@PLT
+    GRAPH_NXT main@PLT
+    GRAPH_PRV putchar
+'X64_AMOCO.InstructionCFG'>1222 [None]movq      40(%rsp), %rsi [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>1227 [None]movl      $4, %edi [ia32_mov_adr]
+'X64_AMOCO.InstructionCFG'>1232 [sub]call      main@PLT [ia32_imm_rel]
+
+<Symbol '.L000004D5.startup' section='.text.startup', address=1237>
+    ENDER True -- NXT None
+    CFG .L000002AD.startup
+    GRAPH_NXT .L000002AD.startup
+    GRAPH_PRV main@PLT
+'X64_AMOCO.InstructionCFG'>1237 [jmp]jmp       .L000002AD.startup [ia32_imm_rel]
+
+<Symbol '.LC00000000' section='.rodata', align=4, size=20, address=0, switch_table=(<Symbol '.LC00000000' section='.rodata', align=4, size=20, address=0, switch_table=(...)>, 4, 5)>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.Constant4Byte'>0 (4, 'long', 'I') [<Symbol '.L00000174.startup-.LC00000000' >]
+'plasmasm.constants.Constant4Byte'>4 (4, 'long', 'I') [<Symbol '.L000002C4.startup-.LC00000000' >]
+'plasmasm.constants.Constant4Byte'>8 (4, 'long', 'I') [<Symbol '.L0000038E.startup-.LC00000000' >]
+'plasmasm.constants.Constant4Byte'>12 (4, 'long', 'I') [<Symbol '.L00000052.startup-.LC00000000' >]
+'plasmasm.constants.Constant4Byte'>16 (4, 'long', 'I') [<Symbol '.L00000122.startup-.LC00000000' >]
+
+<Symbol '.L000004DA.startup' section='.text.startup', address=1242>
+    ENDER False -- NXT .L000004E3.startup
+    CFG .L0000047E.startup
+    CFG .L000004E3.startup
+    GRAPH_NXT .L0000047E.startup
+    GRAPH_NXT .L000004E3.startup
+    GRAPH_PRV .L000003C0.startup
+    GRAPH_PRV .L000003D0.startup
+'X64_AMOCO.InstructionCFG'>1242 [None]testl     %r13d, %r13d [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>1245 [None]leal      -1(%r13), %r12d [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>1249 [jcc]je        .L0000047E.startup [ia32_imm_rel]
+
+<Symbol '.L000004E3.startup' section='.text.startup', address=1251>
+    ENDER True -- NXT None
+    CFG .L00000434.startup
+    GRAPH_NXT .L00000434.startup
+    GRAPH_PRV .L000004DA.startup
+'X64_AMOCO.InstructionCFG'>1251 [jmp]jmp       .L00000434.startup [ia32_imm_rel]
+
+<Symbol 'i.3610' section='.bss', type='object', bind='local', size=4, address=0>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>0 .zero	4
+
+<Symbol 'X.3567' section='.bss', type='object', bind='local', size=8, address=16>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>16 .zero	8
+
+<Symbol 'c.3562' section='.bss', type='object', bind='local', size=1, address=32>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>32 .zero	1
+
+<Symbol '.LC3' section='.rodata.str1.1', bind='local', size=0, address=0>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>0 .string	".HHH"
+
+<Symbol '.LC4' section='.rodata.str1.1', bind='local', size=0, address=5>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>5 .string	"?`H0"
+
+<Symbol '.LC5' section='.rodata.str1.1', bind='local', size=0, address=10>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>10 .string	",b@b,"
+
+<Symbol '.LC6' section='.rodata.str1.1', bind='local', size=0, address=16>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>16 .string	" +"
+
+<Symbol '.LC7' section='.rodata.str1.1', bind='local', size=0, address=19>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>19 .string	"r"
+
+<Symbol '.LC0' section='.rodata.str1.8', bind='local', size=0, address=0>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>0 .string	"aH B0 BB B, , `0 b0 @, 0 Hb, B2 H0 b, B bH HB b`, H, @ 2 `, @2 H2 BH Bb b@"
+
+<Symbol '.LC0000004B.str1.8' section='.rodata.str1.8', type='padding', address=75>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>75 .zero	5
+
+<Symbol '.LC1' section='.rodata.str1.8', bind='local', align=8, size=0, address=80>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>80 .string	"AH B0 BB B, , `0 b0 @, 0 Hb, B2 H0 b, B bH HB b`, H, @ 2 `, @2 H2 BH Bb b@"
+
+<Symbol '.LC0000009B.str1.8' section='.rodata.str1.8', type='padding', address=155>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>155 .zero	5
+
+<Symbol '.LC2' section='.rodata.str1.8', bind='local', align=8, size=0, address=160>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>160 .string	"0bHb, HbH `H2 @b, @H @0 B@ b@ bH0 bHB"
+
+<Symbol 'R' section='.data.rel', type='object', bind='globl', size=8, address=0>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.Constant8Byte'>0 (8, 'quad', 'Q') [<Symbol 'putchar' bind='globl'>]
+
+<Symbol '.L00000052.startup-.LC00000000' >
+
+<Symbol '.L00000122.startup-.LC00000000' >
+
+<Symbol '.L00000174.startup-.LC00000000' >
+
+<Symbol '.L000002C4.startup-.LC00000000' >
+
+<Symbol '.L0000038E.startup-.LC00000000' >
+
+<Symbol 'D@PLT' >
+    GRAPH_NXT .L00000129
+    GRAPH_PRV .L00000116
+-- STACK00 ['.L00000129']
+
+<Symbol 'P@PLT' >
+    GRAPH_NXT .L00000052
+    GRAPH_NXT .L0000009B
+    GRAPH_NXT .L00000159
+    GRAPH_NXT .L00000181
+    GRAPH_PRV .L0000004D
+    GRAPH_PRV .L00000096
+    GRAPH_PRV .L00000154
+    GRAPH_PRV .L0000017C
+-- STACK00 ['.L00000052']
+-- STACK01 ['.L0000009B']
+-- STACK02 ['.L00000159']
+-- STACK03 ['.L00000181']
+
+<Symbol 'R@GOTPCREL' >
+
+<Symbol '_GLOBAL_OFFSET_TABLE_' bind='globl'>
+
+<Symbol '_IO_getc' bind='globl'>
+
+<Symbol '_IO_getc@PLT' >
+    GRAPH_NXT .L00000377.startup
+    GRAPH_NXT .L000003C0.startup
+    GRAPH_PRV .L00000368.startup
+    GRAPH_PRV .L000003B1.startup
+-- STACK00 ['.L00000377.startup']
+-- STACK01 ['.L000003C0.startup']
+
+<Symbol '_IO_putc' bind='globl'>
+
+<Symbol '_IO_putc@PLT' >
+    GRAPH_NXT .L000002A6.startup
+    GRAPH_PRV .L0000028D.startup
+-- STACK00 ['.L000002A6.startup']
+
+<Symbol '__ctype_b_loc' bind='globl'>
+
+<Symbol '__ctype_b_loc@PLT' >
+    GRAPH_NXT .L0000000A
+    GRAPH_PRV P
+-- STACK00 ['.L0000000A']
+
+<Symbol 'c9.c' bind='file'>
+
+<Symbol 'calloc' bind='globl'>
+
+<Symbol 'calloc@PLT' >
+    GRAPH_NXT .L00000061.startup
+    GRAPH_NXT .L00000335.startup
+    GRAPH_PRV .L00000052.startup
+    GRAPH_PRV .L000002C4.startup
+-- STACK00 ['.L00000061.startup']
+-- STACK01 ['.L00000335.startup']
+
+<Symbol 'exit' bind='globl'>
+
+<Symbol 'exit@PLT' >
+    GRAPH_PRV .L000001A7
+    GRAPH_PRV .L000002BD.startup
+    GRAPH_PRV .L00000495.startup
+-- STACK00 ['   0x1b1-.text-.L000001A7']
+-- STACK01 ['   0x2c4-.text.startup-.L000002BD.startup']
+-- STACK02 ['   0x49f-.text.startup-.L00000495.startup']
+
+<Symbol 'fclose' bind='globl'>
+
+<Symbol 'fclose@PLT' >
+    GRAPH_NXT .L00000122.startup
+    GRAPH_PRV .L00000118.startup
+-- STACK00 ['.L00000122.startup']
+
+<Symbol 'fgets' bind='globl'>
+
+<Symbol 'fgets@PLT' >
+    GRAPH_NXT .L000000BF.startup
+    GRAPH_PRV .L000000AD.startup
+-- STACK00 ['.L000000BF.startup']
+
+<Symbol 'fopen' bind='globl'>
+
+<Symbol 'fopen@PLT' >
+    GRAPH_NXT .L00000086.startup
+    GRAPH_PRV .L00000071.startup
+-- STACK00 ['.L00000086.startup']
+
+<Symbol 'h@PLT' >
+    GRAPH_NXT .L00000362.startup
+    GRAPH_NXT .L000004B1.startup
+    GRAPH_PRV .L00000348.startup
+    GRAPH_PRV .L0000049F.startup
+-- STACK00 ['.L00000362.startup']
+-- STACK01 ['.L000004B1.startup']
+
+<Symbol 'k@PLT' >
+    GRAPH_NXT .L00000389.startup
+    GRAPH_PRV .L00000382.startup
+-- STACK00 ['.L00000389.startup']
+
+<Symbol 'l@PLT' >
+    GRAPH_NXT .L00000139
+    GRAPH_PRV .L00000129
+-- STACK00 ['.L00000139']
+
+<Symbol 'main@PLT' >
+    GRAPH_NXT .L000004D5.startup
+    GRAPH_PRV .L000004C6.startup
+-- STACK00 ['.L000004D5.startup']
+
+<Symbol 'malloc' bind='globl'>
+
+<Symbol 'malloc@PLT' >
+    GRAPH_NXT .L00000061
+    GRAPH_NXT .L0000010A
+    GRAPH_PRV .L0000005C
+    GRAPH_PRV .L00000100
+-- STACK00 ['.L00000061']
+-- STACK01 ['.L0000010A']
+
+<Symbol 'memmove' bind='globl'>
+
+<Symbol 'memmove@PLT' >
+    GRAPH_NXT .L0000014F.startup
+    GRAPH_PRV .L0000013B.startup
+-- STACK00 ['.L0000014F.startup']
+
+<Symbol 'putchar' bind='globl'>
+    GRAPH_NXT .L00000451.startup
+    GRAPH_NXT .L000004C6.startup
+    GRAPH_PRV .L000001D8
+    GRAPH_PRV .L00000434.startup
+    GRAPH_PRV .L000004B6.startup
+-- STACK00 ['.L00000451.startup']
+-- STACK01 ['.L000004C6.startup']
+
+<Symbol 'stdin' bind='globl'>
+
+<Symbol 'stdin@GOTPCREL' >
+
+<Symbol 'stdout' bind='globl'>
+
+<Symbol 'stdout@GOTPCREL' >
+
+<Symbol 'i.3610+4' section='.bss', type='endofsymbol', bind='local', address=4>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'X.3567+8' section='.bss', type='endofsymbol', bind='local', address=24>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'c.3562+1' section='.bss', type='endofsymbol', bind='local', address=33>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'R+8' section='.data.rel', type='padding', address=8>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '.LC00000014' section='.rodata', type='endofsymbol', address=20>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'k+36' section='.text', type='padding', address=484>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol 'main+1256' section='.text.startup', type='padding', address=1256>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.data.rel', '.data.rel,"wa",@progbits')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+('.rodata.str1.1', '.rodata.str1.1,"aMS",@progbits,1')
+('.rodata.str1.8', '.rodata.str1.8,"aMS",@progbits,1')
+('.text.startup', '.text.startup,"ax",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4',endianess:'<',eh_frame_size:264,eh_frame_relocs:{32: (('ELF', 62, 2), {'section': '.text', 'address': 0}), 60: (('ELF', 62, 2), {'section': '.text', 'address': 32}), 120: (('ELF', 62, 2), {'section': '.text', 'address': 192}), 140: (('ELF', 62, 2), {'section': '.text', 'address': 208}), 200: (('ELF', 62, 2), {'section': '.text', 'address': 448}), 220: (('ELF', 62, 2), {'section': '.text.startup', 'address': 0})},container:'ELF',compiler:'gcc'

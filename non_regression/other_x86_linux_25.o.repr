@@ -1,0 +1,690 @@
+<Symbol 'my_ProcessingInstructionHandler' section='.text', type='function', bind='local', size=668, address=0>
+    ENDER False -- NXT .L00000010
+    CFG __x86.get_pc_thunk.bx
+    GRAPH_NXT __x86.get_pc_thunk.bx
+'I386_MIASM.InstructionCFG'>0 [None][] push {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>1 [None][] push {7:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>2 [None][] push {6:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>3 [None][] push {3:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>4 [None][] sub {4:1,ad:False,size:u32} {ad:False,imm:uint32(0x2c),size:u32} 
+'I386_MIASM.InstructionCFG'>7 [None][] mov {6:1,ad:False,size:u32} {4:1,ad:u32,imm:uint32(0x40),size:u32,txt:esp+imm} 
+'I386_MIASM.InstructionCFG'>11 [sub][] call {ad:False,size:u32,symb__intern__:{__x86.get_pc_thunk.bx:1}} 
+
+<Symbol '.L00000010' section='.text', address=16>
+    ENDER False -- NXT .L00000024
+    CFG .L0000011C
+    CFG .L00000024
+    GRAPH_NXT .L00000024
+    GRAPH_NXT .L0000011C
+    GRAPH_PRV __x86.get_pc_thunk.bx
+'I386_MIASM.InstructionCFG'>16 [None][] add {3:1,ad:False,size:u32} {ad:False,size:u32,symb__intern__:{_GLOBAL_OFFSET_TABLE_:1}} 
+'I386_MIASM.InstructionCFG'>22 [None][] mov {0:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x30),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>25 [None][] mov {0:1,ad:False,size:u32} {0:1,ad:u32,imm:uint32(0x8),size:u32,txt:eax+imm} 
+'I386_MIASM.InstructionCFG'>28 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>30 [jcc][] je {ad:False,size:u32,symb__intern__:{.L0000011C:1}} 
+
+<Symbol '.L00000024' section='.text', address=36>
+    ENDER False -- NXT .L0000002B
+    CFG .L00000036
+    CFG .L0000002B
+    GRAPH_NXT .L0000002B
+    GRAPH_NXT .L00000036
+    GRAPH_PRV .L00000010
+'I386_MIASM.InstructionCFG'>36 [None][] mov {2:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x20),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>39 [None][] test {2:1,ad:False,size:u32} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>41 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000036:1}} 
+
+<Symbol '.L0000002B' section='.text', address=43>
+    ENDER False -- NXT .L00000036
+    CFG .L00000128
+    CFG .L00000036
+    GRAPH_NXT .L00000036
+    GRAPH_NXT .L00000128
+    GRAPH_PRV .L00000024
+'I386_MIASM.InstructionCFG'>43 [None][] mov {0:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x28),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>46 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>48 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L00000128:1}} 
+
+<Symbol '.L00000036' section='.text', address=54>
+    ENDER False -- NXT .L00000053
+    CFG conv_string_to_utf8
+    CFG conv_string_to_unicode
+    GRAPH_NXT conv_string_to_unicode
+    GRAPH_NXT conv_string_to_utf8
+    GRAPH_PRV .L00000024
+    GRAPH_PRV .L0000002B
+    GRAPH_PRV .L00000132
+'I386_MIASM.InstructionCFG'>54 [None][] mov {5:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0xc),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>57 [None][] lea {0:1,ad:False,size:u32} {3:1,ad:True,size:True,symb__intern__:{conv_string_to_unicode@GOTOFF:1},txt:ebx+imm} 
+'I386_MIASM.InstructionCFG'>63 [None][] lea {7:1,ad:False,size:u32} {3:1,ad:True,size:True,symb__intern__:{conv_string_to_utf8@GOTOFF:1},txt:ebx+imm} 
+'I386_MIASM.InstructionCFG'>69 [None][] test {5:1,ad:False,size:u32} {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>71 [None][] cmovne {7:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>74 [None][] mov {0:1,ad:False,size:u32} {4:1,ad:u32,imm:uint32(0x44),size:u32,txt:esp+imm} 
+'I386_MIASM.InstructionCFG'>78 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>81 [sub][] call {7:1,ad:False,size:u32} 
+
+<Symbol '.L00000053' section='.text', address=83>
+    ENDER False -- NXT .L0000005D
+    CFG .L000001B0
+    CFG .L0000005D
+    GRAPH_NXT .L0000005D
+    GRAPH_NXT .L000001B0
+    GRAPH_PRV conv_string_to_unicode
+    GRAPH_PRV conv_string_to_utf8
+'I386_MIASM.InstructionCFG'>83 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>85 [None][] mov {1:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>87 [jcc][] je {ad:False,size:u32,symb__intern__:{.L000001B0:1}} 
+
+<Symbol '.L0000005D' section='.text', address=93>
+    ENDER False -- NXT .L0000006A
+    CFG .L0000009A
+    CFG .L0000006A
+    GRAPH_NXT .L0000006A
+    GRAPH_NXT .L0000009A
+    GRAPH_PRV .L00000053
+'I386_MIASM.InstructionCFG'>93 [None][] mov {0:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x2c),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>96 [None][] mov {5:1,ad:False,size:u32} {1:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>98 [None][] mov {4:1,ad:u32,imm:uint32(0x1c),size:u32,txt:esp+imm} {1:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>102 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>104 [jcc][] je {ad:False,size:u32,symb__intern__:{.L0000009A:1}} 
+
+<Symbol '.L0000006A' section='.text', address=106>
+    ENDER False -- NXT .L00000076
+    CFG PyDict_GetItem@PLT
+    GRAPH_NXT PyDict_GetItem@PLT
+    GRAPH_PRV .L0000005D
+'I386_MIASM.InstructionCFG'>106 [None][] mov {4:1,ad:u32,imm:uint32(0x4),size:u32,txt:esp+imm} {1:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>110 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>113 [sub][] call {ad:False,size:u32,symb__intern__:{PyDict_GetItem@PLT:1}} 
+
+<Symbol '.L00000076' section='.text', address=118>
+    ENDER False -- NXT .L00000084
+    CFG .L0000018E
+    CFG .L00000084
+    GRAPH_NXT .L00000084
+    GRAPH_NXT .L0000018E
+    GRAPH_PRV PyDict_GetItem@PLT
+'I386_MIASM.InstructionCFG'>118 [None][] mov {1:1,ad:False,size:u32} {4:1,ad:u32,imm:uint32(0x1c),size:u32,txt:esp+imm} 
+'I386_MIASM.InstructionCFG'>122 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>124 [None][] mov {2:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>126 [jcc][] je {ad:False,size:u32,symb__intern__:{.L0000018E:1}} 
+
+<Symbol '.L00000084' section='.text', address=132>
+    ENDER False -- NXT .L0000009A
+    CFG .L00000180
+    CFG .L0000009A
+    GRAPH_NXT .L0000009A
+    GRAPH_NXT .L00000180
+    GRAPH_PRV .L00000076
+'I386_MIASM.InstructionCFG'>132 [None][] add {0:1,ad:u32,size:u32,txt:eax} {ad:False,imm:uint32(0x1),size:u32} 
+'I386_MIASM.InstructionCFG'>135 [None][] mov {0:1,ad:False,size:u32} {5:1,ad:u32,imm:uint32(0x0),size:u32,txt:ebp+imm} 
+'I386_MIASM.InstructionCFG'>138 [None][] sub {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x1),size:u32} 
+'I386_MIASM.InstructionCFG'>141 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>143 [None][] mov {5:1,ad:u32,imm:uint32(0x0),size:u32,txt:ebp+imm} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>146 [None][] mov {5:1,ad:False,size:u32} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>148 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000180:1}} 
+
+<Symbol '.L0000009A' section='.text', address=154>
+    ENDER False -- NXT .L000000B8
+    CFG Py_BuildValue@PLT
+    GRAPH_NXT Py_BuildValue@PLT
+    GRAPH_PRV .L0000005D
+    GRAPH_PRV .L00000084
+    GRAPH_PRV .L00000189
+    GRAPH_PRV .L000001A1
+    GRAPH_PRV .L000001B0
+'I386_MIASM.InstructionCFG'>154 [None][] mov {0:1,ad:False,size:u32} {4:1,ad:u32,imm:uint32(0x48),size:u32,txt:esp+imm} 
+'I386_MIASM.InstructionCFG'>158 [None][] mov {4:1,ad:u32,imm:uint32(0x8),size:u32,txt:esp+imm} {7:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>162 [None][] mov {4:1,ad:u32,imm:uint32(0x4),size:u32,txt:esp+imm} {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>166 [None][] mov {4:1,ad:u32,imm:uint32(0xc),size:u32,txt:esp+imm} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>170 [None][] lea {0:1,ad:False,size:u32} {3:1,ad:True,size:True,symb__intern__:{.LC00000000.str1.1@GOTOFF:1},txt:ebx+imm} 
+'I386_MIASM.InstructionCFG'>176 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>179 [sub][] call {ad:False,size:u32,symb__intern__:{Py_BuildValue@PLT:1}} 
+
+<Symbol '.L000000B8' section='.text', address=184>
+    ENDER False -- NXT .L000000C2
+    CFG .L000001B8
+    CFG .L000000C2
+    GRAPH_NXT .L000000C2
+    GRAPH_NXT .L000001B8
+    GRAPH_PRV Py_BuildValue@PLT
+'I386_MIASM.InstructionCFG'>184 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>186 [None][] mov {7:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>188 [jcc][] je {ad:False,size:u32,symb__intern__:{.L000001B8:1}} 
+
+<Symbol '.L000000C2' section='.text', address=194>
+    ENDER False -- NXT .L000000E6
+    CFG getcode
+    GRAPH_NXT getcode
+    GRAPH_PRV .L000000B8
+'I386_MIASM.InstructionCFG'>194 [None][] mov {0:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x30),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>197 [None][] lea {2:1,ad:False,size:u32} {3:1,ad:True,size:True,symb__intern__:{.LC00000006.str1.1@GOTOFF:1},txt:ebx+imm} 
+'I386_MIASM.InstructionCFG'>203 [None][] mov {6:1,ad:u32,imm:uint32(0x18),size:u32,txt:esi+imm} {ad:False,imm:uint32(0x1),size:u32} 
+'I386_MIASM.InstructionCFG'>210 [None][] mov {5:1,ad:False,size:u32} {0:1,ad:u32,imm:uint32(0x8),size:u32,txt:eax+imm} 
+'I386_MIASM.InstructionCFG'>213 [None][] mov {0:1,ad:False,size:u32} {ad:False,imm:uint32(0x2),size:u32} 
+'I386_MIASM.InstructionCFG'>218 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {ad:False,imm:uint32(0x285),size:u32} 
+'I386_MIASM.InstructionCFG'>225 [sub][] call {ad:False,size:u32,symb__intern__:{getcode:1}} 
+
+<Symbol '.L000000E6' section='.text', address=230>
+    ENDER False -- NXT .L000000F7
+    CFG call_with_frame.isra.9
+    GRAPH_NXT call_with_frame.isra.9
+    GRAPH_PRV getcode
+'I386_MIASM.InstructionCFG'>230 [None][] lea {2:1,ad:False,size:u32} {6:1,ad:True,imm:uint32(0x8),size:True,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>233 [None][] mov {4:1,ad:u32,imm:uint32(0x4),size:u32,txt:esp+imm} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>237 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {7:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>240 [None][] mov {2:1,ad:False,size:u32} {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>242 [sub][] call {ad:False,size:u32,symb__intern__:{call_with_frame.isra.9:1}} 
+
+<Symbol '.L000000F7' section='.text', address=247>
+    ENDER False -- NXT .L00000109
+    CFG .L00000168
+    CFG .L00000109
+    GRAPH_NXT .L00000109
+    GRAPH_NXT .L00000168
+    GRAPH_PRV call_with_frame.isra.9
+'I386_MIASM.InstructionCFG'>247 [None][] mov {6:1,ad:u32,imm:uint32(0x18),size:u32,txt:esi+imm} {ad:False,imm:uint32(0x0),size:u32} 
+'I386_MIASM.InstructionCFG'>254 [None][] mov {1:1,ad:False,size:u32} {7:1,ad:u32,size:u32,txt:edi} 
+'I386_MIASM.InstructionCFG'>256 [None][] lea {2:1,ad:False,size:u32} {1:1,ad:True,imm:uint32(0xffffffff),size:True,txt:ecx+imm} 
+'I386_MIASM.InstructionCFG'>259 [None][] test {2:1,ad:False,size:u32} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>261 [None][] mov {7:1,ad:u32,size:u32,txt:edi} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>263 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000168:1}} 
+
+<Symbol '.L00000109' section='.text', address=265>
+    ENDER False -- NXT .L00000111
+    CFG .L0000023A
+    CFG .L00000111
+    GRAPH_NXT .L00000111
+    GRAPH_NXT .L0000023A
+    GRAPH_PRV .L000000F7
+    GRAPH_PRV .L00000175
+'I386_MIASM.InstructionCFG'>265 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>267 [jcc][] je {ad:False,size:u32,symb__intern__:{.L0000023A:1}} 
+
+<Symbol '.L00000111' section='.text', address=273>
+    ENDER False -- NXT .L0000011C
+    CFG .L00000150
+    CFG .L0000011C
+    GRAPH_NXT .L0000011C
+    GRAPH_NXT .L00000150
+    GRAPH_PRV .L00000109
+'I386_MIASM.InstructionCFG'>273 [None][] mov {1:1,ad:False,size:u32} {0:1,ad:u32,size:u32,txt:eax} 
+'I386_MIASM.InstructionCFG'>275 [None][] lea {2:1,ad:False,size:u32} {1:1,ad:True,imm:uint32(0xffffffff),size:True,txt:ecx+imm} 
+'I386_MIASM.InstructionCFG'>278 [None][] test {2:1,ad:False,size:u32} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>280 [None][] mov {0:1,ad:u32,size:u32,txt:eax} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>282 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000150:1}} 
+
+<Symbol '.L0000011C' section='.text', address=284>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L00000010
+    GRAPH_PRV .L00000111
+    GRAPH_PRV .L00000235
+'I386_MIASM.InstructionCFG'>284 [None][] add {4:1,ad:False,size:u32} {ad:False,imm:uint32(0x2c),size:u32} 
+'I386_MIASM.InstructionCFG'>287 [None][] pop {3:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>288 [None][] pop {6:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>289 [None][] pop {7:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>290 [None][] pop {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>291 [ret][] ret 
+
+<Symbol '.L00000124' section='.text', size=4, address=292>
+    ENDER False -- NXT .L00000128
+    CFG .L00000128
+    GRAPH_NXT .L00000128
+'plasmasm.constants.P2Align'>292 [None][.]nop 8d742600[.p2align 3]
+
+<Symbol '.L00000128' section='.text', address=296>
+    ENDER False -- NXT .L00000132
+    CFG call_character_handler
+    GRAPH_NXT call_character_handler
+    GRAPH_PRV .L0000002B
+    GRAPH_PRV .L00000124
+'I386_MIASM.InstructionCFG'>296 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>299 [None][] mov {0:1,ad:False,size:u32} {6:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>301 [sub][] call {ad:False,size:u32,symb__intern__:{call_character_handler:1}} 
+
+<Symbol '.L00000132' section='.text', address=306>
+    ENDER False -- NXT .L00000141
+    CFG .L00000036
+    CFG .L00000141
+    GRAPH_NXT .L00000036
+    GRAPH_NXT .L00000141
+    GRAPH_PRV call_character_handler
+'I386_MIASM.InstructionCFG'>306 [None][] mov {6:1,ad:u32,imm:uint32(0x28),size:u32,txt:esi+imm} {ad:False,imm:uint32(0x0),size:u32} 
+'I386_MIASM.InstructionCFG'>313 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>315 [jcc][] jns {ad:False,size:u32,symb__intern__:{.L00000036:1}} 
+
+<Symbol '.L00000141' section='.text', address=321>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L00000132
+'I386_MIASM.InstructionCFG'>321 [None][] add {4:1,ad:False,size:u32} {ad:False,imm:uint32(0x2c),size:u32} 
+'I386_MIASM.InstructionCFG'>324 [None][] pop {3:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>325 [None][] pop {6:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>326 [None][] pop {7:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>327 [None][] pop {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>328 [ret][] ret 
+
+<Symbol '.L00000149' section='.text', size=7, address=329>
+    ENDER False -- NXT .L00000150
+    CFG .L00000150
+    GRAPH_NXT .L00000150
+'plasmasm.constants.P2Align'>329 [None][.]nop 8db42600000000[.p2align 4]
+
+<Symbol '.L00000150' section='.text', address=336>
+    ENDER False -- NXT .L00000159
+    CFG None
+    GRAPH_PRV .L00000111
+    GRAPH_PRV .L00000149
+'I386_MIASM.InstructionCFG'>336 [None][] mov {2:1,ad:False,size:u32} {0:1,ad:u32,imm:uint32(0x4),size:u32,txt:eax+imm} 
+'I386_MIASM.InstructionCFG'>339 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>342 [sub][] call {2:1,ad:u32,imm:uint32(0x18),size:u32,txt:edx+imm} 
+
+<Symbol '.L00000159' section='.text', address=345>
+    ENDER True -- NXT None
+    CFG None
+'I386_MIASM.InstructionCFG'>345 [None][] add {4:1,ad:False,size:u32} {ad:False,imm:uint32(0x2c),size:u32} 
+'I386_MIASM.InstructionCFG'>348 [None][] pop {3:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>349 [None][] pop {6:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>350 [None][] pop {7:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>351 [None][] pop {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>352 [ret][] ret 
+
+<Symbol '.L00000161' section='.text', size=7, address=353>
+    ENDER False -- NXT .L00000168
+    CFG .L00000168
+    GRAPH_NXT .L00000168
+'plasmasm.constants.P2Align'>353 [None][.]nop 8db42600000000[.p2align 3]
+
+<Symbol '.L00000168' section='.text', address=360>
+    ENDER False -- NXT .L00000175
+    CFG None
+    GRAPH_PRV .L000000F7
+    GRAPH_PRV .L00000161
+'I386_MIASM.InstructionCFG'>360 [None][] mov {2:1,ad:False,size:u32} {7:1,ad:u32,imm:uint32(0x4),size:u32,txt:edi+imm} 
+'I386_MIASM.InstructionCFG'>363 [None][] mov {4:1,ad:u32,imm:uint32(0x1c),size:u32,txt:esp+imm} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>367 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {7:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>370 [sub][] call {2:1,ad:u32,imm:uint32(0x18),size:u32,txt:edx+imm} 
+
+<Symbol '.L00000175' section='.text', address=373>
+    ENDER True -- NXT None
+    CFG .L00000109
+    GRAPH_NXT .L00000109
+'I386_MIASM.InstructionCFG'>373 [None][] mov {0:1,ad:False,size:u32} {4:1,ad:u32,imm:uint32(0x1c),size:u32,txt:esp+imm} 
+'I386_MIASM.InstructionCFG'>377 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000109:1}} 
+
+<Symbol '.L0000017B' section='.text', size=5, address=379>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>379 [None][.]nop 908d742600[.p2align 3]
+
+<Symbol '.L00000180' section='.text', address=384>
+    ENDER False -- NXT .L00000189
+    CFG None
+    GRAPH_PRV .L00000084
+'I386_MIASM.InstructionCFG'>384 [None][] mov {0:1,ad:False,size:u32} {1:1,ad:u32,imm:uint32(0x4),size:u32,txt:ecx+imm} 
+'I386_MIASM.InstructionCFG'>387 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {1:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>390 [sub][] call {0:1,ad:u32,imm:uint32(0x18),size:u32,txt:eax+imm} 
+
+<Symbol '.L00000189' section='.text', address=393>
+    ENDER True -- NXT None
+    CFG .L0000009A
+    GRAPH_NXT .L0000009A
+'I386_MIASM.InstructionCFG'>393 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000009A:1}} 
+
+<Symbol '.L0000018E' section='.text', address=398>
+    ENDER False -- NXT .L000001A1
+    CFG PyDict_SetItem@PLT
+    GRAPH_NXT PyDict_SetItem@PLT
+    GRAPH_PRV .L00000076
+'I386_MIASM.InstructionCFG'>398 [None][] mov {4:1,ad:u32,imm:uint32(0x8),size:u32,txt:esp+imm} {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>402 [None][] mov {4:1,ad:u32,imm:uint32(0x4),size:u32,txt:esp+imm} {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>406 [None][] mov {0:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x2c),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>409 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>412 [sub][] call {ad:False,size:u32,symb__intern__:{PyDict_SetItem@PLT:1}} 
+
+<Symbol '.L000001A1' section='.text', address=417>
+    ENDER False -- NXT .L000001A9
+    CFG .L0000009A
+    CFG .L000001A9
+    GRAPH_NXT .L0000009A
+    GRAPH_NXT .L000001A9
+    GRAPH_PRV PyDict_SetItem@PLT
+'I386_MIASM.InstructionCFG'>417 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>419 [jcc][] je {ad:False,size:u32,symb__intern__:{.L0000009A:1}} 
+
+<Symbol '.L000001A9' section='.text', address=425>
+    ENDER False -- NXT .L000001B0
+    CFG .L000001B0
+    GRAPH_NXT .L000001B0
+    GRAPH_PRV .L000001A1
+'plasmasm.constants.P2Align'>425 [None][.]nop 8db42600000000[.p2align 4]
+
+<Symbol '.L000001B0' section='.text', address=432>
+    ENDER True -- NXT None
+    CFG .L0000009A
+    GRAPH_NXT .L0000009A
+    GRAPH_PRV .L00000053
+    GRAPH_PRV .L000001A9
+'I386_MIASM.InstructionCFG'>432 [None][] xor {5:1,ad:False,size:u32} {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>434 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000009A:1}} 
+
+<Symbol '.L000001B7' section='.text', size=1, address=439>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>439 [None][.]nop 90[.p2align 3]
+
+<Symbol '.L000001B8' section='.text', address=440>
+    ENDER False -- NXT .L000001C2
+    CFG .L00000220
+    CFG .L000001C2
+    GRAPH_NXT .L000001C2
+    GRAPH_NXT .L00000220
+    GRAPH_PRV .L000000B8
+'I386_MIASM.InstructionCFG'>440 [None][] mov {7:1,ad:False,size:u32} {3:1,ad:u32,size:u32,symb__intern__:{handler_info@GOTOFF:1},txt:ebx+imm} 
+'I386_MIASM.InstructionCFG'>446 [None][] test {7:1,ad:False,size:u32} {7:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>448 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000220:1}} 
+
+<Symbol '.L000001C2' section='.text', address=450>
+    ENDER True -- NXT None
+    CFG .L000001F5
+    GRAPH_NXT .L000001F5
+    GRAPH_PRV .L000001B8
+'I386_MIASM.InstructionCFG'>450 [None][] lea {7:1,ad:False,size:u32} {3:1,ad:True,imm:int32(0x4),size:True,symb__intern__:{handler_info@GOTOFF:1},txt:ebx+imm} 
+'I386_MIASM.InstructionCFG'>456 [None][] xor {5:1,ad:False,size:u32} {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>458 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L000001F5:1}} 
+
+<Symbol '.L000001CC' section='.text', size=4, address=460>
+    ENDER False -- NXT .L000001D0
+    CFG .L000001D0
+    GRAPH_NXT .L000001D0
+'plasmasm.constants.P2Align'>460 [None][.]nop 8d742600[.p2align 3]
+
+<Symbol '.L000001D0' section='.text', address=464>
+    ENDER False -- NXT .L000001E7
+    CFG None
+    GRAPH_PRV .L000001CC
+    GRAPH_PRV .L000001F5
+    GRAPH_PRV .L00000206
+    GRAPH_PRV .L0000021A
+'I386_MIASM.InstructionCFG'>464 [None][] mov {4:1,ad:u32,imm:uint32(0x4),size:u32,txt:esp+imm} {ad:False,imm:uint32(0x0),size:u32} 
+'I386_MIASM.InstructionCFG'>472 [None][] mov {2:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x8),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>475 [None][] add {5:1,ad:False,size:u32} {ad:False,imm:uint32(0x4),size:u32} 
+'I386_MIASM.InstructionCFG'>478 [None][] mov {4:1,ad:u32,imm:uint32(0x1c),size:u32,txt:esp+imm} {7:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>482 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>485 [sub][] call {7:1,ad:u32,size:u32,txt:edi} 
+
+<Symbol '.L000001E7' section='.text', address=487>
+    ENDER False -- NXT .L000001F5
+    CFG .L00000220
+    CFG .L000001F5
+    GRAPH_NXT .L000001F5
+    GRAPH_NXT .L00000220
+'I386_MIASM.InstructionCFG'>487 [None][] mov {0:1,ad:False,size:u32} {4:1,ad:u32,imm:uint32(0x1c),size:u32,txt:esp+imm} 
+'I386_MIASM.InstructionCFG'>491 [None][] add {7:1,ad:False,size:u32} {ad:False,imm:uint32(0x14),size:u32} 
+'I386_MIASM.InstructionCFG'>494 [None][] mov {1:1,ad:False,size:u32} {0:1,ad:u32,imm:uint32(0x10),size:u32,txt:eax+imm} 
+'I386_MIASM.InstructionCFG'>497 [None][] test {1:1,ad:False,size:u32} {1:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>499 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000220:1}} 
+
+<Symbol '.L000001F5' section='.text', address=501>
+    ENDER False -- NXT .L00000206
+    CFG .L000001D0
+    CFG .L00000206
+    GRAPH_NXT .L000001D0
+    GRAPH_NXT .L00000206
+    GRAPH_PRV .L000001C2
+    GRAPH_PRV .L000001E7
+'I386_MIASM.InstructionCFG'>501 [None][] mov {2:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x30),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>504 [None][] add {2:1,ad:False,size:u32} {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>506 [None][] mov {0:1,ad:False,size:u32} {2:1,ad:u32,size:u32,txt:edx} 
+'I386_MIASM.InstructionCFG'>508 [None][] mov {2:1,ad:u32,size:u32,txt:edx} {ad:False,imm:uint32(0x0),size:u32} 
+'I386_MIASM.InstructionCFG'>514 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>516 [jcc][] je {ad:False,size:u32,symb__intern__:{.L000001D0:1}} 
+
+<Symbol '.L00000206' section='.text', address=518>
+    ENDER False -- NXT .L00000211
+    CFG .L000001D0
+    CFG .L00000211
+    GRAPH_NXT .L000001D0
+    GRAPH_NXT .L00000211
+    GRAPH_PRV .L000001F5
+'I386_MIASM.InstructionCFG'>518 [None][] mov {1:1,ad:False,size:u32} {0:1,ad:u32,size:u32,txt:eax} 
+'I386_MIASM.InstructionCFG'>520 [None][] lea {2:1,ad:False,size:u32} {1:1,ad:True,imm:uint32(0xffffffff),size:True,txt:ecx+imm} 
+'I386_MIASM.InstructionCFG'>523 [None][] test {2:1,ad:False,size:u32} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>525 [None][] mov {0:1,ad:u32,size:u32,txt:eax} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>527 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L000001D0:1}} 
+
+<Symbol '.L00000211' section='.text', address=529>
+    ENDER False -- NXT .L0000021A
+    CFG None
+    GRAPH_PRV .L00000206
+'I386_MIASM.InstructionCFG'>529 [None][] mov {2:1,ad:False,size:u32} {0:1,ad:u32,imm:uint32(0x4),size:u32,txt:eax+imm} 
+'I386_MIASM.InstructionCFG'>532 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>535 [sub][] call {2:1,ad:u32,imm:uint32(0x18),size:u32,txt:edx+imm} 
+
+<Symbol '.L0000021A' section='.text', address=538>
+    ENDER True -- NXT None
+    CFG .L000001D0
+    GRAPH_NXT .L000001D0
+'I386_MIASM.InstructionCFG'>538 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L000001D0:1}} 
+
+<Symbol '.L0000021C' section='.text', size=4, address=540>
+    ENDER False -- NXT .L00000220
+    CFG .L00000220
+    GRAPH_NXT .L00000220
+'plasmasm.constants.P2Align'>540 [None][.]nop 8d742600[.p2align 3]
+
+<Symbol '.L00000220' section='.text', address=544>
+    ENDER False -- NXT .L00000235
+    CFG XML_SetExternalEntityRefHandler@PLT
+    GRAPH_NXT XML_SetExternalEntityRefHandler@PLT
+    GRAPH_PRV .L000001B8
+    GRAPH_PRV .L000001E7
+    GRAPH_PRV .L0000021C
+    GRAPH_PRV .L0000023A
+    GRAPH_PRV .L00000267
+'I386_MIASM.InstructionCFG'>544 [None][] lea {0:1,ad:False,size:u32} {3:1,ad:True,size:True,symb__intern__:{error_external_entity_ref_handler@GOTOFF:1},txt:ebx+imm} 
+'I386_MIASM.InstructionCFG'>550 [None][] mov {4:1,ad:u32,imm:uint32(0x4),size:u32,txt:esp+imm} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>554 [None][] mov {0:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x8),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>557 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>560 [sub][] call {ad:False,size:u32,symb__intern__:{XML_SetExternalEntityRefHandler@PLT:1}} 
+
+<Symbol '.L00000235' section='.text', address=565>
+    ENDER True -- NXT None
+    CFG .L0000011C
+    GRAPH_NXT .L0000011C
+    GRAPH_PRV XML_SetExternalEntityRefHandler@PLT
+'I386_MIASM.InstructionCFG'>565 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L0000011C:1}} 
+
+<Symbol '.L0000023A' section='.text', address=570>
+    ENDER False -- NXT .L00000244
+    CFG .L00000220
+    CFG .L00000244
+    GRAPH_NXT .L00000220
+    GRAPH_NXT .L00000244
+    GRAPH_PRV .L00000109
+'I386_MIASM.InstructionCFG'>570 [None][] mov {2:1,ad:False,size:u32} {3:1,ad:u32,size:u32,symb__intern__:{handler_info@GOTOFF:1},txt:ebx+imm} 
+'I386_MIASM.InstructionCFG'>576 [None][] test {2:1,ad:False,size:u32} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>578 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000220:1}} 
+
+<Symbol '.L00000244' section='.text', address=580>
+    ENDER True -- NXT None
+    CFG .L00000275
+    GRAPH_NXT .L00000275
+    GRAPH_PRV .L0000023A
+'I386_MIASM.InstructionCFG'>580 [None][] lea {7:1,ad:False,size:u32} {3:1,ad:True,imm:int32(0x4),size:True,symb__intern__:{handler_info@GOTOFF:1},txt:ebx+imm} 
+'I386_MIASM.InstructionCFG'>586 [None][] xor {5:1,ad:False,size:u32} {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>588 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000275:1}} 
+
+<Symbol '.L0000024E' section='.text', size=2, address=590>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>590 [None][.]nop 6690[.p2align 3]
+
+<Symbol '.L00000250' section='.text', address=592>
+    ENDER False -- NXT .L00000267
+    CFG None
+    GRAPH_PRV .L00000275
+    GRAPH_PRV .L00000286
+    GRAPH_PRV .L0000029A
+'I386_MIASM.InstructionCFG'>592 [None][] mov {4:1,ad:u32,imm:uint32(0x4),size:u32,txt:esp+imm} {ad:False,imm:uint32(0x0),size:u32} 
+'I386_MIASM.InstructionCFG'>600 [None][] mov {2:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x8),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>603 [None][] add {5:1,ad:False,size:u32} {ad:False,imm:uint32(0x4),size:u32} 
+'I386_MIASM.InstructionCFG'>606 [None][] mov {4:1,ad:u32,imm:uint32(0x1c),size:u32,txt:esp+imm} {7:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>610 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>613 [sub][] call {7:1,ad:u32,size:u32,txt:edi} 
+
+<Symbol '.L00000267' section='.text', address=615>
+    ENDER False -- NXT .L00000275
+    CFG .L00000220
+    CFG .L00000275
+    GRAPH_NXT .L00000220
+    GRAPH_NXT .L00000275
+'I386_MIASM.InstructionCFG'>615 [None][] mov {0:1,ad:False,size:u32} {4:1,ad:u32,imm:uint32(0x1c),size:u32,txt:esp+imm} 
+'I386_MIASM.InstructionCFG'>619 [None][] add {7:1,ad:False,size:u32} {ad:False,imm:uint32(0x14),size:u32} 
+'I386_MIASM.InstructionCFG'>622 [None][] mov {0:1,ad:False,size:u32} {0:1,ad:u32,imm:uint32(0x10),size:u32,txt:eax+imm} 
+'I386_MIASM.InstructionCFG'>625 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>627 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000220:1}} 
+
+<Symbol '.L00000275' section='.text', address=629>
+    ENDER False -- NXT .L00000286
+    CFG .L00000250
+    CFG .L00000286
+    GRAPH_NXT .L00000250
+    GRAPH_NXT .L00000286
+    GRAPH_PRV .L00000244
+    GRAPH_PRV .L00000267
+'I386_MIASM.InstructionCFG'>629 [None][] mov {2:1,ad:False,size:u32} {6:1,ad:u32,imm:uint32(0x30),size:u32,txt:esi+imm} 
+'I386_MIASM.InstructionCFG'>632 [None][] add {2:1,ad:False,size:u32} {5:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>634 [None][] mov {0:1,ad:False,size:u32} {2:1,ad:u32,size:u32,txt:edx} 
+'I386_MIASM.InstructionCFG'>636 [None][] mov {2:1,ad:u32,size:u32,txt:edx} {ad:False,imm:uint32(0x0),size:u32} 
+'I386_MIASM.InstructionCFG'>642 [None][] test {0:1,ad:False,size:u32} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>644 [jcc][] je {ad:False,size:u32,symb__intern__:{.L00000250:1}} 
+
+<Symbol '.L00000286' section='.text', address=646>
+    ENDER False -- NXT .L00000291
+    CFG .L00000250
+    CFG .L00000291
+    GRAPH_NXT .L00000250
+    GRAPH_NXT .L00000291
+    GRAPH_PRV .L00000275
+'I386_MIASM.InstructionCFG'>646 [None][] mov {1:1,ad:False,size:u32} {0:1,ad:u32,size:u32,txt:eax} 
+'I386_MIASM.InstructionCFG'>648 [None][] lea {2:1,ad:False,size:u32} {1:1,ad:True,imm:uint32(0xffffffff),size:True,txt:ecx+imm} 
+'I386_MIASM.InstructionCFG'>651 [None][] test {2:1,ad:False,size:u32} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>653 [None][] mov {0:1,ad:u32,size:u32,txt:eax} {2:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>655 [jcc][] jne {ad:False,size:u32,symb__intern__:{.L00000250:1}} 
+
+<Symbol '.L00000291' section='.text', address=657>
+    ENDER False -- NXT .L0000029A
+    CFG None
+    GRAPH_PRV .L00000286
+'I386_MIASM.InstructionCFG'>657 [None][] mov {2:1,ad:False,size:u32} {0:1,ad:u32,imm:uint32(0x4),size:u32,txt:eax+imm} 
+'I386_MIASM.InstructionCFG'>660 [None][] mov {4:1,ad:u32,size:u32,txt:esp} {0:1,ad:False,size:u32} 
+'I386_MIASM.InstructionCFG'>663 [sub][] call {2:1,ad:u32,imm:uint32(0x18),size:u32,txt:edx+imm} 
+
+<Symbol '.L0000029A' section='.text', address=666>
+    ENDER True -- NXT None
+    CFG .L00000250
+    GRAPH_NXT .L00000250
+'I386_MIASM.InstructionCFG'>666 [jmp][] jmp {ad:False,size:u32,symb__intern__:{.L00000250:1}} 
+
+<Symbol '.LC00000000.str1.1' section='.rodata.str1.1', address=0>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>0 .string	"(NO&)"
+
+<Symbol '.LC00000006.str1.1' section='.rodata.str1.1', address=6>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>6 .string	"ProcessingInstruction"
+
+<Symbol '(extract)pyexpat.c' bind='file'>
+
+<Symbol '.LC00000000.str1.1@GOTOFF' >
+
+<Symbol '.LC00000006.str1.1@GOTOFF' >
+
+<Symbol 'PyDict_GetItem' bind='globl'>
+
+<Symbol 'PyDict_GetItem@PLT' >
+    GRAPH_NXT .L00000076
+    GRAPH_PRV .L0000006A
+-- STACK00 ['.L00000076']
+
+<Symbol 'PyDict_SetItem' bind='globl'>
+
+<Symbol 'PyDict_SetItem@PLT' >
+    GRAPH_NXT .L000001A1
+    GRAPH_PRV .L0000018E
+-- STACK00 ['.L000001A1']
+
+<Symbol 'Py_BuildValue' bind='globl'>
+
+<Symbol 'Py_BuildValue@PLT' >
+    GRAPH_NXT .L000000B8
+    GRAPH_PRV .L0000009A
+-- STACK00 ['.L000000B8']
+
+<Symbol 'XML_SetExternalEntityRefHandler' bind='globl'>
+
+<Symbol 'XML_SetExternalEntityRefHandler@PLT' >
+    GRAPH_NXT .L00000235
+    GRAPH_PRV .L00000220
+-- STACK00 ['.L00000235']
+
+<Symbol '_GLOBAL_OFFSET_TABLE_' bind='globl'>
+
+<Symbol '__stack_chk_fail_local' bind='globl', visibility='hidden'>
+
+<Symbol '__x86.get_pc_thunk.bx' bind='globl'>
+    GRAPH_NXT .L00000010
+    GRAPH_PRV my_ProcessingInstructionHandler
+-- STACK00 ['.L00000010']
+
+<Symbol 'call_character_handler' bind='globl'>
+    GRAPH_NXT .L00000132
+    GRAPH_PRV .L00000128
+-- STACK00 ['.L00000132']
+
+<Symbol 'call_with_frame.isra.9' bind='globl'>
+    GRAPH_NXT .L000000F7
+    GRAPH_PRV .L000000E6
+-- STACK00 ['.L000000F7']
+
+<Symbol 'conv_string_to_unicode' bind='globl'>
+    GRAPH_NXT .L00000053
+    GRAPH_PRV .L00000036
+-- STACK00 ['.L00000053']
+
+<Symbol 'conv_string_to_unicode@GOTOFF' >
+
+<Symbol 'conv_string_to_utf8' bind='globl'>
+    GRAPH_NXT .L00000053
+    GRAPH_PRV .L00000036
+-- STACK00 ['.L00000053']
+
+<Symbol 'conv_string_to_utf8@GOTOFF' >
+
+<Symbol 'error_external_entity_ref_handler' bind='globl'>
+
+<Symbol 'error_external_entity_ref_handler@GOTOFF' >
+
+<Symbol 'getcode' bind='globl'>
+    GRAPH_NXT .L000000E6
+    GRAPH_PRV .L000000C2
+-- STACK00 ['.L000000E6']
+
+<Symbol 'handler_info' bind='globl'>
+
+<Symbol 'handler_info@GOTOFF' >
+
+<Symbol 'my_ProcessingInstructionHandler+668' section='.text', type='padding', address=668>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.debug_abbrev', '.debug_abbrev,"",@progbits')
+('.debug_aranges', '.debug_aranges,"",@progbits')
+('.debug_info', '.debug_info,"",@progbits')
+('.debug_line', '.debug_line,"",@progbits')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+('.rodata.str1.1', '.rodata.str1.1,"a",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4',endianess:'<',eh_frame_size:132,eh_frame_relocs:{32: (('ELF', 3, 2), {'section': '.text', 'address': 0})},container:'ELF',compiler:'gcc'

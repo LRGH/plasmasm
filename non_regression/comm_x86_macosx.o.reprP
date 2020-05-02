@@ -1,0 +1,76 @@
+<Symbol 'L_A$non_lazy_ptr' section='__IMPORT,__pointers', address=47, data='indirect_symbol:_A'>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.Constant4Byte'>47 (4, 'long', 'I') [0]
+
+<Symbol 'L_B$non_lazy_ptr' section='__IMPORT,__pointers', address=51, data='indirect_symbol:_B'>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.Constant4Byte'>51 (4, 'long', 'I') [0]
+
+<Symbol '_main' section='__TEXT,__text', bind='globl', align='4, 0x90', address=0>
+    ENDER False -- NXT L00000009
+    CFG L00000009
+    GRAPH_NXT L00000009
+'I386_MIASM.InstructionRW'>0 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+'I386_MIASM.InstructionRW'>1 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+'I386_MIASM.InstructionRW'>3 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+'I386_MIASM.InstructionRW'>4 [PIC]call      L00000009
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 dst=[<Symbol 'L00000009' section='__TEXT,__text', address=9>]
+
+<Symbol 'L00000009' section='__TEXT,__text', address=9>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV _main
+'I386_MIASM.InstructionRW'>9 [None]popl      %eax
+	 R['@32[esp]', 'esp'] W['eax', 'esp']
+'I386_MIASM.InstructionRW'>10 [None]movl      $0, %ecx
+	 R[] W['ecx']
+	 PIC:L00000009:eax
+'I386_MIASM.InstructionRW'>15 [None]movl      L_A$non_lazy_ptr-L00000009(%eax), %edx
+	 R['MEM', 'eax'] W['edx']
+	 PIC:L00000009:eax
+'I386_MIASM.InstructionRW'>21 [None]movl      L_B$non_lazy_ptr-L00000009(%eax), %eax
+	 R['MEM', 'eax'] W['eax']
+	 PIC:L00000009:eax
+'I386_MIASM.InstructionRW'>27 [None]movl      (%eax), %eax
+	 R['MEM', 'eax'] W['eax']
+'I386_MIASM.InstructionRW'>29 [None]sall      $1, %eax
+	 R['cf', 'eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionRW'>32 [None]imull     $5, (%edx), %esi
+	 R['MEM', 'edx'] W['cf', 'esi', 'of']
+'I386_MIASM.InstructionRW'>38 [None]subl      %esi, %eax
+	 R['eax', 'esi'] W['af', 'cf', 'eax', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionRW'>40 [None]movl      %eax, (%edx)
+	 R['eax', 'edx'] W['MEM']
+'I386_MIASM.InstructionRW'>42 [None]movl      %ecx, %eax
+	 R['ecx'] W['eax']
+'I386_MIASM.InstructionRW'>44 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+'I386_MIASM.InstructionRW'>45 [None]popl      %ebp
+	 R['@32[esp]', 'esp'] W['ebp', 'esp']
+'I386_MIASM.InstructionRW'>46 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 dst=[None]
+
+<Symbol '_A' section='COM', bind='globl', align=4, size=4, address=4>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>4 .zero	4
+
+<Symbol '_B' section='COM', bind='globl', align=4, size=4, address=5>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantZero'>5 .zero	4
+
+<Symbol 'L0000002F' section='__TEXT,__text', type='endofsymbol', address=47>
+    ENDER None -- NXT None
+    CFG None
+
+('__IMPORT,__pointers', '__IMPORT,__pointers,non_lazy_symbol_pointers')
+('__TEXT,__text', '__TEXT,__text,regular,pure_instructions')
+relocatable:True,endianess:'<',container:'Mach-O',compiler:'clang',PIC:'call;pop'

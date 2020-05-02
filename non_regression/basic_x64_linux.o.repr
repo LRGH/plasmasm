@@ -1,0 +1,21 @@
+<Symbol 'main' section='.text', type='function', bind='globl', size=20, address=0>
+    ENDER True -- NXT None
+    CFG None
+'X64_AMOCO.InstructionCFG'>0 [None]pushq     %rbp [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>1 [None]movq      %rsp, %rbp [ia32_reg_32]
+'X64_AMOCO.InstructionCFG'>4 [None]movl      $0, -4(%rbp) [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>11 [None]addl      $66, -4(%rbp) [ia32_ptr_iwd]
+'X64_AMOCO.InstructionCFG'>15 [None]movl      -4(%rbp), %eax [ia32_reg_32_inv]
+'X64_AMOCO.InstructionCFG'>18 [None]popq      %rbp [ia32_rm32]
+'X64_AMOCO.InstructionCFG'>19 [ret]ret        [ia32_nooperand]
+
+<Symbol 'a00.c' bind='file'>
+
+<Symbol 'main+20' section='.text', type='padding', address=20>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4',endianess:'<',eh_frame_size:56,eh_frame_relocs:{32: (('ELF', 62, 2), {'section': '.text', 'address': 0})},container:'ELF',compiler:'gcc'

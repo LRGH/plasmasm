@@ -258,6 +258,17 @@ or Ubuntu is python-pyparsing.
     contain the CPU implementations; the filename is `CPU_BACKEND.py`
     for an implementation of CPU based on BACKEND.
 
+- `pic_tracking.py`
+  When Position Independ Code is generated, there is a register that
+  is used to memorize where the code has been loaded. The way it is
+  done depends on the compiler, this module tracks this register, so
+  we can use it when modifying the code.
+
+- `stack_tracking.py`
+  For X64, there is a "red zone" that we shall not overwrite when
+  doing push/pop. This module tracks the red zone, so we can use
+  the stack when modifying the code.
+
 ## Development status
 
 [![Build Status](https://travis-ci.org/LRGH/plasmasm.svg?branch=master)](https://travis-ci.org/LRGH/plasmasm)

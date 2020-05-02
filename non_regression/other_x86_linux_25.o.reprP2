@@ -1,0 +1,1116 @@
+<Symbol 'my_ProcessingInstructionHandler' section='.text', type='function', bind='local', size=668, address=0>
+    ENDER False -- NXT .L00000010
+    CFG __x86.get_pc_thunk.bx
+    GRAPH_NXT __x86.get_pc_thunk.bx
+'I386_AMOCO.InstructionRW'>0 [None]pushl     %ebp
+	 R['ebp', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>1 [None]pushl     %edi
+	 R['edi', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>2 [None]pushl     %esi
+	 R['eip', 'esi', 'esp'] W['MEM', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>3 [None]pushl     %ebx
+	 R['ebx', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>4 [None]subl      $44, %esp
+	 R['eip', 'esp'] W['eflags', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>7 [None]movl      64(%esp), %esi
+	 R['MEM', 'eip', 'esp'] W['eip', 'esi']
+'I386_AMOCO.InstructionRW'>11 [sub]call      __x86.get_pc_thunk.bx
+	 R['eip', 'esp'] W['MEM', 'eip', 'esp']
+	 dst=[<Symbol '__x86.get_pc_thunk.bx' bind='globl'>]
+
+<Symbol '.L00000010' section='.text', address=16>
+    ENDER False -- NXT .L00000024
+    CFG .L0000011C
+    CFG .L00000024
+    GRAPH_NXT .L00000024
+    GRAPH_NXT .L0000011C
+    GRAPH_PRV __x86.get_pc_thunk.bx
+'I386_AMOCO.InstructionRW'>16 [None]addl      $_GLOBAL_OFFSET_TABLE_, %ebx
+	 R['ebx', 'eip'] W['ebx', 'eflags', 'eip']
+'I386_AMOCO.InstructionRW'>22 [None]movl      48(%esi), %eax
+	 R['MEM', 'eip', 'esi'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>25 [None]movl      8(%eax), %eax
+	 R['MEM', 'eax', 'eip'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>28 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>30 [jcc]je        .L0000011C
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000011C' section='.text', address=284>]
+
+<Symbol '.L00000024' section='.text', address=36>
+    ENDER False -- NXT .L0000002B
+    CFG .L00000036
+    CFG .L0000002B
+    GRAPH_NXT .L0000002B
+    GRAPH_NXT .L00000036
+    GRAPH_PRV .L00000010
+'I386_AMOCO.InstructionRW'>36 [None]movl      32(%esi), %edx
+	 R['MEM', 'eip', 'esi'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>39 [None]testl     %edx, %edx
+	 R['edx', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>41 [jcc]je        .L00000036
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000036' section='.text', address=54>]
+
+<Symbol '.L0000002B' section='.text', address=43>
+    ENDER False -- NXT .L00000036
+    CFG .L00000128
+    CFG .L00000036
+    GRAPH_NXT .L00000036
+    GRAPH_NXT .L00000128
+    GRAPH_PRV .L00000024
+'I386_AMOCO.InstructionRW'>43 [None]movl      40(%esi), %eax
+	 R['MEM', 'eip', 'esi'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>46 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>48 [jcc]jne       .L00000128
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000128' section='.text', address=296>]
+
+<Symbol '.L00000036' section='.text', address=54>
+    ENDER False -- NXT .L00000053
+    CFG conv_string_to_unicode
+    CFG conv_string_to_utf8
+    GRAPH_NXT conv_string_to_unicode
+    GRAPH_NXT conv_string_to_utf8
+    GRAPH_PRV .L00000024
+    GRAPH_PRV .L0000002B
+    GRAPH_PRV .L00000132
+'I386_AMOCO.InstructionRW'>54 [None]movl      12(%esi), %ebp
+	 R['MEM', 'eip', 'esi'] W['ebp', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>57 [None]leal      conv_string_to_unicode@GOTOFF(%ebx), %eax
+	 R['MEM', 'ebx', 'eip'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>63 [None]leal      conv_string_to_utf8@GOTOFF(%ebx), %edi
+	 R['MEM', 'ebx', 'eip'] W['edi', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>69 [None]testl     %ebp, %ebp
+	 R['ebp', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>71 [None]cmovne    %eax, %edi
+	 R['eax', 'edi', 'eflags', 'eip'] W['edi', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>74 [None]movl      68(%esp), %eax
+	 R['MEM', 'eip', 'esp'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>78 [None]movl      %eax, (%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>81 [sub]call      *%edi
+	 R['edi', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol 'conv_string_to_unicode' bind='globl'>, <Symbol 'conv_string_to_utf8' bind='globl'>]
+
+<Symbol '.L00000053' section='.text', address=83>
+    ENDER False -- NXT .L0000005D
+    CFG .L000001B0
+    CFG .L0000005D
+    GRAPH_NXT .L0000005D
+    GRAPH_NXT .L000001B0
+    GRAPH_PRV conv_string_to_unicode
+    GRAPH_PRV conv_string_to_utf8
+'I386_AMOCO.InstructionRW'>83 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>85 [None]movl      %eax, %ecx
+	 R['eax', 'eip'] W['ecx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>87 [jcc]je        .L000001B0
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001B0' section='.text', address=432>]
+
+<Symbol '.L0000005D' section='.text', address=93>
+    ENDER False -- NXT .L0000006A
+    CFG .L0000009A
+    CFG .L0000006A
+    GRAPH_NXT .L0000006A
+    GRAPH_NXT .L0000009A
+    GRAPH_PRV .L00000053
+'I386_AMOCO.InstructionRW'>93 [None]movl      44(%esi), %eax
+	 R['MEM', 'eip', 'esi'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>96 [None]movl      %ecx, %ebp
+	 R['ecx', 'eip'] W['ebp', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>98 [None]movl      %ecx, 28(%esp)
+	 R['ecx', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>102 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>104 [jcc]je        .L0000009A
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000009A' section='.text', address=154>]
+
+<Symbol '.L0000006A' section='.text', address=106>
+    ENDER False -- NXT .L00000076
+    CFG PyDict_GetItem@PLT
+    GRAPH_NXT PyDict_GetItem@PLT
+    GRAPH_PRV .L0000005D
+'I386_AMOCO.InstructionRW'>106 [None]movl      %ecx, 4(%esp)
+	 R['ecx', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>110 [None]movl      %eax, (%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>113 [sub]call      PyDict_GetItem@PLT
+	 R['eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol 'PyDict_GetItem@PLT' >]
+
+<Symbol '.L00000076' section='.text', address=118>
+    ENDER False -- NXT .L00000084
+    CFG .L0000018E
+    CFG .L00000084
+    GRAPH_NXT .L00000084
+    GRAPH_NXT .L0000018E
+    GRAPH_PRV PyDict_GetItem@PLT
+'I386_AMOCO.InstructionRW'>118 [None]movl      28(%esp), %ecx
+	 R['MEM', 'eip', 'esp'] W['ecx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>122 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>124 [None]movl      %eax, %edx
+	 R['eax', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>126 [jcc]je        .L0000018E
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000018E' section='.text', address=398>]
+
+<Symbol '.L00000084' section='.text', address=132>
+    ENDER False -- NXT .L0000009A
+    CFG .L00000180
+    CFG .L0000009A
+    GRAPH_NXT .L0000009A
+    GRAPH_NXT .L00000180
+    GRAPH_PRV .L00000076
+'I386_AMOCO.InstructionRW'>132 [None]addl      $1, (%eax)
+	 R['MEM', 'eax', 'eip'] W['MEM', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>135 [None]movl      (%ebp), %eax
+	 R['MEM', 'ebp', 'eip'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>138 [None]subl      $1, %eax
+	 R['eax', 'eip'] W['eax', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>141 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>143 [None]movl      %eax, (%ebp)
+	 R['eax', 'ebp', 'eip'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>146 [None]movl      %edx, %ebp
+	 R['edx', 'eip'] W['ebp', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>148 [jcc]je        .L00000180
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000180' section='.text', address=384>]
+
+<Symbol '.L0000009A' section='.text', address=154>
+    ENDER False -- NXT .L000000B8
+    CFG Py_BuildValue@PLT
+    GRAPH_NXT Py_BuildValue@PLT
+    GRAPH_PRV .L0000005D
+    GRAPH_PRV .L00000084
+    GRAPH_PRV .L00000189
+    GRAPH_PRV .L000001A1
+    GRAPH_PRV .L000001B0
+'I386_AMOCO.InstructionRW'>154 [None]movl      72(%esp), %eax
+	 R['MEM', 'eip', 'esp'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>158 [None]movl      %edi, 8(%esp)
+	 R['edi', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>162 [None]movl      %ebp, 4(%esp)
+	 R['ebp', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>166 [None]movl      %eax, 12(%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>170 [None]leal      .LC00000000.str1.1@GOTOFF(%ebx), %eax
+	 R['MEM', 'ebx', 'eip'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>176 [None]movl      %eax, (%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>179 [sub]call      Py_BuildValue@PLT
+	 R['eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol 'Py_BuildValue@PLT' >]
+
+<Symbol '.L000000B8' section='.text', address=184>
+    ENDER False -- NXT .L000000C2
+    CFG .L000001B8
+    CFG .L000000C2
+    GRAPH_NXT .L000000C2
+    GRAPH_NXT .L000001B8
+    GRAPH_PRV Py_BuildValue@PLT
+'I386_AMOCO.InstructionRW'>184 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>186 [None]movl      %eax, %edi
+	 R['eax', 'eip'] W['edi', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>188 [jcc]je        .L000001B8
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001B8' section='.text', address=440>]
+
+<Symbol '.L000000C2' section='.text', address=194>
+    ENDER False -- NXT .L000000E6
+    CFG getcode
+    GRAPH_NXT getcode
+    GRAPH_PRV .L000000B8
+'I386_AMOCO.InstructionRW'>194 [None]movl      48(%esi), %eax
+	 R['MEM', 'eip', 'esi'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>197 [None]leal      .LC00000006.str1.1@GOTOFF(%ebx), %edx
+	 R['MEM', 'ebx', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>203 [None]movl      $1, 24(%esi)
+	 R['eip', 'esi'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>210 [None]movl      8(%eax), %ebp
+	 R['MEM', 'eax', 'eip'] W['ebp', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>213 [None]movl      $2, %eax
+	 R['eip'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>218 [None]movl      $645, (%esp)
+	 R['eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>225 [sub]call      getcode
+	 R['eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol 'getcode' bind='globl'>]
+
+<Symbol '.L000000E6' section='.text', address=230>
+    ENDER False -- NXT .L000000F7
+    CFG call_with_frame.isra.9
+    GRAPH_NXT call_with_frame.isra.9
+    GRAPH_PRV getcode
+'I386_AMOCO.InstructionRW'>230 [None]leal      8(%esi), %edx
+	 R['MEM', 'eip', 'esi'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>233 [None]movl      %edx, 4(%esp)
+	 R['edx', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>237 [None]movl      %edi, (%esp)
+	 R['edi', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>240 [None]movl      %ebp, %edx
+	 R['ebp', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>242 [sub]call      call_with_frame.isra.9
+	 R['eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol 'call_with_frame.isra.9' bind='globl'>]
+
+<Symbol '.L000000F7' section='.text', address=247>
+    ENDER False -- NXT .L00000109
+    CFG .L00000168
+    CFG .L00000109
+    GRAPH_NXT .L00000109
+    GRAPH_NXT .L00000168
+    GRAPH_PRV call_with_frame.isra.9
+'I386_AMOCO.InstructionRW'>247 [None]movl      $0, 24(%esi)
+	 R['eip', 'esi'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>254 [None]movl      (%edi), %ecx
+	 R['MEM', 'edi', 'eip'] W['ecx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>256 [None]leal      -1(%ecx), %edx
+	 R['MEM', 'ecx', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>259 [None]testl     %edx, %edx
+	 R['edx', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>261 [None]movl      %edx, (%edi)
+	 R['edi', 'edx', 'eip'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>263 [jcc]je        .L00000168
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000168' section='.text', address=360>]
+
+<Symbol '.L00000109' section='.text', address=265>
+    ENDER False -- NXT .L00000111
+    CFG .L0000023A
+    CFG .L00000111
+    GRAPH_NXT .L00000111
+    GRAPH_NXT .L0000023A
+    GRAPH_PRV .L000000F7
+    GRAPH_PRV .L00000175
+'I386_AMOCO.InstructionRW'>265 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>267 [jcc]je        .L0000023A
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000023A' section='.text', address=570>]
+
+<Symbol '.L00000111' section='.text', address=273>
+    ENDER False -- NXT .L0000011C
+    CFG .L00000150
+    CFG .L0000011C
+    GRAPH_NXT .L0000011C
+    GRAPH_NXT .L00000150
+    GRAPH_PRV .L00000109
+'I386_AMOCO.InstructionRW'>273 [None]movl      (%eax), %ecx
+	 R['MEM', 'eax', 'eip'] W['ecx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>275 [None]leal      -1(%ecx), %edx
+	 R['MEM', 'ecx', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>278 [None]testl     %edx, %edx
+	 R['edx', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>280 [None]movl      %edx, (%eax)
+	 R['eax', 'edx', 'eip'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>282 [jcc]je        .L00000150
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000150' section='.text', address=336>]
+
+<Symbol '.L0000011C' section='.text', address=284>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L00000010
+    GRAPH_PRV .L00000111
+    GRAPH_PRV .L00000235
+'I386_AMOCO.InstructionRW'>284 [None]addl      $44, %esp
+	 R['eip', 'esp'] W['eflags', 'eip', 'esp']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>287 [None]popl      %ebx
+	 R['MEM', 'eip', 'esp'] W['ebx', 'eip', 'esp']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>288 [None]popl      %esi
+	 R['MEM', 'eip', 'esp'] W['eip', 'esi', 'esp']
+'I386_AMOCO.InstructionRW'>289 [None]popl      %edi
+	 R['MEM', 'eip', 'esp'] W['edi', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>290 [None]popl      %ebp
+	 R['MEM', 'eip', 'esp'] W['ebp', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>291 [ret]ret       
+	 R['MEM', 'esp'] W['eip', 'esp']
+	 dst=[None]
+
+<Symbol '.L00000124' section='.text', size=4, address=292>
+    ENDER False -- NXT .L00000128
+    CFG .L00000128
+    GRAPH_NXT .L00000128
+'plasmasm.constants.P2Align'>292 [None].p2align 3
+
+<Symbol '.L00000128' section='.text', address=296>
+    ENDER False -- NXT .L00000132
+    CFG call_character_handler
+    GRAPH_NXT call_character_handler
+    GRAPH_PRV .L0000002B
+    GRAPH_PRV .L00000124
+'I386_AMOCO.InstructionRW'>296 [None]movl      %eax, (%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>299 [None]movl      %esi, %eax
+	 R['eip', 'esi'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>301 [sub]call      call_character_handler
+	 R['eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol 'call_character_handler' bind='globl'>]
+
+<Symbol '.L00000132' section='.text', address=306>
+    ENDER False -- NXT .L00000141
+    CFG .L00000036
+    CFG .L00000141
+    GRAPH_NXT .L00000036
+    GRAPH_NXT .L00000141
+    GRAPH_PRV call_character_handler
+'I386_AMOCO.InstructionRW'>306 [None]movl      $0, 40(%esi)
+	 R['eip', 'esi'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>313 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>315 [jcc]jns       .L00000036
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000036' section='.text', address=54>]
+
+<Symbol '.L00000141' section='.text', address=321>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L00000132
+'I386_AMOCO.InstructionRW'>321 [None]addl      $44, %esp
+	 R['eip', 'esp'] W['eflags', 'eip', 'esp']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>324 [None]popl      %ebx
+	 R['MEM', 'eip', 'esp'] W['ebx', 'eip', 'esp']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>325 [None]popl      %esi
+	 R['MEM', 'eip', 'esp'] W['eip', 'esi', 'esp']
+'I386_AMOCO.InstructionRW'>326 [None]popl      %edi
+	 R['MEM', 'eip', 'esp'] W['edi', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>327 [None]popl      %ebp
+	 R['MEM', 'eip', 'esp'] W['ebp', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>328 [ret]ret       
+	 R['MEM', 'esp'] W['eip', 'esp']
+	 dst=[None]
+
+<Symbol '.L00000149' section='.text', size=7, address=329>
+    ENDER False -- NXT .L00000150
+    CFG .L00000150
+    GRAPH_NXT .L00000150
+'plasmasm.constants.P2Align'>329 [None].p2align 4
+
+<Symbol '.L00000150' section='.text', address=336>
+    ENDER False -- NXT .L00000159
+    CFG None
+    GRAPH_PRV .L00000111
+    GRAPH_PRV .L00000149
+'I386_AMOCO.InstructionRW'>336 [None]movl      4(%eax), %edx
+	 R['MEM', 'eax', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>339 [None]movl      %eax, (%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>342 [sub]call      *24(%edx)
+	 R['MEM', 'edx', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[None]
+
+<Symbol '.L00000159' section='.text', address=345>
+    ENDER True -- NXT None
+    CFG None
+'I386_AMOCO.InstructionRW'>345 [None]addl      $44, %esp
+	 R['eip', 'esp'] W['eflags', 'eip', 'esp']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>348 [None]popl      %ebx
+	 R['MEM', 'eip', 'esp'] W['ebx', 'eip', 'esp']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>349 [None]popl      %esi
+	 R['MEM', 'eip', 'esp'] W['eip', 'esi', 'esp']
+'I386_AMOCO.InstructionRW'>350 [None]popl      %edi
+	 R['MEM', 'eip', 'esp'] W['edi', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>351 [None]popl      %ebp
+	 R['MEM', 'eip', 'esp'] W['ebp', 'eip', 'esp']
+'I386_AMOCO.InstructionRW'>352 [ret]ret       
+	 R['MEM', 'esp'] W['eip', 'esp']
+	 dst=[None]
+
+<Symbol '.L00000161' section='.text', size=7, address=353>
+    ENDER False -- NXT .L00000168
+    CFG .L00000168
+    GRAPH_NXT .L00000168
+'plasmasm.constants.P2Align'>353 [None].p2align 3
+
+<Symbol '.L00000168' section='.text', address=360>
+    ENDER False -- NXT .L00000175
+    CFG None
+    GRAPH_PRV .L000000F7
+    GRAPH_PRV .L00000161
+'I386_AMOCO.InstructionRW'>360 [None]movl      4(%edi), %edx
+	 R['MEM', 'edi', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>363 [None]movl      %eax, 28(%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>367 [None]movl      %edi, (%esp)
+	 R['edi', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>370 [sub]call      *24(%edx)
+	 R['MEM', 'edx', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[None]
+
+<Symbol '.L00000175' section='.text', address=373>
+    ENDER True -- NXT None
+    CFG .L00000109
+    GRAPH_NXT .L00000109
+'I386_AMOCO.InstructionRW'>373 [None]movl      28(%esp), %eax
+	 R['MEM', 'eip', 'esp'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>377 [jmp]jmp       .L00000109
+	 R['eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000109' section='.text', address=265>]
+
+<Symbol '.L0000017B' section='.text', size=5, address=379>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>379 [None].p2align 3
+
+<Symbol '.L00000180' section='.text', address=384>
+    ENDER False -- NXT .L00000189
+    CFG None
+    GRAPH_PRV .L00000084
+'I386_AMOCO.InstructionRW'>384 [None]movl      4(%ecx), %eax
+	 R['MEM', 'ecx', 'eip'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>387 [None]movl      %ecx, (%esp)
+	 R['ecx', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>390 [sub]call      *24(%eax)
+	 R['MEM', 'eax', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[None]
+
+<Symbol '.L00000189' section='.text', address=393>
+    ENDER True -- NXT None
+    CFG .L0000009A
+    GRAPH_NXT .L0000009A
+'I386_AMOCO.InstructionRW'>393 [jmp]jmp       .L0000009A
+	 R['eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000009A' section='.text', address=154>]
+
+<Symbol '.L0000018E' section='.text', address=398>
+    ENDER False -- NXT .L000001A1
+    CFG PyDict_SetItem@PLT
+    GRAPH_NXT PyDict_SetItem@PLT
+    GRAPH_PRV .L00000076
+'I386_AMOCO.InstructionRW'>398 [None]movl      %ebp, 8(%esp)
+	 R['ebp', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>402 [None]movl      %ebp, 4(%esp)
+	 R['ebp', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>406 [None]movl      44(%esi), %eax
+	 R['MEM', 'eip', 'esi'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>409 [None]movl      %eax, (%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>412 [sub]call      PyDict_SetItem@PLT
+	 R['eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol 'PyDict_SetItem@PLT' >]
+
+<Symbol '.L000001A1' section='.text', address=417>
+    ENDER False -- NXT .L000001A9
+    CFG .L0000009A
+    CFG .L000001A9
+    GRAPH_NXT .L0000009A
+    GRAPH_NXT .L000001A9
+    GRAPH_PRV PyDict_SetItem@PLT
+'I386_AMOCO.InstructionRW'>417 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>419 [jcc]je        .L0000009A
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000009A' section='.text', address=154>]
+
+<Symbol '.L000001A9' section='.text', address=425>
+    ENDER False -- NXT .L000001B0
+    CFG .L000001B0
+    GRAPH_NXT .L000001B0
+    GRAPH_PRV .L000001A1
+'plasmasm.constants.P2Align'>425 [None].p2align 4
+
+<Symbol '.L000001B0' section='.text', address=432>
+    ENDER True -- NXT None
+    CFG .L0000009A
+    GRAPH_NXT .L0000009A
+    GRAPH_PRV .L00000053
+    GRAPH_PRV .L000001A9
+'I386_AMOCO.InstructionRW'>432 [None]xorl      %ebp, %ebp
+	 R['eflags', 'eip'] W['ebp', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>434 [jmp]jmp       .L0000009A
+	 R['eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000009A' section='.text', address=154>]
+
+<Symbol '.L000001B7' section='.text', size=1, address=439>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>439 [None].p2align 3
+
+<Symbol '.L000001B8' section='.text', address=440>
+    ENDER False -- NXT .L000001C2
+    CFG .L00000220
+    CFG .L000001C2
+    GRAPH_NXT .L000001C2
+    GRAPH_NXT .L00000220
+    GRAPH_PRV .L000000B8
+'I386_AMOCO.InstructionRW'>440 [None]movl      handler_info@GOTOFF(%ebx), %edi
+	 R['MEM', 'ebx', 'eip'] W['edi', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>446 [None]testl     %edi, %edi
+	 R['edi', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>448 [jcc]je        .L00000220
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000220' section='.text', address=544>]
+
+<Symbol '.L000001C2' section='.text', address=450>
+    ENDER True -- NXT None
+    CFG .L000001F5
+    GRAPH_NXT .L000001F5
+    GRAPH_PRV .L000001B8
+'I386_AMOCO.InstructionRW'>450 [None]leal      handler_info@GOTOFF+4(%ebx), %edi
+	 R['MEM', 'ebx', 'eip'] W['edi', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>456 [None]xorl      %ebp, %ebp
+	 R['eflags', 'eip'] W['ebp', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>458 [jmp]jmp       .L000001F5
+	 R['eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001F5' section='.text', address=501>]
+
+<Symbol '.L000001CC' section='.text', size=4, address=460>
+    ENDER False -- NXT .L000001D0
+    CFG .L000001D0
+    GRAPH_NXT .L000001D0
+'plasmasm.constants.P2Align'>460 [None].p2align 3
+
+<Symbol '.L000001D0' section='.text', address=464>
+    ENDER False -- NXT .L000001E7
+    CFG None
+    GRAPH_PRV .L000001CC
+    GRAPH_PRV .L000001F5
+    GRAPH_PRV .L00000206
+    GRAPH_PRV .L0000021A
+'I386_AMOCO.InstructionRW'>464 [None]movl      $0, 4(%esp)
+	 R['eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>472 [None]movl      8(%esi), %edx
+	 R['MEM', 'eip', 'esi'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>475 [None]addl      $4, %ebp
+	 R['ebp', 'eip'] W['ebp', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>478 [None]movl      %edi, 28(%esp)
+	 R['edi', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>482 [None]movl      %edx, (%esp)
+	 R['edx', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>485 [sub]call      *(%edi)
+	 R['MEM', 'edi', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[None]
+
+<Symbol '.L000001E7' section='.text', address=487>
+    ENDER False -- NXT .L000001F5
+    CFG .L00000220
+    CFG .L000001F5
+    GRAPH_NXT .L000001F5
+    GRAPH_NXT .L00000220
+'I386_AMOCO.InstructionRW'>487 [None]movl      28(%esp), %eax
+	 R['MEM', 'eip', 'esp'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>491 [None]addl      $20, %edi
+	 R['edi', 'eip'] W['edi', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>494 [None]movl      16(%eax), %ecx
+	 R['MEM', 'eax', 'eip'] W['ecx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>497 [None]testl     %ecx, %ecx
+	 R['ecx', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>499 [jcc]je        .L00000220
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000220' section='.text', address=544>]
+
+<Symbol '.L000001F5' section='.text', address=501>
+    ENDER False -- NXT .L00000206
+    CFG .L000001D0
+    CFG .L00000206
+    GRAPH_NXT .L000001D0
+    GRAPH_NXT .L00000206
+    GRAPH_PRV .L000001C2
+    GRAPH_PRV .L000001E7
+'I386_AMOCO.InstructionRW'>501 [None]movl      48(%esi), %edx
+	 R['MEM', 'eip', 'esi'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>504 [None]addl      %ebp, %edx
+	 R['ebp', 'edx', 'eip'] W['edx', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>506 [None]movl      (%edx), %eax
+	 R['MEM', 'edx', 'eip'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>508 [None]movl      $0, (%edx)
+	 R['edx', 'eip'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>514 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>516 [jcc]je        .L000001D0
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001D0' section='.text', address=464>]
+
+<Symbol '.L00000206' section='.text', address=518>
+    ENDER False -- NXT .L00000211
+    CFG .L000001D0
+    CFG .L00000211
+    GRAPH_NXT .L000001D0
+    GRAPH_NXT .L00000211
+    GRAPH_PRV .L000001F5
+'I386_AMOCO.InstructionRW'>518 [None]movl      (%eax), %ecx
+	 R['MEM', 'eax', 'eip'] W['ecx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>520 [None]leal      -1(%ecx), %edx
+	 R['MEM', 'ecx', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>523 [None]testl     %edx, %edx
+	 R['edx', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>525 [None]movl      %edx, (%eax)
+	 R['eax', 'edx', 'eip'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>527 [jcc]jne       .L000001D0
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001D0' section='.text', address=464>]
+
+<Symbol '.L00000211' section='.text', address=529>
+    ENDER False -- NXT .L0000021A
+    CFG None
+    GRAPH_PRV .L00000206
+'I386_AMOCO.InstructionRW'>529 [None]movl      4(%eax), %edx
+	 R['MEM', 'eax', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>532 [None]movl      %eax, (%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>535 [sub]call      *24(%edx)
+	 R['MEM', 'edx', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[None]
+
+<Symbol '.L0000021A' section='.text', address=538>
+    ENDER True -- NXT None
+    CFG .L000001D0
+    GRAPH_NXT .L000001D0
+'I386_AMOCO.InstructionRW'>538 [jmp]jmp       .L000001D0
+	 R['eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001D0' section='.text', address=464>]
+
+<Symbol '.L0000021C' section='.text', size=4, address=540>
+    ENDER False -- NXT .L00000220
+    CFG .L00000220
+    GRAPH_NXT .L00000220
+'plasmasm.constants.P2Align'>540 [None].p2align 3
+
+<Symbol '.L00000220' section='.text', address=544>
+    ENDER False -- NXT .L00000235
+    CFG XML_SetExternalEntityRefHandler@PLT
+    GRAPH_NXT XML_SetExternalEntityRefHandler@PLT
+    GRAPH_PRV .L000001B8
+    GRAPH_PRV .L000001E7
+    GRAPH_PRV .L0000021C
+    GRAPH_PRV .L0000023A
+    GRAPH_PRV .L00000267
+'I386_AMOCO.InstructionRW'>544 [None]leal      error_external_entity_ref_handler@GOTOFF(%ebx), %eax
+	 R['MEM', 'ebx', 'eip'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>550 [None]movl      %eax, 4(%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>554 [None]movl      8(%esi), %eax
+	 R['MEM', 'eip', 'esi'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>557 [None]movl      %eax, (%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>560 [sub]call      XML_SetExternalEntityRefHandler@PLT
+	 R['eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol 'XML_SetExternalEntityRefHandler@PLT' >]
+
+<Symbol '.L00000235' section='.text', address=565>
+    ENDER True -- NXT None
+    CFG .L0000011C
+    GRAPH_NXT .L0000011C
+    GRAPH_PRV XML_SetExternalEntityRefHandler@PLT
+'I386_AMOCO.InstructionRW'>565 [jmp]jmp       .L0000011C
+	 R['eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000011C' section='.text', address=284>]
+
+<Symbol '.L0000023A' section='.text', address=570>
+    ENDER False -- NXT .L00000244
+    CFG .L00000220
+    CFG .L00000244
+    GRAPH_NXT .L00000220
+    GRAPH_NXT .L00000244
+    GRAPH_PRV .L00000109
+'I386_AMOCO.InstructionRW'>570 [None]movl      handler_info@GOTOFF(%ebx), %edx
+	 R['MEM', 'ebx', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>576 [None]testl     %edx, %edx
+	 R['edx', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>578 [jcc]je        .L00000220
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000220' section='.text', address=544>]
+
+<Symbol '.L00000244' section='.text', address=580>
+    ENDER True -- NXT None
+    CFG .L00000275
+    GRAPH_NXT .L00000275
+    GRAPH_PRV .L0000023A
+'I386_AMOCO.InstructionRW'>580 [None]leal      handler_info@GOTOFF+4(%ebx), %edi
+	 R['MEM', 'ebx', 'eip'] W['edi', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>586 [None]xorl      %ebp, %ebp
+	 R['eflags', 'eip'] W['ebp', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>588 [jmp]jmp       .L00000275
+	 R['eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000275' section='.text', address=629>]
+
+<Symbol '.L0000024E' section='.text', size=2, address=590>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>590 [None].p2align 3
+
+<Symbol '.L00000250' section='.text', address=592>
+    ENDER False -- NXT .L00000267
+    CFG None
+    GRAPH_PRV .L00000275
+    GRAPH_PRV .L00000286
+    GRAPH_PRV .L0000029A
+'I386_AMOCO.InstructionRW'>592 [None]movl      $0, 4(%esp)
+	 R['eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>600 [None]movl      8(%esi), %edx
+	 R['MEM', 'eip', 'esi'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>603 [None]addl      $4, %ebp
+	 R['ebp', 'eip'] W['ebp', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>606 [None]movl      %edi, 28(%esp)
+	 R['edi', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>610 [None]movl      %edx, (%esp)
+	 R['edx', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>613 [sub]call      *(%edi)
+	 R['MEM', 'edi', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[None]
+
+<Symbol '.L00000267' section='.text', address=615>
+    ENDER False -- NXT .L00000275
+    CFG .L00000220
+    CFG .L00000275
+    GRAPH_NXT .L00000220
+    GRAPH_NXT .L00000275
+'I386_AMOCO.InstructionRW'>615 [None]movl      28(%esp), %eax
+	 R['MEM', 'eip', 'esp'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>619 [None]addl      $20, %edi
+	 R['edi', 'eip'] W['edi', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>622 [None]movl      16(%eax), %eax
+	 R['MEM', 'eax', 'eip'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>625 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>627 [jcc]je        .L00000220
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000220' section='.text', address=544>]
+
+<Symbol '.L00000275' section='.text', address=629>
+    ENDER False -- NXT .L00000286
+    CFG .L00000250
+    CFG .L00000286
+    GRAPH_NXT .L00000250
+    GRAPH_NXT .L00000286
+    GRAPH_PRV .L00000244
+    GRAPH_PRV .L00000267
+'I386_AMOCO.InstructionRW'>629 [None]movl      48(%esi), %edx
+	 R['MEM', 'eip', 'esi'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>632 [None]addl      %ebp, %edx
+	 R['ebp', 'edx', 'eip'] W['edx', 'eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>634 [None]movl      (%edx), %eax
+	 R['MEM', 'edx', 'eip'] W['eax', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>636 [None]movl      $0, (%edx)
+	 R['edx', 'eip'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>642 [None]testl     %eax, %eax
+	 R['eax', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>644 [jcc]je        .L00000250
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000250' section='.text', address=592>]
+
+<Symbol '.L00000286' section='.text', address=646>
+    ENDER False -- NXT .L00000291
+    CFG .L00000250
+    CFG .L00000291
+    GRAPH_NXT .L00000250
+    GRAPH_NXT .L00000291
+    GRAPH_PRV .L00000275
+'I386_AMOCO.InstructionRW'>646 [None]movl      (%eax), %ecx
+	 R['MEM', 'eax', 'eip'] W['ecx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>648 [None]leal      -1(%ecx), %edx
+	 R['MEM', 'ecx', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>651 [None]testl     %edx, %edx
+	 R['edx', 'eip'] W['eflags', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>653 [None]movl      %edx, (%eax)
+	 R['eax', 'edx', 'eip'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>655 [jcc]jne       .L00000250
+	 R['eflags', 'eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000250' section='.text', address=592>]
+
+<Symbol '.L00000291' section='.text', address=657>
+    ENDER False -- NXT .L0000029A
+    CFG None
+    GRAPH_PRV .L00000286
+'I386_AMOCO.InstructionRW'>657 [None]movl      4(%eax), %edx
+	 R['MEM', 'eax', 'eip'] W['edx', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>660 [None]movl      %eax, (%esp)
+	 R['eax', 'eip', 'esp'] W['MEM', 'eip']
+	 PIC:ebx
+'I386_AMOCO.InstructionRW'>663 [sub]call      *24(%edx)
+	 R['MEM', 'edx', 'eip', 'esp'] W['MEM', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[None]
+
+<Symbol '.L0000029A' section='.text', address=666>
+    ENDER True -- NXT None
+    CFG .L00000250
+    GRAPH_NXT .L00000250
+'I386_AMOCO.InstructionRW'>666 [jmp]jmp       .L00000250
+	 R['eip'] W['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000250' section='.text', address=592>]
+
+<Symbol '.LC00000000.str1.1' section='.rodata.str1.1', address=0>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>0 .string	"(NO&)"
+
+<Symbol '.LC00000006.str1.1' section='.rodata.str1.1', address=6>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>6 .string	"ProcessingInstruction"
+
+<Symbol '(extract)pyexpat.c' bind='file'>
+
+<Symbol '.LC00000000.str1.1@GOTOFF' >
+
+<Symbol '.LC00000006.str1.1@GOTOFF' >
+
+<Symbol 'PyDict_GetItem' bind='globl'>
+
+<Symbol 'PyDict_GetItem@PLT' >
+    GRAPH_NXT .L00000076
+    GRAPH_PRV .L0000006A
+-- STACK00 ['.L00000076']
+
+<Symbol 'PyDict_SetItem' bind='globl'>
+
+<Symbol 'PyDict_SetItem@PLT' >
+    GRAPH_NXT .L000001A1
+    GRAPH_PRV .L0000018E
+-- STACK00 ['.L000001A1']
+
+<Symbol 'Py_BuildValue' bind='globl'>
+
+<Symbol 'Py_BuildValue@PLT' >
+    GRAPH_NXT .L000000B8
+    GRAPH_PRV .L0000009A
+-- STACK00 ['.L000000B8']
+
+<Symbol 'XML_SetExternalEntityRefHandler' bind='globl'>
+
+<Symbol 'XML_SetExternalEntityRefHandler@PLT' >
+    GRAPH_NXT .L00000235
+    GRAPH_PRV .L00000220
+-- STACK00 ['.L00000235']
+
+<Symbol '_GLOBAL_OFFSET_TABLE_' bind='globl'>
+
+<Symbol '__stack_chk_fail_local' bind='globl', visibility='hidden'>
+
+<Symbol '__x86.get_pc_thunk.bx' bind='globl'>
+    GRAPH_NXT .L00000010
+    GRAPH_PRV my_ProcessingInstructionHandler
+-- STACK00 ['.L00000010']
+
+<Symbol 'call_character_handler' bind='globl'>
+    GRAPH_NXT .L00000132
+    GRAPH_PRV .L00000128
+-- STACK00 ['.L00000132']
+
+<Symbol 'call_with_frame.isra.9' bind='globl'>
+    GRAPH_NXT .L000000F7
+    GRAPH_PRV .L000000E6
+-- STACK00 ['.L000000F7']
+
+<Symbol 'conv_string_to_unicode' bind='globl'>
+    GRAPH_NXT .L00000053
+    GRAPH_PRV .L00000036
+-- STACK00 ['.L00000053']
+
+<Symbol 'conv_string_to_unicode@GOTOFF' >
+
+<Symbol 'conv_string_to_utf8' bind='globl'>
+    GRAPH_NXT .L00000053
+    GRAPH_PRV .L00000036
+-- STACK00 ['.L00000053']
+
+<Symbol 'conv_string_to_utf8@GOTOFF' >
+
+<Symbol 'error_external_entity_ref_handler' bind='globl'>
+
+<Symbol 'error_external_entity_ref_handler@GOTOFF' >
+
+<Symbol 'getcode' bind='globl'>
+    GRAPH_NXT .L000000E6
+    GRAPH_PRV .L000000C2
+-- STACK00 ['.L000000E6']
+
+<Symbol 'handler_info' bind='globl'>
+
+<Symbol 'handler_info@GOTOFF' >
+
+<Symbol 'my_ProcessingInstructionHandler+668' section='.text', type='padding', address=668>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.debug_abbrev', '.debug_abbrev,"",@progbits')
+('.debug_aranges', '.debug_aranges,"",@progbits')
+('.debug_info', '.debug_info,"",@progbits')
+('.debug_line', '.debug_line,"",@progbits')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+('.rodata.str1.1', '.rodata.str1.1,"a",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu 4.8.4-2ubuntu1~14.04.3) 4.8.4',endianess:'<',eh_frame_size:132,eh_frame_relocs:{32: (('ELF', 3, 2), {'section': '.text', 'address': 0})},container:'ELF',compiler:'gcc',PIC:'call;add'
