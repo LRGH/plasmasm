@@ -42,6 +42,10 @@ all_tests = [
     ("dot_plasmasm_c9.o",       "repr", {}),
     ("dot_plasmasm_c9.out",     "repr", {}),
     ("dot_plasmasm_d2.out",     "repr", {}),
+    # For coverage of staticasm/pic_tracking
+    ("other_x86_linux_11.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
+    ("other_x86_macosx.o",      "reprD", {"rw":True,"pic":True,"dead":True}),
+    ("other_x86_macosx_5.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
 ]
 
 if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
@@ -60,14 +64,15 @@ def test_io(file, suffix, kargs):
     fd = open("non_regression/"+file+"."+suffix,"r")
     res = fd.read()
     fd.close()
+    from plasmasm import constants
     if "rw" in kargs:
         # Same output as disass.py -rLWT
         pool.arch.set_asm_format('att_syntax')
         pool.arch.long_display = True
+        constants.Constant.out_format = None
     else:
         # Same output as disass.py -r
         pool.arch.set_asm_format('raw')
-        from plasmasm import constants
         constants.Constant.out_format = 'raw'
     if "pic" in kargs:
         from staticasm.pic_tracking import analyze_PIC

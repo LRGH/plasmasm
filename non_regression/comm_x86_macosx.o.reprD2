@@ -1,12 +1,12 @@
 <Symbol 'L_A$non_lazy_ptr' section='__IMPORT,__pointers', address=47, data='indirect_symbol:_A'>
     ENDER False -- NXT None
     CFG None
-'plasmasm.constants.Constant4Byte'>47 (4, 'long', 'I') [0]
+'plasmasm.constants.Constant4Byte'>47 .long	0
 
 <Symbol 'L_B$non_lazy_ptr' section='__IMPORT,__pointers', address=51, data='indirect_symbol:_B'>
     ENDER False -- NXT None
     CFG None
-'plasmasm.constants.Constant4Byte'>51 (4, 'long', 'I') [0]
+'plasmasm.constants.Constant4Byte'>51 .long	0
 
 <Symbol '_main' section='__TEXT,__text', bind='globl', align='4, 0x90', address=0>
     ENDER False -- NXT L00000009

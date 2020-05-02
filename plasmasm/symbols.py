@@ -907,10 +907,13 @@ class Line(object):
             fmt = '%-80s # '
         if self.long_display and hasattr(self, 'stack'):
             registers, positions = self.stack
-            stack_status = []
-            for k in sorted(registers):
-                stack_status.append('%r: %r'%(k,sorted(list(registers[k]))))
-            stack_status = '{' + ', '.join(stack_status) + '}:'
+            if isinstance(registers, bool):
+                stack_status = '%s:' % registers
+            else:
+                stack_status = []
+                for k in sorted(registers):
+                    stack_status.append('%r: %r'%(k,sorted(list(registers[k]))))
+                stack_status = '{' + ', '.join(stack_status) + '}:'
             stack_status += str(tuple(sorted(positions)))
             out = (fmt+'STACK:%s') % (out, stack_status)
             fmt = '%-80s # '
@@ -965,10 +968,13 @@ class Line(object):
                 out += "\n\t PIC:%s" % pic_list
             if hasattr(self, 'stack'):
                 registers, positions = self.stack
-                stack_status = []
-                for k in sorted(registers):
-                    stack_status.append('%r: %r'%(k,sorted(list(registers[k]))))
-                stack_status = '{' + ', '.join(stack_status) + '}:'
+                if isinstance(registers, bool):
+                    stack_status = '%s:' % registers
+                else:
+                    stack_status = []
+                    for k in sorted(registers):
+                        stack_status.append('%r: %r'%(k,sorted(list(registers[k]))))
+                    stack_status = '{' + ', '.join(stack_status) + '}:'
                 stack_status += str(tuple(sorted(positions)))
                 out += "\n\t STACK:%s" % stack_status
             if hasattr(self, 'dst') and len(self.dst) != 0:

@@ -1,0 +1,5324 @@
+<Symbol 'gzopen' section='.text', type='function', bind='globl', size=21, address=0>
+    ENDER False -- NXT .L00000013
+    CFG gz_open
+    GRAPH_NXT gz_open
+'I386_MIASM.InstructionDEAD'>0 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'ebp', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>3 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>6 [None]pushl     12(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>9 [None]pushl     $-1
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>11 [None]pushl     8(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>14 [sub]call      gz_open
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol 'gz_open' section='.text', type='function', bind='local', size=722, address=1896>]
+
+<Symbol '.L00000013' section='.text', address=19>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L000008F3
+'I386_MIASM.InstructionDEAD'>19 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>20 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L00000015' section='.text', type='padding', address=21>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>21 [None].p2align 3
+
+<Symbol 'gzopen64' section='.text', type='function', bind='globl', size=21, address=24>
+    ENDER False -- NXT .L0000002B
+    CFG gz_open
+    GRAPH_NXT gz_open
+'I386_MIASM.InstructionDEAD'>24 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>25 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'ebp', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>27 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>30 [None]pushl     12(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>33 [None]pushl     $-1
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>35 [None]pushl     8(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>38 [sub]call      gz_open
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol 'gz_open' section='.text', type='function', bind='local', size=722, address=1896>]
+
+<Symbol '.L0000002B' section='.text', address=43>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L000008F3
+'I386_MIASM.InstructionDEAD'>43 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>44 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L0000002D' section='.text', type='padding', address=45>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>45 [None].p2align 3
+
+<Symbol 'gzdopen' section='.text', type='function', bind='globl', size=104, address=48>
+    ENDER False -- NXT .L00000041
+    CFG .L00000041
+    GRAPH_NXT .L00000041
+'I386_MIASM.InstructionDEAD'>48 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>49 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'ebp', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>51 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>52 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>53 [None]pushl     %ebx
+	 R['ebx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>54 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ebx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>57 [None]movl      8(%ebp), %esi
+	 R['MEM', 'ebp'] W['esi']
+	 D['af', 'cf', 'ebx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>60 [PIC]call      .L00000041
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'ebx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L00000041' section='.text', address=65>]
+
+<Symbol '.L00000041' section='.text', address=65>
+    ENDER False -- NXT .L0000004D
+    CFG .L00000094
+    CFG .L0000004D
+    GRAPH_NXT .L0000004D
+    GRAPH_NXT .L00000094
+    GRAPH_PRV gzdopen
+'I386_MIASM.InstructionDEAD'>65 [None][immutable=PIC:call;pop;add]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'ebx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>66 [None][immutable=PIC:call;add]addl      $_GLOBAL_OFFSET_TABLE_+1, %ebx
+	 R['ebx'] W['af', 'cf', 'ebx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>72 [None]cmpl      $-1, %esi
+	 R['esi'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>75 [jcc]je        .L00000094
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000094' section='.text', address=148>]
+
+<Symbol '.L0000004D' section='.text', address=77>
+    ENDER False -- NXT .L00000057
+    CFG malloc@PLT
+    GRAPH_NXT malloc@PLT
+    GRAPH_PRV .L00000041
+'I386_MIASM.InstructionDEAD'>77 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>80 [None]pushl     $19
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>82 [sub]call      malloc@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'malloc@PLT' >]
+
+<Symbol '.L00000057' section='.text', address=87>
+    ENDER False -- NXT .L00000060
+    CFG .L00000094
+    CFG .L00000060
+    GRAPH_NXT .L00000060
+    GRAPH_NXT .L00000094
+    GRAPH_PRV malloc@PLT
+'I386_MIASM.InstructionDEAD'>87 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>90 [None]testl     %eax, %eax
+	 R['eax'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>92 [None]movl      %eax, %edi
+	 R['eax'] W['edi']
+	 D['edi', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>94 [jcc]je        .L00000094
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000094' section='.text', address=148>]
+
+<Symbol '.L00000060' section='.text', address=96>
+    ENDER False -- NXT .L00000070
+    CFG snprintf@PLT
+    GRAPH_NXT snprintf@PLT
+    GRAPH_PRV .L00000057
+'I386_MIASM.InstructionDEAD'>96 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['edx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>97 [None]leal      .LC1@GOTOFF(%ebx), %edx
+	 R['ebx'] W['edx']
+	 D['edx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>103 [None]pushl     %edx
+	 R['edx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>104 [None]pushl     $19
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>106 [None]pushl     %eax
+	 R['eax', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>107 [sub]call      snprintf@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'snprintf@PLT' >]
+
+<Symbol '.L00000070' section='.text', address=112>
+    ENDER False -- NXT .L0000007D
+    CFG gz_open
+    GRAPH_NXT gz_open
+    GRAPH_PRV snprintf@PLT
+'I386_MIASM.InstructionDEAD'>112 [None]addl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>115 [None]pushl     12(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>118 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>119 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>120 [sub]call      gz_open
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol 'gz_open' section='.text', type='function', bind='local', size=722, address=1896>]
+
+<Symbol '.L0000007D' section='.text', address=125>
+    ENDER False -- NXT .L00000087
+    CFG free@PLT
+    GRAPH_NXT free@PLT
+    GRAPH_PRV .L000008F3
+'I386_MIASM.InstructionDEAD'>125 [None]movl      %eax, %esi
+	 R['eax'] W['esi']
+	 D['eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>127 [None]movl      %edi, (%esp)
+	 R['edi', 'esp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>130 [sub]call      free@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'free@PLT' >]
+
+<Symbol '.L00000087' section='.text', address=135>
+    ENDER False -- NXT .L00000089
+    CFG .L00000089
+    GRAPH_NXT .L00000089
+    GRAPH_PRV free@PLT
+'I386_MIASM.InstructionDEAD'>135 [None]movl      %esi, %eax
+	 R['esi'] W['eax']
+	 D['eax', 'edi', 'eip', 'esp']
+	 PIC:ebx
+
+<Symbol '.L00000089' section='.text', address=137>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L00000087
+    GRAPH_PRV .L00000094
+'I386_MIASM.InstructionDEAD'>137 [None]leal      -12(%ebp), %esp
+	 R['ebp'] W['esp']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>140 [None]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['edi', 'eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>141 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+	 D['edi', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>142 [None]popl      %edi
+	 R['@32[esp]', 'esp'] W['edi', 'esp']
+	 D['edi', 'eip']
+'I386_MIASM.InstructionDEAD'>143 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>144 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L00000091' section='.text', size=3, address=145>
+    ENDER False -- NXT .L00000094
+    CFG .L00000094
+    GRAPH_NXT .L00000094
+'plasmasm.constants.P2Align'>145 [None].p2align 2
+
+<Symbol '.L00000094' section='.text', address=148>
+    ENDER True -- NXT None
+    CFG .L00000089
+    GRAPH_NXT .L00000089
+    GRAPH_PRV .L00000041
+    GRAPH_PRV .L00000057
+    GRAPH_PRV .L00000091
+'I386_MIASM.InstructionDEAD'>148 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edi', 'eip', 'esi', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>150 [jmp]jmp       .L00000089
+	 R[] W['eip']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000089' section='.text', address=137>]
+
+<Symbol 'gzbuffer' section='.text', type='function', bind='globl', size=85, address=152>
+    ENDER False -- NXT .L000000AB
+    CFG .L000000C3
+    CFG .L000000AB
+    GRAPH_NXT .L000000AB
+    GRAPH_NXT .L000000C3
+'I386_MIASM.InstructionDEAD'>152 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['cf', 'eax', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>153 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['cf', 'eax', 'ebp', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>155 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['cf', 'eax', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>158 [None]testl     %ecx, %ecx
+	 R['ecx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>160 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eax', 'eip']
+'I386_MIASM.InstructionDEAD'>161 [None]movl      12(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['eax', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>164 [None]movl      $-1, %esi
+	 R[] W['esi']
+	 D['eip', 'esi']
+'I386_MIASM.InstructionDEAD'>169 [jcc]je        .L000000C3
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L000000C3' section='.text', address=195>]
+
+<Symbol '.L000000AB' section='.text', address=171>
+    ENDER False -- NXT .L000000B6
+    CFG .L000000CC
+    CFG .L000000B6
+    GRAPH_NXT .L000000B6
+    GRAPH_NXT .L000000CC
+    GRAPH_PRV gzbuffer
+'I386_MIASM.InstructionDEAD'>171 [None]movl      16(%ecx), %edx
+	 R['MEM', 'ecx'] W['edx']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>174 [None]cmpl      $7247, %edx
+	 R['edx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>180 [jcc]je        .L000000CC
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L000000CC' section='.text', address=204>]
+
+<Symbol '.L000000B6' section='.text', address=182>
+    ENDER False -- NXT .L000000C3
+    CFG .L000000CC
+    CFG .L000000C3
+    GRAPH_NXT .L000000C3
+    GRAPH_NXT .L000000CC
+    GRAPH_PRV .L000000AB
+'I386_MIASM.InstructionDEAD'>182 [None]cmpl      $31153, %edx
+	 R['edx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>188 [None]movl      $-1, %esi
+	 R[] W['esi']
+	 D['eip', 'esi']
+'I386_MIASM.InstructionDEAD'>193 [jcc]je        .L000000CC
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L000000CC' section='.text', address=204>]
+
+<Symbol '.L000000C3' section='.text', address=195>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L000000B6
+    GRAPH_PRV .L000000D3
+    GRAPH_PRV .L000000E6
+    GRAPH_PRV gzbuffer
+'I386_MIASM.InstructionDEAD'>195 [None]movl      %esi, %eax
+	 R['esi'] W['eax']
+	 D['eax', 'eip']
+'I386_MIASM.InstructionDEAD'>197 [None]movl      (%esp), %esi
+	 R['MEM', 'esp'] W['esi']
+	 D['eip', 'esi']
+'I386_MIASM.InstructionDEAD'>200 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>201 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L000000CA' section='.text', size=2, address=202>
+    ENDER False -- NXT .L000000CC
+    CFG .L000000CC
+    GRAPH_NXT .L000000CC
+'plasmasm.constants.P2Align'>202 [None].p2align 2
+
+<Symbol '.L000000CC' section='.text', address=204>
+    ENDER False -- NXT .L000000D3
+    CFG .L000000DC
+    CFG .L000000D3
+    GRAPH_NXT .L000000D3
+    GRAPH_NXT .L000000DC
+    GRAPH_PRV .L000000AB
+    GRAPH_PRV .L000000B6
+    GRAPH_PRV .L000000CA
+'I386_MIASM.InstructionDEAD'>204 [None]movl      28(%ecx), %esi
+	 R['MEM', 'ecx'] W['esi']
+	 D['cf', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>207 [None]testl     %esi, %esi
+	 R['esi'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>209 [jcc]je        .L000000DC
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L000000DC' section='.text', address=220>]
+
+<Symbol '.L000000D3' section='.text', address=211>
+    ENDER True -- NXT None
+    CFG .L000000C3
+    GRAPH_NXT .L000000C3
+    GRAPH_PRV .L000000CC
+'I386_MIASM.InstructionDEAD'>211 [None]movl      $-1, %esi
+	 R[] W['esi']
+	 D['eax', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>216 [jmp]jmp       .L000000C3
+	 R[] W['eip']
+	 D['eax', 'eip']
+	 dst=[<Symbol '.L000000C3' section='.text', address=195>]
+
+<Symbol '.L000000DA' section='.text', size=2, address=218>
+    ENDER False -- NXT .L000000DC
+    CFG .L000000DC
+    GRAPH_NXT .L000000DC
+'plasmasm.constants.P2Align'>218 [None].p2align 2
+
+<Symbol '.L000000DC' section='.text', address=220>
+    ENDER False -- NXT .L000000E1
+    CFG .L000000E6
+    CFG .L000000E1
+    GRAPH_NXT .L000000E1
+    GRAPH_NXT .L000000E6
+    GRAPH_PRV .L000000CC
+    GRAPH_PRV .L000000DA
+'I386_MIASM.InstructionDEAD'>220 [None]cmpl      $1, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>223 [jcc]ja        .L000000E6
+	 R['cf', 'zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L000000E6' section='.text', address=230>]
+
+<Symbol '.L000000E1' section='.text', address=225>
+    ENDER False -- NXT .L000000E6
+    CFG .L000000E6
+    GRAPH_NXT .L000000E6
+    GRAPH_PRV .L000000DC
+'I386_MIASM.InstructionDEAD'>225 [None]movl      $2, %eax
+	 R[] W['eax']
+	 D['cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+
+<Symbol '.L000000E6' section='.text', address=230>
+    ENDER True -- NXT None
+    CFG .L000000C3
+    GRAPH_NXT .L000000C3
+    GRAPH_PRV .L000000DC
+    GRAPH_PRV .L000000E1
+'I386_MIASM.InstructionDEAD'>230 [None]movl      %eax, 32(%ecx)
+	 R['eax', 'ecx'] W['MEM']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>233 [None]xorl      %esi, %esi
+	 R['esi'] W['cf', 'esi', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>235 [jmp]jmp       .L000000C3
+	 R[] W['eip']
+	 D['eax', 'eip']
+	 dst=[<Symbol '.L000000C3' section='.text', address=195>]
+
+<Symbol '.L000000ED' section='.text', type='padding', address=237>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>237 [None].p2align 3
+
+<Symbol 'gzrewind' section='.text', type='function', bind='globl', size=177, address=240>
+    ENDER False -- NXT .L000000FD
+    CFG .L000000FD
+    GRAPH_NXT .L000000FD
+'I386_MIASM.InstructionDEAD'>240 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>241 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'ebp', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>243 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>244 [None]movl      8(%ebp), %esi
+	 R['MEM', 'ebp'] W['esi']
+	 D['af', 'cf', 'edx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>247 [None]pushl     %ebx
+	 R['ebx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>248 [PIC]call      .L000000FD
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'ebx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L000000FD' section='.text', address=253>]
+
+<Symbol '.L000000FD' section='.text', address=253>
+    ENDER False -- NXT .L0000010D
+    CFG .L0000011B
+    CFG .L0000010D
+    GRAPH_NXT .L0000010D
+    GRAPH_NXT .L0000011B
+    GRAPH_PRV gzrewind
+'I386_MIASM.InstructionDEAD'>253 [None][immutable=PIC:call;pop;add]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'ebx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>254 [None][immutable=PIC:call;add]addl      $_GLOBAL_OFFSET_TABLE_+1, %ebx
+	 R['ebx'] W['af', 'cf', 'ebx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>260 [None]testl     %esi, %esi
+	 R['esi'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>262 [None]movl      $-1, %edx
+	 R[] W['edx']
+	 D['edx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>267 [jcc]je        .L0000011B
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000011B' section='.text', address=283>]
+
+<Symbol '.L0000010D' section='.text', address=269>
+    ENDER False -- NXT .L00000116
+    CFG .L00000124
+    CFG .L00000116
+    GRAPH_NXT .L00000116
+    GRAPH_NXT .L00000124
+    GRAPH_PRV .L000000FD
+'I386_MIASM.InstructionDEAD'>269 [None]cmpl      $7247, 16(%esi)
+	 R['MEM', 'esi'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>276 [jcc]je        .L00000124
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000124' section='.text', address=292>]
+
+<Symbol '.L00000116' section='.text', address=278>
+    ENDER False -- NXT .L0000011B
+    CFG .L0000011B
+    GRAPH_NXT .L0000011B
+    GRAPH_PRV .L0000010D
+    GRAPH_PRV .L0000012B
+'I386_MIASM.InstructionDEAD'>278 [None]movl      $-1, %edx
+	 R[] W['edx']
+	 D['eax', 'edx', 'eip', 'esi', 'esp']
+	 PIC:ebx
+
+<Symbol '.L0000011B' section='.text', address=283>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L000000FD
+    GRAPH_PRV .L00000116
+    GRAPH_PRV .L00000140
+    GRAPH_PRV .L0000016E
+'I386_MIASM.InstructionDEAD'>283 [None]leal      -8(%ebp), %esp
+	 R['ebp'] W['esp']
+	 D['eax', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>286 [None]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['eax', 'eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>287 [None]movl      %edx, %eax
+	 R['edx'] W['eax']
+	 D['eax', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>289 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+	 D['eip', 'esi']
+'I386_MIASM.InstructionDEAD'>290 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>291 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L00000124' section='.text', address=292>
+    ENDER False -- NXT .L0000012B
+    CFG .L00000130
+    CFG .L0000012B
+    GRAPH_NXT .L0000012B
+    GRAPH_NXT .L00000130
+    GRAPH_PRV .L0000010D
+'I386_MIASM.InstructionDEAD'>292 [None]movl      88(%esi), %eax
+	 R['MEM', 'esi'] W['eax']
+	 D['cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>295 [None]testl     %eax, %eax
+	 R['eax'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>297 [jcc]je        .L00000130
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000130' section='.text', address=304>]
+
+<Symbol '.L0000012B' section='.text', address=299>
+    ENDER False -- NXT .L00000130
+    CFG .L00000116
+    CFG .L00000130
+    GRAPH_NXT .L00000116
+    GRAPH_NXT .L00000130
+    GRAPH_PRV .L00000124
+'I386_MIASM.InstructionDEAD'>299 [None]cmpl      $-5, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>302 [jcc]jne       .L00000116
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000116' section='.text', address=278>]
+
+<Symbol '.L00000130' section='.text', address=304>
+    ENDER False -- NXT .L00000140
+    CFG lseek64@PLT
+    GRAPH_NXT lseek64@PLT
+    GRAPH_PRV .L00000124
+    GRAPH_PRV .L0000012B
+'I386_MIASM.InstructionDEAD'>304 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>306 [None]pushl     56(%esi)
+	 R['MEM', 'esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>309 [None]pushl     52(%esi)
+	 R['MEM', 'esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>312 [None]pushl     20(%esi)
+	 R['MEM', 'esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>315 [sub]call      lseek64@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'lseek64@PLT' >]
+
+<Symbol '.L00000140' section='.text', address=320>
+    ENDER False -- NXT .L0000014D
+    CFG .L0000011B
+    CFG .L0000014D
+    GRAPH_NXT .L0000011B
+    GRAPH_NXT .L0000014D
+    GRAPH_PRV lseek64@PLT
+'I386_MIASM.InstructionDEAD'>320 [None]andl      %edx, %eax
+	 R['eax', 'edx'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>322 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>325 [None]incl      %eax
+	 R['eax'] W['af', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>326 [None]movl      $-1, %edx
+	 R[] W['edx']
+	 D['edx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>331 [jcc]je        .L0000011B
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000011B' section='.text', address=283>]
+
+<Symbol '.L0000014D' section='.text', address=333>
+    ENDER False -- NXT .L0000015C
+    CFG .L0000018A
+    CFG .L0000015C
+    GRAPH_NXT .L0000015C
+    GRAPH_NXT .L0000018A
+    GRAPH_PRV .L00000140
+'I386_MIASM.InstructionDEAD'>333 [None]cmpl      $7247, 16(%esi)
+	 R['MEM', 'esi'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>340 [None]movl      $0, (%esi)
+	 R['esi'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>346 [jcc]je        .L0000018A
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000018A' section='.text', address=394>]
+
+<Symbol '.L0000015C' section='.text', address=348>
+    ENDER False -- NXT .L0000016E
+    CFG gz_error
+    GRAPH_NXT gz_error
+    GRAPH_PRV .L0000014D
+    GRAPH_PRV .L0000018A
+'I386_MIASM.InstructionDEAD'>348 [None]movl      $0, 84(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>355 [None]pushl     %ecx
+	 R['ecx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>356 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>358 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>360 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>361 [sub]call      gz_error
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol 'gz_error' section='.text', type='function', bind='globl', visibility='hidden', size=217, address=1676>]
+
+<Symbol '.L0000016E' section='.text', address=366>
+    ENDER True -- NXT None
+    CFG .L0000011B
+    GRAPH_NXT .L0000011B
+    GRAPH_PRV .L00000752
+'I386_MIASM.InstructionDEAD'>366 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>369 [None]movl      $0, 8(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eax', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>376 [None]movl      $0, 12(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eax', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>383 [None]movl      $0, 100(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eax', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>390 [None]xorl      %edx, %edx
+	 R['edx'] W['cf', 'edx', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eax', 'eip', 'esi', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>392 [jmp]jmp       .L0000011B
+	 R[] W['eip']
+	 D['eax', 'eip', 'esi', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000011B' section='.text', address=283>]
+
+<Symbol '.L0000018A' section='.text', address=394>
+    ENDER True -- NXT None
+    CFG .L0000015C
+    GRAPH_NXT .L0000015C
+    GRAPH_PRV .L0000014D
+'I386_MIASM.InstructionDEAD'>394 [None]movl      $0, 60(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>401 [None]movl      $0, 64(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>408 [None]movl      $0, 48(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>415 [jmp]jmp       .L0000015C
+	 R[] W['eip']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000015C' section='.text', address=348>]
+
+<Symbol '.L000001A1' section='.text', type='padding', address=417>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>417 [None].p2align 2
+
+<Symbol 'gzseek64' section='.text', type='function', bind='globl', size=605, address=420>
+    ENDER False -- NXT .L000001B5
+    CFG .L000001B5
+    GRAPH_NXT .L000001B5
+'I386_MIASM.InstructionDEAD'>420 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>421 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'ebp', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>423 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>424 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'ecx', 'edi', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>425 [None]pushl     %ebx
+	 R['ebx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'ecx', 'edi', 'edx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>426 [None]subl      $44, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ebx', 'ecx', 'edi', 'edx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>429 [None]movl      8(%ebp), %edx
+	 R['MEM', 'ebp'] W['edx']
+	 D['af', 'cf', 'ebx', 'ecx', 'edi', 'edx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>432 [PIC]call      .L000001B5
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'ebx', 'ecx', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L000001B5' section='.text', address=437>]
+
+<Symbol '.L000001B5' section='.text', address=437>
+    ENDER False -- NXT .L000001D7
+    CFG .L000001F9
+    CFG .L000001D7
+    GRAPH_NXT .L000001D7
+    GRAPH_NXT .L000001F9
+    GRAPH_PRV gzseek64
+'I386_MIASM.InstructionDEAD'>437 [None][immutable=PIC:call;pop;add]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'ebx', 'ecx', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>438 [None][immutable=PIC:call;add]addl      $_GLOBAL_OFFSET_TABLE_+1, %ebx
+	 R['ebx'] W['af', 'cf', 'ebx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ecx', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>444 [None]testl     %edx, %edx
+	 R['edx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'ecx', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>446 [None]movl      12(%ebp), %esi
+	 R['MEM', 'ebp'] W['esi']
+	 D['ecx', 'edi', 'eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>449 [None]movl      16(%ebp), %edi
+	 R['MEM', 'ebp'] W['edi']
+	 D['ecx', 'edi', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>452 [None]movl      20(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['ecx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>455 [None]movl      $-1, -24(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>462 [None]movl      $-1, -20(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>469 [jcc]je        .L000001F9
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001F9' section='.text', address=505>]
+
+<Symbol '.L000001D7' section='.text', address=471>
+    ENDER False -- NXT .L000001E4
+    CFG .L00000208
+    CFG .L000001E4
+    GRAPH_NXT .L000001E4
+    GRAPH_NXT .L00000208
+    GRAPH_PRV .L000001B5
+'I386_MIASM.InstructionDEAD'>471 [None]movl      8(%ebp), %edx
+	 R['MEM', 'ebp'] W['edx']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>474 [None]movl      16(%edx), %eax
+	 R['MEM', 'edx'] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>477 [None]cmpl      $7247, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>482 [jcc]je        .L00000208
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000208' section='.text', address=520>]
+
+<Symbol '.L000001E4' section='.text', address=484>
+    ENDER False -- NXT .L000001F9
+    CFG .L00000208
+    CFG .L000001F9
+    GRAPH_NXT .L000001F9
+    GRAPH_NXT .L00000208
+    GRAPH_PRV .L000001D7
+'I386_MIASM.InstructionDEAD'>484 [None]cmpl      $31153, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>489 [None]movl      $-1, -24(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>496 [None]movl      $-1, -20(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>503 [jcc]je        .L00000208
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000208' section='.text', address=520>]
+
+<Symbol '.L000001F9' section='.text', address=505>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L000001B5
+    GRAPH_PRV .L000001E4
+    GRAPH_PRV .L00000212
+    GRAPH_PRV .L00000225
+    GRAPH_PRV .L0000028B
+    GRAPH_PRV .L000002D8
+    GRAPH_PRV .L000002F3
+    GRAPH_PRV .L0000031D
+    GRAPH_PRV .L00000380
+    GRAPH_PRV .L000003C3
+'I386_MIASM.InstructionDEAD'>505 [None]movl      -24(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['eax', 'edi', 'edx', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>508 [None]movl      -20(%ebp), %edx
+	 R['MEM', 'ebp'] W['edx']
+	 D['edi', 'edx', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>511 [None]leal      -12(%ebp), %esp
+	 R['ebp'] W['esp']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>514 [None]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['edi', 'eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>515 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+	 D['edi', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>516 [None]popl      %edi
+	 R['@32[esp]', 'esp'] W['edi', 'esp']
+	 D['edi', 'eip']
+'I386_MIASM.InstructionDEAD'>517 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>518 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L00000207' section='.text', size=1, address=519>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>519 [None].p2align 3
+
+<Symbol '.L00000208' section='.text', address=520>
+    ENDER False -- NXT .L00000212
+    CFG .L00000225
+    CFG .L00000212
+    GRAPH_NXT .L00000212
+    GRAPH_NXT .L00000225
+    GRAPH_PRV .L000001D7
+    GRAPH_PRV .L000001E4
+'I386_MIASM.InstructionDEAD'>520 [None]movl      8(%ebp), %edx
+	 R['MEM', 'ebp'] W['edx']
+	 D['cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>523 [None]movl      88(%edx), %eax
+	 R['MEM', 'edx'] W['eax']
+	 D['cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>526 [None]testl     %eax, %eax
+	 R['eax'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>528 [jcc]je        .L00000225
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000225' section='.text', address=549>]
+
+<Symbol '.L00000212' section='.text', address=530>
+    ENDER False -- NXT .L00000225
+    CFG .L000001F9
+    CFG .L00000225
+    GRAPH_NXT .L000001F9
+    GRAPH_NXT .L00000225
+    GRAPH_PRV .L00000208
+'I386_MIASM.InstructionDEAD'>530 [None]cmpl      $-5, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>533 [None]movl      $-1, -24(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>540 [None]movl      $-1, -20(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>547 [jcc]jne       .L000001F9
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001F9' section='.text', address=505>]
+
+<Symbol '.L00000225' section='.text', address=549>
+    ENDER False -- NXT .L00000238
+    CFG .L000001F9
+    CFG .L00000238
+    GRAPH_NXT .L000001F9
+    GRAPH_NXT .L00000238
+    GRAPH_PRV .L00000208
+    GRAPH_PRV .L00000212
+'I386_MIASM.InstructionDEAD'>549 [None]cmpl      $1, %ecx
+	 R['ecx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>552 [None]movl      $-1, -24(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>559 [None]movl      $-1, -20(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>566 [jcc]ja        .L000001F9
+	 R['cf', 'zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001F9' section='.text', address=505>]
+
+<Symbol '.L00000238' section='.text', address=568>
+    ENDER False -- NXT .L00000240
+    CFG .L000003E8
+    CFG .L00000240
+    GRAPH_NXT .L00000240
+    GRAPH_NXT .L000003E8
+    GRAPH_PRV .L00000225
+'I386_MIASM.InstructionDEAD'>568 [None]testl     %ecx, %ecx
+	 R['ecx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>570 [jcc]jne       .L000003E8
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000003E8' section='.text', address=1000>]
+
+<Symbol '.L00000240' section='.text', address=576>
+    ENDER False -- NXT .L00000249
+    CFG .L00000249
+    GRAPH_NXT .L00000249
+    GRAPH_PRV .L00000238
+'I386_MIASM.InstructionDEAD'>576 [None]movl      8(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>579 [None]subl      8(%eax), %esi
+	 R['MEM', 'eax', 'esi'] W['af', 'cf', 'esi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>582 [None]sbbl      12(%eax), %edi
+	 R['MEM', 'cf', 'eax', 'edi'] W['af', 'cf', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L00000249' section='.text', address=585>
+    ENDER False -- NXT .L00000268
+    CFG .L00000344
+    CFG .L00000268
+    GRAPH_NXT .L00000268
+    GRAPH_NXT .L00000344
+    GRAPH_PRV .L00000240
+    GRAPH_PRV .L000003E8
+    GRAPH_PRV .L000003F6
+'I386_MIASM.InstructionDEAD'>585 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>588 [None]movl      16(%ecx), %edx
+	 R['MEM', 'ecx'] W['edx']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>591 [None]cmpl      $7247, %edx
+	 R['edx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>597 [None]movl      $0, 84(%ecx)
+	 R['ecx'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>604 [None]movl      %edx, -44(%ebp)
+	 R['ebp', 'edx'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>607 [None]movl      %edx, -28(%ebp)
+	 R['ebp', 'edx'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>610 [jcc]je        .L00000344
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000344' section='.text', address=836>]
+
+<Symbol '.L00000268' section='.text', address=616>
+    ENDER False -- NXT .L0000026C
+    CFG .L000002D8
+    CFG .L0000026C
+    GRAPH_NXT .L0000026C
+    GRAPH_NXT .L000002D8
+    GRAPH_PRV .L00000249
+    GRAPH_PRV .L00000344
+    GRAPH_PRV .L0000034E
+'I386_MIASM.InstructionDEAD'>616 [None]testl     %edi, %edi
+	 R['edi'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>618 [jcc]js        .L000002D8
+	 R['nf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000002D8' section='.text', address=728>]
+
+<Symbol '.L0000026C' section='.text', address=620>
+    ENDER False -- NXT .L00000275
+    CFG .L0000029F
+    CFG .L00000275
+    GRAPH_NXT .L00000275
+    GRAPH_NXT .L0000029F
+    GRAPH_PRV .L00000268
+    GRAPH_PRV .L00000335
+'I386_MIASM.InstructionDEAD'>620 [None]cmpl      $7247, -44(%ebp)
+	 R['MEM', 'ebp'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>627 [jcc]je        .L0000029F
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000029F' section='.text', address=671>]
+
+<Symbol '.L00000275' section='.text', address=629>
+    ENDER False -- NXT .L0000027B
+    CFG .L0000028B
+    CFG .L0000027B
+    GRAPH_NXT .L0000027B
+    GRAPH_NXT .L0000028B
+    GRAPH_PRV .L0000026C
+    GRAPH_PRV .L000002B7
+'I386_MIASM.InstructionDEAD'>629 [None]movl      %edi, %edx
+	 R['edi'] W['edx']
+	 D['cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>631 [None]orl       %esi, %edx
+	 R['edx', 'esi'] W['cf', 'edx', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>633 [jcc]je        .L0000028B
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000028B' section='.text', address=651>]
+
+<Symbol '.L0000027B' section='.text', address=635>
+    ENDER False -- NXT .L0000028B
+    CFG .L0000028B
+    GRAPH_NXT .L0000028B
+    GRAPH_PRV .L00000275
+'I386_MIASM.InstructionDEAD'>635 [None]movl      8(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>638 [None]movl      $1, 84(%eax)
+	 R['eax'] W['MEM']
+	 D['af', 'cf', 'edx', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>645 [None]movl      %esi, 76(%eax)
+	 R['eax', 'esi'] W['MEM']
+	 D['af', 'cf', 'edx', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>648 [None]movl      %edi, 80(%eax)
+	 R['eax', 'edi'] W['MEM']
+	 D['af', 'cf', 'edx', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L0000028B' section='.text', address=651>
+    ENDER True -- NXT None
+    CFG .L000001F9
+    GRAPH_NXT .L000001F9
+    GRAPH_PRV .L00000275
+    GRAPH_PRV .L0000027B
+'I386_MIASM.InstructionDEAD'>651 [None]movl      8(%ebp), %edx
+	 R['MEM', 'ebp'] W['edx']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>654 [None]addl      8(%edx), %esi
+	 R['MEM', 'edx', 'esi'] W['af', 'cf', 'esi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>657 [None]adcl      12(%edx), %edi
+	 R['MEM', 'cf', 'edi', 'edx'] W['af', 'cf', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eax', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>660 [None]movl      %esi, -24(%ebp)
+	 R['ebp', 'esi'] W['MEM']
+	 D['eax', 'edx', 'eip', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>663 [None]movl      %edi, -20(%ebp)
+	 R['ebp', 'edi'] W['MEM']
+	 D['eax', 'edx', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>666 [jmp]jmp       .L000001F9
+	 R[] W['eip']
+	 D['eax', 'edi', 'edx', 'eip', 'esi', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001F9' section='.text', address=505>]
+
+<Symbol '.L0000029F' section='.text', address=671>
+    ENDER False -- NXT .L000002AA
+    CFG .L000002CF
+    CFG .L000002AA
+    GRAPH_NXT .L000002AA
+    GRAPH_NXT .L000002CF
+    GRAPH_PRV .L0000026C
+'I386_MIASM.InstructionDEAD'>671 [None]xorl      %ecx, %ecx
+	 R['ecx'] W['cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>673 [None]movl      8(%ebp), %edx
+	 R['MEM', 'ebp'] W['edx']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>676 [None]cmpl      %edi, %ecx
+	 R['ecx', 'edi'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>678 [None]movl      (%edx), %eax
+	 R['MEM', 'edx'] W['eax']
+	 D['eax', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>680 [jcc]jl        .L000002CF
+	 R['nf', 'of'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000002CF' section='.text', address=719>]
+
+<Symbol '.L000002AA' section='.text', address=682>
+    ENDER False -- NXT .L000002AC
+    CFG .L000002B0
+    CFG .L000002AC
+    GRAPH_NXT .L000002AC
+    GRAPH_NXT .L000002B0
+    GRAPH_PRV .L0000029F
+'I386_MIASM.InstructionDEAD'>682 [jcc]jg        .L000002B0
+	 R['nf', 'of', 'zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000002B0' section='.text', address=688>]
+
+<Symbol '.L000002AC' section='.text', address=684>
+    ENDER False -- NXT .L000002B0
+    CFG .L000002CF
+    CFG .L000002B0
+    GRAPH_NXT .L000002B0
+    GRAPH_NXT .L000002CF
+    GRAPH_PRV .L000002AA
+'I386_MIASM.InstructionDEAD'>684 [None]cmpl      %esi, %eax
+	 R['eax', 'esi'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>686 [jcc]jbe       .L000002CF
+	 R['cf', 'zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000002CF' section='.text', address=719>]
+
+<Symbol '.L000002B0' section='.text', address=688>
+    ENDER False -- NXT .L000002B7
+    CFG .L000002B7
+    GRAPH_NXT .L000002B7
+    GRAPH_PRV .L000002AA
+    GRAPH_PRV .L000002AC
+'I386_MIASM.InstructionDEAD'>688 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>691 [None]movl      %esi, %eax
+	 R['esi'] W['eax']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>693 [None]movl      (%ecx), %edx
+	 R['MEM', 'ecx'] W['edx']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L000002B7' section='.text', address=695>
+    ENDER True -- NXT None
+    CFG .L00000275
+    GRAPH_NXT .L00000275
+    GRAPH_PRV .L000002B0
+    GRAPH_PRV .L000002CF
+'I386_MIASM.InstructionDEAD'>695 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>698 [None]subl      %eax, %edx
+	 R['eax', 'edx'] W['af', 'cf', 'edx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>700 [None]movl      %edx, (%ecx)
+	 R['ecx', 'edx'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>702 [None]addl      %eax, 4(%ecx)
+	 R['MEM', 'eax', 'ecx'] W['MEM', 'af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>705 [None]xorl      %edx, %edx
+	 R['edx'] W['cf', 'edx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>707 [None]addl      %eax, 8(%ecx)
+	 R['MEM', 'eax', 'ecx'] W['MEM', 'af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>710 [None]adcl      %edx, 12(%ecx)
+	 R['MEM', 'cf', 'ecx', 'edx'] W['MEM', 'af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>713 [None]subl      %eax, %esi
+	 R['eax', 'esi'] W['af', 'cf', 'esi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>715 [None]sbbl      %edx, %edi
+	 R['cf', 'edi', 'edx'] W['af', 'cf', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>717 [jmp]jmp       .L00000275
+	 R[] W['eip']
+	 D['cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000275' section='.text', address=629>]
+
+<Symbol '.L000002CF' section='.text', address=719>
+    ENDER True -- NXT None
+    CFG .L000002B7
+    GRAPH_NXT .L000002B7
+    GRAPH_PRV .L0000029F
+    GRAPH_PRV .L000002AC
+'I386_MIASM.InstructionDEAD'>719 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>722 [None]movl      (%ecx), %eax
+	 R['MEM', 'ecx'] W['eax']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>724 [None]movl      %eax, %edx
+	 R['eax'] W['edx']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>726 [jmp]jmp       .L000002B7
+	 R[] W['eip']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L000002B7' section='.text', address=695>]
+
+<Symbol '.L000002D8' section='.text', address=728>
+    ENDER False -- NXT .L000002F3
+    CFG .L000001F9
+    CFG .L000002F3
+    GRAPH_NXT .L000001F9
+    GRAPH_NXT .L000002F3
+    GRAPH_PRV .L00000268
+'I386_MIASM.InstructionDEAD'>728 [None]cmpl      $7247, -28(%ebp)
+	 R['MEM', 'ebp'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>735 [None]movl      $-1, -24(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>742 [None]movl      $-1, -20(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>749 [jcc]jne       .L000001F9
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001F9' section='.text', address=505>]
+
+<Symbol '.L000002F3' section='.text', address=755>
+    ENDER False -- NXT .L00000312
+    CFG .L000001F9
+    CFG .L00000312
+    GRAPH_NXT .L000001F9
+    GRAPH_NXT .L00000312
+    GRAPH_PRV .L000002D8
+'I386_MIASM.InstructionDEAD'>755 [None]movl      8(%ebp), %edx
+	 R['MEM', 'ebp'] W['edx']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>758 [None]addl      8(%edx), %esi
+	 R['MEM', 'edx', 'esi'] W['af', 'cf', 'esi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>761 [None]adcl      12(%edx), %edi
+	 R['MEM', 'cf', 'edi', 'edx'] W['af', 'cf', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>764 [None]testl     %edi, %edi
+	 R['edi'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>766 [None]movl      $-1, -24(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>773 [None]movl      $-1, -20(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>780 [jcc]js        .L000001F9
+	 R['nf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001F9' section='.text', address=505>]
+
+<Symbol '.L00000312' section='.text', address=786>
+    ENDER False -- NXT .L0000031D
+    CFG gzrewind@PLT
+    GRAPH_NXT gzrewind@PLT
+    GRAPH_PRV .L000002F3
+'I386_MIASM.InstructionDEAD'>786 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>789 [None]pushl     8(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>792 [sub]call      gzrewind@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol 'gzrewind@PLT' >]
+
+<Symbol '.L0000031D' section='.text', address=797>
+    ENDER False -- NXT .L00000335
+    CFG .L000001F9
+    CFG .L00000335
+    GRAPH_NXT .L000001F9
+    GRAPH_NXT .L00000335
+    GRAPH_PRV gzrewind@PLT
+'I386_MIASM.InstructionDEAD'>797 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>800 [None]incl      %eax
+	 R['eax'] W['af', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>801 [None]movl      $-1, -24(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>808 [None]movl      $-1, -20(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>815 [jcc]je        .L000001F9
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001F9' section='.text', address=505>]
+
+<Symbol '.L00000335' section='.text', address=821>
+    ENDER True -- NXT None
+    CFG .L0000026C
+    GRAPH_NXT .L0000026C
+    GRAPH_PRV .L0000031D
+'I386_MIASM.InstructionDEAD'>821 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['af', 'cf', 'eax', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>824 [None]movl      16(%ecx), %eax
+	 R['MEM', 'ecx'] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>827 [None]movl      %eax, -44(%ebp)
+	 R['eax', 'ebp'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>830 [jmp]jmp       .L0000026C
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000026C' section='.text', address=620>]
+
+<Symbol '.L00000343' section='.text', size=1, address=835>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>835 [None].p2align 2
+
+<Symbol '.L00000344' section='.text', address=836>
+    ENDER False -- NXT .L0000034E
+    CFG .L00000268
+    CFG .L0000034E
+    GRAPH_NXT .L00000268
+    GRAPH_NXT .L0000034E
+    GRAPH_PRV .L00000249
+'I386_MIASM.InstructionDEAD'>836 [None]cmpl      $1, 48(%ecx)
+	 R['MEM', 'ecx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>840 [jcc]jne       .L00000268
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000268' section='.text', address=616>]
+
+<Symbol '.L0000034E' section='.text', address=846>
+    ENDER False -- NXT .L00000360
+    CFG .L00000268
+    CFG .L00000360
+    GRAPH_NXT .L00000268
+    GRAPH_NXT .L00000360
+    GRAPH_PRV .L00000344
+'I386_MIASM.InstructionDEAD'>846 [None]movl      8(%ecx), %eax
+	 R['MEM', 'ecx'] W['eax']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>849 [None]addl      %esi, %eax
+	 R['eax', 'esi'] W['af', 'cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>851 [None]movl      12(%ecx), %edx
+	 R['MEM', 'ecx'] W['edx']
+	 D['af', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>854 [None]adcl      %edi, %edx
+	 R['cf', 'edi', 'edx'] W['af', 'cf', 'edx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>856 [None]testl     %edx, %edx
+	 R['edx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>858 [jcc]js        .L00000268
+	 R['nf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000268' section='.text', address=616>]
+
+<Symbol '.L00000360' section='.text', address=864>
+    ENDER False -- NXT .L00000380
+    CFG lseek64@PLT
+    GRAPH_NXT lseek64@PLT
+    GRAPH_PRV .L0000034E
+'I386_MIASM.InstructionDEAD'>864 [None]pushl     $1
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>866 [None]movl      (%ecx), %eax
+	 R['MEM', 'ecx'] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>868 [None]xorl      %edx, %edx
+	 R['edx'] W['cf', 'edx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>870 [None]movl      %eax, -40(%ebp)
+	 R['eax', 'ebp'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>873 [None]movl      %esi, %eax
+	 R['esi'] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>875 [None]subl      -40(%ebp), %eax
+	 R['MEM', 'eax', 'ebp'] W['af', 'cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>878 [None]movl      %edx, -36(%ebp)
+	 R['ebp', 'edx'] W['MEM']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>881 [None]movl      %edi, %edx
+	 R['edi'] W['edx']
+	 D['af', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>883 [None]sbbl      -36(%ebp), %edx
+	 R['MEM', 'cf', 'ebp', 'edx'] W['af', 'cf', 'edx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>886 [None]pushl     %edx
+	 R['edx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>887 [None]pushl     %eax
+	 R['eax', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>888 [None]pushl     20(%ecx)
+	 R['MEM', 'ecx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>891 [sub]call      lseek64@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'lseek64@PLT' >]
+
+<Symbol '.L00000380' section='.text', address=896>
+    ENDER False -- NXT .L0000039A
+    CFG .L000001F9
+    CFG .L0000039A
+    GRAPH_NXT .L000001F9
+    GRAPH_NXT .L0000039A
+    GRAPH_PRV lseek64@PLT
+'I386_MIASM.InstructionDEAD'>896 [None]andl      %edx, %eax
+	 R['eax', 'edx'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>898 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>901 [None]incl      %eax
+	 R['eax'] W['af', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>902 [None]movl      $-1, -24(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>909 [None]movl      $-1, -20(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>916 [jcc]je        .L000001F9
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001F9' section='.text', address=505>]
+
+<Symbol '.L0000039A' section='.text', address=922>
+    ENDER False -- NXT .L000003C3
+    CFG gz_error
+    GRAPH_NXT gz_error
+    GRAPH_PRV .L00000380
+'I386_MIASM.InstructionDEAD'>922 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>925 [None]movl      $0, (%ecx)
+	 R['ecx'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>931 [None]movl      $0, 60(%ecx)
+	 R['ecx'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>938 [None]movl      $0, 64(%ecx)
+	 R['ecx'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>945 [None]movl      $0, 84(%ecx)
+	 R['ecx'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>952 [None]pushl     %eax
+	 R['eax', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>953 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>955 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>957 [None]pushl     %ecx
+	 R['ecx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>958 [sub]call      gz_error
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol 'gz_error' section='.text', type='function', bind='globl', visibility='hidden', size=217, address=1676>]
+
+<Symbol '.L000003C3' section='.text', address=963>
+    ENDER True -- NXT None
+    CFG .L000001F9
+    GRAPH_NXT .L000001F9
+    GRAPH_PRV .L00000752
+'I386_MIASM.InstructionDEAD'>963 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>966 [None]movl      8(%ecx), %eax
+	 R['MEM', 'ecx'] W['eax']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>969 [None]addl      %esi, %eax
+	 R['eax', 'esi'] W['af', 'cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>971 [None]movl      12(%ecx), %edx
+	 R['MEM', 'ecx'] W['edx']
+	 D['af', 'edx', 'eip', 'esi', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>974 [None]adcl      %edi, %edx
+	 R['cf', 'edi', 'edx'] W['af', 'cf', 'edx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'esi', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>976 [None]movl      $0, 100(%ecx)
+	 R['ecx'] W['MEM']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>983 [None]movl      %eax, 8(%ecx)
+	 R['eax', 'ecx'] W['MEM']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>986 [None]movl      %edx, 12(%ecx)
+	 R['ecx', 'edx'] W['MEM']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>989 [None]movl      %eax, -24(%ebp)
+	 R['eax', 'ebp'] W['MEM']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>992 [None]movl      %edx, -20(%ebp)
+	 R['ebp', 'edx'] W['MEM']
+	 D['eax', 'edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>995 [jmp]jmp       .L000001F9
+	 R[] W['eip']
+	 D['eax', 'edi', 'edx', 'eip', 'esi', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol '.L000001F9' section='.text', address=505>]
+
+<Symbol '.L000003E8' section='.text', address=1000>
+    ENDER False -- NXT .L000003F6
+    CFG .L00000249
+    CFG .L000003F6
+    GRAPH_NXT .L00000249
+    GRAPH_NXT .L000003F6
+    GRAPH_PRV .L00000238
+'I386_MIASM.InstructionDEAD'>1000 [None]movl      8(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['cf', 'eax', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1003 [None]movl      84(%eax), %ecx
+	 R['MEM', 'eax'] W['ecx']
+	 D['cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1006 [None]testl     %ecx, %ecx
+	 R['ecx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1008 [jcc]je        .L00000249
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000249' section='.text', address=585>]
+
+<Symbol '.L000003F6' section='.text', address=1014>
+    ENDER True -- NXT None
+    CFG .L00000249
+    GRAPH_NXT .L00000249
+    GRAPH_PRV .L000003E8
+'I386_MIASM.InstructionDEAD'>1014 [None]addl      76(%eax), %esi
+	 R['MEM', 'eax', 'esi'] W['af', 'cf', 'esi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1017 [None]adcl      80(%eax), %edi
+	 R['MEM', 'cf', 'eax', 'edi'] W['af', 'cf', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1020 [jmp]jmp       .L00000249
+	 R[] W['eip']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000249' section='.text', address=585>]
+
+<Symbol '.L00000401' section='.text', type='padding', address=1025>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>1025 [None].p2align 2
+
+<Symbol 'gzseek' section='.text', type='function', bind='globl', size=71, address=1028>
+    ENDER False -- NXT .L0000041B
+    CFG .L0000041B
+    GRAPH_NXT .L0000041B
+'I386_MIASM.InstructionDEAD'>1028 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1029 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'eax', 'ebp', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1031 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1032 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1033 [None]pushl     %ebx
+	 R['ebx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1034 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1037 [None]movl      12(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['af', 'cf', 'eax', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1040 [None]pushl     16(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1043 [None]cltd      
+	 R['eax'] W['edx']
+	 D['af', 'cf', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1044 [None]pushl     %edx
+	 R['edx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'ebx', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1045 [None]pushl     %eax
+	 R['eax', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1046 [PIC]call      .L0000041B
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L0000041B' section='.text', address=1051>]
+
+<Symbol '.L0000041B' section='.text', address=1051>
+    ENDER False -- NXT .L0000042A
+    CFG gzseek64@PLT
+    GRAPH_NXT gzseek64@PLT
+    GRAPH_PRV gzseek
+'I386_MIASM.InstructionDEAD'>1051 [None][immutable=PIC:call;pop;add]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1052 [None][immutable=PIC:call;add]addl      $_GLOBAL_OFFSET_TABLE_+1, %ebx
+	 R['ebx'] W['af', 'cf', 'ebx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1058 [None]pushl     8(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1061 [sub]call      gzseek64@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol 'gzseek64@PLT' >]
+
+<Symbol '.L0000042A' section='.text', address=1066>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV gzseek64@PLT
+'I386_MIASM.InstructionDEAD'>1066 [None]movl      %edx, %edi
+	 R['edx'] W['edi']
+	 D['af', 'cf', 'ecx', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1068 [None]movl      %eax, %esi
+	 R['eax'] W['esi']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1070 [None]cltd      
+	 R['eax'] W['edx']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1071 [None]movl      %edi, %ecx
+	 R['edi'] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1073 [None]xorl      %esi, %eax
+	 R['eax', 'esi'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1075 [None]xorl      %edx, %ecx
+	 R['ecx', 'edx'] W['cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1077 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1080 [None]orl       %eax, %ecx
+	 R['eax', 'ecx'] W['cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1082 [None]sete      %dl
+	 R['edx', 'zf'] W['edx']
+	 D['af', 'cf', 'eax', 'edi', 'eip', 'esp', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1085 [None]movzbl    %dl, %eax
+	 R['edx'] W['eax']
+	 D['af', 'cf', 'eax', 'edi', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1088 [None]leal      -12(%ebp), %esp
+	 R['ebp'] W['esp']
+	 D['af', 'cf', 'edi', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1091 [None]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1092 [None]decl      %eax
+	 R['eax'] W['af', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1093 [None]orl       %esi, %eax
+	 R['eax', 'esi'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1095 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+	 D['edi', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>1096 [None]popl      %edi
+	 R['@32[esp]', 'esp'] W['edi', 'esp']
+	 D['edi', 'eip']
+'I386_MIASM.InstructionDEAD'>1097 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1098 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L0000044B' section='.text', type='padding', address=1099>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>1099 [None].p2align 2
+
+<Symbol 'gztell64' section='.text', type='function', bind='globl', size=77, address=1100>
+    ENDER False -- NXT .L00000461
+    CFG .L0000047E
+    CFG .L00000461
+    GRAPH_NXT .L00000461
+    GRAPH_NXT .L0000047E
+'I386_MIASM.InstructionDEAD'>1100 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1101 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['cf', 'eax', 'ebp', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1103 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1104 [None]movl      8(%ebp), %esi
+	 R['MEM', 'ebp'] W['esi']
+	 D['cf', 'eax', 'edx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1107 [None]testl     %esi, %esi
+	 R['esi'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1109 [None]movl      $-1, %eax
+	 R[] W['eax']
+	 D['eax', 'edx', 'eip']
+'I386_MIASM.InstructionDEAD'>1114 [None]movl      $-1, %edx
+	 R[] W['edx']
+	 D['edx', 'eip']
+'I386_MIASM.InstructionDEAD'>1119 [jcc]je        .L0000047E
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L0000047E' section='.text', address=1150>]
+
+<Symbol '.L00000461' section='.text', address=1121>
+    ENDER False -- NXT .L0000046C
+    CFG .L00000484
+    CFG .L0000046C
+    GRAPH_NXT .L0000046C
+    GRAPH_NXT .L00000484
+    GRAPH_PRV gztell64
+'I386_MIASM.InstructionDEAD'>1121 [None]movl      16(%esi), %ecx
+	 R['MEM', 'esi'] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1124 [None]cmpl      $7247, %ecx
+	 R['ecx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1130 [jcc]je        .L00000484
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L00000484' section='.text', address=1156>]
+
+<Symbol '.L0000046C' section='.text', address=1132>
+    ENDER False -- NXT .L0000047E
+    CFG .L00000484
+    CFG .L0000047E
+    GRAPH_NXT .L0000047E
+    GRAPH_NXT .L00000484
+    GRAPH_PRV .L00000461
+'I386_MIASM.InstructionDEAD'>1132 [None]cmpl      $31153, %ecx
+	 R['ecx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1138 [None]movl      $-1, %eax
+	 R[] W['eax']
+	 D['eax', 'edx', 'eip']
+'I386_MIASM.InstructionDEAD'>1143 [None]movl      $-1, %edx
+	 R[] W['edx']
+	 D['edx', 'eip']
+'I386_MIASM.InstructionDEAD'>1148 [jcc]je        .L00000484
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L00000484' section='.text', address=1156>]
+
+<Symbol '.L0000047E' section='.text', address=1150>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L0000046C
+    GRAPH_PRV .L00000484
+    GRAPH_PRV .L00000491
+    GRAPH_PRV gztell64
+'I386_MIASM.InstructionDEAD'>1150 [None]movl      (%esp), %esi
+	 R['MEM', 'esp'] W['esi']
+	 D['eip', 'esi']
+'I386_MIASM.InstructionDEAD'>1153 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1154 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L00000483' section='.text', size=1, address=1155>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>1155 [None].p2align 2
+
+<Symbol '.L00000484' section='.text', address=1156>
+    ENDER False -- NXT .L00000491
+    CFG .L0000047E
+    CFG .L00000491
+    GRAPH_NXT .L0000047E
+    GRAPH_NXT .L00000491
+    GRAPH_PRV .L00000461
+    GRAPH_PRV .L0000046C
+'I386_MIASM.InstructionDEAD'>1156 [None]movl      84(%esi), %ecx
+	 R['MEM', 'esi'] W['ecx']
+	 D['cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1159 [None]testl     %ecx, %ecx
+	 R['ecx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1161 [None]movl      8(%esi), %eax
+	 R['MEM', 'esi'] W['eax']
+	 D['eax', 'edx', 'eip']
+'I386_MIASM.InstructionDEAD'>1164 [None]movl      12(%esi), %edx
+	 R['MEM', 'esi'] W['edx']
+	 D['edx', 'eip']
+'I386_MIASM.InstructionDEAD'>1167 [jcc]je        .L0000047E
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L0000047E' section='.text', address=1150>]
+
+<Symbol '.L00000491' section='.text', address=1169>
+    ENDER True -- NXT None
+    CFG .L0000047E
+    GRAPH_NXT .L0000047E
+    GRAPH_PRV .L00000484
+'I386_MIASM.InstructionDEAD'>1169 [None]addl      76(%esi), %eax
+	 R['MEM', 'eax', 'esi'] W['af', 'cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1172 [None]adcl      80(%esi), %edx
+	 R['MEM', 'cf', 'edx', 'esi'] W['af', 'cf', 'edx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1175 [jmp]jmp       .L0000047E
+	 R[] W['eip']
+	 D['eip', 'esi']
+	 dst=[<Symbol '.L0000047E' section='.text', address=1150>]
+
+<Symbol '.L00000499' section='.text', type='padding', address=1177>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>1177 [None].p2align 2
+
+<Symbol 'gztell' section='.text', type='function', bind='globl', size=62, address=1180>
+    ENDER False -- NXT .L000004AA
+    CFG .L000004AA
+    GRAPH_NXT .L000004AA
+'I386_MIASM.InstructionDEAD'>1180 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1181 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'eax', 'ebp', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1183 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1184 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1185 [None]pushl     %ebx
+	 R['ebx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1186 [None]subl      $24, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'ebx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1189 [PIC]call      .L000004AA
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'eax', 'ebx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L000004AA' section='.text', address=1194>]
+
+<Symbol '.L000004AA' section='.text', address=1194>
+    ENDER False -- NXT .L000004B9
+    CFG gztell64@PLT
+    GRAPH_NXT gztell64@PLT
+    GRAPH_PRV gztell
+'I386_MIASM.InstructionDEAD'>1194 [None][immutable=PIC:call;pop;add]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'eax', 'ebx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1195 [None][immutable=PIC:call;add]addl      $_GLOBAL_OFFSET_TABLE_+1, %ebx
+	 R['ebx'] W['af', 'cf', 'ebx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1201 [None]pushl     8(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1204 [sub]call      gztell64@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['cf', 'eax', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol 'gztell64@PLT' >]
+
+<Symbol '.L000004B9' section='.text', address=1209>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV gztell64@PLT
+'I386_MIASM.InstructionDEAD'>1209 [None]movl      %edx, %edi
+	 R['edx'] W['edi']
+	 D['af', 'cf', 'ecx', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1211 [None]movl      %eax, %esi
+	 R['eax'] W['esi']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1213 [None]cltd      
+	 R['eax'] W['edx']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1214 [None]movl      %edi, %ecx
+	 R['edi'] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1216 [None]xorl      %esi, %eax
+	 R['eax', 'esi'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1218 [None]xorl      %edx, %ecx
+	 R['ecx', 'edx'] W['cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1220 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1223 [None]orl       %eax, %ecx
+	 R['eax', 'ecx'] W['cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1225 [None]sete      %dl
+	 R['edx', 'zf'] W['edx']
+	 D['af', 'cf', 'eax', 'edi', 'eip', 'esp', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1228 [None]movzbl    %dl, %eax
+	 R['edx'] W['eax']
+	 D['af', 'cf', 'eax', 'edi', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1231 [None]leal      -12(%ebp), %esp
+	 R['ebp'] W['esp']
+	 D['af', 'cf', 'edi', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1234 [None]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1235 [None]decl      %eax
+	 R['eax'] W['af', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1236 [None]orl       %esi, %eax
+	 R['eax', 'esi'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1238 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+	 D['edi', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>1239 [None]popl      %edi
+	 R['@32[esp]', 'esp'] W['edi', 'esp']
+	 D['edi', 'eip']
+'I386_MIASM.InstructionDEAD'>1240 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1241 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L000004DA' section='.text', type='padding', address=1242>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>1242 [None].p2align 2
+
+<Symbol 'gzoffset64' section='.text', type='function', bind='globl', size=148, address=1244>
+    ENDER False -- NXT .L000004ED
+    CFG .L000004ED
+    GRAPH_NXT .L000004ED
+'I386_MIASM.InstructionDEAD'>1244 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1245 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'eax', 'ebp', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1247 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1248 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1249 [None]pushl     %ebx
+	 R['ebx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1250 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1253 [None]movl      8(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['af', 'cf', 'eax', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1256 [PIC]call      .L000004ED
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L000004ED' section='.text', address=1261>]
+
+<Symbol '.L000004ED' section='.text', address=1261>
+    ENDER False -- NXT .L00000502
+    CFG .L00000520
+    CFG .L00000502
+    GRAPH_NXT .L00000502
+    GRAPH_NXT .L00000520
+    GRAPH_PRV gzoffset64
+'I386_MIASM.InstructionDEAD'>1261 [None][immutable=PIC:call;pop;add]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1262 [None][immutable=PIC:call;add]addl      $_GLOBAL_OFFSET_TABLE_+1, %ebx
+	 R['ebx'] W['af', 'cf', 'ebx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1268 [None]testl     %eax, %eax
+	 R['eax'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1270 [None]movl      $-1, %edx
+	 R[] W['edx']
+	 D['ecx', 'edx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1275 [None]movl      $-1, %ecx
+	 R[] W['ecx']
+	 D['ecx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1280 [jcc]je        .L00000520
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000520' section='.text', address=1312>]
+
+<Symbol '.L00000502' section='.text', address=1282>
+    ENDER False -- NXT .L0000050F
+    CFG .L0000052C
+    CFG .L0000050F
+    GRAPH_NXT .L0000050F
+    GRAPH_NXT .L0000052C
+    GRAPH_PRV .L000004ED
+'I386_MIASM.InstructionDEAD'>1282 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['af', 'cf', 'eax', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1285 [None]movl      16(%ecx), %eax
+	 R['MEM', 'ecx'] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1288 [None]cmpl      $7247, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1293 [jcc]je        .L0000052C
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000052C' section='.text', address=1324>]
+
+<Symbol '.L0000050F' section='.text', address=1295>
+    ENDER False -- NXT .L00000520
+    CFG .L0000052C
+    CFG .L00000520
+    GRAPH_NXT .L00000520
+    GRAPH_NXT .L0000052C
+    GRAPH_PRV .L00000502
+'I386_MIASM.InstructionDEAD'>1295 [None]cmpl      $31153, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1300 [None]movl      $-1, %edx
+	 R[] W['edx']
+	 D['ecx', 'edx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1305 [None]movl      $-1, %ecx
+	 R[] W['ecx']
+	 D['ecx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1310 [jcc]je        .L0000052C
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000052C' section='.text', address=1324>]
+
+<Symbol '.L00000520' section='.text', address=1312>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L000004ED
+    GRAPH_PRV .L0000050F
+    GRAPH_PRV .L0000053D
+    GRAPH_PRV .L0000055F
+'I386_MIASM.InstructionDEAD'>1312 [None]leal      -12(%ebp), %esp
+	 R['ebp'] W['esp']
+	 D['eax', 'edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1315 [None]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['eax', 'edi', 'eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1316 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+	 D['eax', 'edi', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>1317 [None]movl      %edx, %eax
+	 R['edx'] W['eax']
+	 D['eax', 'edi', 'eip']
+'I386_MIASM.InstructionDEAD'>1319 [None]popl      %edi
+	 R['@32[esp]', 'esp'] W['edi', 'esp']
+	 D['edi', 'edx', 'eip']
+'I386_MIASM.InstructionDEAD'>1320 [None]movl      %ecx, %edx
+	 R['ecx'] W['edx']
+	 D['edx', 'eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1322 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1323 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L0000052C' section='.text', address=1324>
+    ENDER False -- NXT .L0000053D
+    CFG lseek64@PLT
+    GRAPH_NXT lseek64@PLT
+    GRAPH_PRV .L00000502
+    GRAPH_PRV .L0000050F
+'I386_MIASM.InstructionDEAD'>1324 [None]pushl     $1
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eax', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1326 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eax', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1328 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eax', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1330 [None]movl      8(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['eax', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1333 [None]pushl     20(%eax)
+	 R['MEM', 'eax', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1336 [sub]call      lseek64@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'lseek64@PLT' >]
+
+<Symbol '.L0000053D' section='.text', address=1341>
+    ENDER False -- NXT .L00000553
+    CFG .L00000520
+    CFG .L00000553
+    GRAPH_NXT .L00000520
+    GRAPH_NXT .L00000553
+    GRAPH_PRV lseek64@PLT
+'I386_MIASM.InstructionDEAD'>1341 [None]movl      %eax, %esi
+	 R['eax'] W['esi']
+	 D['af', 'cf', 'ecx', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1343 [None]andl      %edx, %eax
+	 R['eax', 'edx'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1345 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1348 [None]incl      %eax
+	 R['eax'] W['af', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1349 [None]movl      %edx, %edi
+	 R['edx'] W['edi']
+	 D['ecx', 'edi', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1351 [None]movl      $-1, %ecx
+	 R[] W['ecx']
+	 D['ecx', 'edx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1356 [None]movl      $-1, %edx
+	 R[] W['edx']
+	 D['edx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1361 [jcc]je        .L00000520
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000520' section='.text', address=1312>]
+
+<Symbol '.L00000553' section='.text', address=1363>
+    ENDER False -- NXT .L0000055F
+    CFG .L00000565
+    CFG .L0000055F
+    GRAPH_NXT .L0000055F
+    GRAPH_NXT .L00000565
+    GRAPH_PRV .L0000053D
+'I386_MIASM.InstructionDEAD'>1363 [None]movl      8(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1366 [None]cmpl      $7247, 16(%eax)
+	 R['MEM', 'eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1373 [jcc]je        .L00000565
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000565' section='.text', address=1381>]
+
+<Symbol '.L0000055F' section='.text', address=1375>
+    ENDER True -- NXT None
+    CFG .L00000520
+    GRAPH_NXT .L00000520
+    GRAPH_PRV .L00000553
+    GRAPH_PRV .L00000565
+'I386_MIASM.InstructionDEAD'>1375 [None]movl      %esi, %edx
+	 R['esi'] W['edx']
+	 D['eax', 'ecx', 'edx', 'eip', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1377 [None]movl      %edi, %ecx
+	 R['edi'] W['ecx']
+	 D['eax', 'ecx', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1379 [jmp]jmp       .L00000520
+	 R[] W['eip']
+	 D['eax', 'edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000520' section='.text', address=1312>]
+
+<Symbol '.L00000565' section='.text', address=1381>
+    ENDER True -- NXT None
+    CFG .L0000055F
+    GRAPH_NXT .L0000055F
+    GRAPH_PRV .L00000553
+'I386_MIASM.InstructionDEAD'>1381 [None]movl      100(%eax), %edx
+	 R['MEM', 'eax'] W['edx']
+	 D['af', 'cf', 'edx', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1384 [None]xorl      %ecx, %ecx
+	 R['ecx'] W['cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1386 [None]subl      %edx, %esi
+	 R['edx', 'esi'] W['af', 'cf', 'esi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1388 [None]sbbl      %ecx, %edi
+	 R['cf', 'ecx', 'edi'] W['af', 'cf', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eax', 'edx', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1390 [jmp]jmp       .L0000055F
+	 R[] W['eip']
+	 D['eax', 'ecx', 'edx', 'eip', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000055F' section='.text', address=1375>]
+
+<Symbol 'gzoffset' section='.text', type='function', bind='globl', size=62, address=1392>
+    ENDER False -- NXT .L0000057E
+    CFG .L0000057E
+    GRAPH_NXT .L0000057E
+'I386_MIASM.InstructionDEAD'>1392 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1393 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'eax', 'ebp', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1395 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1396 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1397 [None]pushl     %ebx
+	 R['ebx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1398 [None]subl      $24, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1401 [PIC]call      .L0000057E
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'eax', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L0000057E' section='.text', address=1406>]
+
+<Symbol '.L0000057E' section='.text', address=1406>
+    ENDER False -- NXT .L0000058D
+    CFG gzoffset64@PLT
+    GRAPH_NXT gzoffset64@PLT
+    GRAPH_PRV gzoffset
+'I386_MIASM.InstructionDEAD'>1406 [None][immutable=PIC:call;pop;add]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'eax', 'ebx', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1407 [None][immutable=PIC:call;add]addl      $_GLOBAL_OFFSET_TABLE_+1, %ebx
+	 R['ebx'] W['af', 'cf', 'ebx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1413 [None]pushl     8(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1416 [sub]call      gzoffset64@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'eax', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol 'gzoffset64@PLT' >]
+
+<Symbol '.L0000058D' section='.text', address=1421>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV gzoffset64@PLT
+'I386_MIASM.InstructionDEAD'>1421 [None]movl      %edx, %edi
+	 R['edx'] W['edi']
+	 D['af', 'cf', 'ecx', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1423 [None]movl      %eax, %esi
+	 R['eax'] W['esi']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1425 [None]cltd      
+	 R['eax'] W['edx']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1426 [None]movl      %edi, %ecx
+	 R['edi'] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1428 [None]xorl      %esi, %eax
+	 R['eax', 'esi'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1430 [None]xorl      %edx, %ecx
+	 R['ecx', 'edx'] W['cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1432 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1435 [None]orl       %eax, %ecx
+	 R['eax', 'ecx'] W['cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1437 [None]sete      %dl
+	 R['edx', 'zf'] W['edx']
+	 D['af', 'cf', 'eax', 'edi', 'eip', 'esp', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1440 [None]movzbl    %dl, %eax
+	 R['edx'] W['eax']
+	 D['af', 'cf', 'eax', 'edi', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1443 [None]leal      -12(%ebp), %esp
+	 R['ebp'] W['esp']
+	 D['af', 'cf', 'edi', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1446 [None]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1447 [None]decl      %eax
+	 R['eax'] W['af', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1448 [None]orl       %esi, %eax
+	 R['eax', 'esi'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1450 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+	 D['edi', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>1451 [None]popl      %edi
+	 R['@32[esp]', 'esp'] W['edi', 'esp']
+	 D['edi', 'eip']
+'I386_MIASM.InstructionDEAD'>1452 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1453 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L000005AE' section='.text', type='padding', address=1454>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>1454 [None].p2align 3
+
+<Symbol 'gzeof' section='.text', type='function', bind='globl', size=57, address=1456>
+    ENDER False -- NXT .L000005BC
+    CFG .L000005D1
+    CFG .L000005BC
+    GRAPH_NXT .L000005BC
+    GRAPH_NXT .L000005D1
+'I386_MIASM.InstructionDEAD'>1456 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1457 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['cf', 'ebp', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1459 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1462 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1464 [None]testl     %ecx, %ecx
+	 R['ecx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1466 [jcc]je        .L000005D1
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L000005D1' section='.text', address=1489>]
+
+<Symbol '.L000005BC' section='.text', address=1468>
+    ENDER False -- NXT .L000005C7
+    CFG .L000005D4
+    CFG .L000005C7
+    GRAPH_NXT .L000005C7
+    GRAPH_NXT .L000005D4
+    GRAPH_PRV gzeof
+'I386_MIASM.InstructionDEAD'>1468 [None]movl      16(%ecx), %edx
+	 R['MEM', 'ecx'] W['edx']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1471 [None]cmpl      $7247, %edx
+	 R['edx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1477 [jcc]je        .L000005D4
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L000005D4' section='.text', address=1492>]
+
+<Symbol '.L000005C7' section='.text', address=1479>
+    ENDER False -- NXT .L000005D1
+    CFG .L000005D4
+    CFG .L000005D1
+    GRAPH_NXT .L000005D1
+    GRAPH_NXT .L000005D4
+    GRAPH_PRV .L000005BC
+'I386_MIASM.InstructionDEAD'>1479 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1481 [None]cmpl      $31153, %edx
+	 R['edx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1487 [jcc]je        .L000005D4
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L000005D4' section='.text', address=1492>]
+
+<Symbol '.L000005D1' section='.text', address=1489>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L000005C7
+    GRAPH_PRV .L000005DD
+    GRAPH_PRV .L000005E4
+    GRAPH_PRV gzeof
+'I386_MIASM.InstructionDEAD'>1489 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1490 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L000005D3' section='.text', size=1, address=1491>
+    ENDER True -- NXT None
+'plasmasm.constants.P2Align'>1491 [None].p2align 2
+
+<Symbol '.L000005D4' section='.text', address=1492>
+    ENDER False -- NXT .L000005DD
+    CFG .L000005E4
+    CFG .L000005DD
+    GRAPH_NXT .L000005DD
+    GRAPH_NXT .L000005E4
+    GRAPH_PRV .L000005BC
+    GRAPH_PRV .L000005C7
+'I386_MIASM.InstructionDEAD'>1492 [None]cmpl      $7247, 16(%ecx)
+	 R['MEM', 'ecx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1499 [jcc]je        .L000005E4
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L000005E4' section='.text', address=1508>]
+
+<Symbol '.L000005DD' section='.text', address=1501>
+    ENDER True -- NXT None
+    CFG .L000005D1
+    GRAPH_NXT .L000005D1
+    GRAPH_PRV .L000005D4
+'I386_MIASM.InstructionDEAD'>1501 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'esp', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1503 [jmp]jmp       .L000005D1
+	 R[] W['eip']
+	 D['eip', 'esp']
+	 dst=[<Symbol '.L000005D1' section='.text', address=1489>]
+
+<Symbol '.L000005E1' section='.text', size=3, address=1505>
+    ENDER False -- NXT .L000005E4
+    CFG .L000005E4
+    GRAPH_NXT .L000005E4
+'plasmasm.constants.P2Align'>1505 [None].p2align 2
+
+<Symbol '.L000005E4' section='.text', address=1508>
+    ENDER True -- NXT None
+    CFG .L000005D1
+    GRAPH_NXT .L000005D1
+    GRAPH_PRV .L000005D4
+    GRAPH_PRV .L000005E1
+'I386_MIASM.InstructionDEAD'>1508 [None]movl      64(%ecx), %eax
+	 R['MEM', 'ecx'] W['eax']
+	 D['eax', 'eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1511 [jmp]jmp       .L000005D1
+	 R[] W['eip']
+	 D['eip', 'esp']
+	 dst=[<Symbol '.L000005D1' section='.text', address=1489>]
+
+<Symbol '.L000005E9' section='.text', type='padding', address=1513>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>1513 [None].p2align 2
+
+<Symbol 'gzerror' section='.text', type='function', bind='globl', size=96, address=1516>
+    ENDER False -- NXT .L000005FB
+    CFG .L000005FB
+    GRAPH_NXT .L000005FB
+'I386_MIASM.InstructionDEAD'>1516 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1517 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'ebp', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1519 [None]movl      8(%ebp), %ecx
+	 R['MEM', 'ebp'] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1522 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1523 [None]pushl     %ebx
+	 R['ebx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1524 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ebx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1526 [PIC]call      .L000005FB
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'ebx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L000005FB' section='.text', address=1531>]
+
+<Symbol '.L000005FB' section='.text', address=1531>
+    ENDER False -- NXT .L00000609
+    CFG .L0000061E
+    CFG .L00000609
+    GRAPH_NXT .L00000609
+    GRAPH_NXT .L0000061E
+    GRAPH_PRV gzerror
+'I386_MIASM.InstructionDEAD'>1531 [None][immutable=PIC:call;pop;add]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'ebx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1532 [None][immutable=PIC:call;add]addl      $_GLOBAL_OFFSET_TABLE_+1, %ebx
+	 R['ebx'] W['af', 'cf', 'ebx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1538 [None]testl     %ecx, %ecx
+	 R['ecx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1540 [None]movl      12(%ebp), %esi
+	 R['MEM', 'ebp'] W['esi']
+	 D['eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1543 [jcc]je        .L0000061E
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000061E' section='.text', address=1566>]
+
+<Symbol '.L00000609' section='.text', address=1545>
+    ENDER False -- NXT .L00000614
+    CFG .L00000624
+    CFG .L00000614
+    GRAPH_NXT .L00000614
+    GRAPH_NXT .L00000624
+    GRAPH_PRV .L000005FB
+'I386_MIASM.InstructionDEAD'>1545 [None]movl      16(%ecx), %edx
+	 R['MEM', 'ecx'] W['edx']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1548 [None]cmpl      $7247, %edx
+	 R['edx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1554 [jcc]je        .L00000624
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000624' section='.text', address=1572>]
+
+<Symbol '.L00000614' section='.text', address=1556>
+    ENDER False -- NXT .L0000061E
+    CFG .L00000624
+    CFG .L0000061E
+    GRAPH_NXT .L0000061E
+    GRAPH_NXT .L00000624
+    GRAPH_PRV .L00000609
+'I386_MIASM.InstructionDEAD'>1556 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1558 [None]cmpl      $31153, %edx
+	 R['edx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1564 [jcc]je        .L00000624
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000624' section='.text', address=1572>]
+
+<Symbol '.L0000061E' section='.text', address=1566>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L000005FB
+    GRAPH_PRV .L00000614
+    GRAPH_PRV .L00000633
+    GRAPH_PRV .L0000063A
+    GRAPH_PRV .L00000644
+'I386_MIASM.InstructionDEAD'>1566 [None]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1567 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+	 D['eip', 'esi']
+'I386_MIASM.InstructionDEAD'>1568 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1569 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L00000622' section='.text', size=2, address=1570>
+    ENDER False -- NXT .L00000624
+    CFG .L00000624
+    GRAPH_NXT .L00000624
+'plasmasm.constants.P2Align'>1570 [None].p2align 2
+
+<Symbol '.L00000624' section='.text', address=1572>
+    ENDER False -- NXT .L00000628
+    CFG .L0000062D
+    CFG .L00000628
+    GRAPH_NXT .L00000628
+    GRAPH_NXT .L0000062D
+    GRAPH_PRV .L00000609
+    GRAPH_PRV .L00000614
+    GRAPH_PRV .L00000622
+'I386_MIASM.InstructionDEAD'>1572 [None]testl     %esi, %esi
+	 R['esi'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1574 [jcc]je        .L0000062D
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000062D' section='.text', address=1581>]
+
+<Symbol '.L00000628' section='.text', address=1576>
+    ENDER False -- NXT .L0000062D
+    CFG .L0000062D
+    GRAPH_NXT .L0000062D
+    GRAPH_PRV .L00000624
+'I386_MIASM.InstructionDEAD'>1576 [None]movl      88(%ecx), %edx
+	 R['MEM', 'ecx'] W['edx']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1579 [None]movl      %edx, (%esi)
+	 R['edx', 'esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L0000062D' section='.text', address=1581>
+    ENDER False -- NXT .L00000633
+    CFG .L00000644
+    CFG .L00000633
+    GRAPH_NXT .L00000633
+    GRAPH_NXT .L00000644
+    GRAPH_PRV .L00000624
+    GRAPH_PRV .L00000628
+'I386_MIASM.InstructionDEAD'>1581 [None]cmpl      $-4, 88(%ecx)
+	 R['MEM', 'ecx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1585 [jcc]je        .L00000644
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000644' section='.text', address=1604>]
+
+<Symbol '.L00000633' section='.text', address=1587>
+    ENDER False -- NXT .L0000063A
+    CFG .L0000061E
+    CFG .L0000063A
+    GRAPH_NXT .L0000061E
+    GRAPH_NXT .L0000063A
+    GRAPH_PRV .L0000062D
+'I386_MIASM.InstructionDEAD'>1587 [None]movl      92(%ecx), %eax
+	 R['MEM', 'ecx'] W['eax']
+	 D['cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1590 [None]testl     %eax, %eax
+	 R['eax'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1592 [jcc]jne       .L0000061E
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000061E' section='.text', address=1566>]
+
+<Symbol '.L0000063A' section='.text', address=1594>
+    ENDER True -- NXT None
+    CFG .L0000061E
+    GRAPH_NXT .L0000061E
+    GRAPH_PRV .L00000633
+'I386_MIASM.InstructionDEAD'>1594 [None]leal      .LC2@GOTOFF(%ebx), %eax
+	 R['ebx'] W['eax']
+	 D['eax', 'eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1600 [jmp]jmp       .L0000061E
+	 R[] W['eip']
+	 D['eip', 'esi']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000061E' section='.text', address=1566>]
+
+<Symbol '.L00000642' section='.text', size=2, address=1602>
+    ENDER False -- NXT .L00000644
+    CFG .L00000644
+    GRAPH_NXT .L00000644
+'plasmasm.constants.P2Align'>1602 [None].p2align 2
+
+<Symbol '.L00000644' section='.text', address=1604>
+    ENDER True -- NXT None
+    CFG .L0000061E
+    GRAPH_NXT .L0000061E
+    GRAPH_PRV .L0000062D
+    GRAPH_PRV .L00000642
+'I386_MIASM.InstructionDEAD'>1604 [None]leal      .LC3@GOTOFF(%ebx), %eax
+	 R['ebx'] W['eax']
+	 D['eax', 'eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1610 [jmp]jmp       .L0000061E
+	 R[] W['eip']
+	 D['eip', 'esi']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000061E' section='.text', address=1566>]
+
+<Symbol 'gzclearerr' section='.text', type='function', bind='globl', size=64, address=1612>
+    ENDER False -- NXT .L00000659
+    CFG .L0000066A
+    CFG .L00000659
+    GRAPH_NXT .L00000659
+    GRAPH_NXT .L0000066A
+'I386_MIASM.InstructionDEAD'>1612 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1613 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'ebp', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1615 [None]subl      $8, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1618 [None]movl      8(%ebp), %edx
+	 R['MEM', 'ebp'] W['edx']
+	 D['cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1621 [None]testl     %edx, %edx
+	 R['edx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1623 [jcc]je        .L0000066A
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L0000066A' section='.text', address=1642>]
+
+<Symbol '.L00000659' section='.text', address=1625>
+    ENDER False -- NXT .L00000663
+    CFG .L0000067C
+    CFG .L00000663
+    GRAPH_NXT .L00000663
+    GRAPH_NXT .L0000067C
+    GRAPH_PRV gzclearerr
+'I386_MIASM.InstructionDEAD'>1625 [None]movl      16(%edx), %eax
+	 R['MEM', 'edx'] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1628 [None]cmpl      $7247, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1633 [jcc]je        .L0000067C
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L0000067C' section='.text', address=1660>]
+
+<Symbol '.L00000663' section='.text', address=1635>
+    ENDER False -- NXT .L0000066A
+    CFG .L0000066C
+    CFG .L0000066A
+    GRAPH_NXT .L0000066A
+    GRAPH_NXT .L0000066C
+    GRAPH_PRV .L00000659
+'I386_MIASM.InstructionDEAD'>1635 [None]cmpl      $31153, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1640 [jcc]je        .L0000066C
+	 R['zf'] W['eip']
+	 D['eip']
+	 dst=[<Symbol '.L0000066C' section='.text', address=1644>]
+
+<Symbol '.L0000066A' section='.text', address=1642>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_PRV .L00000663
+    GRAPH_PRV .L00000677
+    GRAPH_PRV gzclearerr
+'I386_MIASM.InstructionDEAD'>1642 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1643 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L0000066C' section='.text', address=1644>
+    ENDER False -- NXT .L00000677
+    CFG gz_error
+    GRAPH_NXT gz_error
+    GRAPH_PRV .L00000663
+    GRAPH_PRV .L0000067C
+'I386_MIASM.InstructionDEAD'>1644 [None]pushl     %eax
+	 R['eax', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1645 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1647 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1649 [None]pushl     %edx
+	 R['edx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1650 [sub]call      gz_error
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol 'gz_error' section='.text', type='function', bind='globl', visibility='hidden', size=217, address=1676>]
+
+<Symbol '.L00000677' section='.text', address=1655>
+    ENDER True -- NXT None
+    CFG .L0000066A
+    GRAPH_NXT .L0000066A
+    GRAPH_PRV .L00000752
+'I386_MIASM.InstructionDEAD'>1655 [jmp]jmp       .L0000066A
+	 R[] W['eip']
+	 D['eip', 'esp']
+	 dst=[<Symbol '.L0000066A' section='.text', address=1642>]
+
+<Symbol '.L00000679' section='.text', size=3, address=1657>
+    ENDER False -- NXT .L0000067C
+    CFG .L0000067C
+    GRAPH_NXT .L0000067C
+'plasmasm.constants.P2Align'>1657 [None].p2align 2
+
+<Symbol '.L0000067C' section='.text', address=1660>
+    ENDER True -- NXT None
+    CFG .L0000066C
+    GRAPH_NXT .L0000066C
+    GRAPH_PRV .L00000659
+    GRAPH_PRV .L00000679
+'I386_MIASM.InstructionDEAD'>1660 [None]movl      $0, 60(%edx)
+	 R['edx'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1667 [None]movl      $0, 64(%edx)
+	 R['edx'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1674 [jmp]jmp       .L0000066C
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L0000066C' section='.text', address=1644>]
+
+<Symbol 'gz_error' section='.text', type='function', bind='globl', visibility='hidden', size=217, address=1676>
+    ENDER False -- NXT .L000006A0
+    CFG .L000006A0
+    GRAPH_NXT .L000006A0
+    GRAPH_PRV .L0000015C
+    GRAPH_PRV .L0000039A
+    GRAPH_PRV .L0000066C
+    GRAPH_PRV .L000008C7
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1676 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1677 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'eax', 'ebp', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1679 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1680 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1681 [None]pushl     %ebx
+	 R['ebx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1682 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'ebx', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1685 [None]movl      8(%ebp), %esi
+	 R['MEM', 'ebp'] W['esi']
+	 D['af', 'cf', 'eax', 'ebx', 'edi', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1688 [None]movl      92(%esi), %eax
+	 R['MEM', 'esi'] W['eax']
+	 D['af', 'cf', 'eax', 'ebx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1691 [PIC]call      .L000006A0
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'ebx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L000006A0' section='.text', address=1696>]
+
+<Symbol '.L000006A0' section='.text', address=1696>
+    ENDER False -- NXT .L000006AE
+    CFG .L000006C7
+    CFG .L000006AE
+    GRAPH_NXT .L000006AE
+    GRAPH_NXT .L000006C7
+    GRAPH_PRV gz_error
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1696 [None][immutable=PIC:call;pop;add]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'ebx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1697 [None][immutable=PIC:call;add]addl      $_GLOBAL_OFFSET_TABLE_+1, %ebx
+	 R['ebx'] W['af', 'cf', 'ebx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1703 [None]testl     %eax, %eax
+	 R['eax'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1705 [None]movl      12(%ebp), %edi
+	 R['MEM', 'ebp'] W['edi']
+	 D['edi', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1708 [jcc]je        .L000006C7
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000006C7' section='.text', address=1735>]
+
+<Symbol '.L000006AE' section='.text', address=1710>
+    ENDER False -- NXT .L000006B4
+    CFG .L000006C0
+    CFG .L000006B4
+    GRAPH_NXT .L000006B4
+    GRAPH_NXT .L000006C0
+    GRAPH_PRV .L000006A0
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1710 [None]cmpl      $-4, 88(%esi)
+	 R['MEM', 'esi'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1714 [jcc]je        .L000006C0
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000006C0' section='.text', address=1728>]
+
+<Symbol '.L000006B4' section='.text', address=1716>
+    ENDER False -- NXT .L000006BD
+    CFG free@PLT
+    GRAPH_NXT free@PLT
+    GRAPH_PRV .L000006AE
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1716 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1719 [None]pushl     %eax
+	 R['eax', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1720 [sub]call      free@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'free@PLT' >]
+
+<Symbol '.L000006BD' section='.text', address=1725>
+    ENDER False -- NXT .L000006C0
+    CFG .L000006C0
+    GRAPH_NXT .L000006C0
+    GRAPH_PRV free@PLT
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1725 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L000006C0' section='.text', address=1728>
+    ENDER False -- NXT .L000006C7
+    CFG .L000006C7
+    GRAPH_NXT .L000006C7
+    GRAPH_PRV .L000006AE
+    GRAPH_PRV .L000006BD
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1728 [None]movl      $0, 92(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L000006C7' section='.text', address=1735>
+    ENDER False -- NXT .L000006CB
+    CFG .L000006D6
+    CFG .L000006CB
+    GRAPH_NXT .L000006CB
+    GRAPH_NXT .L000006D6
+    GRAPH_PRV .L000006A0
+    GRAPH_PRV .L000006C0
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1735 [None]testl     %edi, %edi
+	 R['edi'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1737 [jcc]je        .L000006D6
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000006D6' section='.text', address=1750>]
+
+<Symbol '.L000006CB' section='.text', address=1739>
+    ENDER False -- NXT .L000006D0
+    CFG .L000006D6
+    CFG .L000006D0
+    GRAPH_NXT .L000006D0
+    GRAPH_NXT .L000006D6
+    GRAPH_PRV .L000006C7
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1739 [None]cmpl      $-5, %edi
+	 R['edi'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1742 [jcc]je        .L000006D6
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000006D6' section='.text', address=1750>]
+
+<Symbol '.L000006D0' section='.text', address=1744>
+    ENDER False -- NXT .L000006D6
+    CFG .L000006D6
+    GRAPH_NXT .L000006D6
+    GRAPH_PRV .L000006CB
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1744 [None]movl      $0, (%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L000006D6' section='.text', address=1750>
+    ENDER False -- NXT .L000006E0
+    CFG .L00000752
+    CFG .L000006E0
+    GRAPH_NXT .L000006E0
+    GRAPH_NXT .L00000752
+    GRAPH_PRV .L000006C7
+    GRAPH_PRV .L000006CB
+    GRAPH_PRV .L000006D0
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1750 [None]movl      16(%ebp), %edx
+	 R['MEM', 'ebp'] W['edx']
+	 D['cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1753 [None]testl     %edx, %edx
+	 R['edx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1755 [None]movl      %edi, 88(%esi)
+	 R['edi', 'esi'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1758 [jcc]je        .L00000752
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000752' section='.text', address=1874>]
+
+<Symbol '.L000006E0' section='.text', address=1760>
+    ENDER False -- NXT .L000006E5
+    CFG .L00000752
+    CFG .L000006E5
+    GRAPH_NXT .L000006E5
+    GRAPH_NXT .L00000752
+    GRAPH_PRV .L000006D6
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1760 [None]cmpl      $-4, %edi
+	 R['edi'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1763 [jcc]je        .L00000752
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000752' section='.text', address=1874>]
+
+<Symbol '.L000006E5' section='.text', address=1765>
+    ENDER False -- NXT .L0000070B
+    CFG malloc@PLT
+    GRAPH_NXT malloc@PLT
+    GRAPH_PRV .L000006E0
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1765 [None]movl      24(%esi), %edi
+	 R['MEM', 'esi'] W['edi']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1768 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'df', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1770 [None]cld       
+	 R[] W['df']
+	 D['af', 'cf', 'df', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1771 [None]movl      $-1, %ecx
+	 R[] W['ecx']
+	 D['af', 'cf', 'ecx', 'edx', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1776 [None]repnz scasb     
+	 R['MEM', 'df', 'eax', 'ecx', 'edi', 'zf'] W['af', 'cf', 'ecx', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1778 [None]movl      %ecx, %edx
+	 R['ecx'] W['edx']
+	 D['af', 'cf', 'edi', 'edx', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1780 [None]movl      16(%ebp), %edi
+	 R['MEM', 'ebp'] W['edi']
+	 D['af', 'cf', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1783 [None]movl      $-1, %ecx
+	 R[] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1788 [None]repnz scasb     
+	 R['MEM', 'df', 'eax', 'ecx', 'edi', 'zf'] W['af', 'cf', 'ecx', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1790 [None]notl      %ecx
+	 R['ecx'] W['ecx']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1792 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1795 [None]subl      %edx, %ecx
+	 R['ecx', 'edx'] W['af', 'cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1797 [None]pushl     %ecx
+	 R['ecx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1798 [sub]call      malloc@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'malloc@PLT' >]
+
+<Symbol '.L0000070B' section='.text', address=1803>
+    ENDER False -- NXT .L00000717
+    CFG .L0000075C
+    CFG .L00000717
+    GRAPH_NXT .L00000717
+    GRAPH_NXT .L0000075C
+    GRAPH_PRV malloc@PLT
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1803 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1806 [None]testl     %eax, %eax
+	 R['eax'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1808 [None]movl      %eax, %edx
+	 R['eax'] W['edx']
+	 D['edx', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1810 [None]movl      %eax, 92(%esi)
+	 R['eax', 'esi'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1813 [jcc]je        .L0000075C
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000075C' section='.text', address=1884>]
+
+<Symbol '.L00000717' section='.text', address=1815>
+    ENDER False -- NXT .L00000752
+    CFG snprintf@PLT
+    GRAPH_NXT snprintf@PLT
+    GRAPH_PRV .L0000070B
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1815 [None]subl      $8, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1818 [None]pushl     16(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1821 [None]leal      .LC4@GOTOFF(%ebx), %edi
+	 R['ebx'] W['edi']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1827 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'df', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1828 [None]pushl     24(%esi)
+	 R['MEM', 'esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1831 [None]leal      .LC5@GOTOFF(%ebx), %ecx
+	 R['ebx'] W['ecx']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1837 [None]pushl     %ecx
+	 R['ecx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'df', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1838 [None]movl      24(%esi), %edi
+	 R['MEM', 'esi'] W['edi']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1841 [None]cld       
+	 R[] W['df']
+	 D['af', 'cf', 'df', 'ecx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1842 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ecx', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1844 [None]movl      $-1, %ecx
+	 R[] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'esi', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1849 [None]repnz scasb     
+	 R['MEM', 'df', 'eax', 'ecx', 'edi', 'zf'] W['af', 'cf', 'ecx', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'esi', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1851 [None]movl      %ecx, %esi
+	 R['ecx'] W['esi']
+	 D['af', 'cf', 'edi', 'eip', 'esi', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1853 [None]movl      16(%ebp), %edi
+	 R['MEM', 'ebp'] W['edi']
+	 D['af', 'cf', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1856 [None]movl      $-1, %ecx
+	 R[] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1861 [None]repnz scasb     
+	 R['MEM', 'df', 'eax', 'ecx', 'edi', 'zf'] W['af', 'cf', 'ecx', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1863 [None]notl      %ecx
+	 R['ecx'] W['ecx']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1865 [None]subl      %esi, %ecx
+	 R['ecx', 'esi'] W['af', 'cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1867 [None]pushl     %ecx
+	 R['ecx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1868 [None]pushl     %edx
+	 R['edx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1869 [sub]call      snprintf@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'snprintf@PLT' >]
+
+<Symbol '.L00000752' section='.text', address=1874>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_NXT .L0000016E
+    GRAPH_NXT .L000003C3
+    GRAPH_NXT .L00000677
+    GRAPH_NXT .L000008D9
+    GRAPH_PRV .L000006D6
+    GRAPH_PRV .L000006E0
+    GRAPH_PRV .L0000075C
+    GRAPH_PRV snprintf@PLT
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1874 [None]leal      -12(%ebp), %esp
+	 R['ebp'] W['esp']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1877 [None]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['edi', 'eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1878 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+	 D['edi', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>1879 [None]popl      %edi
+	 R['@32[esp]', 'esp'] W['edi', 'esp']
+	 D['edi', 'eip']
+'I386_MIASM.InstructionDEAD'>1880 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>1881 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L0000075A' section='.text', size=2, address=1882>
+    ENDER False -- NXT .L0000075C
+    CFG .L0000075C
+    GRAPH_NXT .L0000075C
+'plasmasm.constants.P2Align'>1882 [None].p2align 2
+
+<Symbol '.L0000075C' section='.text', address=1884>
+    ENDER True -- NXT None
+    CFG .L00000752
+    GRAPH_NXT .L00000752
+    GRAPH_PRV .L0000070B
+    GRAPH_PRV .L0000075A
+-- STACK00 ['.L0000016E']
+-- STACK01 ['.L000003C3']
+-- STACK02 ['.L00000677']
+-- STACK03 ['.L000008D9', '.L00000013']
+-- STACK04 ['.L000008D9', '.L0000002B']
+-- STACK05 ['.L000008D9', '.L0000007D']
+'I386_MIASM.InstructionDEAD'>1884 [None]movl      $-4, 88(%esi)
+	 R['esi'] W['MEM']
+	 D['edi', 'eip', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1891 [jmp]jmp       .L00000752
+	 R[] W['eip']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000752' section='.text', address=1874>]
+
+<Symbol '.L00000765' section='.text', type='padding', address=1893>
+    ENDER True -- NXT None
+    CFG None
+'plasmasm.constants.P2Align'>1893 [None].p2align 3
+
+<Symbol 'gz_open' section='.text', type='function', bind='local', size=722, address=1896>
+    ENDER False -- NXT .L00000779
+    CFG .L00000779
+    GRAPH_NXT .L00000779
+    GRAPH_PRV .L00000070
+    GRAPH_PRV gzopen
+    GRAPH_PRV gzopen64
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>1896 [None]pushl     %ebp
+	 R['ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1897 [None]movl      %esp, %ebp
+	 R['esp'] W['ebp']
+	 D['af', 'cf', 'ebp', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1899 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1900 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edi', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1901 [None]pushl     %ebx
+	 R['ebx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'edi', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1902 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'ebx', 'edi', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1905 [None]movl      8(%ebp), %edx
+	 R['MEM', 'ebp'] W['edx']
+	 D['af', 'cf', 'ebx', 'edi', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1908 [PIC]call      .L00000779
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'ebx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 dst=[<Symbol '.L00000779' section='.text', address=1913>]
+
+<Symbol '.L00000779' section='.text', address=1913>
+    ENDER False -- NXT .L00000794
+    CFG .L000008F3
+    CFG .L00000794
+    GRAPH_NXT .L00000794
+    GRAPH_NXT .L000008F3
+    GRAPH_PRV gz_open
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>1913 [None][immutable=PIC:call;pop;add]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['af', 'cf', 'ebx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1914 [None][immutable=PIC:call;add]addl      $_GLOBAL_OFFSET_TABLE_+1, %ebx
+	 R['ebx'] W['af', 'cf', 'ebx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+'I386_MIASM.InstructionDEAD'>1920 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1922 [None]testl     %edx, %edx
+	 R['edx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1924 [None]movl      16(%ebp), %edi
+	 R['MEM', 'ebp'] W['edi']
+	 D['edi', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1927 [None]movl      $0, -16(%ebp)
+	 R['ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1934 [jcc]je        .L000008F3
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000008F3' section='.text', address=2291>]
+
+<Symbol '.L00000794' section='.text', address=1940>
+    ENDER False -- NXT .L000007A1
+    CFG malloc@PLT
+    GRAPH_NXT malloc@PLT
+    GRAPH_PRV .L00000779
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>1940 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1943 [None]pushl     $152
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1948 [sub]call      malloc@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'malloc@PLT' >]
+
+<Symbol '.L000007A1' section='.text', address=1953>
+    ENDER False -- NXT .L000007B0
+    CFG .L000008F3
+    CFG .L000007B0
+    GRAPH_NXT .L000007B0
+    GRAPH_NXT .L000008F3
+    GRAPH_PRV malloc@PLT
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>1953 [None]movl      %eax, %esi
+	 R['eax'] W['esi']
+	 D['af', 'cf', 'eip', 'esi', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1955 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1958 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1960 [None]testl     %esi, %esi
+	 R['esi'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1962 [jcc]je        .L000008F3
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000008F3' section='.text', address=2291>]
+
+<Symbol '.L000007B0' section='.text', address=1968>
+    ENDER False -- NXT .L000007E7
+    CFG .L00000806
+    CFG .L000007E7
+    GRAPH_NXT .L000007E7
+    GRAPH_NXT .L00000806
+    GRAPH_PRV .L000007A1
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>1968 [None]movl      $0, 28(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1975 [None]movl      $8192, 32(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1982 [None]movl      $0, 92(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1989 [None]movl      $0, 16(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>1996 [None]movl      $-1, 68(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2003 [None]movl      $0, 72(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2010 [None]movl      $0, 44(%esi)
+	 R['esi'] W['MEM']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2017 [None]movb      (%edi), %dl
+	 R['MEM', 'edi', 'edx'] W['edx']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2019 [None]testb     %dl, %dl
+	 R['edx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2021 [jcc]je        .L00000806
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000806' section='.text', address=2054>]
+
+<Symbol '.L000007E7' section='.text', address=2023>
+    ENDER False -- NXT .L000007E8
+    CFG .L000007E8
+    GRAPH_NXT .L000007E8
+    GRAPH_PRV .L000007B0
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'plasmasm.constants.P2Align'>2023 [None].p2align 3
+
+<Symbol '.L000007E8' section='.text', address=2024>
+    ENDER False -- NXT .L000007F4
+    CFG .L000009B4
+    CFG .L000007F4
+    GRAPH_NXT .L000007F4
+    GRAPH_NXT .L000009B4
+    GRAPH_PRV .L000007E7
+    GRAPH_PRV .L8
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2024 [None]leal      -48(%edx), %ecx
+	 R['edx'] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2027 [None]cmpb      $9, %cl
+	 R['ecx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2030 [jcc]ja        .L000009B4
+	 R['cf', 'zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000009B4' section='.text', address=2484>]
+
+<Symbol '.L000007F4' section='.text', address=2036>
+    ENDER False -- NXT .L8
+    CFG .L8
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000007E8
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2036 [None]movsbl    %dl, %ecx
+	 R['edx'] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2039 [None]subl      $48, %ecx
+	 R['ecx'] W['af', 'cf', 'ecx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2042 [None]movl      %ecx, 68(%esi)
+	 R['ecx', 'esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L8' section='.text', bind='local', size=0, address=2045>
+    ENDER False -- NXT .L00000806
+    CFG .L000007E8
+    CFG .L00000806
+    GRAPH_NXT .L000007E8
+    GRAPH_NXT .L00000806
+    GRAPH_PRV .L000007F4
+    GRAPH_PRV .L000009B4
+    GRAPH_PRV .L000009C3
+    GRAPH_PRV .L10
+    GRAPH_PRV .L11
+    GRAPH_PRV .L12
+    GRAPH_PRV .L15
+    GRAPH_PRV .L16
+    GRAPH_PRV .L17
+    GRAPH_PRV .L18
+    GRAPH_PRV .L19
+    GRAPH_PRV .L20
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2045 [None]incl      %edi
+	 R['edi'] W['af', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2046 [None]movb      (%edi), %cl
+	 R['MEM', 'ecx', 'edi'] W['ecx']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2048 [None]testb     %cl, %cl
+	 R['ecx'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2050 [None]movb      %cl, %dl
+	 R['ecx', 'edx'] W['edx']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2052 [jcc]jne       .L000007E8
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000007E8' section='.text', address=2024>]
+
+<Symbol '.L00000806' section='.text', address=2054>
+    ENDER False -- NXT .L00000811
+    CFG .L263
+    CFG .L00000811
+    GRAPH_NXT .L00000811
+    GRAPH_NXT .L263
+    GRAPH_PRV .L000007B0
+    GRAPH_PRV .L8
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2054 [None]movl      16(%esi), %eax
+	 R['MEM', 'esi'] W['eax']
+	 D['cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2057 [None]testl     %eax, %eax
+	 R['eax'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2059 [jcc]je        .L263
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L263' section='.text', bind='local', size=0, address=2460>]
+
+<Symbol '.L00000811' section='.text', address=2065>
+    ENDER False -- NXT .L0000081C
+    CFG .L000009A1
+    CFG .L0000081C
+    GRAPH_NXT .L0000081C
+    GRAPH_NXT .L000009A1
+    GRAPH_PRV .L00000806
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2065 [None]cmpl      $7247, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2070 [jcc]je        .L000009A1
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000009A1' section='.text', address=2465>]
+
+<Symbol '.L0000081C' section='.text', address=2076>
+    ENDER False -- NXT .L0000083A
+    CFG malloc@PLT
+    GRAPH_NXT malloc@PLT
+    GRAPH_PRV .L00000811
+    GRAPH_PRV .L000009A8
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2076 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2078 [None]movl      8(%ebp), %edi
+	 R['MEM', 'ebp'] W['edi']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2081 [None]cld       
+	 R[] W['df']
+	 D['af', 'cf', 'df', 'ecx', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2082 [None]movl      $-1, %ecx
+	 R[] W['ecx']
+	 D['af', 'cf', 'ecx', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2087 [None]repnz scasb     
+	 R['MEM', 'df', 'eax', 'ecx', 'edi', 'zf'] W['af', 'cf', 'ecx', 'edi', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2089 [None]movl      %ecx, -20(%ebp)
+	 R['ebp', 'ecx'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2092 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2095 [None]notl      -20(%ebp)
+	 R['MEM', 'ebp'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2098 [None]pushl     -20(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2101 [sub]call      malloc@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'malloc@PLT' >]
+
+<Symbol '.L0000083A' section='.text', address=2106>
+    ENDER False -- NXT .L00000848
+    CFG .L263
+    CFG .L00000848
+    GRAPH_NXT .L00000848
+    GRAPH_NXT .L263
+    GRAPH_PRV malloc@PLT
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2106 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2109 [None]testl     %eax, %eax
+	 R['eax'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2111 [None]movl      %eax, 24(%esi)
+	 R['eax', 'esi'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2114 [jcc]je        .L263
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L263' section='.text', bind='local', size=0, address=2460>]
+
+<Symbol '.L00000848' section='.text', address=2120>
+    ENDER False -- NXT .L0000085B
+    CFG snprintf@PLT
+    GRAPH_NXT snprintf@PLT
+    GRAPH_PRV .L0000083A
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2120 [None]pushl     8(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['edi', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2123 [None]leal      .LC0@GOTOFF(%ebx), %edi
+	 R['ebx'] W['edi']
+	 D['edi', 'eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2129 [None]pushl     %edi
+	 R['edi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2130 [None]pushl     -20(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2133 [None]pushl     %eax
+	 R['eax', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2134 [sub]call      snprintf@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'snprintf@PLT' >]
+
+<Symbol '.L0000085B' section='.text', address=2139>
+    ENDER False -- NXT .L0000086D
+    CFG .L0000098F
+    CFG .L0000086D
+    GRAPH_NXT .L0000086D
+    GRAPH_NXT .L0000098F
+    GRAPH_PRV snprintf@PLT
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2139 [None]movl      16(%esi), %edx
+	 R['MEM', 'esi'] W['edx']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2142 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2145 [None]cmpl      $7247, %edx
+	 R['edx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2151 [jcc]je        .L0000098F
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000098F' section='.text', address=2447>]
+
+<Symbol '.L0000086D' section='.text', address=2157>
+    ENDER False -- NXT .L0000088B
+    CFG .L00000985
+    CFG .L0000088B
+    GRAPH_NXT .L0000088B
+    GRAPH_NXT .L00000985
+    GRAPH_PRV .L0000085B
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2157 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2159 [None]cmpl      $0, -16(%ebp)
+	 R['MEM', 'ebp'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2163 [None]setne     %al
+	 R['eax', 'zf'] W['eax']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2166 [None]decl      %eax
+	 R['eax'] W['af', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2167 [None]andl      $-128, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2170 [None]addl      $193, %eax
+	 R['eax'] W['af', 'cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2175 [None]cmpl      $31153, %edx
+	 R['edx'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2181 [jcc]je        .L00000985
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000985' section='.text', address=2437>]
+
+<Symbol '.L0000088B' section='.text', address=2187>
+    ENDER False -- NXT .L00000890
+    CFG .L00000890
+    GRAPH_NXT .L00000890
+    GRAPH_PRV .L0000086D
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2187 [None]orl       $33792, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L00000890' section='.text', address=2192>
+    ENDER False -- NXT .L0000089A
+    CFG .L0000096E
+    CFG .L0000089A
+    GRAPH_NXT .L0000089A
+    GRAPH_NXT .L0000096E
+    GRAPH_PRV .L0000088B
+    GRAPH_PRV .L00000985
+    GRAPH_PRV .L0000098F
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2192 [None]cmpl      $-1, 12(%ebp)
+	 R['MEM', 'ebp'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2196 [jcc]jle       .L0000096E
+	 R['nf', 'of', 'zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000096E' section='.text', address=2414>]
+
+<Symbol '.L0000089A' section='.text', address=2202>
+    ENDER False -- NXT .L0000089D
+    CFG .L0000089D
+    GRAPH_NXT .L0000089D
+    GRAPH_PRV .L00000890
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2202 [None]movl      12(%ebp), %eax
+	 R['MEM', 'ebp'] W['eax']
+	 D['af', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L0000089D' section='.text', address=2205>
+    ENDER False -- NXT .L000008A7
+    CFG .L00000955
+    CFG .L000008A7
+    GRAPH_NXT .L000008A7
+    GRAPH_NXT .L00000955
+    GRAPH_PRV .L0000089A
+    GRAPH_PRV .L0000097D
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2205 [None]movl      %eax, 20(%esi)
+	 R['eax', 'esi'] W['MEM']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2208 [None]incl      %eax
+	 R['eax'] W['af', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2209 [jcc]je        .L00000955
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000955' section='.text', address=2389>]
+
+<Symbol '.L000008A7' section='.text', address=2215>
+    ENDER False -- NXT .L000008B3
+    CFG .L00000944
+    CFG .L000008B3
+    GRAPH_NXT .L000008B3
+    GRAPH_NXT .L00000944
+    GRAPH_PRV .L0000089D
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2215 [None]movl      16(%esi), %eax
+	 R['MEM', 'esi'] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2218 [None]cmpl      $1, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2221 [jcc]je        .L00000944
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000944' section='.text', address=2372>]
+
+<Symbol '.L000008B3' section='.text', address=2227>
+    ENDER False -- NXT .L000008BA
+    CFG .L00000912
+    CFG .L000008BA
+    GRAPH_NXT .L000008BA
+    GRAPH_NXT .L00000912
+    GRAPH_PRV .L000008A7
+    GRAPH_PRV .L00000944
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2227 [None]cmpl      $7247, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2232 [jcc]je        .L00000912
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000912' section='.text', address=2322>]
+
+<Symbol '.L000008BA' section='.text', address=2234>
+    ENDER False -- NXT .L000008C7
+    CFG .L000008FB
+    CFG .L000008C7
+    GRAPH_NXT .L000008C7
+    GRAPH_NXT .L000008FB
+    GRAPH_PRV .L000008B3
+    GRAPH_PRV .L0000093C
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2234 [None]cmpl      $7247, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2239 [None]movl      $0, (%esi)
+	 R['esi'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2245 [jcc]je        .L000008FB
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L000008FB' section='.text', address=2299>]
+
+<Symbol '.L000008C7' section='.text', address=2247>
+    ENDER False -- NXT .L000008D9
+    CFG gz_error
+    GRAPH_NXT gz_error
+    GRAPH_PRV .L000008BA
+    GRAPH_PRV .L000008FB
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2247 [None]pushl     %eax
+	 R['eax', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2248 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2250 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2252 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2253 [None]movl      $0, 84(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2260 [sub]call      gz_error
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol 'gz_error' section='.text', type='function', bind='globl', visibility='hidden', size=217, address=1676>]
+
+<Symbol '.L000008D9' section='.text', address=2265>
+    ENDER False -- NXT .L000008F3
+    CFG .L000008F3
+    GRAPH_NXT .L000008F3
+    GRAPH_PRV .L00000752
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2265 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eax', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2268 [None]movl      $0, 8(%esi)
+	 R['esi'] W['MEM']
+	 D['eax', 'edi', 'eip', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2275 [None]movl      $0, 12(%esi)
+	 R['esi'] W['MEM']
+	 D['eax', 'edi', 'eip', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2282 [None]movl      $0, 100(%esi)
+	 R['esi'] W['MEM']
+	 D['eax', 'edi', 'eip', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2289 [None]movl      %esi, %eax
+	 R['esi'] W['eax']
+	 D['eax', 'edi', 'eip', 'esp']
+	 PIC:ebx
+
+<Symbol '.L000008F3' section='.text', address=2291>
+    ENDER True -- NXT None
+    CFG None
+    GRAPH_NXT .L00000013
+    GRAPH_NXT .L0000002B
+    GRAPH_NXT .L0000007D
+    GRAPH_PRV .L00000779
+    GRAPH_PRV .L000007A1
+    GRAPH_PRV .L000008D9
+    GRAPH_PRV .L0000096A
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2291 [None]leal      -12(%ebp), %esp
+	 R['ebp'] W['esp']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2294 [None]popl      %ebx
+	 R['@32[esp]', 'esp'] W['ebx', 'esp']
+	 D['edi', 'eip', 'esi']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2295 [None]popl      %esi
+	 R['@32[esp]', 'esp'] W['esi', 'esp']
+	 D['edi', 'eip', 'esi']
+'I386_MIASM.InstructionDEAD'>2296 [None]popl      %edi
+	 R['@32[esp]', 'esp'] W['edi', 'esp']
+	 D['edi', 'eip']
+'I386_MIASM.InstructionDEAD'>2297 [None]leave     
+	 R['@32[ebp]', 'ebp'] W['ebp', 'esp']
+	 D['eip', 'esp']
+'I386_MIASM.InstructionDEAD'>2298 [ret]ret       
+	 R['@32[esp]', 'esp'] W['eip', 'esp']
+	 D['eip']
+	 dst=[None]
+
+<Symbol '.L000008FB' section='.text', address=2299>
+    ENDER True -- NXT None
+    CFG .L000008C7
+    GRAPH_NXT .L000008C7
+    GRAPH_PRV .L000008BA
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2299 [None]movl      $0, 60(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2306 [None]movl      $0, 64(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2313 [None]movl      $0, 48(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2320 [jmp]jmp       .L000008C7
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L000008C7' section='.text', address=2247>]
+
+<Symbol '.L00000912' section='.text', address=2322>
+    ENDER False -- NXT .L00000920
+    CFG lseek64@PLT
+    GRAPH_NXT lseek64@PLT
+    GRAPH_PRV .L000008B3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2322 [None]pushl     $1
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2324 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2326 [None]pushl     $0
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2328 [None]pushl     20(%esi)
+	 R['MEM', 'esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2331 [sub]call      lseek64@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'lseek64@PLT' >]
+
+<Symbol '.L00000920' section='.text', address=2336>
+    ENDER False -- NXT .L0000092E
+    CFG .L0000093C
+    CFG .L0000092E
+    GRAPH_NXT .L0000092E
+    GRAPH_NXT .L0000093C
+    GRAPH_PRV lseek64@PLT
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2336 [None]movl      %eax, 52(%esi)
+	 R['eax', 'esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2339 [None]andl      %edx, %eax
+	 R['eax', 'edx'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2341 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2344 [None]incl      %eax
+	 R['eax'] W['af', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2345 [None]movl      %edx, 56(%esi)
+	 R['edx', 'esi'] W['MEM']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2348 [jcc]jne       .L0000093C
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000093C' section='.text', address=2364>]
+
+<Symbol '.L0000092E' section='.text', address=2350>
+    ENDER False -- NXT .L0000093C
+    CFG .L0000093C
+    GRAPH_NXT .L0000093C
+    GRAPH_PRV .L00000920
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2350 [None]movl      $0, 52(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2357 [None]movl      $0, 56(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+
+<Symbol '.L0000093C' section='.text', address=2364>
+    ENDER True -- NXT None
+    CFG .L000008BA
+    GRAPH_NXT .L000008BA
+    GRAPH_PRV .L00000920
+    GRAPH_PRV .L0000092E
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2364 [None]movl      16(%esi), %eax
+	 R['MEM', 'esi'] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2367 [jmp]jmp       .L000008BA
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L000008BA' section='.text', address=2234>]
+
+<Symbol '.L00000944' section='.text', address=2372>
+    ENDER True -- NXT None
+    CFG .L000008B3
+    GRAPH_NXT .L000008B3
+    GRAPH_PRV .L000008A7
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2372 [None]movl      $31153, 16(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2379 [None]movl      $31153, %eax
+	 R[] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2384 [jmp]jmp       .L000008B3
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L000008B3' section='.text', address=2227>]
+
+<Symbol '.L00000955' section='.text', address=2389>
+    ENDER False -- NXT .L00000960
+    CFG free@PLT
+    GRAPH_NXT free@PLT
+    GRAPH_PRV .L0000089D
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2389 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2392 [None]pushl     24(%esi)
+	 R['MEM', 'esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2395 [sub]call      free@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'free@PLT' >]
+
+<Symbol '.L00000960' section='.text', address=2400>
+    ENDER False -- NXT .L00000964
+    CFG .L00000964
+    GRAPH_NXT .L00000964
+    GRAPH_PRV free@PLT
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2400 [None]popl      %eax
+	 R['@32[esp]', 'esp'] W['eax', 'esp']
+	 D['eax', 'eip']
+	 PIC:ebx
+'plasmasm.constants.P2Align'>2401 [None].p2align 2
+
+<Symbol '.L00000964' section='.text', address=2404>
+    ENDER False -- NXT .L0000096A
+    CFG free@PLT
+    GRAPH_NXT free@PLT
+    GRAPH_PRV .L00000960
+    GRAPH_PRV .L263
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2404 [None]pushl     %esi
+	 R['esi', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2405 [sub]call      free@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'free@PLT' >]
+
+<Symbol '.L0000096A' section='.text', address=2410>
+    ENDER True -- NXT None
+    CFG .L000008F3
+    GRAPH_NXT .L000008F3
+    GRAPH_PRV free@PLT
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2410 [None]xorl      %eax, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'edi', 'eip', 'esi', 'esp', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2412 [jmp]jmp       .L000008F3
+	 R[] W['eip']
+	 D['edi', 'eip', 'esi', 'esp']
+	 PIC:ebx
+	 dst=[<Symbol '.L000008F3' section='.text', address=2291>]
+
+<Symbol '.L0000096E' section='.text', address=2414>
+    ENDER False -- NXT .L0000097D
+    CFG open@PLT
+    GRAPH_NXT open@PLT
+    GRAPH_PRV .L00000890
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2414 [None]pushl     %edx
+	 R['edx', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2415 [None]pushl     $438
+	 R['esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2420 [None]pushl     %eax
+	 R['eax', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2421 [None]pushl     8(%ebp)
+	 R['MEM', 'ebp', 'esp'] W['@32[(esp - 0x4)]', 'esp']
+	 D['eip']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2424 [sub]call      open@PLT
+	 R['esp'] W['@32[(esp+0xFFFFFFFC)]', 'eip', 'esp']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol 'open@PLT' >]
+
+<Symbol '.L0000097D' section='.text', address=2429>
+    ENDER True -- NXT None
+    CFG .L0000089D
+    GRAPH_NXT .L0000089D
+    GRAPH_PRV open@PLT
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2429 [None]addl      $16, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2432 [jmp]jmp       .L0000089D
+	 R[] W['eip']
+	 D['af', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000089D' section='.text', address=2205>]
+
+<Symbol '.L00000985' section='.text', address=2437>
+    ENDER True -- NXT None
+    CFG .L00000890
+    GRAPH_NXT .L00000890
+    GRAPH_PRV .L0000086D
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2437 [None]orl       $33280, %eax
+	 R['eax'] W['cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2442 [jmp]jmp       .L00000890
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000890' section='.text', address=2192>]
+
+<Symbol '.L0000098F' section='.text', address=2447>
+    ENDER True -- NXT None
+    CFG .L00000890
+    GRAPH_NXT .L00000890
+    GRAPH_PRV .L0000085B
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2447 [None]movl      $32768, %eax
+	 R[] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2452 [jmp]jmp       .L00000890
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000890' section='.text', address=2192>]
+
+<Symbol '.L00000999' section='.text', size=3, address=2457>
+    ENDER False -- NXT .L263
+    CFG .L263
+    GRAPH_NXT .L263
+'plasmasm.constants.P2Align'>2457 [None].p2align 2
+
+<Symbol '.L263' section='.text', bind='local', size=0, address=2460>
+    ENDER True -- NXT None
+    CFG .L00000964
+    GRAPH_NXT .L00000964
+    GRAPH_PRV .L00000806
+    GRAPH_PRV .L0000083A
+    GRAPH_PRV .L00000999
+    GRAPH_PRV .L000009A1
+    GRAPH_PRV .L000009C3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2460 [None]subl      $12, %esp
+	 R['esp'] W['af', 'cf', 'esp', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2463 [jmp]jmp       .L00000964
+	 R[] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L00000964' section='.text', address=2404>]
+
+<Symbol '.L000009A1' section='.text', address=2465>
+    ENDER False -- NXT .L000009A8
+    CFG .L263
+    CFG .L000009A8
+    GRAPH_NXT .L000009A8
+    GRAPH_NXT .L263
+    GRAPH_PRV .L00000811
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2465 [None]movl      44(%esi), %eax
+	 R['MEM', 'esi'] W['eax']
+	 D['cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2468 [None]testl     %eax, %eax
+	 R['eax'] W['cf', 'nf', 'of', 'pf', 'zf']
+	 D['cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2470 [jcc]jne       .L263
+	 R['zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L263' section='.text', bind='local', size=0, address=2460>]
+
+<Symbol '.L000009A8' section='.text', address=2472>
+    ENDER True -- NXT None
+    CFG .L0000081C
+    GRAPH_NXT .L0000081C
+    GRAPH_PRV .L000009A1
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2472 [None]movl      $1, 44(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2479 [jmp]jmp       .L0000081C
+	 R[] W['eip']
+	 D['af', 'cf', 'df', 'ecx', 'edi', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L0000081C' section='.text', address=2076>]
+
+<Symbol '.L000009B4' section='.text', address=2484>
+    ENDER False -- NXT .L000009C3
+    CFG .L8
+    CFG .L000009C3
+    GRAPH_NXT .L000009C3
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000007E8
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2484 [None]movsbl    %dl, %eax
+	 R['edx'] W['eax']
+	 D['af', 'cf', 'eax', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2487 [None]subl      $43, %eax
+	 R['eax'] W['af', 'cf', 'eax', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2490 [None]cmpl      $77, %eax
+	 R['eax'] W['af', 'cf', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2493 [jcc]ja        .L8
+	 R['cf', 'zf'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L8' section='.text', bind='local', size=0, address=2045>]
+
+<Symbol '.L000009C3' section='.text', address=2499>
+    ENDER True -- NXT None
+    CFG .L10
+    CFG .L11
+    CFG .L12
+    CFG .L15
+    CFG .L16
+    CFG .L17
+    CFG .L18
+    CFG .L19
+    CFG .L20
+    CFG .L263
+    CFG .L8
+    GRAPH_NXT .L10
+    GRAPH_NXT .L11
+    GRAPH_NXT .L12
+    GRAPH_NXT .L15
+    GRAPH_NXT .L16
+    GRAPH_NXT .L17
+    GRAPH_NXT .L18
+    GRAPH_NXT .L19
+    GRAPH_NXT .L20
+    GRAPH_NXT .L263
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000009B4
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2499 [None]movl      .LC00000000@GOTOFF(%ebx,%eax,4), %edx
+	 R['MEM', 'eax', 'ebx'] W['edx']
+	 D['af', 'cf', 'edx', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2506 [None]addl      %ebx, %edx
+	 R['ebx', 'edx'] W['af', 'cf', 'edx', 'nf', 'of', 'pf', 'zf']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2508 [jmp]jmp       *%edx
+	 R['edx'] W['eip']
+	 D['eip']
+	 PIC:ebx
+	 dst=[<Symbol '.L263' section='.text', bind='local', size=0, address=2460>, <Symbol '.L8' section='.text', bind='local', size=0, address=2045>, <Symbol '.L19' section='.text', bind='local', size=0, address=2522>, <Symbol '.L18' section='.text', bind='local', size=0, address=2534>, <Symbol '.L20' section='.text', bind='local', size=0, address=2546>, <Symbol '.L12' section='.text', bind='local', size=0, address=2558>, <Symbol '.L16' section='.text', bind='local', size=0, address=2570>, <Symbol '.L17' section='.text', bind='local', size=0, address=2582>, <Symbol '.L10' section='.text', bind='local', size=0, address=2510>, <Symbol '.L11' section='.text', bind='local', size=0, address=2594>, <Symbol '.L15' section='.text', bind='local', size=0, address=2606>]
+
+<Symbol '.L10' section='.text', bind='local', size=0, address=2510>
+    ENDER True -- NXT None
+    CFG .L8
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000009C3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2510 [None]movl      $7247, 16(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2517 [jmp]jmp       .L8
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L8' section='.text', bind='local', size=0, address=2045>]
+
+<Symbol '.L19' section='.text', bind='local', size=0, address=2522>
+    ENDER True -- NXT None
+    CFG .L8
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000009C3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2522 [None]movl      $4, 72(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2529 [jmp]jmp       .L8
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L8' section='.text', bind='local', size=0, address=2045>]
+
+<Symbol '.L18' section='.text', bind='local', size=0, address=2534>
+    ENDER True -- NXT None
+    CFG .L8
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000009C3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2534 [None]movl      $3, 72(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2541 [jmp]jmp       .L8
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L8' section='.text', bind='local', size=0, address=2045>]
+
+<Symbol '.L20' section='.text', bind='local', size=0, address=2546>
+    ENDER True -- NXT None
+    CFG .L8
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000009C3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2546 [None]movl      $1, 44(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2553 [jmp]jmp       .L8
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L8' section='.text', bind='local', size=0, address=2045>]
+
+<Symbol '.L12' section='.text', bind='local', size=0, address=2558>
+    ENDER True -- NXT None
+    CFG .L8
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000009C3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2558 [None]movl      $1, 16(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2565 [jmp]jmp       .L8
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L8' section='.text', bind='local', size=0, address=2045>]
+
+<Symbol '.L16' section='.text', bind='local', size=0, address=2570>
+    ENDER True -- NXT None
+    CFG .L8
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000009C3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2570 [None]movl      $1, 72(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2577 [jmp]jmp       .L8
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L8' section='.text', bind='local', size=0, address=2045>]
+
+<Symbol '.L17' section='.text', bind='local', size=0, address=2582>
+    ENDER True -- NXT None
+    CFG .L8
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000009C3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2582 [None]movl      $2, 72(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2589 [jmp]jmp       .L8
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L8' section='.text', bind='local', size=0, address=2045>]
+
+<Symbol '.L11' section='.text', bind='local', size=0, address=2594>
+    ENDER True -- NXT None
+    CFG .L8
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000009C3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2594 [None]movl      $31153, 16(%esi)
+	 R['esi'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2601 [jmp]jmp       .L8
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L8' section='.text', bind='local', size=0, address=2045>]
+
+<Symbol '.L15' section='.text', bind='local', size=0, address=2606>
+    ENDER True -- NXT None
+    CFG .L8
+    GRAPH_NXT .L8
+    GRAPH_PRV .L000009C3
+-- STACK00 ['.L00000013']
+-- STACK01 ['.L0000002B']
+-- STACK02 ['.L0000007D']
+'I386_MIASM.InstructionDEAD'>2606 [None]movl      $1, -16(%ebp)
+	 R['ebp'] W['MEM']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+'I386_MIASM.InstructionDEAD'>2613 [jmp]jmp       .L8
+	 R[] W['eip']
+	 D['af', 'cf', 'eip', 'nf', 'of', 'pf', 'zf']
+	 PIC:ebx
+	 dst=[<Symbol '.L8' section='.text', bind='local', size=0, address=2045>]
+
+<Symbol '.LC1' section='.rodata.str1.1', bind='local', size=0, address=0>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>0 .string	"<fd:%d>"
+
+<Symbol '.LC2' section='.rodata.str1.1', bind='local', size=0, address=8>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.Constant1Byte'>8 .byte	0
+
+<Symbol '.LC3' section='.rodata.str1.1', bind='local', size=0, address=9>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>9 .string	"out of memory"
+
+<Symbol '.LC4' section='.rodata.str1.1', bind='local', size=0, address=23>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>23 .string	": "
+
+<Symbol '.LC5' section='.rodata.str1.1', bind='local', size=0, address=26>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>26 .string	"%s%s%s"
+
+<Symbol '.LC0' section='.rodata.str1.1', bind='local', size=0, address=33>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.ConstantStr'>33 .string	"%s"
+
+<Symbol '.LC00000000' section='.rodata', align=4, address=0>
+    ENDER False -- NXT None
+    CFG None
+'plasmasm.constants.Constant4Byte'>0 .long	.L263@GOTOFF
+'plasmasm.constants.Constant4Byte'>4 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>8 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>12 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>16 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>20 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>24 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>28 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>32 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>36 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>40 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>44 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>48 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>52 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>56 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>60 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>64 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>68 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>72 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>76 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>80 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>84 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>88 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>92 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>96 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>100 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>104 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>108 .long	.L19@GOTOFF
+'plasmasm.constants.Constant4Byte'>112 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>116 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>120 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>124 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>128 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>132 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>136 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>140 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>144 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>148 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>152 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>156 .long	.L18@GOTOFF
+'plasmasm.constants.Constant4Byte'>160 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>164 .long	.L20@GOTOFF
+'plasmasm.constants.Constant4Byte'>168 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>172 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>176 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>180 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>184 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>188 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>192 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>196 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>200 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>204 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>208 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>212 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>216 .long	.L12@GOTOFF
+'plasmasm.constants.Constant4Byte'>220 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>224 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>228 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>232 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>236 .long	.L16@GOTOFF
+'plasmasm.constants.Constant4Byte'>240 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>244 .long	.L17@GOTOFF
+'plasmasm.constants.Constant4Byte'>248 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>252 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>256 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>260 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>264 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>268 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>272 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>276 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>280 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>284 .long	.L10@GOTOFF
+'plasmasm.constants.Constant4Byte'>288 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>292 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>296 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>300 .long	.L8@GOTOFF
+'plasmasm.constants.Constant4Byte'>304 .long	.L11@GOTOFF
+'plasmasm.constants.Constant4Byte'>308 .long	.L15@GOTOFF
+
+<Symbol '.L10@GOTOFF' >
+
+<Symbol '.L11@GOTOFF' >
+
+<Symbol '.L12@GOTOFF' >
+
+<Symbol '.L15@GOTOFF' >
+
+<Symbol '.L16@GOTOFF' >
+
+<Symbol '.L17@GOTOFF' >
+
+<Symbol '.L18@GOTOFF' >
+
+<Symbol '.L19@GOTOFF' >
+
+<Symbol '.L20@GOTOFF' >
+
+<Symbol '.L263@GOTOFF' >
+
+<Symbol '.L8@GOTOFF' >
+
+<Symbol '.LC00000000@GOTOFF' >
+
+<Symbol '.LC0@GOTOFF' >
+
+<Symbol '.LC1@GOTOFF' >
+
+<Symbol '.LC2@GOTOFF' >
+
+<Symbol '.LC3@GOTOFF' >
+
+<Symbol '.LC4@GOTOFF' >
+
+<Symbol '.LC5@GOTOFF' >
+
+<Symbol '_GLOBAL_OFFSET_TABLE_' bind='globl'>
+
+<Symbol 'free' bind='globl'>
+
+<Symbol 'free@PLT' >
+    GRAPH_NXT .L00000087
+    GRAPH_NXT .L000006BD
+    GRAPH_NXT .L00000960
+    GRAPH_NXT .L0000096A
+    GRAPH_PRV .L0000007D
+    GRAPH_PRV .L000006B4
+    GRAPH_PRV .L00000955
+    GRAPH_PRV .L00000964
+-- STACK00 ['.L00000087']
+-- STACK01 ['.L000006BD', '.L0000016E']
+-- STACK02 ['.L000006BD', '.L000003C3']
+-- STACK03 ['.L000006BD', '.L00000677']
+-- STACK04 ['.L000006BD', '.L000008D9', '.L00000013']
+-- STACK05 ['.L000006BD', '.L000008D9', '.L0000002B']
+-- STACK06 ['.L000006BD', '.L000008D9', '.L0000007D']
+-- STACK07 ['.L00000960']
+-- STACK08 ['.L0000096A']
+
+<Symbol 'gzlib.c' bind='file'>
+
+<Symbol 'gzoffset64@PLT' >
+    GRAPH_NXT .L0000058D
+    GRAPH_PRV .L0000057E
+-- STACK00 ['.L0000058D']
+
+<Symbol 'gzrewind@PLT' >
+    GRAPH_NXT .L0000031D
+    GRAPH_PRV .L00000312
+-- STACK00 ['.L0000031D']
+
+<Symbol 'gzseek64@PLT' >
+    GRAPH_NXT .L0000042A
+    GRAPH_PRV .L0000041B
+-- STACK00 ['.L0000042A']
+
+<Symbol 'gztell64@PLT' >
+    GRAPH_NXT .L000004B9
+    GRAPH_PRV .L000004AA
+-- STACK00 ['.L000004B9']
+
+<Symbol 'lseek64' bind='globl'>
+
+<Symbol 'lseek64@PLT' >
+    GRAPH_NXT .L00000140
+    GRAPH_NXT .L00000380
+    GRAPH_NXT .L0000053D
+    GRAPH_NXT .L00000920
+    GRAPH_PRV .L00000130
+    GRAPH_PRV .L00000360
+    GRAPH_PRV .L0000052C
+    GRAPH_PRV .L00000912
+-- STACK00 ['.L00000140']
+-- STACK01 ['.L00000380']
+-- STACK02 ['.L0000053D']
+-- STACK03 ['.L00000920', '.L00000013']
+-- STACK04 ['.L00000920', '.L0000002B']
+-- STACK05 ['.L00000920', '.L0000007D']
+
+<Symbol 'malloc' bind='globl'>
+
+<Symbol 'malloc@PLT' >
+    GRAPH_NXT .L00000057
+    GRAPH_NXT .L0000070B
+    GRAPH_NXT .L000007A1
+    GRAPH_NXT .L0000083A
+    GRAPH_PRV .L0000004D
+    GRAPH_PRV .L000006E5
+    GRAPH_PRV .L00000794
+    GRAPH_PRV .L0000081C
+-- STACK00 ['.L00000057']
+-- STACK01 ['.L0000070B', '.L0000016E']
+-- STACK02 ['.L0000070B', '.L000003C3']
+-- STACK03 ['.L0000070B', '.L00000677']
+-- STACK04 ['.L0000070B', '.L000008D9']
+-- STACK05 ['.L000007A1', '.L00000013']
+-- STACK06 ['.L000007A1', '.L0000002B']
+-- STACK07 ['.L000007A1', '.L0000007D']
+-- STACK08 ['.L0000083A']
+
+<Symbol 'open' bind='globl'>
+
+<Symbol 'open@PLT' >
+    GRAPH_NXT .L0000097D
+    GRAPH_PRV .L0000096E
+-- STACK00 ['.L0000097D', '.L00000013']
+-- STACK01 ['.L0000097D', '.L0000002B']
+-- STACK02 ['.L0000097D', '.L0000007D']
+
+<Symbol 'snprintf' bind='globl'>
+
+<Symbol 'snprintf@PLT' >
+    GRAPH_NXT .L00000070
+    GRAPH_NXT .L00000752
+    GRAPH_NXT .L0000085B
+    GRAPH_PRV .L00000060
+    GRAPH_PRV .L00000717
+    GRAPH_PRV .L00000848
+-- STACK00 ['.L00000070']
+-- STACK01 ['.L00000752', '.L0000016E']
+-- STACK02 ['.L00000752', '.L000003C3']
+-- STACK03 ['.L00000752', '.L00000677']
+-- STACK04 ['.L00000752', '.L000008D9', '.L00000013']
+-- STACK05 ['.L00000752', '.L000008D9', '.L0000002B']
+-- STACK06 ['.L00000752', '.L000008D9', '.L0000007D']
+-- STACK07 ['.L0000085B', '.L00000013']
+-- STACK08 ['.L0000085B', '.L0000002B']
+-- STACK09 ['.L0000085B', '.L0000007D']
+
+<Symbol '.LC00000138' section='.rodata', type='endofsymbol', address=312>
+    ENDER None -- NXT None
+    CFG None
+
+<Symbol '.L15+12' section='.text', type='padding', address=2618>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@note')
+('.rodata.str1.1', '.rodata.str1.1,"aMS",@progbits,1')
+relocatable:True,ident:'GCC: (GNU) 3.2.3 20030502 (Red Hat Linux 3.2.3-59)',endianess:'<',container:'ELF',compiler:'gcc',PIC:'call;pop;add'

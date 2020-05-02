@@ -2833,11 +2833,11 @@
 <Symbol '.LC00000000' section='.rodata', align=4, size=20, address=0, switch_table=(<Symbol '.LC00000000' section='.rodata', align=4, size=20, address=0, switch_table=(...)>, 4, 5)>
     ENDER False -- NXT None
     CFG None
-'plasmasm.constants.Constant4Byte'>0 (4, 'long', 'I') [<Symbol '.L00000174.startup-.LC00000000' >]
-'plasmasm.constants.Constant4Byte'>4 (4, 'long', 'I') [<Symbol '.L000002C4.startup-.LC00000000' >]
-'plasmasm.constants.Constant4Byte'>8 (4, 'long', 'I') [<Symbol '.L0000038E.startup-.LC00000000' >]
-'plasmasm.constants.Constant4Byte'>12 (4, 'long', 'I') [<Symbol '.L00000052.startup-.LC00000000' >]
-'plasmasm.constants.Constant4Byte'>16 (4, 'long', 'I') [<Symbol '.L00000122.startup-.LC00000000' >]
+'plasmasm.constants.Constant4Byte'>0 .long	.L00000174.startup-.LC00000000
+'plasmasm.constants.Constant4Byte'>4 .long	.L000002C4.startup-.LC00000000
+'plasmasm.constants.Constant4Byte'>8 .long	.L0000038E.startup-.LC00000000
+'plasmasm.constants.Constant4Byte'>12 .long	.L00000052.startup-.LC00000000
+'plasmasm.constants.Constant4Byte'>16 .long	.L00000122.startup-.LC00000000
 
 <Symbol '.L000004DA.startup' section='.text.startup', address=1242>
     ENDER False -- NXT .L000004E3.startup
@@ -2940,7 +2940,7 @@
 <Symbol 'R' section='.data.rel', type='object', bind='globl', size=8, address=0>
     ENDER False -- NXT None
     CFG None
-'plasmasm.constants.Constant8Byte'>0 (8, 'quad', 'Q') [<Symbol 'putchar' bind='globl'>]
+'plasmasm.constants.Constant8Byte'>0 .quad	putchar
 
 <Symbol '.L00000052.startup-.LC00000000' >
 
