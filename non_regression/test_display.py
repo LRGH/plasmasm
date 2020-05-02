@@ -46,6 +46,15 @@ all_tests = [
     ("other_x86_linux_11.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
     ("other_x86_macosx.o",      "reprD", {"rw":True,"pic":True,"dead":True}),
     ("other_x86_macosx_5.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
+    # For coverage of staticasm/stack_tracking
+    ("asm_x64_macosx.o",        "reprD", {"rw":True,"pic":True,"dead":True}),
+    ("other_x64_linux_6.o",     "reprD", {"rw":True,"pic":True,"dead":True}),
+    ("other_x64_linux_15.s",    "reprD", {"rw":True,"pic":True,"dead":True}),
+    ("other_x64_linux_15.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
+    ("other_x64_linux_16.s",    "reprD", {"rw":True,"pic":True,"dead":True}),
+    ("other_x64_linux_17.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
+    ("other_x64_linux_18.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
+    ("switch_x64_linux_3.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
 ]
 
 if sys.version_info[0] == 2 and sys.version_info[1] <= 6:

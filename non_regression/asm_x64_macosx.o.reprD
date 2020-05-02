@@ -1,0 +1,340 @@
+<Symbol '_main' section='__TEXT,__text', bind='globl', align='4, 0x90', address=0>
+    ENDER True -- NXT None
+    CFG None
+'X64_AMOCO.InstructionDEAD'>0 [None]cbtw      
+	 R['rax', 'rip'] W['rax', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>2 [None]cwtl      
+	 R['rax', 'rip'] W['rax', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>3 [None]cwtd      
+	 R['rax', 'rdx', 'rip'] W['rax', 'rdx', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>5 [None]cltd      
+	 R['rax', 'rip'] W['rax', 'rdx', 'rip']
+	 D['cr0', 'dr0', 'rdx']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>6 [None]cltq      
+	 R['rax', 'rip'] W['rax', 'rip']
+	 D['cr0', 'dr0', 'rdx']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>8 [None]cqto      
+	 R['rax', 'rip'] W['rax', 'rdx', 'rip']
+	 D['cr0', 'dr0', 'rdx']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>10 [None]repz scasb     
+	 R['MEM', 'rax', 'rcx', 'rdi', 'rflags', 'rip'] W['rcx', 'rdi', 'rflags', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>12 [None]repz scasw     
+	 R['MEM', 'rax', 'rcx', 'rdi', 'rflags', 'rip'] W['rcx', 'rdi', 'rflags', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>15 [None]repz scasl     
+	 R['MEM', 'rax', 'rcx', 'rdi', 'rflags', 'rip'] W['rcx', 'rdi', 'rflags', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>17 [None]repz scasq     
+	 R['MEM', 'rax', 'rcx', 'rdi', 'rflags', 'rip'] W['rcx', 'rdi', 'rflags', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>20 [None]pushw     %ax
+	 R['rax', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>22 [None]pushq     %rax
+	 R['rax', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>23 [None]pushw     $12
+	 R['rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>27 [None]pushq     $12
+	 R['rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>29 [None]pushw     $1234
+	 R['rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>33 [None]pushq     $1234
+	 R['rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>38 [None]pushq     %ds:1234
+	 R['MEM', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>46 [None]pushq     %fs:1234
+	 R['MEM', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>54 [None]pushq     %gs:1234
+	 R['MEM', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>62 [None]pushq     %fs
+	 R['fs', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>64 [None]pushq     %gs
+	 R['gs', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>66 [None]pushq     %gs
+	 R['gs', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>68 [None]bswap     %rax
+	 R['rax', 'rip'] W['rax', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>71 [None]shrdw     %cl, %ax, %dx
+	 R['rax', 'rcx', 'rdx', 'rflags', 'rip'] W['rdx', 'rflags', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>75 [None]shrdq     %cl, %rax, %rdx
+	 R['rax', 'rcx', 'rdx', 'rflags', 'rip'] W['rdx', 'rflags', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>79 [None]shrdq     %cl, %rax, %rdx
+	 R['rax', 'rcx', 'rdx', 'rflags', 'rip'] W['rdx', 'rflags', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>83 [None]shrdq     $3, %rax, %rdx
+	 R['rax', 'rdx', 'rflags', 'rip'] W['rdx', 'rflags', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>88 [None]movq      %rax, %cr0
+	 R['rax', 'rip'] W['cr0', 'rip']
+	 D['cr0', 'dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>91 [None]movq      %cr0, %rax
+	 R['cr0', 'rip'] W['rax', 'rip']
+	 D['dr0', 'rax']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>94 [None]movq      %rax, %dr0
+	 R['rax', 'rip'] W['dr0', 'rip']
+	 D['dr0']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>97 [None]movq      %dr0, %rax
+	 R['dr0', 'rip'] W['rax', 'rip']
+	 D['rax']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>100 [None]pextrq    $1, %xmm0, %rax
+	 R['rax', 'rip', 'xmm0'] W['rax', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>107 [None]pextrd    $1, %xmm0, %eax
+	 R['rax', 'rip', 'xmm0'] W['rax', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>113 [None]pextrw    $1, %xmm0, %eax
+	 R['rax', 'rip', 'xmm0'] W['rax', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>118 [None]pextrb    $1, %xmm0, %eax
+	 R['rax', 'rip', 'xmm0'] W['rax', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>124 [None]pextrq    $1, %xmm0, (%rax)
+	 R['MEM', 'rax', 'rip', 'xmm0'] W['MEM', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>131 [None]pextrd    $1, %xmm0, (%rax)
+	 R['MEM', 'rax', 'rip', 'xmm0'] W['MEM', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>137 [None]pextrw    $1, %xmm0, (%rax)
+	 R['MEM', 'rax', 'rip', 'xmm0'] W['MEM', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>143 [None]pextrb    $1, %xmm0, (%rax)
+	 R['MEM', 'rax', 'rip', 'xmm0'] W['MEM', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>149 [None]pinsrq    $1, %rax, %xmm1
+	 R['rax', 'rip', 'xmm1'] W['rip', 'xmm1']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>156 [None]pinsrd    $1, %eax, %xmm1
+	 R['rax', 'rip', 'xmm1'] W['rip', 'xmm1']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>162 [None]pinsrw    $1, %eax, %xmm1
+	 R['rax', 'rip', 'xmm1'] W['rip', 'xmm1']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>167 [None]pinsrb    $1, %eax, %xmm1
+	 R['rax', 'rip', 'xmm1'] W['rip', 'xmm1']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>173 [None]pinsrq    $1, (%rax), %xmm1
+	 R['MEM', 'rax', 'rip', 'xmm1'] W['rip', 'xmm1']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>180 [None]pinsrd    $1, (%rax), %xmm1
+	 R['MEM', 'rax', 'rip', 'xmm1'] W['rip', 'xmm1']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>186 [None]pinsrw    $1, (%rax), %xmm1
+	 R['MEM', 'rax', 'rip', 'xmm1'] W['rip', 'xmm1']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>191 [None]pinsrb    $1, (%rax), %xmm1
+	 R['MEM', 'rax', 'rip', 'xmm1'] W['rip', 'xmm1']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>197 [None]pextrw    $1, %mm0, %eax
+	 R['mm0', 'rax', 'rip'] W['rax', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>201 [None]pinsrw    $1, (%rax), %mm1
+	 R['MEM', 'mm1', 'rax', 'rip'] W['mm1', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>205 [None]extractps $1, %xmm0, %eax
+	 R['rax', 'rip', 'xmm0'] W['rax', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>211 [None]extractps $1, %xmm0, (%rax)
+	 R['MEM', 'rax', 'rip', 'xmm0'] W['MEM', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>217 [None]cvttss2si %xmm1, %rcx
+	 R['rcx', 'rip', 'xmm1'] W['rcx', 'rip']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>222 [None]cvtsi2ss  %rcx, %xmm0
+	 R['rcx', 'rip', 'xmm0'] W['rip', 'xmm0']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>227 [None]cvtsi2ssq 4(%rsp), %xmm0
+	 R['MEM', 'rip', 'rsp', 'xmm0'] W['rip', 'xmm0']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>234 [None]cvtsi2ssl 4(%rsp), %xmm0
+	 R['MEM', 'rip', 'rsp', 'xmm0'] W['rip', 'xmm0']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>240 [None]cvtsi2ssl 4(%rsp), %xmm0
+	 R['MEM', 'rip', 'rsp', 'xmm0'] W['rip', 'xmm0']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>246 [None]cvtsi2ssl 4(%rsp), %xmm0
+	 R['MEM', 'rip', 'rsp', 'xmm0'] W['rip', 'xmm0']
+	 D[]
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>252 [None]movsd     %xmm2, -88(%rsp)
+	 R['MEM', 'rdi', 'rflags', 'rip', 'rsi', 'rsp', 'xmm2'] W['MEM', 'rdi', 'rip', 'rsi']
+	 D[]
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>258 [None]sahf      
+	 R['rip'] W['rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>259 [None]lahf      
+	 R['rip'] W['rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>260 [None]clflush   (%rax)
+	 R['rip'] W['rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>263 [None]fxsave    (%rax)
+	 R['fpu_status', 'rip'] W['rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>266 [None]xrstor    (%rax)
+	 R['rip'] W['rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>269 [None]lfence    
+	 R['rip'] W['rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>272 [None]rolb      $1, %ah
+	 R['rax', 'rip'] W['rax', 'rflags', 'rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>274 [None]rolb      $3, %ah
+	 R['rax', 'rip'] W['rax', 'rflags', 'rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>277 [None]decb      (%rax)
+	 R['MEM', 'rax', 'rip'] W['MEM', 'rflags', 'rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>279 [None]decw      (%rax)
+	 R['MEM', 'rax', 'rip'] W['MEM', 'rflags', 'rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>282 [None]decl      (%rax)
+	 R['MEM', 'rax', 'rip'] W['MEM', 'rflags', 'rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>284 [None]rdrandl   %eax
+	 R['rax', 'rflags', 'rip'] W['rax', 'rflags', 'rip']
+	 D['rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>287 [None]rdrandq   %rax
+	 R['rflags', 'rip'] W['rax', 'rflags', 'rip']
+	 D['rax', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>291 [None]movntil   %ebx, (%rax)
+	 R['rax', 'rbx', 'rip'] W['MEM', 'rip']
+	 D['rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>294 [None]movntiq   %rbx, (%rax)
+	 R['rax', 'rbx', 'rip'] W['MEM', 'rip']
+	 D['rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>298 [None]cmpxchgl  %eax, (%rax)
+	 R['MEM', 'rax', 'rflags', 'rip'] W['MEM', 'rax', 'rflags', 'rip']
+	 D['rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>301 [None]cmpxchgq  %rax, (%rax)
+	 R['MEM', 'rax', 'rflags', 'rip'] W['MEM', 'rax', 'rflags', 'rip']
+	 D['rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>305 [None]cmpxchg8b (%rax)
+	 R['MEM', 'rax', 'rbx', 'rcx', 'rdx', 'rflags', 'rip'] W['MEM', 'rax', 'rdx', 'rflags', 'rip']
+	 D['rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>308 [None]cmpxchg16b (%rax)
+	 R['MEM', 'rax', 'rbx', 'rcx', 'rdx', 'rflags', 'rip'] W['MEM', 'rax', 'rdx', 'rflags', 'rip']
+	 D['rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>312 [None]prefetcht0 (%rax)
+	 R['rip'] W['rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>315 [None]bsrl      %eax, %ebx
+	 R['rax', 'rbx', 'rip'] W['rbx', 'rflags', 'rip']
+	 D['rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>318 [None]bsrq      %rax, %rbx
+	 R['rax', 'rip'] W['rbx', 'rflags', 'rip']
+	 D['rbx', 'rflags', 'rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>322 [None]leave     
+	 R['MEM', 'rbp', 'rip'] W['rbp', 'rip', 'rsp']
+	 D['rsp']
+	 STACK:{}:(-88,)
+'X64_AMOCO.InstructionDEAD'>323 [ret]ret       
+	 R['MEM', 'rip', 'rsp'] W['rip', 'rsp']
+	 D[]
+	 STACK:{}:(-88,)
+	 dst=[None]
+
+<Symbol 'L00000144' section='__TEXT,__text', type='endofsymbol', address=324>
+    ENDER None -- NXT None
+    CFG None
+
+('__IMPORT,__pointers', '__IMPORT,__pointers,non_lazy_symbol_pointers')
+('__TEXT,__text', '__TEXT,__text,regular,pure_instructions')
+relocatable:True,endianess:'<',container:'Mach-O',compiler:'clang',PIC:'call;pop'

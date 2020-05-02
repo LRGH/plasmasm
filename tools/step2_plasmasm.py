@@ -20,6 +20,13 @@ class Step2_parse_asm(Step2Base):
             else: print("Invalid option %r" % opt)
         symbols = File().from_filename(input, **options)
         hook_for_as_bugs(symbols)
+        if 'dead' in options:
+            from staticasm.pic_tracking import analyze_PIC
+            analyze_PIC(symbols)
+            from staticasm.stack_tracking import analyze_stack
+            analyze_stack(symbols)
+            from staticasm.dead_registers import analyze_dead
+            analyze_dead(symbols)
         symbols.to_asm(output_filename=output)
         return output
 

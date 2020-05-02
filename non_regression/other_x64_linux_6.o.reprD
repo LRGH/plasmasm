@@ -1,0 +1,90 @@
+<Symbol 'toto' section='.text', type='function', bind='globl', size=4, address=0>
+    ENDER True -- NXT None
+    CFG None
+'X64_AMOCO.InstructionDEAD'>0 [None]addl      $1, (%rdi)
+	 R['MEM', 'rdi', 'rip'] W['MEM', 'rflags', 'rip']
+	 D['rflags']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>3 [ret]ret       
+	 R['MEM', 'rip', 'rsp'] W['rip', 'rsp']
+	 D[]
+	 STACK:{}:()
+	 dst=[None]
+
+<Symbol 'tata' section='.text', type='function', bind='globl', size=4, address=4>
+    ENDER True -- NXT None
+    CFG None
+'X64_AMOCO.InstructionDEAD'>4 [None]subl      $1, (%rdi)
+	 R['MEM', 'rdi', 'rip'] W['MEM', 'rflags', 'rip']
+	 D['rflags']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>7 [ret]ret       
+	 R['MEM', 'rip', 'rsp'] W['rip', 'rsp']
+	 D[]
+	 STACK:{}:()
+	 dst=[None]
+
+<Symbol 'main' section='.text', type='function', bind='globl', size=53, address=8>
+    ENDER False -- NXT .L00000034
+    CFG None
+'X64_AMOCO.InstructionDEAD'>8 [None]subq      $40, %rsp
+	 R['rip', 'rsp'] W['rflags', 'rip', 'rsp']
+	 D['rflags']
+	 STACK:{}:()
+'X64_AMOCO.InstructionDEAD'>12 [None]movl      $0, 12(%rsp)
+	 R['rip', 'rsp'] W['MEM', 'rip']
+	 D[]
+	 STACK:{}:(12,)
+'X64_AMOCO.InstructionDEAD'>20 [None]movq      $toto, 16(%rsp)
+	 R['rip', 'rsp'] W['MEM', 'rip']
+	 D[]
+	 STACK:{}:(12, 16)
+'X64_AMOCO.InstructionDEAD'>29 [None]movq      $tata, 24(%rsp)
+	 R['rip', 'rsp'] W['MEM', 'rip']
+	 D[]
+	 STACK:{}:(12, 16, 24)
+'X64_AMOCO.InstructionDEAD'>38 [None]leal      -1(%rdi), %eax
+	 R['MEM', 'rax', 'rdi', 'rip'] W['rax', 'rip']
+	 D[]
+	 STACK:{}:(12, 16, 24)
+'X64_AMOCO.InstructionDEAD'>41 [None]cltq      
+	 R['rax', 'rip'] W['rax', 'rip']
+	 D['rdi']
+	 STACK:{}:(12, 16, 24)
+'X64_AMOCO.InstructionDEAD'>43 [None]leaq      12(%rsp), %rdi
+	 R['MEM', 'rip', 'rsp'] W['rdi', 'rip']
+	 D['rdi']
+	 STACK:{'%rdi': [12]}:(12, 16, 24)
+'X64_AMOCO.InstructionDEAD'>48 [sub]call      *16(%rsp,%rax,8)
+	 R['MEM', 'rax', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
+	 D[]
+	 STACK:False:()
+	 dst=[None]
+
+<Symbol '.L00000034' section='.text', address=52>
+    ENDER True -- NXT None
+    CFG None
+'X64_AMOCO.InstructionDEAD'>52 [None]movl      12(%rsp), %eax
+	 R['MEM', 'rip', 'rsp'] W['rax', 'rip']
+	 D['rax', 'rflags']
+	 STACK:False:()
+'X64_AMOCO.InstructionDEAD'>56 [None]addq      $40, %rsp
+	 R['rip', 'rsp'] W['rflags', 'rip', 'rsp']
+	 D['rflags']
+	 STACK:False:()
+'X64_AMOCO.InstructionDEAD'>60 [ret]ret       
+	 R['MEM', 'rip', 'rsp'] W['rip', 'rsp']
+	 D[]
+	 STACK:False:()
+	 dst=[None]
+
+<Symbol 'a03.c' bind='file'>
+
+<Symbol 'main+53' section='.text', type='padding', address=61>
+    ENDER None -- NXT None
+    CFG None
+
+('.comment', '.comment,"MS",@progbits,1')
+('.eh_frame', '.eh_frame,"a",@progbits')
+('.note.GNU-stack', '.note.GNU-stack,"",@progbits')
+relocatable:True,ident:'GCC: (Ubuntu 4.8.4-2ubuntu1~14.04) 4.8.4',endianess:'<',eh_frame_size:88,eh_frame_relocs:{32: (('ELF', 62, 2), {'section': '.text', 'address': 0}), 52: (('ELF', 62, 2), {'section': '.text', 'address': 4}), 72: (('ELF', 62, 2), {'section': '.text', 'address': 8})},container:'ELF',compiler:'gcc'
