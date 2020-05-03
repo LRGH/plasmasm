@@ -7,6 +7,7 @@ from plasmasm.python.utils import spawn
 
 from tools.step2 import *
 from tools.step2_plasmasm import *
+from tools.step2_change import *
 
 def usage():
     sys.stderr.write("Syntax:\tcompile.py [-v] <step2 definition> <compiler command>\n")

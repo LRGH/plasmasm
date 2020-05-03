@@ -125,6 +125,11 @@ be used to check that plasmasm will work well for a given os + compiler.
 make test CC='compile.py -parse_asm gcc'
 make test CC='compile.py -parse_obj gcc'
 ```
+This can also be used to make automatic changes. A simple example is
+included:
+```
+make test CC='compile.py -change gcc'
+```
 
 ## .plasmasm helper files
 

@@ -13,6 +13,7 @@ _zlib_test32: &zlib_test32
     - make clean; make test CC="compile.py -parse_asm $gcc" CFLAGS='-m32 -masm=intel' SFLAGS='-m32 -masm=intel -fPIC'
     - make clean; make test CC="compile.py -parse_obj $gcc" CFLAGS=-m32 SFLAGS='-m32 -fPIC'
     - make clean; make test CC="compile.py -parse_obj -c/AMOCO $gcc" CFLAGS=-m32 SFLAGS='-m32 -fPIC'
+    - make clean; make test CC="compile.py -change $gcc" CFLAGS=-m32 SFLAGS='-m32 -fPIC'
   after_success:
     - true # no coverage test
 _zlib_test64: &zlib_test64
@@ -25,6 +26,7 @@ _zlib_test64: &zlib_test64
     - make clean; make test CC='compile.py -parse_asm gcc'
     - make clean; make test CC='compile.py -parse_asm -rw -dead gcc'
     - make clean; make test CC='compile.py -parse_obj gcc'
+    - make clean; make test CC='compile.py -change gcc'
   after_success:
     - true # no coverage test
 jobs:
