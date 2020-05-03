@@ -59,8 +59,8 @@ class Instruction(Line):
             This function modifies the argument impacted by the relocation '''
         offset = 0 # TODO: current value of the argument impacted
         from plasmasm.get_symbols import analyze_reloc
-        label, label_dif, offset, size = analyze_reloc(self.symbols,
-            reloc, offset, self.offset, pos, self.bytelen)
+        label, label_dif, offset, size = analyze_reloc(self,
+            reloc, offset, pos, self.bytelen)
         # TODO: find which arg is impacted
         # by computing: pos -= self.miasm.offset
         for argname in ['simm', 'li']:

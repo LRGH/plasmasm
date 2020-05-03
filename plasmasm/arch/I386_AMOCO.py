@@ -603,8 +603,8 @@ class Instruction(Line, API_AMOCO):
             raise ValueError("Arg of type %s"%self.amoco.operands[argpos].__class__)
         if address is None:
             from plasmasm.get_symbols import analyze_reloc
-            label, label_dif, offset, size = analyze_reloc(self.symbols,
-                reloc, offset, self.offset, pos, self.bytelen)
+            label, label_dif, offset, size = analyze_reloc(self,
+                reloc, offset, pos, self.bytelen)
         else:
             # Special case: offset to a switch table
             r_type, data = reloc
@@ -1324,36 +1324,46 @@ def remove_pic_offset(e, pool):
     #    to make this work also with executables, we will need to change
     #    our API and return the offset that will have to be substracted
     if e._is_eqn and e.op.symbol == '+':
-        if   e.r._is_mem:
-            u = e.r; v = e.l
-        elif e.l._is_mem:
-            u = e.l; v = e.r
-        elif e.l._is_eqn and e.l.op.symbol == '-' and e.l.l is None:
-            u = e.l.r; v = e.r
-        else:
-            log.error("Unknown formula %s", e)
-            NON_REGRESSION_FOUND
-            return None
-        if not (u.a.base._is_eqn
-            and u.a.disp._is_lab
-            and u.a.disp.ref.name.endswith('@GOTOFF')):
+        base, index, pic_data, pic_data_dup = extract_base_index(e)
+        if base == None:
             log.error("Unknown base %s", e)
-            NON_REGRESSION_FOUND
             return None
-        if not check_pic_data(v):
-            log.debug("PIC OFFSET [%s] LABEL %s", v, None)
+        if pic_data != pic_data_dup:
+            log.error("Inconsistent PIC %s != %s", pic_data, pic_data_dup)
             return None
-        if   u.a.base.l == v:
-            b = u.a.base.r # Non-regression: a28-O3fPIC.o
-        elif u.a.base.r == v:
-            b = u.a.base.l # Non-regression: a28-fPIC.o
-        else:
-            log.error("BASE %s should never happen", u.a.base)
-            NON_REGRESSION_FOUND
-            return None
-        label = u.a.disp.ref.name[:-7]
-        label = env.lab(pool.find_symbol(name = label), size=cpu_addrsize)
-        return env.mem(b, disp=label)
+        label_name = base.disp.ref.name[:-7]
+        if not check_pic_data(pic_data):
+            log.error("PIC OFFSET [%s] LABEL %s", pic_data, label_name)
+            # Don't abort, for now, improvement of pic_tracking needed
+        label = env.lab(pool.find_symbol(name = label_name), size=cpu_addrsize)
+        return env.mem(index, disp=label)
+
+def extract_base_index(e):
+    # M32[(INDEX_IN_TABLE+PIC_OFFSET)+toto@GOTOFF]+PIC_OFFSET
+    #      e.l.a.base.l  e.l.a.base.r e.l.a.disp  +  e.r
+    if (e.l._is_mem and
+        e.l.a.disp._is_lab and
+        e.l.a.base._is_eqn and
+        e.l.a.base.op.symbol == '+'):
+        return e.l.a, e.l.a.base.l, e.l.a.base.r, e.r
+    # PIC_OFFSET+M32[(INDEX_IN_TABLE+PIC_OFFSET)+toto@GOTOFF]
+    #    e.l    +     e.r.a.base.l  e.r.a.base.r e.r.a.disp
+    if (e.r._is_mem and
+        e.r.a.disp._is_lab and
+        e.r.a.base._is_eqn and
+        e.r.a.base.op.symbol == '+'):
+        return e.r.a, e.r.a.base.l, e.r.a.base.r, e.l
+    # (-M32[(INDEX_IN_TABLE+PIC_OFFSET)+toto@GOTOFF]+PIC_OFFSET)
+    if (e.l._is_eqn and
+        e.l.op.symbol == '-' and
+        e.l.l is None and
+        e.l.r._is_mem and
+        e.l.r.a.disp._is_lab and
+        e.l.r.a.base._is_eqn and
+        e.l.r.a.base.op.symbol == '+'
+        ):
+        return e.l.r.a, e.l.r.a.base.l, e.l.r.a.base.r, e.r
+    return None, None, None, None
 
 def check_pic_data(pic):
     pic = str(pic)

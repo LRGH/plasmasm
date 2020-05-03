@@ -359,7 +359,7 @@ except ImportError:
 
 import logging
 log = logging.getLogger("plasmasm")
-def analyze_reloc(pool, reloc, offset, address, pos, bytelen):
+def analyze_reloc(instr, reloc, offset, pos, bytelen):
     # reloc is the description of the relocation
     # offset is the immediate value that is to be overwritten by the relocation
     # address is the address of the instruction (used for PC-relative)
@@ -374,6 +374,8 @@ def analyze_reloc(pool, reloc, offset, address, pos, bytelen):
     #   return label, None, offset, 32
     # but some adaptations need to be made, depending on r_type
     # Especially because Mach-O relocations may be a label_diff
+    pool = instr.symbols
+    address = instr.offset
     def prop(address):
         return { 'address': address,
             'section': pool.get_sectionname(address) }
@@ -402,7 +404,10 @@ def analyze_reloc(pool, reloc, offset, address, pos, bytelen):
         size, suffix = reloc_suffixes[r_type]
         if   r_type == ('ELF',elf.EM_386,elf.R_386_PC32):           offset += 4
         elif r_type == ('ELF',elf.EM_386,elf.R_386_PLT32):          offset += 4
-        elif r_type == ('ELF',elf.EM_386,elf.R_386_GOTPC):          offset -= 2
+        elif r_type == ('ELF',elf.EM_386,elf.R_386_GOTPC):
+            offset += 4-bytelen
+            if hasattr(instr, 'value'): # constant, not instruction
+                offset -= 6
         elif r_type == ('ELF',elf.EM_X86_64,elf.R_386_PLT32):       offset += 4
         elif r_type == ('ELF',elf.EM_X86_64,elf.R_X86_64_GOTPCREL): offset += 4
         elif r_type == ('ELF',elf.EM_X86_64,elf.R_X86_64_REX_GOTPCRELX): offset += 4

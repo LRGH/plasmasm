@@ -19,12 +19,17 @@ def analyze_PIC(symbols):
     # gcc 4.8.x or 4.9.x use __x86.get_pc_thunk...
     # For recent gcc, even if not PIC, the executable contains the symbol
     # __x86.get_pc_thunk... but it is not in the CFG
+    # More recent gcc event also use thunk.ax or thunk.dx
     gcc4_PIC = False
     for thunk in [
+            '__i686.get_pc_thunk.ax',
             '__i686.get_pc_thunk.bx',
             '__i686.get_pc_thunk.cx',
+            '__i686.get_pc_thunk.dx',
+            '__x86.get_pc_thunk.ax',
             '__x86.get_pc_thunk.bx',
             '__x86.get_pc_thunk.cx',
+            '__x86.get_pc_thunk.dx',
         ]:
         if thunk in symbols.symbols_byname:
             thunk = symbols.symbols_byname[thunk]

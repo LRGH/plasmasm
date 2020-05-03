@@ -583,8 +583,8 @@ class Instruction(Line, API_MIASM):
         offset = int32(a[x86_afs.imm])
         if address is None:
             from plasmasm.get_symbols import analyze_reloc
-            label, label_dif, offset, size = analyze_reloc(self.symbols,
-                reloc, offset, self.offset, pos, self.bytelen)
+            label, label_dif, offset, size = analyze_reloc(self,
+                reloc, offset, pos, self.bytelen)
         else:
             # Special case: offset to a switch table
             r_type, data = reloc
@@ -1085,32 +1085,58 @@ def remove_pic_offset(e, pool):
     # (-M32[(INDEX_IN_TABLE+PIC_OFFSET)+toto@GOTOFF]+PIC_OFFSET)
     # => M32[toto+INDEX_IN_TABLE]
     if isinstance(e, expression.ExprOp) and e.op == '+' and len(e.args) == 2:
-        if   isinstance(e.args[1], expression.ExprMem):
-            u = e.args[1].arg; v = e.args[0]
-        elif isinstance(e.args[0], expression.ExprMem):
-            NON_REGRESSION_FOUND
-            u = e.args[0].arg; v = e.args[1]
-        elif isinstance(e.args[1], expression.ExprOp) and e.args[1].op == '-' and len(e.args[1].args) == 1 and isinstance(e.args[1].args[0], expression.ExprMem):
-            u = e.args[1].args[0].arg; v = e.args[0]
-        else:
-            log.error("Unknown formula %s", e)
-            NON_REGRESSION_FOUND
-            return None
-        if not (isinstance(u, expression.ExprOp)
-                and u.op == '+'
-                and len(u.args) == 3
-                and isinstance(u.args[2], expression.ExprOp)):
-            # Non-regression: arith1.o from pari-2.5.5 / gcc 3.4.6 PIC
-            NON_REGRESSION_FOUND
+        label_name, index, pic_data, pic_data_dup = extract_base_index(e)
+        if label_name == None:
             log.error("Unknown base %s", e)
             return None
-        label_name, pic_data = extract_label_pic(u.args[0:2], '@GOTOFF')
-        if not (v == pic_data):
-            log.debug("INCONSISTENT [%s] [%s]", v, pic_data)
+        if pic_data != pic_data_dup:
+            log.error("Inconsistent PIC %s != %s", pic_data, pic_data_dup)
             return None
+        if not check_pic_data(pic_data):
+            log.error("PIC OFFSET [%s] LABEL %s", pic_data, label_name)
+            # Don't abort, for now, improvement of pic_tracking needed
         return expression.ExprMem(expression.ExprOp('+',
-            u.args[2], # index_in_table
+            index,
             expression.ExprId(pool.find_symbol(name = label_name))))
+
+def extract_base_index(e):
+    # PIC_OFFSET+M32[PIC_OFFSET+toto@GOTOFF+INDEX_IN_TABLE]
+    #     e[0]  +   e[1][0]    +  e[1][1] +  e[1][2]
+    if (isinstance(e.args[1], expression.ExprMem) and
+        isinstance(e.args[1].arg, expression.ExprOp) and
+        e.args[1].arg.op == '+' and
+        len(e.args[1].arg.args) == 3 and
+        isinstance(e.args[1].arg.args[2], expression.ExprOp)
+        ):
+        u = e.args[1].arg.args
+        label_name, pic_data = extract_label_pic(u[0:2], '@GOTOFF')
+        return label_name, u[2], pic_data, e.args[0]
+    # M32[toto@GOTOFF+PIC_OFFSET+INDEX_IN_TABLE]+PIC_OFFSET
+    #     e[0][0]    +  e[0][1] +  e[0][2]      +  e[1]
+    if (isinstance(e.args[0], expression.ExprMem) and
+        isinstance(e.args[0].arg, expression.ExprOp) and
+        e.args[0].arg.op == '+' and
+        len(e.args[0].arg.args) == 3 and
+        isinstance(e.args[0].arg.args[2], expression.ExprOp)
+        ):
+        u = e.args[0].arg.args
+        label_name, pic_data = extract_label_pic(u[0:2], '@GOTOFF')
+        return label_name, u[2], pic_data, e.args[1]
+    # -M32[(INDEX_IN_TABLE+PIC_OFFSET)+toto@GOTOFF]+PIC_OFFSET
+    #     e[1][0][0]    +  e[1][0][1] +  e[1][0][2]      +  e[0]
+    if (isinstance(e.args[1], expression.ExprOp) and
+        e.args[1].op == '-' and
+        len(e.args[1].args) == 1 and
+        isinstance(e.args[1].args[0], expression.ExprMem) and
+        isinstance(e.args[1].args[0].arg, expression.ExprOp) and
+        e.args[1].args[0].arg.op == '+' and
+        len(e.args[1].args[0].arg.args) == 3 and
+        isinstance(e.args[1].args[0].arg.args[2], expression.ExprOp)
+        ):
+        u = e.args[1].args[0].arg.args
+        label_name, pic_data = extract_label_pic(u[0:2], '@GOTOFF')
+        return label_name, u[2], pic_data, e.args[0]
+    return None, None, None, None
 
 def extract_label_pic(a, suffix):
     for idx in range(len(a)):
@@ -1118,9 +1144,6 @@ def extract_label_pic(a, suffix):
             label_name = a[idx].name.name[:-len(suffix)]
             if len(a) == 2: pic_data = a[1-idx]
             else: pic_data = expression.ExprOp('+', *tuple(a[:idx]+a[idx+1:]))
-            if not check_pic_data(pic_data):
-                log.debug("PIC OFFSET [%s] LABEL %s", pic_data, label_name)
-                pic_data = None
             return label_name, pic_data
     return None, None
 

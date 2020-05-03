@@ -121,8 +121,8 @@ class Constant(Line):
             # Used for switch table for x86_64 gcc 4.8 PIC
             reloc[1].update({'label_dif': label_dif})
         from plasmasm.get_symbols import analyze_reloc
-        label, label_dif, offset, size = analyze_reloc(self.symbols,
-            reloc, value, self.offset, pos, 0)
+        label, label_dif, offset, size = analyze_reloc(self,
+            reloc, value, pos, 0)
         if label_dif == '.':
             label_dif = self.symbols.find_symbol(address=-offset,section=self.section)
             name = "%s+[.-%s]"%(label,label_dif)

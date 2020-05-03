@@ -270,8 +270,8 @@ class Instruction(Line):
         else:
             raise ValueError("Arg of type %s"%self.amoco.operands[argpos].__class__)
         from plasmasm.get_symbols import analyze_reloc
-        label, label_dif, offset, size = analyze_reloc(self.symbols,
-            reloc, offset, self.offset, pos, self.bytelen)
+        label, label_dif, offset, size = analyze_reloc(self,
+            reloc, offset, pos, self.bytelen)
         ext_label = expressions.lab(label, size=32)
         if   size == 22: ext_label = env.slc(ext_label,10,22)
         elif size == 10: ext_label = env.slc(ext_label,0,10).zeroextend(32)

@@ -552,8 +552,8 @@ class Instruction(Line, API_AMOCO):
             raise ValueError("Arg of type %s"%self.amoco.operands[argpos].__class__)
         if address is None:
             from plasmasm.get_symbols import analyze_reloc
-            label, label_dif, offset, size = analyze_reloc(self.symbols,
-                reloc, offset, self.offset, pos, self.bytelen)
+            label, label_dif, offset, size = analyze_reloc(self,
+                reloc, offset, pos, self.bytelen)
             r_type, data = reloc
             from elfesteem import elf
             if r_type[0] == 'ELF' and \
