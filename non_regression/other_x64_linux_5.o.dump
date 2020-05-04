@@ -1,0 +1,51 @@
+
+non_regression/other_x64_linux_5.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+00000000 <toto>:
+   0:	55             	pushq     %rbp
+   1:	48 89 e5       	movq      %rsp, %rbp
+   4:	48 89 7d f8    	movq      %rdi, -8(%rbp)
+   8:	48 8b 45 f8    	movq      -8(%rbp), %rax
+   c:	8b 00          	movl      (%rax), %eax
+   e:	8d 50 01       	leal      1(%rax), %edx
+  11:	48 8b 45 f8    	movq      -8(%rbp), %rax
+  15:	89 10          	movl      %edx, (%rax)
+  17:	5d             	popq      %rbp
+  18:	c3             	ret       
+
+00000019 <tata>:
+  19:	55             	pushq     %rbp
+  1a:	48 89 e5       	movq      %rsp, %rbp
+  1d:	48 89 7d f8    	movq      %rdi, -8(%rbp)
+  21:	48 8b 45 f8    	movq      -8(%rbp), %rax
+  25:	8b 00          	movl      (%rax), %eax
+  27:	8d 50 ff       	leal      -1(%rax), %edx
+  2a:	48 8b 45 f8    	movq      -8(%rbp), %rax
+  2e:	89 10          	movl      %edx, (%rax)
+  30:	5d             	popq      %rbp
+  31:	c3             	ret       
+
+00000032 <main>:
+  32:	55             	pushq     %rbp
+  33:	48 89 e5       	movq      %rsp, %rbp
+  36:	48 83 ec 30    	subq      $48, %rsp
+  3a:	89 7d dc       	movl      %edi, -36(%rbp)
+  3d:	48 89 75 d0    	movq      %rsi, -48(%rbp)
+  41:	c7 45 ec 00 00 00 00	movl      $0, -20(%rbp)
+  48:	48 8b 05 00 00 00 00	movq      toto@GOTPCREL(%rip), %rax
+  4f:	48 89 45 f0    	movq      %rax, -16(%rbp)
+  53:	48 8b 05 00 00 00 00	movq      tata@GOTPCREL(%rip), %rax
+  5a:	48 89 45 f8    	movq      %rax, -8(%rbp)
+  5e:	8b 45 dc       	movl      -36(%rbp), %eax
+  61:	83 e8 01       	subl      $1, %eax
+  64:	48 98          	cltq      
+  66:	48 8b 44 c5 f0 	movq      -16(%rbp,%rax,8), %rax
+  6b:	48 8d 55 ec    	leaq      -20(%rbp), %rdx
+  6f:	48 89 d7       	movq      %rdx, %rdi
+  72:	ff d0          	call      *%rax
+  74:	8b 45 ec       	movl      -20(%rbp), %eax
+  77:	c9             	leave     
+  78:	c3             	ret       

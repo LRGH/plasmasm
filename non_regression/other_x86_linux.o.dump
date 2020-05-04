@@ -1,0 +1,79 @@
+
+non_regression/other_x86_linux.o:     file format elf32-i386
+
+
+Disassembly of section .data:
+
+00000000 <init>:
+   0:	.long	1
+   4:	.long	value
+   8:	.long	func1
+   c:	.long	func2
+  10:	.zero	52
+Disassembly of section .text:
+
+00000000 <func1>:
+   0:	f3 c3                	rep; ret    
+   2:	.p2align 4
+
+00000010 <func2>:
+  10:	f3 c3                	rep; ret    
+  12:	.p2align 4
+
+00000020 <toto>:
+  20:	83 ec 08             	sub    $0x8,%esp
+  23:	b8 44 00 00 00       	mov    $0x44,%eax
+  28:	89 7c 24 04          	mov    %edi,0x4(%esp)
+  2c:	8b 7c 24 0c          	mov    0xc(%esp),%edi
+  30:	89 34 24             	mov    %esi,(%esp)
+  33:	be 00 00 00 00       	mov    $init,%esi
+  38:	f7 c7 01 00 00 00    	test   $0x1,%edi
+  3e:	75 38                	jne    .L00000078
+  40:	f7 c7 02 00 00 00    	test   $0x2,%edi
+  46:	75 50                	jne    .L00000098
+  48:	89 c1                	mov    %eax,%ecx
+  4a:	31 d2                	xor    %edx,%edx
+  4c:	c1 e9 02             	shr    $0x2,%ecx
+  4f:	a8 02                	test   $0x2,%al
+  51:	f3 a5                	rep movsl  
+  53:	74 0b                	je     .L00000060
+  55:	0f b7 16             	movzwl (%esi),%edx
+  58:	66 89 17             	mov    %dx,(%edi)
+  5b:	ba 02 00 00 00       	mov    $0x2,%edx
+  60:	a8 01                	test   $0x1,%al
+  62:	74 07                	je     .L0000006B
+  64:	0f b6 04 16          	movzbl (%esi,%edx),%eax
+  68:	88 04 17             	mov    %al,(%edi,%edx)
+  6b:	8b 34 24             	mov    (%esp),%esi
+  6e:	8b 7c 24 04          	mov    0x4(%esp),%edi
+  72:	83 c4 08             	add    $0x8,%esp
+  75:	c3                   	ret    
+  76:	.p2align 3
+  78:	0f b6 05 00 00 00 00 	movzbl init,%eax
+  7f:	be 01 00 00 00       	mov    $init+1,%esi
+  84:	88 07                	mov    %al,(%edi)
+  86:	83 c7 01             	add    $0x1,%edi
+  89:	b8 43 00 00 00       	mov    $0x43,%eax
+  8e:	f7 c7 02 00 00 00    	test   $0x2,%edi
+  94:	74 b2                	je     .L00000048
+  96:	.p2align 3
+  98:	0f b7 16             	movzwl (%esi),%edx
+  9b:	83 e8 02             	sub    $0x2,%eax
+  9e:	83 c6 02             	add    $0x2,%esi
+  a1:	66 89 17             	mov    %dx,(%edi)
+  a4:	83 c7 02             	add    $0x2,%edi
+  a7:	eb 9f                	jmp    .L00000048
+Disassembly of section .text.startup:
+
+00000000 <main>:
+   0:	83 ec 04             	sub    $0x4,%esp
+   3:	8b 44 24 0c          	mov    0xc(%esp),%eax
+   7:	8b 00                	mov    (%eax),%eax
+   9:	89 04 24             	mov    %eax,(%esp)
+   c:	e8 fc ff ff ff       	call   toto
+  11:	83 c4 04             	add    $0x4,%esp
+  14:	c3                   	ret    
+Disassembly of section COM:
+
+0000000f <value>:
+   f:	.zero	68

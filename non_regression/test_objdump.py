@@ -12,7 +12,17 @@ sys.path.append(os.path.dirname(basedir)+'/elfesteem')
 
 all_tests = [
     ("basic_x86_linux.o",       "dump",{"cpu":"/MIASM"}),
+    ("other_x86_linux.o",       "dump",{"cpu":"/MIASM"}),
+    ("other_x86_linux_2.o",     "dump",{"cpu":"/MIASM"}),
+    ("other_x64_linux_5.o",     "dump",{}),
 ]
+
+if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
+    # Cannot use amoco, no OrderedDict
+    all_tests = [ (f,s,k) for (f,s,k) in all_tests
+                  if  not '_x64_' in f
+                  and not '_sparc' in f
+                  and k.get("cpu",None) != "/AMOCO" ]
 
 def test_io(file, suffix, kargs):
     fd = open("non_regression/"+file,"rb")
