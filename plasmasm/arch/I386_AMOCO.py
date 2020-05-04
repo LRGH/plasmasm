@@ -554,7 +554,7 @@ class Instruction(Line, API_AMOCO):
         o = cpu_amoco.disassemble(self.amoco.bytes)
         patched = self.amoco.bytes[:pos] + b + self.amoco.bytes[pos+1:]
         p = cpu_amoco.disassemble(patched)
-        if o.mnemonic != p.mnemonic:
+        if o == None or p == None or o.mnemonic != p.mnemonic:
             log.error("Relocation changes instruction! %s => %s", o, p)
             log.error("   at offset %r with reloc %r", pos, reloc)
             log.error("   for '%s' at %s, address=%s",
@@ -564,7 +564,13 @@ class Instruction(Line, API_AMOCO):
         # and test if it is non-zero
         argpos = None
         for idx, (oa, na) in enumerate(zip(o.operands, p.operands)):
-            d = na - oa
+            try:
+                d = na - oa
+            except ValueError:
+                log.error("Invalid relocation effect")
+                log.error("    incompatible sizes %s %s", na, oa)
+                log.error("    reloc %r for '%s'", reloc, self)
+                return
             if d._is_cst and int(d) == 0:
                 # Not changed
                 continue
@@ -600,7 +606,8 @@ class Instruction(Line, API_AMOCO):
                 offset = self.amoco.operands[argpos].a.disp
                 self.amoco.operands[argpos].a.disp -= offset
         else:
-            raise ValueError("Arg of type %s"%self.amoco.operands[argpos].__class__)
+            log.error("Arg of type %s", self.amoco.operands[argpos].__class__)
+            return
         if address is None:
             from plasmasm.get_symbols import analyze_reloc
             label, label_dif, offset, size = analyze_reloc(self,

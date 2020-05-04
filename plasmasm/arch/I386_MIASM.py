@@ -562,7 +562,7 @@ class Instruction(Line, API_MIASM):
         o = x86_mn.dis(self.miasm.b, {})
         patched = self.miasm.b[:pos] + b + self.miasm.b[pos+1:]
         p = x86_mn.dis(patched, {})
-        if o.m.name != p.m.name:
+        if o == None or p == None or o.m.name != p.m.name:
             log.error("Relocation changes instruction! %s => %s", o, p)
             log.error("   at offset %r with reloc %r", pos, reloc)
             log.error("   for '%s' at %s, address=%s",
@@ -577,6 +577,9 @@ class Instruction(Line, API_MIASM):
         argpos = argpos.index(True)
         # Step 2: modify the argument by using the reloc data
         a = self.miasm.arg[argpos]
+        if not x86_afs.imm in a:
+            log.error("No 'imm' in %s", a)
+            return
         address = switch_detection_gcc463m32opt(self)
         if address is None:
             address = switch_detection_gcc346m32opt(self)
