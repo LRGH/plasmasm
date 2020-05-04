@@ -67,7 +67,11 @@ def set_dead_bloc(label, marked_blocs):
     else:
         marked_blocs[label] = 1
     # Don't compute dead registers for data blocs or empty blocs
-    if len(label.lines) == 0 or getattr(label.lines[-1], 'flow', False) == False:
+    if len(label.lines) == 0:
+        return
+    if getattr(label.lines[-1], 'flow', False) == False:
+        return
+    if getattr(label.lines[0], 'flow', False) == False:
         return
     # If the flow can continue to only one other line, then we compute
     # its dead registers

@@ -55,6 +55,8 @@ all_tests = [
     ("other_x64_linux_17.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
     ("other_x64_linux_18.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
     ("switch_x64_linux_3.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
+    # For coverage of staticasm/dead_registers
+    ("switch_x86_linux_4.s",    "reprD", {"rw":True,"pic":True,"dead":True}),
 ]
 
 if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
