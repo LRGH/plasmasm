@@ -29,6 +29,10 @@ all_tests = [
     ("switch_x86_linux_3.o",     "asm", {"cpu":"/AMOCO"}),
     #"switch_x86_linux_3.out",   "asm", {"cpu":"/MIASM"}), # FAIL
     #"switch_x86_linux_3.out",   "asm", {"cpu":"/AMOCO"}), # FAIL
+    ("switch_x86_linux_4.s",     "asm", {"cpu":"/MIASM"}),
+    ("switch_x86_linux_4.s",     "asm", {"cpu":"/AMOCO"}),
+    ("switch_x86_linux_4.o",     "asm", {"cpu":"/MIASM"}),
+    ("switch_x86_linux_4.o",     "asm", {"cpu":"/AMOCO"}),
     ("switch_x86_macosx.s",      "asm", {"cpu":"/MIASM"}),
     ("switch_x86_macosx.s",      "asm", {"cpu":"/AMOCO"}),
     ("switch_x86_macosx.o",      "asm", {"cpu":"/MIASM"}),

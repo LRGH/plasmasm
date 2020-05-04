@@ -227,8 +227,7 @@ class StubNone(Stub):
 from plasmasm.symbols import Line
 from plasmasm.symbols import section_type
 from plasmasm.compilers import \
-    switch_detection_clang32, \
-    switch_detection_gcc411, \
+    switch_detection_x86_update, \
     switch_detection_gcc463m32opt, \
     switch_detection_gcc346m32opt, \
     gcc_label_for_inlined_memcpy
@@ -499,12 +498,7 @@ class Instruction(Line, API_MIASM):
     def create_label_imm(self):
         ''' Replace immediate values that may be labels '''
         from plasmasm.parse_bin import label_for_address
-        if switch_detection_clang32(self):
-            # Specific mandatory hook to detect a label difference
-            # and to compute the PIC label, even when PIC data computation
-            # will not be made
-            return
-        if switch_detection_gcc411(self):
+        if switch_detection_x86_update(self):
             return
         address = switch_detection_gcc463m32opt(self)
         if address is not None:

@@ -328,7 +328,11 @@ def x86_long_nop(symbols):
             except AttributeError:
                 pass
 
-# Hack for gcc 4.6.3, 32-bit
+# Hack for gcc 4.6.3, 32-bit - version running in my VM
+# Note that there are two different gcc compilers with same version
+# number 4.6.3-1ubuntu5. The one running in Travis CI and Ubuntu 12.04.5
+# generates switch tables in .text and _GLOBAL_OFFSET_TABLE_+[.-.L18]
+# and another one generating switch table in .rodata and .L18@GOTOFF
 def switch_detection_gcc463m32opt(instr):
     if instr.opname != 'movsx':
         return None
@@ -345,9 +349,7 @@ def switch_detection_gcc463m32opt(instr):
         return None
     bloc = instr.symbols.symbols_byaddress[pos][0]
     bloc = instr.symbols.previous(bloc)
-    if bloc is None:
-        return None
-    if len(bloc.lines) < 3:
+    if len(getattr(bloc, 'lines', [])) < 3:
         return None
     # Check that the last lines are of type:
     # lea       ecx, [edx-37]
@@ -363,6 +365,56 @@ def switch_detection_gcc463m32opt(instr):
         return None
     log.debug("SWITCH GCC 4.6.3 %r", bloc)
     return (value - bloc.lines[-3].api_get_imm(1))%(one<<32)
+
+# Switch detection that updates the switch table
+def switch_detection_x86_update(instr):
+    if switch_detection_clang32(instr):
+        return True
+    if switch_detection_gcc411(instr):
+        return True
+    if switch_detection_gcc463m32opt_travis(instr):
+        return True
+    return False
+
+# Hack for gcc 4.6.3, 32-bit - version running in Travis CI
+def switch_detection_gcc463m32opt_travis(instr):
+    # typically
+    #   movl    %ebx, %ecx
+    #   subl    .L24@GOTOFF(%ebx,%eax,4), %ecx
+    #   jmp     *%ecx
+    if instr.symbols.meta.get('compiler', None) != 'gcc':
+        return False
+    if instr.opname != 'jmp':
+        return False
+    if instr.api_get_label(0) != (None, None):
+        return False
+    bloc = instr.get_bloc()
+    if len(getattr(bloc, 'lines', [])) < 2:
+        return False
+    # Check the previous lines
+    jmp_reg = instr.api_arg_txt(0)
+    # line -1: subl TABLE(%sub_reg,%add_reg,4), %jmp_reg
+    if 'sub' != bloc.lines[-1].opname:
+        return False
+    if jmp_reg != bloc.lines[-1].api_arg_txt(0):
+        return False
+    """ TODO: check (%sub_reg,%add_reg,4) """
+    label, label_dif = bloc.lines[-1].api_get_label(1)
+    if label_dif is not None:
+        return False
+    if not label.name.endswith('@GOTOFF'):
+        return False
+    label = instr.symbols.find_symbol(name=label.name[:-7])
+    # line -2: movl %sub_reg, %jmp_reg
+    if 'mov' != bloc.lines[-2].opname:
+        return False
+    if jmp_reg != bloc.lines[-2].api_arg_txt(0):
+        return False
+    sub_reg = bloc.lines[-2].api_arg_txt(1)
+    # switch table size is unknown
+    log.debug("SWITCH GCC 4.6.3-travis %s", label)
+    label.switch_table = ('.', 4, None)
+    return False
 
 # Hack for gcc 4.1.1, 32-bit ; PIC, not optimized
 def switch_detection_gcc411(instr):
@@ -383,8 +435,6 @@ def switch_detection_gcc411(instr):
     if instr.api_get_label(0) != (None, None):
         return False
     bloc = instr.get_bloc()
-    if bloc is None:
-        NON_REGRESSION_FOUND; return False
     if len(getattr(bloc, 'lines', [])) < 6:
         return False
     # Check the previous lines
@@ -393,45 +443,45 @@ def switch_detection_gcc411(instr):
     if 'mov' != bloc.lines[-1].opname:
         return False
     if jmp_reg != bloc.lines[-1].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     sub_reg = bloc.lines[-1].api_arg_txt(1)
     # line -2: subl %jmp_reg, %sub_reg
     if 'sub' != bloc.lines[-2].opname:
         return False
     if sub_reg != bloc.lines[-2].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     if jmp_reg != bloc.lines[-2].api_arg_txt(1):
-        NON_REGRESSION_FOUND; return False
+        return False
     # line -3: movl %add_reg, %sub_reg
     if 'mov' != bloc.lines[-3].opname:
-        NON_REGRESSION_FOUND; return False
+        return False
     if sub_reg != bloc.lines[-3].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     add_reg = bloc.lines[-3].api_arg_txt(1)
     # line -4: movl TABLE(%jmp_reg,%add_reg), %jmp_reg
     if 'mov' != bloc.lines[-4].opname:
-        NON_REGRESSION_FOUND; return False
+        return False
     if jmp_reg != bloc.lines[-4].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     """ TODO: check (%jmp_reg,%add_reg) """
     label, label_dif = bloc.lines[-4].api_get_label(1)
     if label_dif is not None:
-        NON_REGRESSION_FOUND; return False
+        return False
     if not label.name.endswith('@GOTOFF'):
-        NON_REGRESSION_FOUND; return False
+        return False
     label = instr.symbols.find_symbol(name=label.name[:-7])
     # line -5: sall $2, %jmp_reg
     if 'sal' != bloc.lines[-5].opname:
-        NON_REGRESSION_FOUND; return False
+        return False
     if jmp_reg != bloc.lines[-5].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     if '2' != bloc.lines[-5].api_arg_txt(1):
-        NON_REGRESSION_FOUND; return False
+        return False
     # line -6: movl %stack, %jmp_reg
     if 'mov' != bloc.lines[-6].opname:
-        NON_REGRESSION_FOUND; return False
+        return False
     if jmp_reg != bloc.lines[-6].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     stack = bloc.lines[-6].api_arg_txt(1)
     # When not optimized, it is always the previous bloc that makes the
     # comparison to the switch table size
@@ -498,7 +548,7 @@ def get_lea_label(line):
         or not op.a.disp._is_lab \
         or not op.a.base._is_reg \
         or not op.a.base.ref == 'rip':
-        NON_REGRESSION_FOUND; return False
+        return False
     return op.a.disp.ref
 
 # amoco-only; later we may want to use a more generic API
@@ -540,43 +590,43 @@ def switch_detection_gcc64picnotopt(instr):
     if 'lea' != bloc.lines[-2].opname:
         return False
     if jmp_reg != bloc.lines[-2].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     label = get_lea_label(bloc.lines[-2])
     # line -3: movslq %jmp_reg32, %add_reg
     if 'movsxd' != bloc.lines[-3].opname:
-        NON_REGRESSION_FOUND; return False
+        return False
     if add_reg != bloc.lines[-3].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     jmp_reg32 = bloc.lines[-3].api_arg_txt(1)
     # line -4: movl (%add_reg, %jmp_reg), %jmp_reg32
     if 'mov' != bloc.lines[-4].opname:
-        NON_REGRESSION_FOUND; return False
+        return False
     if jmp_reg32 != bloc.lines[-4].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     # line -5: leaq TABLE(%rip), %jmp_reg
     if 'lea' != bloc.lines[-5].opname:
-        NON_REGRESSION_FOUND; return False
+        return False
     if jmp_reg != bloc.lines[-5].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     op = bloc.lines[-5].amoco.operands[1]
     if not op._is_mem \
         or not op.size == 64 \
         or not op.a.disp._is_lab \
         or not op.a.base._is_reg \
         or not op.a.base.ref == 'rip':
-        NON_REGRESSION_FOUND; return False
+        return False
     if label != op.a.disp.ref:
-        NON_REGRESSION_FOUND; return False
+        return False
     # line -6: leaq (%jmp_reg,4), %add_reg
     if 'lea' != bloc.lines[-6].opname:
-        NON_REGRESSION_FOUND; return False
+        return False
     if add_reg != bloc.lines[-6].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     # line -7: movl %jmp_reg32, %jmp_reg32
     if 'mov' != bloc.lines[-7].opname:
-        NON_REGRESSION_FOUND; return False
+        return False
     if jmp_reg32 != bloc.lines[-7].api_arg_txt(0):
-        NON_REGRESSION_FOUND; return False
+        return False
     # When not optimized, it is always the previous bloc that makes the
     # comparison to the switch table size
     tbl_size = get_tbl_size(bloc.symbols.previous(bloc))
@@ -661,7 +711,7 @@ def switch_detection_gcc64picopt_jmp(instr):
     if 'movsxd' != bloc.lines[-2].opname:
         return False
     if not bloc.lines[-2].api_arg_txt(0) in (jmp_reg, add_reg):
-        NON_REGRESSION_FOUND; return False
+        return False
     op = bloc.lines[-2].amoco.operands[1]
     if not op._is_mem \
         or not op.size == 32 \
@@ -671,7 +721,7 @@ def switch_detection_gcc64picopt_jmp(instr):
         or not op.a.base.r._is_eqn \
         or not op.a.base.r.op.symbol == '*' \
         or not op.a.base.r.l._is_reg:
-        NON_REGRESSION_FOUND; return False
+        return False
     tbl_reg = op.a.base.l.ref
     idx_reg = op.a.base.r.l.ref
     # Find the size of the switch table
