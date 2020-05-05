@@ -469,7 +469,6 @@ def parse_asm_file(symbols, txt):
                 continue
             if directive == 'symver':
                 # Syntax: weakref symbol, alias
-                NON_REGRESSION_FOUND
                 arguments = re.split(r",\W*", rest)
                 if len(arguments) == 2:
                     dst = symbols.find_symbol(name = arguments[1])
@@ -675,13 +674,16 @@ def guess_asm_cpu(symbols):
         cpu_base.update(set([_[:_.find('-')] for _ in cpu if '-' in _]))
         for op in operands:
             if op in ('%g0', '%g1', '%o0'):
+                NON_REGRESSION_FOUND
                 cpu_base.intersection_update(set(['SPARC']))
             for reg in ['rax', 'rbx', 'rcx', 'rdx',
                         'rbp', 'rsp', 'rsi', 'rdi', 'rip'
                        ] + [ 'r%d'%_ for _ in range(8,16) ]:
                 if op in (reg, '%'+reg, '(%'+reg+')'):
+                    NON_REGRESSION_FOUND
                     cpu_base.intersection_update(set(['X64']))
                 if '%'+reg in op or '['+reg in op:
+                    NON_REGRESSION_FOUND
                     cpu_base.intersection_update(set(['X64']))
             if op in ('eax', '%eax'):
                 cpu_base.intersection_update(set(['X64', 'I386']))
@@ -692,6 +694,7 @@ def guess_asm_cpu(symbols):
             # was the target architecture, e.g. obfuscation will be different
             if '.rodata.str1.8' in symbols.sections.asm_name:
                 # 32-bit uses .rodata.str1.4
+                NON_REGRESSION_FOUND
                 cpu_base = set(['X64'])
             else:
                 cpu_base = set(['I386'])
@@ -708,6 +711,7 @@ def guess_asm_cpu(symbols):
             if not 'format' in symbols.get_meta():
                 return 'I386-att'
             else:
+                NON_REGRESSION_FOUND
                 return 'I386-intel'
         log.warning("Guessing cpu: %s are matching", cpu)
         return cpu[0]
