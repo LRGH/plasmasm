@@ -315,6 +315,7 @@ def mk_asm_file(symbols, output_filename=None):
         output += '\t.section\t.note.GNU-stack,"",@progbits\n'
     if meta.get('compiler') == 'clang':
         output += '\n.subsections_via_symbols\n'
+    if output_filename is not None: output.file.close()
     return output
 
 def mk_objdump(symbols, filename=None):
