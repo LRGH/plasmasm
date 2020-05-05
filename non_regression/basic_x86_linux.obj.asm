@@ -1,7 +1,6 @@
 	.file	"a00.c"
 	.text
-	.globl	_main
-	.type	_main, @function
+	.def	_main;	.scl	2;	.type	32;	.endef
 _main:
 	pushl     %ebp
 	movl      %esp, %ebp
@@ -24,5 +23,4 @@ L0000002A:
 	movl      -4(%ebp), %eax
 	leave     
 	ret       
-	.size	_main, .-_main
 # ----------------------

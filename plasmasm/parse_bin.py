@@ -430,6 +430,7 @@ def add_symbols(symbols):
         symbols.set_meta(container = 'PE')
     elif hasattr(e, 'isPE'):
         symbols.set_meta(container = 'COFF')
+        symbols.set_meta(compiler = 'mingw')
     # Initialize compiler-dependent stuff
     from plasmasm import compilers
     symbols.cds = compilers.cds(symbols)
