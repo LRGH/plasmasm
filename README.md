@@ -126,9 +126,21 @@ make test CC='compile.py -parse_asm gcc'
 make test CC='compile.py -parse_obj gcc'
 ```
 This can also be used to make automatic changes. A simple example is
-included:
+included in `tools.step2_change`, which can be used in a compilation chain:
 ```
 make test CC='compile.py -change gcc'
+```
+Or interactively with python:
+```
+>>> from plasmasm.analyze_file import File
+>>> from tools.step2_change import change_ret
+>>> f = './non_regression/sh_x86_linux_ubuntu1204'
+>>> pool = File().from_filename(f, rw=True, dead=True)
+>>> pool.arch.set_asm_format('att_syntax')
+>>> change_ret(pool)
+>>> pool.to_asm('/tmp/a.s')
+gcc -o /tmp/sh /tmp/a.s
+/tmp/sh -c 'for i in a b c; do echo x$i; done'
 ```
 
 ## .plasmasm helper files
