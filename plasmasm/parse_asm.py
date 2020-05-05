@@ -554,7 +554,7 @@ def parse_asm_lines(symbols):
             line = label.lines.pop(0)
             if isinstance(line, Instruction):
                 txt = str(line)
-                if txt in [ 'rep', ' rep', 'repnz', 'repz', 'lock' ]:
+                if txt in [ 'rep', ' rep', 'repnz', 'repz', 'repe', 'lock' ]:
                     # Special case: gcc can output lines with only 'rep'
                     # then we need to merge it with the next line
                     txt = '%s %s' % (txt, label.lines[0])
