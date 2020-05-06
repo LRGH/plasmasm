@@ -17,7 +17,7 @@ L00401295:
 	call      ___main
 L0040129A:
 	movsbl    -9(%ebp), %edx
-	movswl    LBSS00404008, %eax
+	movswl    s.0, %eax
 	leal      (%edx,%eax), %eax
 	addl      -16(%ebp), %eax
 	cltd      
@@ -43,6 +43,7 @@ L0040129A:
 	ret       
 # ----------------------
 	.bss
-LBSS00404008:
+	.def	s.0;	.scl	3;	.endef
+s.0:
 	.zero	16
 # ----------------------

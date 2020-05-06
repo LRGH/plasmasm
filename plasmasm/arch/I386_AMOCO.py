@@ -610,9 +610,16 @@ class Instruction(Line, API_AMOCO):
             # Special case: offset to a switch table
             r_type, data = reloc
             # Some coherency checks
-            from elfesteem import elf
-            if r_type != ('ELF', elf.EM_386, elf.R_386_32): NEVER
-            if data['section'] != '.rodata': NEVER
+            from elfesteem import elf, pe
+            if   r_type == ('ELF', elf.EM_386, elf.R_386_32):
+                assert data['section'] == '.rodata'
+            elif r_type == ('COFF', pe.IMAGE_FILE_MACHINE_I386,
+                                    pe.IMAGE_REL_I386_DIR32):
+                assert data['section'] == '.rdata'
+            else:
+                log.error("Unknown reloc type: %s", reloc)
+                log.error("for: %s", self)
+                return
             label = self.symbols.find_symbol(
                 section=data['section'], address=address)
             label_dif = None

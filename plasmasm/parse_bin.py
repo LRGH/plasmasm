@@ -437,9 +437,11 @@ def add_symbols(symbols):
     # Create labels for each symbol
     from plasmasm.get_symbols import get_symbols, translate_symbol, deduplicate_symbols
     s_list, _ = get_symbols(e)
-    log.debug('Symbols %r', s_list)
+    for i, s in enumerate(s_list):
+        log.debug("Symbol %3d %r", i, s)
     s_list = [ translate_symbol(_, e) for _ in s_list ]
-    log.debug('Symbols, translated %r', s_list)
+    for i, s in enumerate(s_list):
+        log.debug("Translated %3d %r", i, s)
     s_list = deduplicate_symbols(s_list)
     log.debug('Symbols, filtered %r', s_list)
     seen = {}
@@ -1879,8 +1881,7 @@ def parse_bin_file(symbols):
                     log.warning("... %s (TODO) '%s'", msg, retval)
         break
     merge_data_blocs(symbols)
-    if symbols.arch.CPU in ['I386', 'X64'] and \
-        symbols.get_meta().get('compiler', None) in [ 'gcc', 'clang' ]:
+    if symbols.arch.CPU in ['I386', 'X64']:
         symbols.cds.match_x86_long_nop()
     symbols.cds.compiler_dependent_stuff()
     delete_useless_longnops(symbols)

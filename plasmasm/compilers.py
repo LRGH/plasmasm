@@ -175,6 +175,8 @@ x86_long_nop_bytes = [
     '0f1f440000',
     '0f1f4000',
     '0f1f00',
+    # mingw uses some other instructions
+    '8d3f',
     ]
 
 def x86_long_nop(symbols):
@@ -256,6 +258,7 @@ def x86_long_nop(symbols):
         return
     # We have long nops: -O2 has been used, more specifically, one of
     # -falign-functions, -falign-jumps, -falign-loops, -falign-labels
+    compiler = symbols.get_meta().get('compiler', None)
     data_longnop = False
     for label, pos, long_nop in sorted(
             labels_with_long_nop.union(labels_with_nop),
@@ -276,7 +279,7 @@ def x86_long_nop(symbols):
                                idx, cnt, binascii.hexlify(data))
         # Replace the line with a p2align directive
         offset = label.lines[idx].offset
-        if symbols.get_meta().get('compiler', None) == 'gcc':
+        if compiler in ('gcc', 'mingw'):
             end = offset + len(data)
             if   len(data) >= 7: max_p2 = 4
             else:                max_p2 = 3
@@ -287,8 +290,11 @@ def x86_long_nop(symbols):
                 # Don't convert this nop to p2align
                 continue
             align = ".p2align %s" % lo_zero_bits
-        elif symbols.get_meta().get('compiler', None) == 'clang':
+        elif compiler == 'clang':
             align = ".align 4, 0x90"
+        else:
+            # unknown compiler
+            continue
         for _ in range(cnt):
             del label.lines[idx+1]
         label.lines[idx] = P2Align(symbols, align,

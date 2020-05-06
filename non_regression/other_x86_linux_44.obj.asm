@@ -1,7 +1,6 @@
 	.file	"example.c"
 	.text
-	.globl	_test_compress
-	.type	_test_compress, @function
+	.def	_test_compress;	.scl	2;	.type	32;	.endef
 _test_compress:
 	pushl     %ebp
 	movl      %esp, %ebp
@@ -86,10 +85,8 @@ L000000D4:
 	call      _fwrite
 L000000FF:
 	jmp       L000000B9
-	.size	_test_compress, .-_test_compress
 # ----------------------
-	.globl	_test_gzio
-	.type	_test_gzio, @function
+	.def	_test_gzio;	.scl	2;	.type	32;	.endef
 _test_gzio:
 	pushl     %ebp
 	movl      %esp, %ebp
@@ -366,10 +363,8 @@ L00000449:
 	call      _fwrite
 L00000474:
 	jmp       L00000280
-	.size	_test_gzio, .-_test_gzio
 # ----------------------
-	.globl	_test_deflate
-	.type	_test_deflate, @function
+	.def	_test_deflate;	.scl	2;	.type	32;	.endef
 _test_deflate:
 	pushl     %ebp
 	movl      %esp, %ebp
@@ -403,7 +398,7 @@ L000004E1:
 	movl      $_hello, -88(%ebp)
 	movl      8(%ebp), %edx
 	movl      %edx, -76(%ebp)
-	nop       
+	.p2align 3
 L000004F0:
 	cmpl      %esi, -80(%ebp)
 	je        L00000554
@@ -469,10 +464,8 @@ L00000590:
 	movl      $LC0000016C, %edi
 	movl      %edi, 8(%esp)
 	jmp       L00000527
-	.size	_test_deflate, .-_test_deflate
 # ----------------------
-	.globl	_test_inflate
-	.type	_test_inflate, @function
+	.def	_test_inflate;	.scl	2;	.type	32;	.endef
 _test_inflate:
 	pushl     %ebp
 	movl      $56, %edx
@@ -504,7 +497,7 @@ L00000601:
 	testl     %eax, %eax
 	jne       L000006AE
 L00000609:
-	leal      (%esi), %esi
+	.p2align 4
 L00000610:
 	cmpl      %edi, -68(%ebp)
 	jae       L00000675
@@ -584,10 +577,8 @@ L000006C4:
 	call      _fwrite
 L000006EF:
 	jmp       L00000669
-	.size	_test_inflate, .-_test_inflate
 # ----------------------
-	.globl	_test_large_deflate
-	.type	_test_large_deflate, @function
+	.def	_test_large_deflate;	.scl	2;	.type	32;	.endef
 _test_large_deflate:
 	pushl     %ebp
 	movl      $56, %ecx
@@ -738,10 +729,8 @@ L000008B6:
 	movl      $LC0000016C, %eax
 	movl      %eax, 8(%esp)
 	jmp       L0000082B
-	.size	_test_large_deflate, .-_test_large_deflate
 # ----------------------
-	.globl	_test_large_inflate
-	.type	_test_large_inflate, @function
+	.def	_test_large_inflate;	.scl	2;	.type	32;	.endef
 _test_large_inflate:
 	pushl     %ebp
 	movl      %esp, %ebp
@@ -844,10 +833,8 @@ L000009D4:
 	call      _fprintf
 L000009F2:
 	jmp       L000009AA
-	.size	_test_large_inflate, .-_test_large_inflate
 # ----------------------
-	.globl	_test_flush
-	.type	_test_flush, @function
+	.def	_test_flush;	.scl	2;	.type	32;	.endef
 _test_flush:
 	pushl     %ebp
 	movl      %esp, %ebp
@@ -945,10 +932,8 @@ L00000B0F:
 	movl      $LC0000016C, %eax
 	movl      %eax, 8(%esp)
 	jmp       L00000ADA
-	.size	_test_flush, .-_test_flush
 # ----------------------
-	.globl	_test_sync
-	.type	_test_sync, @function
+	.def	_test_sync;	.scl	2;	.type	32;	.endef
 _test_sync:
 	pushl     %ebp
 	movl      $56, %edx
@@ -1053,10 +1038,8 @@ L00000C52:
 	movl      $LC0000019A, %eax
 	movl      %eax, 8(%esp)
 	jmp       L00000BF4
-	.size	_test_sync, .-_test_sync
 # ----------------------
-	.globl	_test_dict_deflate
-	.type	_test_dict_deflate, @function
+	.def	_test_dict_deflate;	.scl	2;	.type	32;	.endef
 _test_dict_deflate:
 	pushl     %ebp
 	movl      $LC00000152, %ecx
@@ -1156,10 +1139,8 @@ L00000D97:
 	movl      $LC0000016C, %edx
 	movl      %edx, 8(%esp)
 	jmp       L00000D3A
-	.size	_test_dict_deflate, .-_test_dict_deflate
 # ----------------------
-	.globl	_test_dict_inflate
-	.type	_test_dict_inflate, @function
+	.def	_test_dict_inflate;	.scl	2;	.type	32;	.endef
 _test_dict_inflate:
 	pushl     %ebp
 	movl      %esp, %ebp
@@ -1291,10 +1272,8 @@ L00000F1D:
 	call      _fwrite
 L00000F48:
 	jmp       L00000E90
-	.size	_test_dict_inflate, .-_test_dict_inflate
 # ----------------------
-	.globl	_main
-	.type	_main, @function
+	.def	_main;	.scl	2;	.type	32;	.endef
 _main:
 	pushl     %ebp
 	movl      $16, %eax
@@ -1310,7 +1289,7 @@ L00000F6A:
 	movl      $40000, -12(%ebp)
 	call      _zlibVersion
 L00000F76:
-	movl      LD00000010, %ecx
+	movl      myVersion.0, %ecx
 	movzbl    (%ecx), %edx
 	cmpb      %dl, (%eax)
 	jne       L00001156
@@ -1474,15 +1453,26 @@ L0000118D:
 	call      _puts
 L00001199:
 	jmp       L00001181
-	.size	_main, .-_main
 # ----------------------
 	.bss
+	.def	_zfree;	.scl	3;	.endef
 _zfree:
 	.zero	16
 _zalloc:
 	.zero	16
 # ----------------------
+	.data
+	.def	_hello;	.scl	2;	.endef
+_hello:
+	.ascii	"hello,"
+LD00000006:
+	.string	" hello!"
+	.align 4
+myVersion.0:
+	.long	LC00000152
+# ----------------------
 	.section       .rdata
+	.def	_dictionary;	.scl	2;	.endef
 _dictionary:
 	.string	"hello"
 LC00000006:
@@ -1587,13 +1577,4 @@ LC0000033D:
 	.string	"incompatible zlib version\n"
 LC00000358:
 	.string	"out of memory"
-# ----------------------
-	.data
-_hello:
-	.ascii	"hello,"
-LD00000006:
-	.string	" hello!"
-	.align 4
-LD00000010:
-	.long	LC00000152
 # ----------------------

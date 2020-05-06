@@ -1,34 +1,27 @@
 	.file	"a18.c"
 	.text
-	.globl	_eax
-	.type	_eax, @function
+	.def	_eax;	.scl	2;	.type	32;	.endef
 _eax:
 	pushl     %ebp
 	movl      %esp, %ebp
 	popl      %ebp
 	ret       
-	.size	_eax, .-_eax
 # ----------------------
-	.globl	_ebp
-	.type	_ebp, @function
+	.def	_ebp;	.scl	2;	.type	32;	.endef
 _ebp:
 	pushl     %ebp
 	movl      %esp, %ebp
 	popl      %ebp
 	ret       
-	.size	_ebp, .-_ebp
 # ----------------------
-	.globl	_ezx
-	.type	_ezx, @function
+	.def	_ezx;	.scl	2;	.type	32;	.endef
 _ezx:
 	pushl     %ebp
 	movl      %esp, %ebp
 	popl      %ebp
 	ret       
-	.size	_ezx, .-_ezx
 # ----------------------
-	.globl	_main
-	.type	_main, @function
+	.def	_main;	.scl	2;	.type	32;	.endef
 _main:
 	pushl     %ebp
 	movl      %esp, %ebp
@@ -56,5 +49,4 @@ L00000057:
 L0000005C:
 	leave     
 	ret       
-	.size	_main, .-_main
 # ----------------------

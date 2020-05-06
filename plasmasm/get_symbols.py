@@ -183,9 +183,19 @@ def translate_symbol(s, e):
             return {}
         if s['section'] == 0:
             return {}
-        if s['name'] == '__data_start__':
+        if s['name'] in ( '__data_start__',
+            'hname', 'fthunk',
+            'p.0',
+            'dw2_object_mutex.0',
+            'dw2_once.1',
+            'sjl_fc_key.2',
+            'sjl_once.3',
+            'eh_globals_static.4',
+            'eh_globals_key.5',
+            'eh_globals_once.6',
+            ):
             return {}
-        if not s['name'].startswith('_'):
+        if s['name'].startswith('.'):
             return {}
         # ============
         # section, address, align and size
