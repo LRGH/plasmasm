@@ -116,11 +116,11 @@ class API_AMOCO(object):
             then get its value as an 'int' '''
         arg = self.amoco.operands[pos]
         if arg._is_cst:
-            return int(arg)
+            return int(int(arg))
         elif arg._is_mem and arg.a.base._is_cst:
-            return int(arg.a.base)
+            return int(int(arg.a.base))
         elif arg._is_mem and not hasattr(arg.a.disp, '_is_cst'):
-            return int(arg.a.disp)
+            return int(int(arg.a.disp))
         elif arg._is_eqn and arg.op.symbol == '+' and arg.r._is_cst:
             return arg.r.value
         elif arg._is_eqn and arg.op.symbol == '-' and arg.r._is_cst:
@@ -147,7 +147,8 @@ class API_AMOCO(object):
             return label, label_dif
     def api_is_address(self, pos):
         ''' True if the argument 'pos' is an address '''
-        return expr.get_mem(self.amoco.operands[pos]) is not None
+        arg = self.amoco.operands[pos]
+        return arg is not None and arg._is_mem
     def api_is_arg_size(self, pos, size):
         ''' True if the argument 'pos' is a size-bit argument '''
         arg = self.amoco.operands[pos]
@@ -965,14 +966,18 @@ def evaluate_lines(instr, lines, in_str):
 class expr(object):
     def get_cst(e):
         NON_REGRESSION_FOUND
-        if e is not None and e._is_cst: return int(e)
+        if e is not None and e._is_cst:
+            return int(e)
     get_cst = staticmethod(get_cst)
     def get_lab(e):
-        if e is not None and e._is_lab: return e.ref
+        if e is not None and e._is_lab:
+            return e.ref
     get_lab = staticmethod(get_lab)
     def get_lab_imm(e):
-        if e is not None and e._is_cst: return None, int(e)
-        if e is not None and e._is_lab: return e.ref, 0
+        if e is not None and e._is_cst:
+            return None, int(e)
+        if e is not None and e._is_lab:
+            return e.ref, 0
         if e is not None and e._is_eqn and e.op.symbol == '+' \
                 and e.l._is_lab \
                 and e.r._is_cst:
@@ -980,17 +985,24 @@ class expr(object):
         return None, None
     get_lab_imm = staticmethod(get_lab_imm)
     def get_reg(e):
-        if e is not None and e._is_reg and not e._is_lab: return e.ref
+        if e is not None and e._is_reg and not e._is_lab:
+            return e.ref
     get_reg = staticmethod(get_reg)
     def get_mem(e):
-        if e is not None and e._is_mem: return e.a.base+e.a.disp
+        if e is None:
+            return None
+        if not e._is_mem:
+            return None
+        return e.a.base+e.a.disp
     get_mem = staticmethod(get_mem)
     def get_eqn(e):
         NON_REGRESSION_FOUND
-        if e is not None and e._is_eqn: return True
+        if e is not None and e._is_eqn:
+            return True
     get_eqn = staticmethod(get_eqn)
     def get_tst(e):
-        if e is not None and e._is_tst: return e.l, e.r
+        if e is not None and e._is_tst:
+            return e.l, e.r
     get_tst = staticmethod(get_tst)
 
 def evaluate(address, machine, find, instr, in_str):
@@ -1061,7 +1073,7 @@ def evaluate_mem(address, machine, find, instr, in_str):
     
     table, offset = expr.get_lab_imm(address)
     if offset is not None:
-        msg, val = deref_table(table, offset, instr.symbols, in_str)
+        msg, val = deref_table(table, offset, instr, in_str)
         if val is not None:
             return msg, val
     
@@ -1104,7 +1116,6 @@ def array_detection(input, machine, find, instr, in_str):
                 item_len *= 1 + int(input.r.l.base.r.r)
             input.r = index_var
         elif input.r.op.symbol == '<<':
-            # Non-regression: c6-fPIC.o
             NON_REGRESSION_FOUND
             item_len = 1 << int(input.r.r)
             input.r = index_var
@@ -1129,7 +1140,7 @@ def array_detection(input, machine, find, instr, in_str):
         msg, val = 'NOT FOUND', None
         table, offset = expr.get_lab_imm(address_in_array)
         if val is None and offset is not None:
-            msg, val = deref_table(table, offset, instr.symbols, in_str)
+            msg, val = deref_table(table, offset, instr, in_str)
         if val is None:
             mapper.assume_no_aliasing = True
             offset = machine.M(env.mem(address_in_array))
@@ -1140,7 +1151,7 @@ def array_detection(input, machine, find, instr, in_str):
                 msg, val = 'MEM', [ v ]
             table, offset = expr.get_lab_imm(expr.get_mem(offset))
             if offset is not None:
-                msg, val = deref_table(table, offset, instr.symbols, in_str)
+                msg, val = deref_table(table, offset, instr, in_str)
         if val == 'TABLE':
             return msg, val
         if val in (None, [None]):
@@ -1160,7 +1171,8 @@ def array_detection(input, machine, find, instr, in_str):
         return 'MEM_EXP', [None]
     return 'ARRAY', dst_lst
 
-def deref_table(table, offset, pool, in_str):
+def deref_table(table, offset, instr, in_str):
+    pool = instr.symbols
     log.debug("DEREF %s at %s", table, offset)
     if table is None:
         return deref_address(offset, pool, in_str)
@@ -1170,7 +1182,7 @@ def deref_table(table, offset, pool, in_str):
     if not hasattr(table, 'lines'):
         # 'table' has not been parsed; will be later
         return 'MEM_TABLE %s not parsed (offset %d)' % (table, offset), 'TABLE'
-    if hasattr(table, 'lines') and offset < table.bytelen:
+    if offset < table.bytelen:
         # Offset in a table
         sz = 0
         for line in table.lines:

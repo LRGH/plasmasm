@@ -28,7 +28,13 @@ import amoco
 from amoco.logger import Log
 Log.progress = lambda count, total=0, pfx='': None
 
-from amoco.arch.core import type_data_processing, type_control_flow, type_other, type_cpu_state, type_undefined
+try:
+    from amoco.arch.core import type_data_processing, type_control_flow, type_other, type_cpu_state, type_undefined
+except ImportError:
+    log.error("PATH %s", sys.path)
+    e = 'amoco backend not well installed: %s' % sys.exc_info()[1]
+    log.error(e)
+    raise ImportError(e)
 from amoco.cas.mapper import mapper
 from amoco.arch.x64 import env
 from amoco.arch.x64 import cpu_x64 as cpu_amoco
@@ -506,7 +512,7 @@ class Instruction(Line, API_AMOCO):
         o = cpu_amoco.disassemble(self.amoco.bytes)
         patched = self.amoco.bytes[:pos] + b + self.amoco.bytes[pos+1:]
         p = cpu_amoco.disassemble(patched)
-        if o.mnemonic != p.mnemonic:
+        if o == None or p == None or o.mnemonic != p.mnemonic:
             log.error("Relocation changes instruction! %s => %s", o, p)
             log.error("   at offset %r with reloc %r", pos, reloc)
             log.error("   for '%s' at %s, address=%s",
@@ -516,7 +522,13 @@ class Instruction(Line, API_AMOCO):
         # and test if it is non-zero
         argpos = None
         for idx, (oa, na) in enumerate(zip(o.operands, p.operands)):
-            d = na - oa
+            try:
+                d = na - oa
+            except ValueError:
+                log.error("Invalid relocation effect")
+                log.error("    incompatible sizes %s %s", na, oa)
+                log.error("    reloc %r for '%s'", reloc, self)
+                return
             if d._is_cst and int(d) == 0:
                 # Not changed
                 continue
@@ -528,6 +540,7 @@ class Instruction(Line, API_AMOCO):
         if argpos is None:
             log.error("Relocation touches no argument")
             log.error("    reloc %r for '%s'", reloc, self)
+            log.error("ARGPOS %s", argpos)
             return
         # Step 2: modify the argument by using the reloc data
         address = None # TODO SWITCH label_for_optimised_switch(self)
@@ -549,7 +562,8 @@ class Instruction(Line, API_AMOCO):
                 offset = self.amoco.operands[argpos].a.disp
                 self.amoco.operands[argpos].a.disp -= offset
         else:
-            raise ValueError("Arg of type %s"%self.amoco.operands[argpos].__class__)
+            log.error("Arg of type %s", self.amoco.operands[argpos].__class__)
+            return
         if address is None:
             from plasmasm.get_symbols import analyze_reloc
             label, label_dif, offset, size = analyze_reloc(self,
@@ -590,15 +604,6 @@ class Instruction(Line, API_AMOCO):
             # Special case: offset to a switch table
             r_type, data = reloc
             TODO
-            # Some coherency checks
-            from elfesteem import elf
-            if r_type != ('ELF', elf.EM_386, elf.R_386_32): NEVER
-            if data['section'] != '.rodata': NEVER
-            label = self.symbols.find_symbol(
-                section=data['section'], address=address)
-            label_dif = None
-            offset -= address
-            size = cpu_addrsize
         ext_label = expressions.lab(label, size=size)
         if label_dif is not None:
             NEVER
@@ -875,12 +880,13 @@ def evaluate(address, machine, find, instr, in_str):
             # Switch table not complete
             if not None in table: table.append(None)
         return msg, table
-
+    
     v = expr.get_tst(address)
     if v is not None:
         msg_l, res_l = evaluate(v[0], machine, find, instr, in_str)
         msg_r, res_r = evaluate(v[1], machine, find, instr, in_str)
-        if res_l is None or res_r is None: return None, None
+        if res_l is None or res_r is None:
+            return None, None
         return "%s+%s"%(msg_l,msg_r), res_l+res_r
     
     log.debug("Need better analysis of %s:%s", address.__class__.__name__, address)
@@ -932,7 +938,7 @@ def array_detection(input, machine, find, instr, in_str):
     elif input.op.symbol == '+' and input.r._is_eqn:
         if input.r.op.symbol == '*' and input.r.r._is_cst:
             item_len = int(input.r.r)
-            if input.r.l._is_ptr and input.r.l.disp is 0 and \
+            if input.r.l._is_ptr and input.r.l.disp == 0 and \
                input.r.l.base._is_eqn and input.r.l.base.op.symbol == '+' and \
                input.r.l.base.r._is_eqn and input.r.l.base.r.op.symbol == '*' \
                and input.r.l.base.r.r._is_cst \
@@ -975,12 +981,12 @@ def array_detection(input, machine, find, instr, in_str):
             table, offset = expr.get_lab_imm(expr.get_mem(offset, instr))
             if offset is not None:
                 msg, val = deref_table(table, offset, instr, in_str)
+        if val == 'TABLE':
+            return msg, val
         if val in (None, [None]):
             log.debug("        ----> %s", msg)
             invalid_indexes += 1
             continue
-        if val == 'TABLE':
-            return msg, val
         for label in val:
             if label.name.endswith('@GOTOFF'):
                 NON_REGRESSION_FOUND
@@ -1051,10 +1057,11 @@ def remove_pic_offset(e, pool):
     # => M32[M32[toto]+cte]
     if e._is_mem \
             and e.a.base._is_mem \
-            and e.a.base.a.disp is 0 \
+            and e.a.base.a.disp == 0 \
             and e.a.base.a.base._is_mem:
         label = remove_pic_offset(e.a.base.a.base, pool)
-        if label is None: return
+        if label is None:
+            return
         return env.mem(env.mem(label), disp=e.a.disp)
     
     # M32[M32[PIC_OFFSET+toto@GOTPCREL]+cte]
