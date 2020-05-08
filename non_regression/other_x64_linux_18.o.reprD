@@ -1453,11 +1453,11 @@
     GRAPH_PRV .L00000305
 'X64_AMOCO.InstructionDEAD'>59 [None]movl      -124(%rbp), %ecx
 	 R['MEM', 'rbp', 'rip'] W['rcx', 'rip']
-	 D['rcx', 'rdx', 'rflags']
+	 D['rcx', 'rdi', 'rdx', 'rflags']
 	 STACK:{'%rbp': [160]}:(16, 36, 96, 104)
 'X64_AMOCO.InstructionDEAD'>62 [None]leal      1(%rax), %edi
-	 R['MEM', 'rax', 'rdi', 'rip'] W['rdi', 'rip']
-	 D['rdx', 'rflags']
+	 R['MEM', 'rax', 'rip'] W['rdi', 'rip']
+	 D['rdi', 'rdx', 'rflags']
 	 STACK:{'%rbp': [160]}:(16, 36, 96, 104)
 'X64_AMOCO.InstructionDEAD'>65 [None]movl      %edi, -128(%rbp)
 	 R['rbp', 'rdi', 'rip'] W['MEM', 'rip']
@@ -2369,7 +2369,7 @@
     GRAPH_PRV strlen@PLT
 'X64_AMOCO.InstructionDEAD'>773 [jmp]jmp       .L0000003B
 	 R['rip'] W['rip']
-	 D['rcx', 'rdx', 'rflags']
+	 D['rcx', 'rdi', 'rdx', 'rflags']
 	 STACK:{'%rbp': [160]}:(16, 36, 96, 104)
 	 dst=[<Symbol '.L0000003B' section='.text', address=59>]
 
@@ -2915,15 +2915,15 @@
     GRAPH_PRV .L00000553
 'X64_AMOCO.InstructionDEAD'>1380 [None]movl      12(%rax), %esi
 	 R['MEM', 'rax', 'rip'] W['rip', 'rsi']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256]}:(8, 16, 24, 32, 40, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 320, 328, 336, 344, 352, 368, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>1383 [None]movq      %rax, 496(%rsp)
 	 R['rax', 'rip', 'rsp'] W['MEM', 'rip']
-	 D['rflags']
+	 D['rdx', 'rflags']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256]}:(8, 16, 24, 32, 40, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 320, 328, 336, 344, 352, 368, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>1391 [None]leal      1(%rsi), %edx
-	 R['MEM', 'rdx', 'rip', 'rsi'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rip', 'rsi'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256]}:(8, 16, 24, 32, 40, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 320, 328, 336, 344, 352, 368, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>1394 [None]movq      16(%rsp), %rsi
 	 R['MEM', 'rip', 'rsp'] W['rip', 'rsi']
@@ -3538,19 +3538,19 @@
     GRAPH_PRV .L0000076A
 'X64_AMOCO.InstructionDEAD'>1917 [None]movq      %rax, 368(%rsp)
 	 R['rax', 'rip', 'rsp'] W['MEM', 'rip']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256]}:(8, 16, 24, 32, 40, 48, 56, 64, 72, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 320, 328, 336, 344, 352, 368, 416, 424, 432, 440, 448, 456, 464, 472, 480, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>1925 [None]addl      $1, 12(%rax)
 	 R['MEM', 'rax', 'rip'] W['MEM', 'rflags', 'rip']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256]}:(8, 16, 24, 32, 40, 48, 56, 64, 72, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 320, 328, 336, 344, 352, 368, 416, 424, 432, 440, 448, 456, 464, 472, 480, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>1929 [None]movl      12(%rax), %esi
 	 R['MEM', 'rax', 'rip'] W['rip', 'rsi']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256]}:(8, 16, 24, 32, 40, 48, 56, 64, 72, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 320, 328, 336, 344, 352, 368, 416, 424, 432, 440, 448, 456, 464, 472, 480, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>1932 [None]leal      -1(%rsi), %edx
-	 R['MEM', 'rdx', 'rip', 'rsi'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rip', 'rsi'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256]}:(8, 16, 24, 32, 40, 48, 56, 64, 72, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 320, 328, 336, 344, 352, 368, 416, 424, 432, 440, 448, 456, 464, 472, 480, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>1935 [None]testl     %edx, %edx
 	 R['rdx', 'rip'] W['rflags', 'rip']
@@ -3716,15 +3716,15 @@
     GRAPH_PRV .L000007E2
 'X64_AMOCO.InstructionDEAD'>2035 [None]movl      12(%rax), %esi
 	 R['MEM', 'rax', 'rip'] W['rip', 'rsi']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256, 368]}:(8, 16, 24, 32, 40, 48, 56, 64, 72, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 288, 320, 328, 336, 344, 352, 368, 416, 424, 432, 440, 448, 456, 464, 472, 480, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>2038 [None]movq      %rax, 496(%rsp)
 	 R['rax', 'rip', 'rsp'] W['MEM', 'rip']
-	 D['rflags']
+	 D['rdx', 'rflags']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256, 368]}:(8, 16, 24, 32, 40, 48, 56, 64, 72, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 288, 320, 328, 336, 344, 352, 368, 416, 424, 432, 440, 448, 456, 464, 472, 480, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>2046 [None]leal      1(%rsi), %edx
-	 R['MEM', 'rdx', 'rip', 'rsi'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rip', 'rsi'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256, 368]}:(8, 16, 24, 32, 40, 48, 56, 64, 72, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 288, 320, 328, 336, 344, 352, 368, 416, 424, 432, 440, 448, 456, 464, 472, 480, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>2049 [None]testl     %edx, %edx
 	 R['rdx', 'rip'] W['rflags', 'rip']
@@ -3974,15 +3974,15 @@
     GRAPH_PRV .L00000890
 'X64_AMOCO.InstructionDEAD'>2209 [None]movl      12(%rax), %esi
 	 R['MEM', 'rax', 'rip'] W['rip', 'rsi']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256, 368]}:(8, 16, 24, 32, 40, 48, 56, 64, 72, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 288, 320, 328, 336, 344, 352, 368, 416, 424, 432, 440, 448, 456, 464, 472, 480, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>2212 [None]movq      %rax, 496(%rsp)
 	 R['rax', 'rip', 'rsp'] W['MEM', 'rip']
-	 D['rflags']
+	 D['rdx', 'rflags']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256, 368]}:(8, 16, 24, 32, 40, 48, 56, 64, 72, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 288, 320, 328, 336, 344, 352, 368, 416, 424, 432, 440, 448, 456, 464, 472, 480, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>2220 [None]leal      1(%rsi), %edx
-	 R['MEM', 'rdx', 'rip', 'rsi'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rip', 'rsi'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:{'%r12': [496], '%r14': [416], '%r15': [256, 368]}:(8, 16, 24, 32, 40, 48, 56, 64, 72, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 288, 320, 328, 336, 344, 352, 368, 416, 424, 432, 440, 448, 456, 464, 472, 480, 496, 504, 512, 520)
 'X64_AMOCO.InstructionDEAD'>2223 [None]movq      16(%rsp), %rsi
 	 R['MEM', 'rip', 'rsp'] W['rip', 'rsi']
@@ -4286,11 +4286,11 @@
     GRAPH_PRV strlen@PLT
 'X64_AMOCO.InstructionDEAD'>2408 [None]movq      %rax, %r12
 	 R['rax', 'rip'] W['r12', 'rip']
-	 D['r12']
+	 D['r12', 'rdi']
 	 STACK:{'%r14': [224], '%r15': [256]}:(16, 24, 32, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 320, 328, 336, 344, 352, 496)
 'X64_AMOCO.InstructionDEAD'>2411 [None]leal      1(%rax), %edi
-	 R['MEM', 'rax', 'rdi', 'rip'] W['rdi', 'rip']
-	 D[]
+	 R['MEM', 'rax', 'rip'] W['rdi', 'rip']
+	 D['rdi']
 	 STACK:{'%r14': [224], '%r15': [256]}:(16, 24, 32, 192, 200, 208, 216, 224, 232, 240, 248, 256, 264, 272, 280, 320, 328, 336, 344, 352, 496)
 'X64_AMOCO.InstructionDEAD'>2414 [None]movl      %r12d, %r12d
 	 R['r12', 'rip'] W['r12', 'rip']
@@ -4931,15 +4931,15 @@
     GRAPH_PRV .L00001100
 'X64_AMOCO.InstructionDEAD'>3043 [None]movl      12(%rax), %esi
 	 R['MEM', 'rax', 'rip'] W['rip', 'rsi']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3046 [None]movq      %rax, 128(%rsp)
 	 R['rax', 'rip', 'rsp'] W['MEM', 'rip']
-	 D['rflags']
+	 D['rdx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3054 [None]leal      1(%rsi), %edx
-	 R['MEM', 'rdx', 'rip', 'rsi'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rip', 'rsi'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3057 [None]testl     %edx, %edx
 	 R['rdx', 'rip'] W['rflags', 'rip']
@@ -5186,15 +5186,15 @@
     GRAPH_PRV .L00000C6B
 'X64_AMOCO.InstructionDEAD'>3193 [None]movl      12(%rax), %esi
 	 R['MEM', 'rax', 'rip'] W['rip', 'rsi']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3196 [None]movq      %rax, 128(%rsp)
 	 R['rax', 'rip', 'rsp'] W['MEM', 'rip']
-	 D['rflags']
+	 D['rdx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3204 [None]leal      1(%rsi), %edx
-	 R['MEM', 'rdx', 'rip', 'rsi'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rip', 'rsi'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3207 [None]testl     %edx, %edx
 	 R['rdx', 'rip'] W['rflags', 'rip']
@@ -5428,8 +5428,8 @@
     GRAPH_NXT .L00000D18
     GRAPH_PRV .L00000D08
 'X64_AMOCO.InstructionDEAD'>3344 [None]leal      -9(%rdx), %ecx
-	 R['MEM', 'rcx', 'rdx', 'rip'] W['rcx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rdx', 'rip'] W['rcx', 'rip']
+	 D['rcx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3347 [None]cmpb      $4, %cl
 	 R['rcx', 'rip'] W['rflags', 'rip']
@@ -5660,15 +5660,15 @@
     GRAPH_PRV .L00001271
 'X64_AMOCO.InstructionDEAD'>3522 [None]movl      12(%rax), %esi
 	 R['MEM', 'rax', 'rip'] W['rip', 'rsi']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3525 [None]movq      %rax, 128(%rsp)
 	 R['rax', 'rip', 'rsp'] W['MEM', 'rip']
-	 D['rflags']
+	 D['rdx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3533 [None]leal      1(%rsi), %edx
-	 R['MEM', 'rdx', 'rip', 'rsi'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rip', 'rsi'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3536 [None]testl     %edx, %edx
 	 R['rdx', 'rip'] W['rflags', 'rip']
@@ -5915,15 +5915,15 @@
     GRAPH_PRV .L00000E4A
 'X64_AMOCO.InstructionDEAD'>3672 [None]movl      12(%rax), %esi
 	 R['MEM', 'rax', 'rip'] W['rip', 'rsi']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3675 [None]movq      %rax, 128(%rsp)
 	 R['rax', 'rip', 'rsp'] W['MEM', 'rip']
-	 D['rflags']
+	 D['rdx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3683 [None]leal      1(%rsi), %edx
-	 R['MEM', 'rdx', 'rip', 'rsi'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rip', 'rsi'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3686 [None]testl     %edx, %edx
 	 R['rdx', 'rip'] W['rflags', 'rip']
@@ -6239,11 +6239,11 @@
     GRAPH_PRV .L00000F47
 'X64_AMOCO.InstructionDEAD'>3920 [None]movl      12(%rax), %esi
 	 R['MEM', 'rax', 'rip'] W['rip', 'rsi']
-	 D['rflags', 'rsi']
+	 D['rdx', 'rflags', 'rsi']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3923 [None]leal      -1(%rsi), %edx
-	 R['MEM', 'rdx', 'rip', 'rsi'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rip', 'rsi'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>3926 [None]testl     %edx, %edx
 	 R['rdx', 'rip'] W['rflags', 'rip']
@@ -8345,8 +8345,8 @@
     GRAPH_NXT malloc@PLT
     GRAPH_PRV .L000015A0
 'X64_AMOCO.InstructionDEAD'>5545 [None]leal      1(%r13), %r12d
-	 R['MEM', 'r12', 'r13', 'rip'] W['r12', 'rip']
-	 D['r14', 'r8', 'rdi', 'rflags']
+	 R['MEM', 'r13', 'rip'] W['r12', 'rip']
+	 D['r12', 'r14', 'r8', 'rdi', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>5549 [None]movl      %r13d, 360(%r15)
 	 R['r13', 'r15', 'rip'] W['MEM', 'rip']
@@ -8718,8 +8718,8 @@
 	 D['rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>5863 [None]leal      1(%r10), %ecx
-	 R['MEM', 'r10', 'rcx', 'rip'] W['rcx', 'rip']
-	 D['rflags']
+	 R['MEM', 'r10', 'rip'] W['rcx', 'rip']
+	 D['rcx', 'rflags']
 	 STACK:False:()
 'X64_AMOCO.InstructionDEAD'>5867 [None]cmpq      %r14, %rcx
 	 R['r14', 'rcx', 'rip'] W['rflags', 'rip']
@@ -10795,11 +10795,11 @@
     GRAPH_PRV .L000019C8
 'X64_AMOCO.InstructionDEAD'>6613 [None]movq      %rax, (%r14)
 	 R['r14', 'rax', 'rip'] W['MEM', 'rip']
-	 D['rcx', 'rflags']
+	 D['rcx', 'rdx', 'rflags']
 	 STACK:{'%rbx': [16]}:(0, 8)
 'X64_AMOCO.InstructionDEAD'>6616 [None]addl      $1, 12(%rax)
 	 R['MEM', 'rax', 'rip'] W['MEM', 'rflags', 'rip']
-	 D['rcx', 'rflags']
+	 D['rcx', 'rdx', 'rflags']
 	 STACK:{'%rbx': [16]}:(0, 8)
 'plasmasm.constants.P2Align'>6620 [None].p2align 4,,10
 'plasmasm.constants.P2Align'>6620 [None].p2align 3
@@ -10814,11 +10814,11 @@
     GRAPH_PRV .L00001AD8
 'X64_AMOCO.InstructionDEAD'>6624 [None]movl      12(%rax), %ecx
 	 R['MEM', 'rax', 'rip'] W['rcx', 'rip']
-	 D['rcx', 'rflags']
+	 D['rcx', 'rdx', 'rflags']
 	 STACK:{'%rbx': [16]}:(0, 8)
 'X64_AMOCO.InstructionDEAD'>6627 [None]leal      -1(%rcx), %edx
-	 R['MEM', 'rcx', 'rdx', 'rip'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rcx', 'rip'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:{'%rbx': [16]}:(0, 8)
 'X64_AMOCO.InstructionDEAD'>6630 [None]testl     %edx, %edx
 	 R['rdx', 'rip'] W['rflags', 'rip']
@@ -11120,11 +11120,11 @@
     GRAPH_PRV .L00001B3F
 'X64_AMOCO.InstructionDEAD'>6747 [None]movl      12(%rax), %ecx
 	 R['MEM', 'rax', 'rip'] W['rcx', 'rip']
-	 D['rcx', 'rflags']
+	 D['rcx', 'rdx', 'rflags']
 	 STACK:{'%rbx': [16]}:(0, 8)
 'X64_AMOCO.InstructionDEAD'>6750 [None]leal      -1(%rcx), %edx
-	 R['MEM', 'rcx', 'rdx', 'rip'] W['rdx', 'rip']
-	 D['rflags']
+	 R['MEM', 'rcx', 'rip'] W['rdx', 'rip']
+	 D['rdx', 'rflags']
 	 STACK:{'%rbx': [16]}:(0, 8)
 'X64_AMOCO.InstructionDEAD'>6753 [None]testl     %edx, %edx
 	 R['rdx', 'rip'] W['rflags', 'rip']
@@ -11540,7 +11540,7 @@
     GRAPH_PRV .L00001B24
 'X64_AMOCO.InstructionDEAD'>6975 [jmp]jmp       .L00001A5B
 	 R['rip'] W['rip']
-	 D['rcx', 'rflags']
+	 D['rcx', 'rdx', 'rflags']
 	 STACK:{'%rbx': [16]}:(0, 8)
 	 dst=[<Symbol '.L00001A5B' section='.text', address=6747>]
 

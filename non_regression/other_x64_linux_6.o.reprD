@@ -29,23 +29,23 @@
     CFG None
 'X64_AMOCO.InstructionDEAD'>8 [None]subq      $40, %rsp
 	 R['rip', 'rsp'] W['rflags', 'rip', 'rsp']
-	 D['rflags']
+	 D['rax', 'rflags']
 	 STACK:{}:()
 'X64_AMOCO.InstructionDEAD'>12 [None]movl      $0, 12(%rsp)
 	 R['rip', 'rsp'] W['MEM', 'rip']
-	 D[]
+	 D['rax']
 	 STACK:{}:(12,)
 'X64_AMOCO.InstructionDEAD'>20 [None]movq      $toto, 16(%rsp)
 	 R['rip', 'rsp'] W['MEM', 'rip']
-	 D[]
+	 D['rax']
 	 STACK:{}:(12, 16)
 'X64_AMOCO.InstructionDEAD'>29 [None]movq      $tata, 24(%rsp)
 	 R['rip', 'rsp'] W['MEM', 'rip']
-	 D[]
+	 D['rax']
 	 STACK:{}:(12, 16, 24)
 'X64_AMOCO.InstructionDEAD'>38 [None]leal      -1(%rdi), %eax
-	 R['MEM', 'rax', 'rdi', 'rip'] W['rax', 'rip']
-	 D[]
+	 R['MEM', 'rdi', 'rip'] W['rax', 'rip']
+	 D['rax']
 	 STACK:{}:(12, 16, 24)
 'X64_AMOCO.InstructionDEAD'>41 [None]cltq      
 	 R['rax', 'rip'] W['rax', 'rip']

@@ -924,7 +924,6 @@ class InstructionDEAD(InstructionRW):
     __slots__ = ('pic', 'stack', 'dead', 'immutable')
 
 from amoco.cas import expressions
-expressions.op.limit(float("inf"))
 
 def evaluate_lines(instr, lines, in_str):
     # Run the emulation of the basic bloc

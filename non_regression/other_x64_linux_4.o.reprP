@@ -1337,7 +1337,7 @@
 	 R['rax', 'rdx', 'rip'] W['rdx', 'rflags', 'rip']
 	 STACK:{'%rbx': [56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192]}:(12, 16, 24, 28, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 376)
 'X64_AMOCO.InstructionRW'>409 [None]leal      0(,%rdx,8), %eax
-	 R['MEM', 'rax', 'rdx', 'rip'] W['rax', 'rip']
+	 R['MEM', 'rdx', 'rip'] W['rax', 'rip']
 	 STACK:{'%rbx': [56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192]}:(12, 16, 24, 28, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 376)
 'X64_AMOCO.InstructionRW'>416 [None]subl      %edx, %eax
 	 R['rax', 'rdx', 'rip'] W['rax', 'rflags', 'rip']
@@ -1532,10 +1532,10 @@
 	 R['rax', 'rip'] W['rax', 'rflags', 'rip']
 	 STACK:{}:(12, 16, 24, 28, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 376)
 'X64_AMOCO.InstructionRW'>535 [None]leal      (%rax,%rax), %ecx
-	 R['MEM', 'rax', 'rcx', 'rip'] W['rcx', 'rip']
+	 R['MEM', 'rax', 'rip'] W['rcx', 'rip']
 	 STACK:{}:(12, 16, 24, 28, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 376)
 'X64_AMOCO.InstructionRW'>538 [None]leal      32(%rax,%rcx), %edi
-	 R['MEM', 'rax', 'rcx', 'rdi', 'rip'] W['rdi', 'rip']
+	 R['MEM', 'rax', 'rcx', 'rip'] W['rdi', 'rip']
 	 STACK:{}:(12, 16, 24, 28, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 376)
 'X64_AMOCO.InstructionRW'>542 [sub]call      *(%r13)
 	 R['MEM', 'r13', 'rip', 'rsp'] W['MEM', 'rip', 'rsp']
@@ -1700,7 +1700,7 @@
 	 R['MEM', 'rip'] W['rax', 'rip']
 	 STACK:{'%rbx': [56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192]}:(12, 16, 24, 28, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 376)
 'X64_AMOCO.InstructionRW'>660 [None]leal      -1(%r14), %ebx
-	 R['MEM', 'r14', 'rbx', 'rip'] W['rbx', 'rip']
+	 R['MEM', 'r14', 'rip'] W['rbx', 'rip']
 	 STACK:{}:(12, 16, 24, 28, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 376)
 'X64_AMOCO.InstructionRW'>664 [None]subl      $43, %r14d
 	 R['r14', 'rip'] W['r14', 'rflags', 'rip']
@@ -2091,7 +2091,7 @@
 	 R['rax', 'rdx', 'rip'] W['rdx', 'rflags', 'rip']
 	 STACK:{'%r12': [112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131], '%rbx': [112]}:(24, 40, 376)
 'X64_AMOCO.InstructionRW'>1004 [None]leal      (%rdx,%rdx,2), %eax
-	 R['MEM', 'rax', 'rdx', 'rip'] W['rax', 'rip']
+	 R['MEM', 'rdx', 'rip'] W['rax', 'rip']
 	 STACK:{'%r12': [112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131], '%rbx': [112]}:(24, 40, 376)
 'X64_AMOCO.InstructionRW'>1007 [None]addl      %eax, %eax
 	 R['rax', 'rip'] W['rax', 'rflags', 'rip']
@@ -2136,7 +2136,7 @@
 	 R['rax', 'rdx', 'rip'] W['rdx', 'rflags', 'rip']
 	 STACK:{'%r12': [112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131], '%rbx': [112]}:(24, 40, 376)
 'X64_AMOCO.InstructionRW'>1042 [None]leal      (%rdx,%rdx,2), %eax
-	 R['MEM', 'rax', 'rdx', 'rip'] W['rax', 'rip']
+	 R['MEM', 'rdx', 'rip'] W['rax', 'rip']
 	 STACK:{'%r12': [112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131], '%rbx': [112]}:(24, 40, 376)
 'X64_AMOCO.InstructionRW'>1045 [None]addl      %eax, %eax
 	 R['rax', 'rip'] W['rax', 'rflags', 'rip']
@@ -2415,7 +2415,7 @@
 	 R['r13', 'rip'] W['rflags', 'rip']
 	 STACK:{'%r12': [112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131], '%rbx': [112]}:(24, 40, 376)
 'X64_AMOCO.InstructionRW'>1245 [None]leal      -1(%r13), %r12d
-	 R['MEM', 'r12', 'r13', 'rip'] W['r12', 'rip']
+	 R['MEM', 'r13', 'rip'] W['r12', 'rip']
 	 STACK:{'%rbx': [112]}:(24, 40, 376)
 'X64_AMOCO.InstructionRW'>1249 [jcc]je        .L0000047E.startup
 	 R['rflags', 'rip'] W['rip']

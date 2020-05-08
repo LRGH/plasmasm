@@ -132,7 +132,7 @@ install:
   - git clone https://github.com/LRGH/crysp
   - git clone https://github.com/LRGH/amoco
   - echo > amoco/amoco/__init__.py # don't import grandalf
-  - sed -i -e "s/ 'wait',//" amoco/amoco/arch/x86/parsers.py # bug of amoco
+  - cat plasmasm/plasmasm/python/amoco-config.py > amoco/amoco/config.py # avoid dependency on traitlets
   - cd plasmasm
 script:
   # With CPython, not with Pypy, the next command fails when first launched.
