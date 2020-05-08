@@ -97,6 +97,7 @@ all_tests = [
     ("comm_x86_macosx.out",    "asm", {"cpu":"/MIASM"}),
     ("comm_x86_macosx.out",    "asm2",{"cpu":"/AMOCO"}),
     ("comm_sparc.s",           "asm", {}),
+    ("comm_sparc.s",           "asmD",{"dead":True}),
     ("comm_sparc.out",         "asm", {}),
     ("p2align_x86_linux.att.s",   "asm", {}),
     ("p2align_x86_linux.o",       "asm", {}),
@@ -150,5 +151,9 @@ def test_io(file, suffix, kargs):
     res = fd.read()
     fd.close()
     pool = File().from_raw(raw, rw=True, **kargs)
+    if "dead" in kargs:
+        from staticasm.dead_registers import analyze_dead
+        analyze_dead(pool)
+        pool.arch.long_display = True
     assert pool.to_asm() == res
 test_io = pytest.mark.parametrize("file, suffix, kargs", all_tests)(test_io)
