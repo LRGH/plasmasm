@@ -727,7 +727,7 @@ def relocs_from_MACHO(e, sh):
         if not r_type in reloc_suffixes:
             raise ValueError("Unknown Mach-O reloc %s;%d;%d on cpu %s"%(
                 x.type, x.length, x.pcrel,
-                macho.constants['CPU_TYPE'][e.Mhdr.cputype]
+                macho.common.constants['CPU_TYPE'][e.Mhdr.cputype]
                 ))
         if e.Mhdr.cputype != macho.CPU_TYPE_X86_64 and \
                  x.type in [ macho.GENERIC_RELOC_SECTDIFF,

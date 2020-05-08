@@ -67,3 +67,16 @@ def test_no_backend():
     except ValueError:
         e = sys.exc_info()[1]
         assert str(e) == "No FOO backend in I386-att"
+
+# The following tests are errors that correspond to valid files for which
+# the current implementation fails, but future implementations may succeed.
+def test_macho_reloc():
+    fd = open("non_regression/macho_reloc.o","rb")
+    raw = fd.read()
+    fd.close()
+    try:
+        pool = File().from_raw(raw, rw=True)
+        assert 0 == 'Should raise ValueError'
+    except ValueError:
+        e = sys.exc_info()[1]
+        assert str(e) == "Unknown Mach-O reloc 5;2;0 on cpu X86_64"
