@@ -381,10 +381,6 @@ def add_compiler_string_from_ELF(symbols, e):
         symbols.set_meta(ident = compiler)
         if compiler.startswith("GCC: "):
             symbols.set_meta(compiler = 'gcc')
-            file = [ _ for _ in symbols.symbols if getattr(_, 'bind', None) == 'file' ]
-            if len(file) > 0 and file[0].name.endswith('.f'):
-                symbols.set_meta(language = 'fortran')
-                symbols.cds.hook_gfortran_rodata()
     elif len(comment) > 1:
         FAIL
     # eh_frame size

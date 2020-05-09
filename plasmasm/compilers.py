@@ -1246,36 +1246,6 @@ def clang64_function_headers(symbols):
         if str(label.lines[1]) != 'movq      %rsp, %rbp': continue
         label.set_data('function', True)
 
-def gfortran_rodata(symbols):
-    # with gfortran 4.4.5, opcodes similar to
-    #   movzbl ich.4799-1(%esi), %eax
-    # are used; they cause the creation of a label at ich.4799-1
-    # which results in incorrect guesses of data type for the label before
-    # the first named label
-    from plasmasm.symbols import section_type
-    for label in symbols.blocs:
-        if not hasattr(label, 'lines'):
-            continue
-        if not section_type(label.section) == 'rodata':
-            continue
-        if label.name.startswith('.LC'):
-            continue
-        nxt  = symbols.previous(label)
-        base = symbols.previous(nxt)
-        if base is None:
-            break
-        if nxt.bytelen != 1:
-            break
-        data = base.pack() + nxt.pack()
-        from plasmasm.parse_bin import parse_data
-        lines = parse_data(data, len(data), base)
-        base.setlines(lines)
-        base.set_nxt(None, force=True)
-        nxt.delete_bloc()
-        nxt.rename("%s-1"%label.name, force=True)
-        break
-    # TODO, rename to recover the other NNN.xxx-1
-
 gcc_del_bloc = (
         # .rodata
         '_fp_hw',
@@ -1704,9 +1674,6 @@ class cds(object):
 
     def match_x86_long_nop(self):
         self._global.append(x86_long_nop)
-
-    def hook_gfortran_rodata(self):
-        self._global.append(gfortran_rodata)
 
     def gcc_leon(self):
         self._hide_symbol.append(lambda name: name in gcc_leon_hide_symbol)
