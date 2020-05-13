@@ -79,6 +79,7 @@ jobs:
         - python non_regression/run_tests.py test_asm_switch
         - python non_regression/run_tests.py test_bin
         - python non_regression/run_tests.py test_display
+        - python non_regression/run_tests.py test_objdump
       after_success:
         - true # coverage needs python >= 2.6
     - name: 'zlib gcc 4.6 64-bit'
