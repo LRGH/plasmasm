@@ -134,6 +134,9 @@ all_tests = [
     ("constructor_x64_macosx.o",      "asm", {}),
     ("clang1001_x86_macosx.s",   "asm", {"cpu":"/MIASM"}),
     ("clang1001_x86_macosx.s",   "asm", {"cpu":"/AMOCO"}),
+    # Two static variables in .o files had the same name
+    ("duplocal_x86_linux.out",   "asm", {"cpu":"/MIASM"}),
+    ("duplocal_x86_linux.out",   "asm", {"cpu":"/AMOCO"}),
 ]
 
 if sys.version_info[0] == 2 and sys.version_info[1] <= 6:

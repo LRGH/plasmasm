@@ -238,7 +238,7 @@ def deduplicate_symbols(symbol_list):
             # If all these symbols are 'local', then rename the symbols
             if count[n] == len([s for s in dup if s.get('bind') == 'local']):
                 for s in dup:
-                    s['name'] += '....' + hex(s['address'])
+                    s['name'] += '....' + hex(int(s['address']))
                 continue
             raise ValueError("Duplicate symbols %r" % dup)
     return symbol_list
