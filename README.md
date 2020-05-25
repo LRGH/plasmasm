@@ -294,3 +294,4 @@ or Ubuntu is python-pyparsing.
 
 [![Build Status](https://travis-ci.org/LRGH/plasmasm.svg?branch=master)](https://travis-ci.org/LRGH/plasmasm)
 [![codecov](https://codecov.io/gh/LRGH/plasmasm/branch/master/graph/badge.svg)](https://codecov.io/gh/LRGH/plasmasm)
+[![Code Quality](https://img.shields.io/lgtm/grade/python/g/LRGH/plasmasm.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LRGH/plasmasm/context:python)
