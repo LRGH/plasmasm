@@ -9,7 +9,6 @@ try:
 except ImportError:
     pass
 import re
-from shlex import shlex
 
 import logging
 log = logging.getLogger("plasmasm")
@@ -20,7 +19,7 @@ class Instruction(Line):
     __slots__ = ('line', 'opname', 'operands')
     CPU = None
     def __init__(self, symbols):
-        pass
+        Line.__init__(self, symbols)
     def from_txt(self, line):
         if line.startswith('\t'):
             line = line[1:]
@@ -84,7 +83,7 @@ class current_blocs(object):
     def set_data_props(self, **data):
         label = self.b[self.section]
         data.update(getattr(label, 'data', {}))
-        if data is not {}:
+        if data != {}:
             setattr(label, 'data', data)
 
 def parse_asm_file(symbols, txt):

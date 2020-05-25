@@ -2,6 +2,7 @@
 from tools.step2 import Step2Base
 from tools.testing_plasmasm import hook_for_as_bugs
 import sys
+__all__ = [ ]
 
 class Step2_parse_asm(Step2Base):
     keyword = '-parse_asm'

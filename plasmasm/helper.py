@@ -14,7 +14,6 @@ def helper_order(pool, symbols, last = False):
     # should not be inserted in the middle
     symbols = [ pool.find_symbol(name = _) for _ in symbols ]
     blocs = []
-    previous_section = None
     next_per_section = {}
     for label in symbols:
         if label in blocs:

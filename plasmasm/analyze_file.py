@@ -27,8 +27,7 @@ def get_file_type(raw):
     for magic, file_type in container_magic.items():
         if raw.startswith(struct.pack("%dB"%len(magic),*magic)):
             return file_type
-    else:
-        raise ValueError('Unknown file type')
+    raise ValueError('Unknown file type')
 
 # Auto-detection of available CPU backends
 def parse_cpu_arg(kargs):

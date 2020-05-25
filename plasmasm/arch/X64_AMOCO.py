@@ -48,7 +48,6 @@ env.internals['keep_order'] = True
 cpu_addrsize = 64
 
 from amoco.arch.x86.formats import default_mnemo_name, default_eqn_parser, \
-    mnemo_string_rep, \
     IA32_Binutils_ATT, IA32_Binutils_Intel, IA32_MacOSX_ATT
 instruction.set_formatter(IA32_Binutils_ATT)
 
@@ -252,9 +251,7 @@ class API_AMOCO(object):
                                  arg.a.base.l,
                                  expressions.cst(2,size=arg.a.base.l.size))
             # Force the order of operands
-            if False:
-                TODO # esp is always first
-            elif last: # reg is last
+            if   last: # reg is last
                 arg.a.base = expressions.op('+', arg.a.base, reg)
             else:      # reg is first
                 arg.a.base = expressions.op('+', reg, arg.a.base)
@@ -365,7 +362,6 @@ class Instruction(Line, API_AMOCO):
     def pack(self):
         ''' binary representation '''
         return self.amoco.bytes # Only if unchanged
-        raise ValueError("amoco cannot provide the binary representation")
     def txt(self, asm_format=None):
         ''' text output, to be used by an assembler '''
         if asm_format is not None:
@@ -513,7 +509,7 @@ class Instruction(Line, API_AMOCO):
         o = cpu_amoco.disassemble(self.amoco.bytes)
         patched = self.amoco.bytes[:pos] + b + self.amoco.bytes[pos+1:]
         p = cpu_amoco.disassemble(patched)
-        if o == None or p == None or o.mnemonic != p.mnemonic:
+        if o is None or p is None or o.mnemonic != p.mnemonic:
             log.error("Relocation changes instruction! %s => %s", o, p)
             log.error("   at offset %r with reloc %r", pos, reloc)
             log.error("   for '%s' at %s, address=%s",
@@ -1004,7 +1000,6 @@ def array_detection(input, machine, find, instr, in_str):
 
 import struct
 def deref_table(table, offset, instr, in_str):
-    pool = instr.symbols
     log.debug("DEREF %s at %s", table, offset)
     if getattr(table, 'section', None) in ['.got.plt', '.got', '.idata']:
         assert offset == instr.offset+instr.bytelen

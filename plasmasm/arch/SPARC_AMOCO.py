@@ -344,7 +344,6 @@ def evaluate_lines(instr, lines, in_str):
     m2[env.g0] = env.cst(0)
     pc = m[env.pc].eval(m2)
     pc = merge_slices(pc)
-    find_symbols = instr.symbols.find_symbols
     log.debug("PC %s:%s", pc.__class__.__name__, pc)
     if pc._is_lab:
         return 'ID', [ pc.ref ]

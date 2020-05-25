@@ -3,7 +3,7 @@ try:
     from plasmasm.python.compatibility import set
 except ImportError:
     pass
-import struct, sys
+import struct
 from plasmasm.symbols import Line
 
 # .p2align is an assembly directive that adds padding to ensure
@@ -12,7 +12,7 @@ class P2Align(Line):
     __slots__ = ('section', 'offset', 'bytelen',
         'binary', 'symbols', 'line', 'pic', 'stack', 'dead')
     def __init__(self, symbols, line, **kargs):
-        self.symbols = symbols
+        Line.__init__(self, symbols)
         self.line = line
         if 'section' in kargs: self.offset = kargs['section']
         if 'offset' in kargs: self.offset = kargs['offset']
@@ -51,7 +51,7 @@ class Constant(Line):
     __slots__ = ('section', 'offset', 'bytelen',
         'binary', 'value', 'type', 'align')
     # Methods from Line that need to be redefined
-    def from_txt(self):
+    def from_txt(self, txt):
         ''' text input, in assembly format '''
         raise ValueError("No 'from_txt' for %r, __init__ is used instead" % self.__class__)
     def from_bin(self, in_str, section):
@@ -89,7 +89,7 @@ class Constant(Line):
             value = ', '.join([str(getattr(x,'name',x)) for x in value])
             return '.%s\t%s' % (int_type, value)
     def __init__(self, symbols, *args, **kargs):
-        self.symbols = symbols
+        Line.__init__(self, symbols)
         self._parse_args(*args)
         if 'offset' in kargs:
             self.offset = kargs['offset']
@@ -162,7 +162,7 @@ def long_to_signed(x):
     try:
         if x > 2**31:
             return x-2**32
-    except:
+    except TypeError:
         # Not an int or long
         pass
     return x

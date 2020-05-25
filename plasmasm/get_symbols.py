@@ -3,7 +3,7 @@ try:
     from plasmasm.python.compatibility import reversed, sorted
 except ImportError:
     pass
-from plasmasm.symbols import comm_symbol_section, section_type
+from plasmasm.symbols import comm_symbol_section
 
 def get_dynsyms(e):
     if hasattr(e, 'Ehdr'):
@@ -480,7 +480,6 @@ def get_reloc_symbol(pool, suffix, section, address):
     # Should never be a padding label; we use ad hoc heuristics...
     # Either the 'padding' type is erroneous, or it should be
     # label+offset
-    import logging; log = logging.getLogger("plasmasm")
     value = getattr(label, 'lines', [None])[0]
     value = getattr(value, 'value', [None])[0]
     if hasattr(value, 'name'):

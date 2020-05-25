@@ -2,6 +2,7 @@
 from tools.step2 import Step2Base
 from staticasm.dead_registers import add_line_update_dead
 import sys
+__all__ = [ ]
 
 def replace_line(label, lines, pos=None):
     # Replace line at pos in label with a list of lines

@@ -65,7 +65,6 @@ class Instruction(Line):
         # by computing: pos -= self.miasm.offset
         for argname in ['simm', 'li']:
             if hasattr(self.miasm, argname):
-                arg = getattr(self.miasm, argname)
                 break
         else:
             log.info("Apply reloc '%s' on '%s'", label, self)
@@ -85,7 +84,7 @@ class InstructionCFG(Instruction):
         elif self.miasm.dstflow():       self.flow = 'jcc'
         else:             NEVER
     def _set_dst(self):
-        if   self.flow == None:
+        if   self.flow is None:
             dst = []
         elif self.flow == 'ret':
             dst = [None]

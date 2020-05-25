@@ -1,5 +1,6 @@
 # Copyright (C) 2020 Airbus, Louis.Granboulan@airbus.com
 from plasmasm.python.utils import spawn
+__all__ = [ 'Step2MetaClass', 'Step2' ]
 
 class Step2MetaClass(type):
     # metaclass with a syntax compatible with python2 and python3

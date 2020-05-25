@@ -1,5 +1,6 @@
 # Copyright (C) 2011-2020 Airbus, Louis.Granboulan@airbus.com
 import sys, os
+import struct
 import logging
 log = logging.getLogger("plasmasm")
 # If miasmX is not installed system-wide, it is recommended to install it
@@ -551,12 +552,11 @@ class Instruction(Line, API_MIASM):
         if type(b) == str: # Python 2
             b = chr((1+ord(b))%256)
         elif type(b) == int: # Python 3
-            import struct
             b = struct.pack("B", (1+b)%256)
         o = x86_mn.dis(self.miasm.b, {})
         patched = self.miasm.b[:pos] + b + self.miasm.b[pos+1:]
         p = x86_mn.dis(patched, {})
-        if o == None or p == None or o.m.name != p.m.name:
+        if o is None or p is None or o.m.name != p.m.name:
             log.error("Relocation changes instruction! %s => %s", o, p)
             log.error("   at offset %r with reloc %r", pos, reloc)
             log.error("   for '%s' at %s, address=%s",
@@ -669,7 +669,6 @@ def get_rw(cpu_sem, line):
         w.update(e.get_w())
     return r, w
 
-from miasmX.arch import ia32_reg
 try:
     ia32_sem.symb_to_Expr({'x':1})
 except AttributeError:
@@ -962,7 +961,6 @@ def deref_table(table, offset, pool, in_str):
         return 'MEM_LAB_IMM %r offset=%s' % (table, offset), [ None ]
     return deref_address(table.address + offset, pool, in_str)
 
-import struct
 def deref_address(offset, pool, in_str):
     log.debug("DEREF_ADDRESS %#x", offset)
     if offset == 0:
@@ -984,7 +982,7 @@ def deref_address(offset, pool, in_str):
             if len(label_list): return 'MEM_VAL', label_list
     if section in [".got"]:
         label = pool.find_symbols(address = offset)
-        if label is []:
+        if label == []:
             NON_REGRESSION_FOUND
             return 'MEM_LAB_IMM %r address=%s' % (table, offset), [ None ]
         if label[0].name.startswith('.rel.dyn.'):
@@ -1090,7 +1088,7 @@ def remove_pic_offset(e, pool):
     # => M32[toto+INDEX_IN_TABLE]
     if isinstance(e, expression.ExprOp) and e.op == '+' and len(e.args) == 2:
         label_name, index, pic_data, pic_data_dup = extract_base_index(e)
-        if label_name == None:
+        if label_name is None:
             log.error("Unknown base %s", e)
             return None
         if pic_data != pic_data_dup:

@@ -268,7 +268,7 @@ def extract_rodata_from_text(file):
         stop, rest, stop-text.addr+text.sh.offset, text.sh.addralign)
 
 
-from plasmasm.symbols import comm_symbol_section, is_comm, compute_alignment
+from plasmasm.symbols import comm_symbol_section, compute_alignment
 
 class bin_stream(object):
     def __init__(self, virt, section = None):

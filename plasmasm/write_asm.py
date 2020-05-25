@@ -1,6 +1,5 @@
 # Copyright (C) 2011-2020 Airbus, Louis.Granboulan@airbus.com
 from plasmasm.symbols import section_type, is_comm, compute_alignment
-from plasmasm.constants import Constant
 from plasmasm.symbols import comm_symbol_section
 try:
     from plasmasm.python.compatibility import bin

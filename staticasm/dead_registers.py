@@ -122,7 +122,6 @@ def set_dead_PIC(lines, idx):
                 and len(lines) > 0 \
                 and lines[1].opname == 'lea' \
                 and '@tls' in str(lines[1]):
-            pass
             set_immutable_line(l, reason='TLS')
             set_immutable_line(lines[1], reason='TLS')
         else:

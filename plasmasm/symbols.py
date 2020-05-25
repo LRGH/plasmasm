@@ -3,7 +3,7 @@ try:
     from plasmasm.python.compatibility import set, reversed, sorted
 except ImportError:
     pass
-import logging, random
+import logging
 log = logging.getLogger("plasmasm")
 console_handler = logging.StreamHandler()
 console_handler.setFormatter(logging.Formatter("%(levelname)-5s: %(message)s"))
@@ -33,7 +33,7 @@ class StackTop(object):
     def __str__(self):
         if self.data is None: return str(self.label)
         return "%#8x-%s-%s"%self.data
-class StackTopVoid(StackTop):
+class StackTopVoid(object):
     __slots__ = ()
     def __init__(self):
         pass
@@ -279,7 +279,7 @@ class Symbol(object):
     # 'ender' is a boolean to determine if the bloc is a 'tab_ender'
     # which means that we may add random bytes just after it
     def cfg(self):
-        if self._cfg == None: return (self.nxt,)
+        if self._cfg is None: return (self.nxt,)
         return self._cfg
     cfg = property(cfg)
     def set_cfg(self, cfg, graph0=None):
@@ -557,9 +557,8 @@ class Symbol(object):
             if line.offset > address:
                 log.error("label is in the middle of an instruction")
                 return None
-        else:
-            log.error("address %#x should be in the bloc of %s", address, self.display())
-            return None
+        log.error("address %#x should be in the bloc of %s", address, self.display())
+        return None
 
 def compute_alignment(size, address):
     # Find the biggest power of two dividing size
@@ -764,7 +763,7 @@ class Symbols(object):
     def get_sectionname(self, offset):
         # Binary only
         section = self.file_elfesteem.getsectionbyvad(offset)
-        if section == None:
+        if section is None:
             return None
         if not hasattr(section, 'name'): return None
         return section.name.strip('\0')
@@ -886,7 +885,7 @@ class Symbols(object):
 class Line(object):
     __slots__ = ('symbols',)
     # The following methods should be defined for all architectures
-    def from_txt(self):
+    def from_txt(self, txt):
         ''' text input, in assembly format '''
         raise ValueError("TODO 'from_txt' for %r" % self.__class__)
     def from_bin(self, in_str, section):
@@ -1012,8 +1011,6 @@ class Line(object):
         # the offset caused by a label
         # If 'label' is 'base+shift', attributes are in 'base'
         base = getattr(label, 'reference', label)
-        bind = getattr(base, 'bind', None)
-        section = getattr(base, 'section', None)
         offset = 0
         # If 'label' is 'base+shift', increment by 'shift'
         if hasattr(label, 'reference'):
@@ -1089,9 +1086,9 @@ del dont_return_noPLT
 def should_return(dst, emulate_stack=True, cds=None):
     if type(dst) == list:
         for _ in dst:
-            if should_return(_, emulate_stack=emulate_stack): return True
-        else:
-            return False
+            if should_return(_, emulate_stack=emulate_stack):
+                return True
+        return False
     if dst is None:
         # Failed to determine all destinations
         # We could return 'True' and risk to decode non executed chunks

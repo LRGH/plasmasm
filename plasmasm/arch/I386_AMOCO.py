@@ -243,9 +243,7 @@ class API_AMOCO(object):
                                  arg.a.base.l,
                                  expressions.cst(2,size=arg.a.base.l.size))
             # Force the order of operands
-            if False:
-                TODO # esp is always first
-            elif last: # reg is last
+            if   last: # reg is last
                 arg.a.base = expressions.op('+', arg.a.base, reg)
             else:      # reg is first
                 arg.a.base = expressions.op('+', reg, arg.a.base)
@@ -431,7 +429,6 @@ class Instruction(Line, API_AMOCO):
     def pack(self):
         ''' binary representation '''
         return self.amoco.bytes # Only if unchanged
-        raise ValueError("amoco cannot provide the binary representation")
     def txt(self, asm_format=None):
         ''' text output, to be used by an assembler '''
         if asm_format is not None:
@@ -549,7 +546,7 @@ class Instruction(Line, API_AMOCO):
         o = cpu_amoco.disassemble(self.amoco.bytes)
         patched = self.amoco.bytes[:pos] + b + self.amoco.bytes[pos+1:]
         p = cpu_amoco.disassemble(patched)
-        if o == None or p == None or o.mnemonic != p.mnemonic:
+        if o is None or p is None or o.mnemonic != p.mnemonic:
             log.error("Relocation changes instruction! %s => %s", o, p)
             log.error("   at offset %r with reloc %r", pos, reloc)
             log.error("   for '%s' at %s, address=%s",
@@ -1225,7 +1222,7 @@ def deref_address(offset, pool, in_str):
             if len(label_list): return 'MEM_VAL', label_list
     if section in [".got"]:
         label = pool.find_symbols(address = offset)
-        if label is []:
+        if label == []:
             NON_REGRESSION_FOUND
             return 'MEM_LAB_IMM %r address=%s' % (table, offset), [ None ]
         if label[0].name.startswith('.rel.dyn.'):
@@ -1346,7 +1343,7 @@ def remove_pic_offset(e, pool):
     #    our API and return the offset that will have to be substracted
     if e._is_eqn and e.op.symbol == '+':
         base, index, pic_data, pic_data_dup = extract_base_index(e)
-        if base == None:
+        if base is None:
             log.error("Unknown base %s", e)
             return None
         if pic_data != pic_data_dup:

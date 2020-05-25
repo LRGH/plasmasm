@@ -404,7 +404,6 @@ def switch_detection_gcc463m32opt_travis(instr):
         return False
     if jmp_reg != bloc.lines[-1].api_arg_txt(0):
         return False
-    """ TODO: check (%sub_reg,%add_reg,4) """
     label, label_dif = bloc.lines[-1].api_get_label(1)
     if label_dif is not None:
         return False
@@ -417,6 +416,10 @@ def switch_detection_gcc463m32opt_travis(instr):
     if jmp_reg != bloc.lines[-2].api_arg_txt(0):
         return False
     sub_reg = bloc.lines[-2].api_arg_txt(1)
+    import re
+    pattern = r".*@GOTOFF\[%s\+...\*4\]$" % sub_reg
+    if not re.match(pattern, bloc.lines[-1].api_arg_txt(1)):
+        return False
     # switch table size is unknown
     log.debug("SWITCH GCC 4.6.3-travis %s", label)
     label.switch_table = ('.', 4, None)
@@ -469,7 +472,10 @@ def switch_detection_gcc411(instr):
         return False
     if jmp_reg != bloc.lines[-4].api_arg_txt(0):
         return False
-    """ TODO: check (%jmp_reg,%add_reg) """
+    import re
+    pattern = r".*@GOTOFF\[%s\+%s\]$" % (jmp_reg, add_reg)
+    if not re.match(pattern, bloc.lines[-4].api_arg_txt(1)):
+        return False
     label, label_dif = bloc.lines[-4].api_get_label(1)
     if label_dif is not None:
         return False
@@ -489,6 +495,8 @@ def switch_detection_gcc411(instr):
     if jmp_reg != bloc.lines[-6].api_arg_txt(0):
         return False
     stack = bloc.lines[-6].api_arg_txt(1)
+    if not re.match(r"\[ebp\+\d+\]$", stack):
+        return False
     # When not optimized, it is always the previous bloc that makes the
     # comparison to the switch table size
     tbl_size = get_tbl_size(bloc.symbols.previous(bloc))
