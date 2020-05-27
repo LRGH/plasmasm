@@ -679,10 +679,8 @@ def guess_asm_cpu(symbols):
                         'rbp', 'rsp', 'rsi', 'rdi', 'rip'
                        ] + [ 'r%d'%_ for _ in range(8,16) ]:
                 if op in (reg, '%'+reg, '(%'+reg+')'):
-                    NON_REGRESSION_FOUND
                     cpu_base.intersection_update(set(['X64']))
                 if '%'+reg in op or '['+reg in op:
-                    NON_REGRESSION_FOUND
                     cpu_base.intersection_update(set(['X64']))
             if op in ('eax', '%eax'):
                 cpu_base.intersection_update(set(['X64', 'I386']))

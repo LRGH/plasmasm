@@ -246,6 +246,8 @@ all_tests = [
     ("other_x64_linux_13.o",    "asm", {}),
     ("other_x64_linux_14.s",    "asm", {}),
     ("other_x64_linux_14.o",    "asm", {}),
+    ("other_x64_linux_19.s",    "asm", {}),
+    ("other_x64_linux_19.o",    "asm", {}),
     ("other_x64_macosx_1.s",    "asm", {}),
     ("other_x64_macosx_1.o",    "asm", {}),
     ("other_x64_macosx_2.s",    "asm", {}),
