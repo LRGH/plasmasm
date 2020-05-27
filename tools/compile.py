@@ -115,12 +115,9 @@ def find_output_idx(command, input_idx):
 
 if __name__ == "__main__":
     verbose, step2, command = parse_options(sys.argv[1:])
-    import tempfile, shutil
-    tmpdir = tempfile.mkdtemp()
     if verbose:
         print("Compiler command: %s" % command)
         print("Step2 definition: %s" % step2.param)
-        print("Tmpdir: %s" % tmpdir)
     
     # =====================================================
     # Analyze the command
@@ -143,6 +140,11 @@ if __name__ == "__main__":
 
     # =====================================================
     # Step 1: generate the intermediate result (asm or object)
+    import tempfile, shutil
+    tmpdir = tempfile.mkdtemp()
+    if verbose:
+        print("Tmpdir: %s" % tmpdir)
+
     input_src = command[input_idx]
     basefile = input_src[input_src.rfind('/')+1:]
     basefile = basefile[:basefile.rfind('.')]
