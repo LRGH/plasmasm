@@ -434,11 +434,24 @@ def parse_asm_file(symbols, txt):
                 symbols.set_meta(compiler = "clang")
                 continue
             if directive == 'macosx_version_min':
+                # Older versions of clang, e.g. clang-900
                 symbols.set_meta(compiler = "clang")
+                r =  re.match(r'([0-9]+),\s*([0-9]+)', rest)
+                if r is not None:
+                    r = r.groups()
+                    osmaj = int(r[0])
+                    osmin = int(r[1])
+                    symbols.set_meta(os_minversion = (osmaj, osmin, 'vermin'))
                 continue
             if directive == 'build_version':
                 # Recent versions of clang, e.g. clang-1001
                 symbols.set_meta(compiler = "clang")
+                r =  re.match(r'macos, ([0-9]+),\s*([0-9]+)', rest)
+                if r is not None:
+                    r = r.groups()
+                    osmaj = int(r[0])
+                    osmin = int(r[1])
+                    symbols.set_meta(os_minversion = (osmaj, osmin, 'bldver'))
                 continue
             if directive in ('data_region','end_data_region'):
                 # Recent versions of clang, e.g. clang-801

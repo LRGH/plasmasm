@@ -1,3 +1,4 @@
+	.macosx_version_min 10, 12
 	.section       __TEXT,__literal8,8byte_literals
 	.p2align 3
 LCPI22_0:

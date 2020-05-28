@@ -1,3 +1,4 @@
+	.macosx_version_min 10, 11
 	.section       __TEXT,__text,regular,pure_instructions
 	.globl	_main
 _main:

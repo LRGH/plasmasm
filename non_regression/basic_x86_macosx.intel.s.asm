@@ -1,4 +1,5 @@
 	.intel_syntax noprefix
+	.build_version macos, 10, 14	sdk_version 10, 14
 	.section       __TEXT,__text,regular,pure_instructions
 	.p2align 4, 0x90
 # ----------------------

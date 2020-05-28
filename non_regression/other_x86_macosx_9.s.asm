@@ -1,3 +1,4 @@
+	.macosx_version_min 10, 12
 	.section       __TEXT,__const
 	.p2align 2
 _readonly_constants:

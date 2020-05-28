@@ -3017,4 +3017,4 @@
 ('__TEXT,__literal16', '__TEXT,__literal16,16byte_literals')
 ('__TEXT,__literal8', '__TEXT,__literal8,8byte_literals')
 ('__TEXT,__text', '__TEXT,__text,regular,pure_instructions')
-relocatable:True,endianess:'<',container:'Mach-O',compiler:'clang',PIC:'call;pop'
+relocatable:True,os_minversion:(10, 11, 'vermin'),endianess:'<',container:'Mach-O',compiler:'clang',PIC:'call;pop'

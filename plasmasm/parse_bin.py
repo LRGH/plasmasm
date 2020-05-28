@@ -422,6 +422,20 @@ def add_symbols(symbols):
     elif hasattr(e, 'Mhdr'):
         symbols.set_meta(container = 'Mach-O')
         symbols.set_meta(compiler = 'clang')
+        from elfesteem import macho
+        for lc in e.load:
+            cmd = macho.loaders.constants['LC'].get(lc.cmd, None)
+            if cmd == 'VERSION_MIN_MACOSX':
+                if 0 < lc.sdk < ((10<<8)+11)<<8:
+                    # Before MacOSX 10.11 and Xcode 7, the definition
+                    # of LC_VERSION_MIN_MACOSX was done by the linker
+                    # and did not appear in the assembly.
+                    continue
+                v = lc.version >> 8
+                symbols.set_meta(os_minversion = (v>>8, v&255, 'vermin'))
+            if cmd == 'BUILD_VERSION':
+                v = lc.minos >> 8
+                symbols.set_meta(os_minversion = (v>>8, v&255, 'bldver'))
     elif hasattr(e, 'isPE') and e.isPE():
         symbols.set_meta(container = 'PE')
     elif hasattr(e, 'isPE'):

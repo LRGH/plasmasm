@@ -1,3 +1,4 @@
+	.macosx_version_min 10, 11
 	.section       __TEXT,__text,regular,pure_instructions
 L00001F90:
 	pushl     %ebp

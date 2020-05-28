@@ -873,4 +873,4 @@
 ('__LD,__compact_unwind', '__LD,__compact_unwind,regular,debug')
 ('__TEXT,__eh_frame', '__TEXT,__eh_frame,coalesced,no_toc+strip_static_syms+live_support')
 ('__TEXT,__text', '__TEXT,__text,regular,pure_instructions')
-relocatable:True,endianess:'<',container:'Mach-O',compiler:'clang'
+relocatable:True,os_minversion:(10, 11, 'vermin'),endianess:'<',container:'Mach-O',compiler:'clang'

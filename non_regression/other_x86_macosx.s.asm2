@@ -1,3 +1,4 @@
+	.macosx_version_min 10, 11
 	.section       __TEXT,__literal16,16byte_literals
 	.align 4
 LCPI0_0:

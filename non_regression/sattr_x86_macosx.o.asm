@@ -1,3 +1,4 @@
+	.macosx_version_min 10, 11
 	.section       __TEXT,__StaticInit,regular,no_toc+strip_static_syms+no_dead_strip+live_support+self_modifying_code+debug
 	.globl	_main
 _main:

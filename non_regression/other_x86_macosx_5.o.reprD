@@ -7375,4 +7375,4 @@
 ('__IMPORT,__pointers', '__IMPORT,__pointers,non_lazy_symbol_pointers')
 ('__TEXT,__cstring', '__TEXT,__cstring,cstring_literals')
 ('__TEXT,__text', '__TEXT,__text,regular,pure_instructions')
-relocatable:True,endianess:'<',container:'Mach-O',compiler:'clang',PIC:'call;pop'
+relocatable:True,os_minversion:(10, 12, 'vermin'),endianess:'<',container:'Mach-O',compiler:'clang',PIC:'call;pop'

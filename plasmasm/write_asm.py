@@ -276,6 +276,13 @@ def mk_asm_file(symbols, output_filename=None):
     if len(file) == 1:
         output += '\t.file\t"%s"\n' % file[0]
     output += format_file
+    if meta.get('compiler') == 'clang' and 'os_minversion' in meta:
+        osmaj, osmin, type = meta.get('os_minversion')
+        if   type == 'vermin':
+            output += "\t.macosx_version_min %d, %d\n" % (osmaj, osmin)
+        elif type == 'bldver':
+            output += "\t.build_version macos, %d, %d" % (osmaj, osmin)
+            output += "\tsdk_version %d, %d\n" % (osmaj, osmin)
     output += hack_for_gcc492(symbols)
     output += mk_asm_file_v2(symbols, meta, asm_format)
     for label in symbols.symbols:

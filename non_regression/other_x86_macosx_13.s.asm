@@ -1,3 +1,4 @@
+	.macosx_version_min 10, 12
 	.section       __TEXT,__text,regular,pure_instructions
 	.align 4, 0x90
 	.globl	_F2x_degree

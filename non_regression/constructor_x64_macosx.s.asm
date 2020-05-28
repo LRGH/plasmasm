@@ -1,3 +1,4 @@
+	.macosx_version_min 10, 11
 	.section       __TEXT,__text,regular,pure_instructions
 	.align 4, 0x90
 	.globl	_c1
