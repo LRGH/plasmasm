@@ -77,20 +77,17 @@ def get_backend(cpu, backend, option, meta):
     # asm_format may depend on CPU name
     if cpu_name in ('I386', 'X64'):
         # Many possible syntax for x86 asm
-        if meta.get('compiler', None) == 'clang':
+        if cpu.endswith('-intel'):
+            # Intel syntax, with no `%' prefix, as used by gcc 3.x or clang
+            asm_format = 'intel_syntax noprefix'
+        elif meta.get('compiler', None) == 'clang':
             # AT&T syntax, as used by clang on MacOSX
             asm_format = 'att_syntax clang'
-            if cpu.endswith('-intel'):
-                # Intel syntax, with no `%' prefix, for clang
-                asm_format = 'intel_syntax noprefix clang'
         elif cpu.endswith('-att'):
             # AT&T syntax, with a workaround for a bug of binutils
             # mixing fsub/fdiv and fsubr/fdivr; this bug is documented at
             # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=372528
             asm_format = 'att_syntax binutils'
-        elif cpu.endswith('-intel'):
-            # Intel syntax, with no `%' prefix, as used by gcc 3.x
-            asm_format = 'intel_syntax noprefix'
         else:
             asm_format = None
         BACKEND.Instruction.set_asm_format(asm_format)

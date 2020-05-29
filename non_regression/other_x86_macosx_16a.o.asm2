@@ -1,0 +1,20 @@
+	.macosx_version_min 10, 11
+	.section       __TEXT,__text,regular,pure_instructions
+	.align 4, 0x90
+	.globl	_main
+_main:
+	testl     %ebx, %edx
+	testl     4(%ebp), %edx
+	testl     4(%ebp), %edx
+	testb     %dl, %dh
+	testb     $32, 1(%edx,%ecx,2)
+	testl     $32896, %eax
+	xchgl     %ebx, %edx
+	xchgl     4(%ebp), %edx
+	xchgl     4(%ebp), %edx
+	imull     $31, %eax, %eax
+	imull     $31, %eax, %eax
+	ret       
+# ----------------------
+
+.subsections_via_symbols

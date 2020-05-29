@@ -215,7 +215,12 @@ def test_api_set_imm_label(instruction):
     assert l.txt(**fmt_a) == 'movl      %eax, (%{b})'.format(**p)
     l = instruction("movl %eax, (%{b})".format(**p))
     l.api_set_imm_label(0, 10, label=toto, label_dif=tata)
-    assert l.txt(**fmt_i) == 'mov       DWORD PTR toto-tata[{b}-10], eax'.format(**p)
+    if instruction is i_x86_miasm:
+        # Needed to be accepted by clang-900
+        assert l.txt(**fmt_i) == 'mov       DWORD PTR [{b} + toto-tata-10], eax'.format(**p)
+    else:
+        # TODO: patch amoco
+        assert l.txt(**fmt_i) == 'mov       DWORD PTR toto-tata[{b}-10], eax'.format(**p)
     assert l.txt(**fmt_a) == 'movl      %eax, toto-tata-10(%{b})'.format(**p)
     l = instruction("movl %eax, %ds:20")
     assert l.txt(**fmt_i) == 'mov       DWORD PTR ds:20, eax'

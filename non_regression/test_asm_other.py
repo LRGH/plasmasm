@@ -172,52 +172,6 @@ all_tests = [
     ("other_x86_linux_45.mingw.s","asm", {"cpu":"/AMOCO"}),
     ("other_x86_linux_45.obj",    "asm", {"cpu":"/MIASM"}),
     ("other_x86_linux_45.obj",    "asm2",{"cpu":"/AMOCO"}),
-    ("other_x86_macosx.s",      "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx.s",      "asm2",{"cpu":"/AMOCO"}),
-    ("other_x86_macosx.o",      "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx.o",      "asm2",{"cpu":"/AMOCO"}),
-    #"other_x86_macosx_1.s",    "fail",{"cpu":"/MIASM"}), # fail
-    #"other_x86_macosx_1.s",    "fail",{"cpu":"/AMOCO"}), # fail
-    #"other_x86_macosx_1.o",    "fail",{"cpu":"/MIASM"}), # fail in 153s
-    #"other_x86_macosx_1.o",    "asm", {"cpu":"/AMOCO"}), # extremely slow, 75s
-    ("other_x86_macosx_4.s",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_4.s",    "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_4.o",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_4.o",    "asm2",{"cpu":"/AMOCO"}),
-    ("other_x86_macosx_5.s",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_5.s",    "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_5.o",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_5.o",    "asm2",{"cpu":"/AMOCO"}),
-    ("other_x86_macosx_6.s",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_6.s",    "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_6.o",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_6.o",    "asm2",{"cpu":"/AMOCO"}),
-    ("other_x86_macosx_7.s",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_7.s",    "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_7.o",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_7.o",    "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_8.s",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_8.s",    "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_8.o",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_8.o",    "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_9.s",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_9.s",    "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_9.o",    "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_9.o",    "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_10.s",   "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_10.s",   "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_10.o",   "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_10.o",   "asm", {"cpu":"/AMOCO"}),
-    #"other_x86_macosx_11.s",   "asm", {"cpu":"/MIASM"}),
-    #"other_x86_macosx_11.s",   "asm", {"cpu":"/AMOCO"}),
-    #"other_x86_macosx_11.o",   "asm", {"cpu":"/MIASM"}), # fail, _usage does not return
-    #"other_x86_macosx_11.o",   "asm", {"cpu":"/AMOCO"}), # fail, _usage does not return
-    ("other_x86_macosx_12.s",   "asm", {"cpu":"/MIASM"}),
-    ("other_x86_macosx_12.s",   "asm", {"cpu":"/AMOCO"}),
-    ("other_x86_macosx_13.s",   "asm", {"cpu":"/MIASM"}),
-    #"other_x86_macosx_13.s",   "asm", {"cpu":"/AMOCO"}),
-    #"other_x86_macosx_13.o",   "asm", {"cpu":"/MIASM"}),
-    #"other_x86_macosx_13.o",   "asm", {"cpu":"/AMOCO"}),
     #"other_x64_linux.att.s",   "asm", {}), # very slow, 10s
     ("other_x64_linux.o",       "asm", {}), # slow,  3s
     #"other_x64_linux_2.att.s", "asm", {}), # very slow, 13s
@@ -248,24 +202,6 @@ all_tests = [
     ("other_x64_linux_14.o",    "asm", {}),
     ("other_x64_linux_19.s",    "asm", {}),
     ("other_x64_linux_19.o",    "asm", {}),
-    ("other_x64_macosx_1.s",    "asm", {}),
-    ("other_x64_macosx_1.o",    "asm", {}),
-    ("other_x64_macosx_2.s",    "asm", {}),
-    ("other_x64_macosx_2.o",    "asm", {}),
-    ("other_x64_macosx_3.s",    "asm", {}), # slow,  4s
-    ("other_x64_macosx_3.o",    "asm", {}),
-    #"other_x64_macosx_4.s",    "asm", {}), # very slow, 14s
-    ("other_x64_macosx_4.o",    "asm", {}),
-    ("other_x64_macosx_5.s",    "asm", {}), # slow,  4s
-    ("other_x64_macosx_5.o",    "asm", {}),
-    ("other_x64_macosx_6.s",    "asm", {}),
-    ("other_x64_macosx_6.o",    "asm", {}),
-    #"other_x64_macosx_7.s",    "asm", {}), # very slow, 18s
-    ("other_x64_macosx_7.o",    "asm", {}), # very slow, 10s
-    ("other_x64_macosx_8.s",    "asm", {}),
-    ("other_x64_macosx_8.o",    "asm", {}),
-    ("other_x64_macosx_9.s",    "asm", {}),
-    ("other_x64_macosx_9.o",    "asm", {}),
     ("other_sparc.s",           "asm", {}),
     ("other_sparc.o",           "asm", {}),
     ("other_sparc_1.s",         "asm", {}),
@@ -289,8 +225,6 @@ if sys.version_info[0] == 2 and sys.version_info[1] <= 3:
                       'other_x86_linux_5.o',
                       'other_x86_linux_23.o',
                       'other_x86_linux_30.o',
-                      'other_x86_macosx.o',
-                      'other_x86_macosx_9.o',
                   ) ]
 
 def test_io(file, suffix, kargs):
