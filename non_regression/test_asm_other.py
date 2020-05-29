@@ -264,6 +264,8 @@ all_tests = [
     ("other_x64_macosx_7.o",    "asm", {}), # very slow, 10s
     ("other_x64_macosx_8.s",    "asm", {}),
     ("other_x64_macosx_8.o",    "asm", {}),
+    ("other_x64_macosx_9.s",    "asm", {}),
+    ("other_x64_macosx_9.o",    "asm", {}),
     ("other_sparc.s",           "asm", {}),
     ("other_sparc.o",           "asm", {}),
     ("other_sparc_1.s",         "asm", {}),

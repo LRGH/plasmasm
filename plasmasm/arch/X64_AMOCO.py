@@ -154,11 +154,11 @@ class API_AMOCO(object):
         arg = self.amoco.operands[pos]
         if arg.size != size: return False
         return True
-    def api_is_reg_size(self, pos, size):
+    def api_is_reg_size(self, pos, size=None):
         ''' True if the argument 'pos' is a size-bit register '''
         arg = self.amoco.operands[pos]
         if expr.get_reg(arg) is None: return False
-        if arg.size != size: return False
+        if size is not None and arg.size != size: return False
         return True
     def api_is_reg_in_arg(self, pos, reg):
         ''' True if the argument 'pos' contains a reference to a given register '''
@@ -318,7 +318,8 @@ del spec
 from plasmasm.arch.I386_AMOCO import \
     set_spec, \
     replace_names_with_symbols, \
-    att_bug_fsub_fdiv
+    att_bug_fsub_fdiv, \
+    clang_bug_test
 
 from plasmasm.symbols import Line
 from plasmasm.compilers import \
@@ -337,7 +338,7 @@ class Instruction(Line, API_AMOCO):
         log.debug("> %s", txt)
         if txt.startswith('rep; ret'): txt = 'rep ret'
         instr = att_syntax.instr.parseString(txt, True)[0]
-        att_bug_fsub_fdiv(instr, self.asm_format)
+        att_bug_fsub_fdiv(instr)
         set_spec(instr, spec_table)
         replace_names_with_symbols(self.symbols, instr.operands)
         self.amoco = instr
@@ -372,7 +373,7 @@ class Instruction(Line, API_AMOCO):
         elif self.asm_format == 'raw':
             txt = '%s [%s]' % (self.amoco, self.amoco.spec.hook.__name__)
         else:
-            txt = str(self.amoco)
+            txt = str(clang_bug_test(self))
         if asm_format is not None:
             self.set_asm_format(asm_format_orig)
         return txt

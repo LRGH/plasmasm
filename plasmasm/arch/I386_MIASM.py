@@ -107,12 +107,13 @@ class API_MIASM(object):
         arg = self.miasm.arg[pos]
         size = {8: x86_afs.u08, 16: x86_afs.u16, 32: x86_afs.u32, 64: None}[size]
         return arg[x86_afs.size] == size
-    def api_is_reg_size(self, pos, size):
+    def api_is_reg_size(self, pos, size=None):
         ''' True if the argument 'pos' is a size-bit register '''
         arg = self.miasm.arg[pos]
-        size = {32: x86_afs.u32}[size]
         if not is_reg(arg): return False
-        if arg[x86_afs.size] != size: return False
+        if size is not None:
+            size = {32: x86_afs.u32}[size]
+            if arg[x86_afs.size] != size: return False
         return True
     def api_is_reg_in_arg(self, pos, reg):
         ''' True if the argument 'pos' contains a reference to a given register '''
@@ -224,6 +225,28 @@ class StubNone(Stub):
         self.offset = offset
         self.l = len(bytes)
         self.bytes = bytes
+
+def clang_bug_test(self):
+    if      self.miasm.m.name == 'test' \
+        and self.symbols.meta.get('compiler') == 'clang' \
+        and self.symbols.meta.get('os_minversion', (0,0,0))[1] < 14 \
+        and self.api_is_address(0) \
+        and self.api_is_reg_size(1) \
+        :
+        # Clang-LLVM on MacOSX sometimes use Intel argument order
+        # it is the case for
+        # Apple LLVM version 6.0 (clang-600.0.54)
+        # Apple LLVM version 7.0.2 (clang-700.1.81)
+        # Apple LLVM version 9.0.0 (clang-900.0.39.2)
+        # not for
+        # Apple clang version 11.0.0 (clang-1100.0.33.17)
+        miasm = x86_mn()
+        miasm.prefix = self.miasm.prefix
+        miasm.m = self.miasm.m
+        miasm.arg = list(reversed(self.miasm.arg))
+        return miasm
+    else:
+        return self.miasm
 
 from plasmasm.symbols import Line
 from plasmasm.symbols import section_type
@@ -357,7 +380,7 @@ class Instruction(Line, API_MIASM):
                     txt += '} '
         else:
             if asm_format == 'att_syntax': asm_format = 'att_syntax binutils'
-            txt = self.miasm.__str__(asm_format)
+            txt = clang_bug_test(self).__str__(asm_format)
         self.precomputed_str[asm_format] = txt
         return txt
     def labels(self):
