@@ -1,7 +1,116 @@
 language: python
+_prepare_linux: &prepare_linux
+  before_install:
+    - cd ..
+    - pip install pyparsing
+    - pip install tox-travis
+    - pip install coverage codecov
+_prepare_linux32: &prepare_linux32
+  before_install:
+    - cd ..
+    - pip install pyparsing
+    - pip install tox-travis
+    - pip install coverage codecov
+    - sudo apt-get install -y gcc-multilib
+_prepare_python23: &prepare_python23
+  before_install:
+    - cd ..
+    - curl -O https://www.python.org/ftp/python/2.3.7/Python-2.3.7.tgz
+    - tar xzf Python-2.3.7.tgz
+    - cd Python-2.3.7
+    # We need to disable FORTIFY_SOURCE to compile python 2.3
+    # cf. https://bugs.launchpad.net/ubuntu/+source/gcc-defaults/+bug/286334
+    - ./configure BASECFLAGS=-U_FORTIFY_SOURCE
+    - make
+    - export PATH=$(pwd):$PATH
+    - cd ..
+    # python --version not available for python2.3
+    - python -c 'import sys;print(sys.version_info)'
+_prepare_osx: &prepare_osx
+  os: osx
+  language: shell
+  before_install:
+    - cd ..
+    - python --version
+    - pip install pyparsing --user
+    - pip install tox-travis --user
+    - pip install coverage codecov --user
+_prepare_osx_yosemite: &prepare_osx_yosemite
+  os: osx
+  language: shell
+  before_install:
+    - cd ..
+    - python --version
+    - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    - python get-pip.py --user
+    - python -m pip install pyparsing --user
+    - python -m pip install tox-travis --user
+    - python -m pip install coverage codecov --user
+_install_all: &install_all
+  install:
+    - git clone https://github.com/LRGH/elfesteem
+    - git clone https://github.com/LRGH/miasmX
+    - git clone https://github.com/LRGH/crysp
+    - git clone https://github.com/LRGH/amoco
+    - echo > amoco/amoco/__init__.py # don't import grandalf
+    - cat plasmasm/plasmasm/python/amoco-config.py > amoco/amoco/config.py # avoid dependency on traitlets
+    - cd plasmasm
+_install_no_amoco: &install_no_amoco
+  install:
+    - git clone https://github.com/LRGH/elfesteem
+    - git clone https://github.com/LRGH/miasmX
+    - cd plasmasm
+_tox_tests: &tox_tests
+  script:
+    # With CPython, not with Pypy, the next command fails when first launched.
+    # Probably something to do with pyc generation
+    # To be investigated
+    - python -c 'from plasmasm import arch; BACKEND = arch.import_cpu_backend("I386", "MIASM")' || true
+    # Simple tests to verify that dependencies are working
+    - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
+    - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.att.s || true
+    - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o || true
+    - python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.att.s || true
+    - python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.o || true
+    # Run all non regression with tox
+    - tox
+  after_success:
+    - codecov
+_python23_tests: &python23_tests
+  script:
+    # Generate an ImportError, that will not happen later
+    - python -c 'from plasmasm import arch; BACKEND = arch.import_cpu_backend("I386", "MIASM")' || true
+    - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
+    # Simple tests to verify that dependencies are working
+    - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s
+    - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.att.s
+    - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o
+    # tox and pytest don't work with python 2.3
+    - export PYTHONPATH=../elfesteem:../miasmX
+    - python non_regression/run_tests.py test_asm_basic
+    - python non_regression/run_tests.py test_asm_other
+    - python non_regression/run_tests.py test_asm_switch
+    - python non_regression/run_tests.py test_bin
+    - python non_regression/run_tests.py test_display
+    - python non_regression/run_tests.py test_objdump
+    - python non_regression/run_tests.py test_asm_fullsoftware
+  after_success:
+    - true # coverage needs python >= 2.6
+_zlib_test64: &zlib_test64
+  script:
+    - export PATH=$(pwd)/tools:$PATH
+    - curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
+    - tar xzf zlib-1.2.8.tar.gz
+    - cd zlib-1.2.8
+    - ./configure
+    - make clean; make test CC='compile.py -parse_asm gcc'
+    - make clean; make test CC='compile.py -parse_asm -rw -dead gcc'
+    - make clean; make test CC='compile.py -parse_obj gcc'
+    - make clean; make test CC='compile.py -change gcc'
+  after_success:
+    - true # no coverage test
 _zlib_test32: &zlib_test32
   script:
-    - sudo apt-get install -y gcc-multilib
     - export PATH=$(pwd)/tools:$PATH
     - curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
     - tar xzf zlib-1.2.8.tar.gz
@@ -16,29 +125,22 @@ _zlib_test32: &zlib_test32
     - make clean; make test CC="compile.py -change $gcc" CFLAGS=-m32 SFLAGS='-m32 -fPIC'
   after_success:
     - true # no coverage test
-_zlib_test64: &zlib_test64
+_zlib_teststatic32: &zlib_teststatic32
   script:
     - export PATH=$(pwd)/tools:$PATH
     - curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
     - tar xzf zlib-1.2.8.tar.gz
     - cd zlib-1.2.8
     - ./configure
-    - make clean; make test CC='compile.py -parse_asm gcc'
-    - make clean; make test CC='compile.py -parse_asm -rw -dead gcc'
-    - make clean; make test CC='compile.py -parse_obj gcc'
-    - make clean; make test CC='compile.py -change gcc'
+    - gcc='gcc -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN'
+    - make clean; make teststatic CC="compile.py -parse_asm $gcc" CFLAGS=-m32 SFLAGS='-m32 -fPIC'
+    - make clean; make teststatic CC="compile.py -parse_asm -c/AMOCO $gcc" CFLAGS=-m32 SFLAGS='-m32 -fPIC'
+    - make clean; make teststatic CC="compile.py -parse_asm $gcc" CFLAGS='-m32 -masm=intel' SFLAGS='-m32 -masm=intel -fPIC'
+    - make clean; make teststatic CC="compile.py -parse_obj $gcc" CFLAGS=-m32 SFLAGS='-m32 -fPIC'
+    - make clean; make teststatic CC="compile.py -parse_obj -c/AMOCO $gcc" CFLAGS=-m32 SFLAGS='-m32 -fPIC'
+    - make clean; make teststatic CC="compile.py -change $gcc" CFLAGS=-m32 SFLAGS='-m32 -fPIC'
   after_success:
     - true # no coverage test
-_zlib_test_osx64: &zlib_test_osx64
-  os: osx
-  language: shell
-  before_install:
-    - cd ..
-    - python --version
-    - pip install pyparsing --user
-    - pip install tox-travis --user
-    - pip install coverage codecov --user
-  <<: *zlib_test64
 jobs:
   include:
     - python: '3.7'
@@ -46,108 +148,60 @@ jobs:
     - python: '2.7'
     - python: 'pypy'
     - name: 'Python: 2.3'
-      # For python 2.3 almost everything is different: overwrite definitions
-      before_install:
-        - cd ..
-        - curl -O https://www.python.org/ftp/python/2.3.7/Python-2.3.7.tgz
-        - tar xzf Python-2.3.7.tgz
-        - cd Python-2.3.7
-        # We need to disable FORTIFY_SOURCE to compile python 2.3
-        # cf. https://bugs.launchpad.net/ubuntu/+source/gcc-defaults/+bug/286334
-        - ./configure BASECFLAGS=-U_FORTIFY_SOURCE
-        - make
-        - export PATH=$(pwd):$PATH
-        - cd ..
-        # python --version not available for python2.3
-        - python -c 'import sys;print(sys.version_info)'
-      install:
-        - git clone https://github.com/LRGH/elfesteem
-        - git clone https://github.com/LRGH/miasmX
-        - cd plasmasm
-      script:
-        # Generate an ImportError, that will not happen later
-        - python -c 'from plasmasm import arch; BACKEND = arch.import_cpu_backend("I386", "MIASM")' || true
-        - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
-        # Simple tests to verify that dependencies are working
-        - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s
-        - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.att.s
-        - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o
-        # tox and pytest don't work with python 2.3
-        - export PYTHONPATH=../elfesteem:../miasmX
-        - python non_regression/run_tests.py test_asm_basic
-        - python non_regression/run_tests.py test_asm_other
-        - python non_regression/run_tests.py test_asm_switch
-        - python non_regression/run_tests.py test_bin
-        - python non_regression/run_tests.py test_display
-        - python non_regression/run_tests.py test_objdump
-        - python non_regression/run_tests.py test_asm_fullsoftware
-      after_success:
-        - true # coverage needs python >= 2.6
+      <<: *prepare_python23
+      <<: *install_no_amoco
+      <<: *python23_tests
     - name: 'zlib gcc 4.6 64-bit'
       dist: precise
       <<: *zlib_test64
     - name: 'zlib gcc 4.6 32-bit'
       dist: precise
+      <<: *prepare_linux32
       <<: *zlib_test32
     - name: 'zlib gcc 4.8 64-bit'
       dist: trusty
       <<: *zlib_test64
     - name: 'zlib gcc 4.8 32-bit'
       dist: trusty
+      <<: *prepare_linux32
       <<: *zlib_test32
     - name: 'zlib gcc 5.4 64-bit'
       <<: *zlib_test64
     - name: 'zlib gcc 5.4 32-bit'
+      <<: *prepare_linux32
       <<: *zlib_test32
-    - name: 'zlib Xcode 9.4 clang-902'
+    - name: 'zlib Xcode 9.4 clang-902 64-bit'
       osx_image: xcode9.4
-      <<: *zlib_test_osx64
-    - name: 'zlib Xcode 7.3 clang-703'
+      <<: *prepare_osx
+      <<: *zlib_test64
+    - name: 'zlib Xcode 9.4 clang-902 32-bit'
+      osx_image: xcode9.4
+      <<: *prepare_osx
+      <<: *zlib_teststatic32
+    - name: 'zlib Xcode 7.3 clang-703 64-bit'
       osx_image: xcode7.3
-      <<: *zlib_test_osx64
-    - name: 'zlib Xcode 11.3 clang-1100'
+      <<: *prepare_osx
+      <<: *zlib_test64
+    - name: 'zlib Xcode 11.3 clang-1100 64-bit'
       osx_image: xcode11.3
-      <<: *zlib_test_osx64
-    - name: 'zlib Xcode 6.4 clang-602'
+      <<: *prepare_osx
+      <<: *zlib_test64
+    - name: 'zlib Xcode 6.4 clang-602 64-bit'
       osx_image: xcode6.4
-      <<: *zlib_test_osx64
-      before_install:
-        - cd ..
-        - python --version
-        - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-        - python get-pip.py --user
-        - python -m pip install pyparsing --user
-        - python -m pip install tox-travis --user
-        - python -m pip install coverage codecov --user
+      <<: *prepare_osx_yosemite
+      <<: *zlib_test64
+    - name: 'zlib Xcode 7.3 clang-703 32-bit'
+      osx_image: xcode7.3
+      <<: *prepare_osx
+      <<: *zlib_teststatic32
+    - name: 'zlib Xcode 6.4 clang-602 32-bit'
+      osx_image: xcode6.4
+      <<: *prepare_osx_yosemite
+      <<: *zlib_teststatic32
     - dist: precise
       python: '2.6'
     - python: '3.4'
     - python: '3.8'
-before_install:
-  - cd ..
-  - pip install pyparsing
-  - pip install tox-travis
-  - pip install coverage codecov
-install:
-  - git clone https://github.com/LRGH/elfesteem
-  - git clone https://github.com/LRGH/miasmX
-  - git clone https://github.com/LRGH/crysp
-  - git clone https://github.com/LRGH/amoco
-  - echo > amoco/amoco/__init__.py # don't import grandalf
-  - cat plasmasm/plasmasm/python/amoco-config.py > amoco/amoco/config.py # avoid dependency on traitlets
-  - cd plasmasm
-script:
-  # With CPython, not with Pypy, the next command fails when first launched.
-  # Probably something to do with pyc generation
-  # To be investigated
-  - python -c 'from plasmasm import arch; BACKEND = arch.import_cpu_backend("I386", "MIASM")' || true
-  # Simple tests to verify that dependencies are working
-  - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
-  - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.att.s || true
-  - python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o || true
-  - python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.att.s || true
-  - python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.o || true
-  # Run all non regression with tox
-  - tox
-after_success:
-  - codecov
+<<: *prepare_linux
+<<: *install_all
+<<: *tox_tests
