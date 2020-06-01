@@ -85,6 +85,13 @@ all_tests = [
     ("other_x64_macosx_8.o",    "asm", {}),
     ("other_x64_macosx_9.s",    "asm", {}),
     ("other_x64_macosx_9.o",    "asm", {}),
+    # For coverage of some opcodes
+    ("emul_opcodes_x86_macosx.s",  "asmM",{"dead":True,"cpu":"/MIASM"}),
+    ("emul_opcodes_x86_macosx.s",  "asmD",{"dead":True,"cpu":"/AMOCO"}),
+    ("emul_opcodes_x86_macosx.o",  "asmM",{"dead":True,"cpu":"/MIASM"}),
+    ("emul_opcodes_x86_macosx.o",  "asmD",{"dead":True,"cpu":"/AMOCO"}),
+    ("emul_opcodes_x64_macosx.s",  "asmD",{"dead":True}),
+    ("emul_opcodes_x64_macosx.o",  "asmD",{"dead":True}),
 ]
 
 if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
@@ -108,5 +115,13 @@ def test_io(file, suffix, kargs):
     res = fd.read()
     fd.close()
     pool = File().from_raw(raw, rw=True, **kargs)
+    if "dead" in kargs:
+        from staticasm.pic_tracking import analyze_PIC
+        analyze_PIC(pool)
+        from staticasm.stack_tracking import analyze_stack
+        analyze_stack(pool)
+        from staticasm.dead_registers import analyze_dead
+        analyze_dead(pool)
+        pool.arch.long_display = True
     assert pool.to_asm() == res
 test_io = pytest.mark.parametrize("file, suffix, kargs", all_tests)(test_io)

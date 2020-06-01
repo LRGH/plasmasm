@@ -1,0 +1,47 @@
+	.macosx_version_min 10, 13
+	.section       __TEXT,__text,regular,pure_instructions
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z4xaddPU7_Atomici
+__Z4xaddPU7_Atomici:
+	pushq     %rbp                                     ## STACK:{}:()                #  DEAD:rax;rflags
+Lcfi0:
+Lcfi1:
+	movq      %rsp, %rbp                               ## STACK:{'%rbp': [0]}:()     #  DEAD:rax;rbp;rflags
+Lcfi2:
+	movl      $-1, %eax                                ## STACK:{'%rbp': [0]}:()     #  DEAD:rax;rbp;rflags
+	lock xaddl     %eax, (%rdi)                        ## STACK:{'%rbp': [0]}:()     #  DEAD:rbp;rflags
+	decl      %eax                                     ## STACK:{'%rbp': [0]}:()     #  DEAD:rbp;rflags
+	popq      %rbp                                     ## STACK:{'%rbp': [-8]}:()    #  DEAD:rbp
+	ret                                                ## STACK:{'%rbp': [-8]}:()    #  DEAD:
+# ----------------------
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z4xchgNSt3__16atomicIiEEi
+__Z4xchgNSt3__16atomicIiEEi:
+	pushq     %rbp                                     ## STACK:{}:()                #  DEAD:
+Lcfi3:
+Lcfi4:
+	movq      %rsp, %rbp                               ## STACK:{'%rbp': [0]}:()     #  DEAD:rbp
+Lcfi5:
+	xchgl     %esi, (%rdi)                             ## STACK:{'%rbp': [0]}:()     #  DEAD:rbp
+	popq      %rbp                                     ## STACK:{'%rbp': [-8]}:()    #  DEAD:rbp
+	ret                                                ## STACK:{'%rbp': [-8]}:()    #  DEAD:
+# ----------------------
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z3rorjj
+__Z3rorjj:
+	pushq     %rbp                                     ## STACK:{}:()                #  DEAD:rax;rcx;rflags
+Lcfi6:
+Lcfi7:
+	movq      %rsp, %rbp                               ## STACK:{'%rbp': [0]}:()     #  DEAD:rax;rbp;rcx;rflags
+Lcfi8:
+	movl      %esi, %ecx                               ## STACK:{'%rbp': [0]}:()     #  DEAD:rax;rbp;rcx;rflags
+	rorl      %cl, %edi                                ## STACK:{'%rbp': [0]}:()     #  DEAD:rax;rbp;rflags
+	movl      %edi, %eax                               ## STACK:{'%rbp': [0]}:()     #  DEAD:rax;rbp
+	popq      %rbp                                     ## STACK:{'%rbp': [-8]}:()    #  DEAD:rbp
+	ret                                                ## STACK:{'%rbp': [-8]}:()    #  DEAD:
+# ----------------------
+
+.subsections_via_symbols

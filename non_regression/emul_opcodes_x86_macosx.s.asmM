@@ -1,0 +1,41 @@
+	.macosx_version_min 10, 13
+	.section       __TEXT,__text,regular,pure_instructions
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z4xaddPU7_Atomici
+__Z4xaddPU7_Atomici:
+	pushl     %ebp                                     ##  DEAD:af;cf;eax;ecx;eip;nf;of;pf;zf
+	movl      %esp, %ebp                               ##  DEAD:af;cf;eax;ebp;ecx;eip;nf;of;pf;zf
+	movl      8(%ebp), %ecx                            ##  DEAD:af;cf;eax;ecx;eip;nf;of;pf;zf
+	movl      $-1, %eax                                ##  DEAD:af;cf;eax;ebp;eip;nf;of;pf;zf
+	lock xaddl     %eax, (%ecx)                        ##  DEAD:af;cf;ebp;eip;nf;of;pf;zf
+	decl      %eax                                     ##  DEAD:af;ebp;eip;nf;of;pf;zf
+	popl      %ebp                                     ##  DEAD:ebp;eip
+	ret                                                ##  DEAD:eip
+# ----------------------
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z4xchgNSt3__16atomicIiEEi
+__Z4xchgNSt3__16atomicIiEEi:
+	pushl     %ebp                                     ##  DEAD:eax;ecx;eip
+	movl      %esp, %ebp                               ##  DEAD:eax;ebp;ecx;eip
+	movl      8(%ebp), %eax                            ##  DEAD:eax;ecx;eip
+	movl      12(%ebp), %ecx                           ##  DEAD:ecx;eip
+	xchgl     %ecx, (%eax)                             ##  DEAD:ebp;eip
+	popl      %ebp                                     ##  DEAD:ebp;eip
+	ret                                                ##  DEAD:eip
+# ----------------------
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z3rorjj
+__Z3rorjj:
+	pushl     %ebp                                     ##  DEAD:cf;eax;eip;of
+	movl      %esp, %ebp                               ##  DEAD:cf;eax;ebp;eip;of
+	movb      12(%ebp), %cl                            ##  DEAD:cf;eax;eip;of
+	movl      8(%ebp), %eax                            ##  DEAD:cf;eax;eip;of
+	rorl      %cl, %eax                                ##  DEAD:cf;ebp;eip;of
+	popl      %ebp                                     ##  DEAD:ebp;eip
+	ret                                                ##  DEAD:eip
+# ----------------------
+
+.subsections_via_symbols

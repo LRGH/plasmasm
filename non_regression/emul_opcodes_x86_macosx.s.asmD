@@ -1,0 +1,41 @@
+	.macosx_version_min 10, 13
+	.section       __TEXT,__text,regular,pure_instructions
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z4xaddPU7_Atomici
+__Z4xaddPU7_Atomici:
+	pushl     %ebp                                     ##  DEAD:eax;ecx;eflags
+	movl      %esp, %ebp                               ##  DEAD:eax;ebp;ecx;eflags
+	movl      8(%ebp), %ecx                            ##  DEAD:eax;ecx;eflags
+	movl      $-1, %eax                                ##  DEAD:eax;ebp;eflags
+	lock xaddl     %eax, (%ecx)                        ##  DEAD:ebp;eflags
+	decl      %eax                                     ##  DEAD:ebp;eflags
+	popl      %ebp                                     ##  DEAD:ebp
+	ret                                                ##  DEAD:eip
+# ----------------------
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z4xchgNSt3__16atomicIiEEi
+__Z4xchgNSt3__16atomicIiEEi:
+	pushl     %ebp                                     ##  DEAD:eax;ecx
+	movl      %esp, %ebp                               ##  DEAD:eax;ebp;ecx
+	movl      8(%ebp), %eax                            ##  DEAD:eax;ecx
+	movl      12(%ebp), %ecx                           ##  DEAD:ecx
+	xchgl     %ecx, (%eax)                             ##  DEAD:ebp
+	popl      %ebp                                     ##  DEAD:ebp
+	ret                                                ##  DEAD:eip
+# ----------------------
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z3rorjj
+__Z3rorjj:
+	pushl     %ebp                                     ##  DEAD:eax;eflags
+	movl      %esp, %ebp                               ##  DEAD:eax;ebp;eflags
+	movb      12(%ebp), %cl                            ##  DEAD:eax;eflags
+	movl      8(%ebp), %eax                            ##  DEAD:eax;eflags
+	rorl      %cl, %eax                                ##  DEAD:ebp;eflags
+	popl      %ebp                                     ##  DEAD:ebp
+	ret                                                ##  DEAD:eip
+# ----------------------
+
+.subsections_via_symbols

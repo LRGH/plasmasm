@@ -99,6 +99,8 @@ if len(args) == 0:
 if long:
     from plasmasm import symbols
     symbols.Line.long_display = True
+    from plasmasm import write_asm, constants
+    constants.P2Align.long_display = False
 
 pool = File().from_filename(args[0],
      file_type = bin_type, cpu = cpu, entrypoints = ep, rw = rw, dead = dead)
