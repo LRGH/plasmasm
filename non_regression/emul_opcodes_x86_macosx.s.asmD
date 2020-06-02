@@ -37,5 +37,28 @@ __Z3rorjj:
 	popl      %ebp                                     ##  DEAD:ebp
 	ret                                                ##  DEAD:eip
 # ----------------------
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z4mulbaa
+__Z4mulbaa:
+	pushl     %ebp                                     ##  DEAD:eflags
+	movl      %esp, %ebp                               ##  DEAD:ebp;eflags
+	movb      12(%ebp), %al                            ##  DEAD:eflags
+	mulb      8(%ebp)                                  ##  DEAD:eflags
+	movsbl    %al, %eax                                ##  DEAD:ebp
+	popl      %ebp                                     ##  DEAD:ebp
+	ret                                                ##  DEAD:eip
+# ----------------------
+	.p2align 4, 0x90
+# ----------------------
+	.globl	__Z7do_fabsd
+__Z7do_fabsd:
+	pushl     %ebp                                     ##  DEAD:st7
+	movl      %esp, %ebp                               ##  DEAD:ebp;st7
+	fldl      8(%ebp)                                  ##  DEAD:st7
+	fabs                                               ##  DEAD:ebp
+	popl      %ebp                                     ##  DEAD:ebp
+	ret                                                ##  DEAD:eip
+# ----------------------
 
 .subsections_via_symbols

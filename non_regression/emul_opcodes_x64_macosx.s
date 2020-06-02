@@ -58,5 +58,49 @@ Lcfi8:
 	retq
 	.cfi_endproc
 
+	.globl	__Z4mulbaa
+	.p2align	4, 0x90
+__Z4mulbaa:                             ## @_Z4mulbaa
+	.cfi_startproc
+## BB#0:
+	pushq	%rbp
+Lcfi9:
+	.cfi_def_cfa_offset 16
+Lcfi10:
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+Lcfi11:
+	.cfi_def_cfa_register %rbp
+	movl	%esi, %eax
+	mulb	%dil
+	movsbl	%al, %eax
+	popq	%rbp
+	retq
+	.cfi_endproc
+
+	.section	__TEXT,__literal16,16byte_literals
+	.p2align	4
+LCPI4_0:
+	.quad	9223372036854775807     ## double NaN
+	.quad	9223372036854775807     ## double NaN
+	.section	__TEXT,__text,regular,pure_instructions
+	.globl	__Z7do_fabsd
+	.p2align	4, 0x90
+__Z7do_fabsd:                           ## @_Z7do_fabsd
+	.cfi_startproc
+## BB#0:
+	pushq	%rbp
+Lcfi12:
+	.cfi_def_cfa_offset 16
+Lcfi13:
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+Lcfi14:
+	.cfi_def_cfa_register %rbp
+	andps	LCPI4_0(%rip), %xmm0
+	popq	%rbp
+	retq
+	.cfi_endproc
+
 
 .subsections_via_symbols

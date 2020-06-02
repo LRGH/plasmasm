@@ -31,5 +31,33 @@ __Z3rorjj:
 	popq      %rbp                                     ## STACK:{'%rbp': [-8]}:()    #  DEAD:rbp
 	ret                                                ## STACK:{'%rbp': [-8]}:()    #  DEAD:
 # ----------------------
+	.align 4, 0x90
+	.globl	__Z4mulbaa
+__Z4mulbaa:
+	pushq     %rbp                                     ## STACK:{}:()                #  DEAD:rax;rflags
+	movq      %rsp, %rbp                               ## STACK:{'%rbp': [0]}:()     #  DEAD:rax;rbp;rflags
+	movl      %esi, %eax                               ## STACK:{'%rbp': [0]}:()     #  DEAD:rax;rbp;rflags
+	mulb      %dil                                     ## STACK:{'%rbp': [0]}:()     #  DEAD:rbp;rflags
+	movsbl    %al, %eax                                ## STACK:{'%rbp': [0]}:()     #  DEAD:rbp
+	popq      %rbp                                     ## STACK:{'%rbp': [-8]}:()    #  DEAD:rbp
+	ret                                                ## STACK:{'%rbp': [-8]}:()    #  DEAD:
+# ----------------------
+	.align 4, 0x90
+	.globl	__Z7do_fabsd
+__Z7do_fabsd:
+	pushq     %rbp                                     ## STACK:{}:()                #  DEAD:
+	movq      %rsp, %rbp                               ## STACK:{'%rbp': [0]}:()     #  DEAD:rbp
+	andps     LC00000060(%rip), %xmm0                  ## STACK:{'%rbp': [0]}:()     #  DEAD:rbp
+	popq      %rbp                                     ## STACK:{'%rbp': [-8]}:()    #  DEAD:rbp
+	ret                                                ## STACK:{'%rbp': [-8]}:()    #  DEAD:
+# ----------------------
+	.section       __TEXT,__literal16,16byte_literals
+	.align 4
+LC00000060:
+	.long	-1
+	.long	2147483647
+	.long	-1
+	.long	2147483647
+# ----------------------
 
 .subsections_via_symbols
