@@ -139,15 +139,13 @@ def gcc_hidden(symbols):
     # disposeable.
     # Non-regression: minigzip from zlib-1.2.8 / gcc 4.8.4 64-bit
     for label in symbols.blocs:
-        if not label.section in ('.init_array', '.fini_array'):
-            continue
-        if not len(label.lines) == 2:
-            continue
-        if getattr(label.lines[1], 'value', None) != [0]:
-            continue
-        if not getattr(getattr(label.lines[0], 'value', [None])[0], 'name', None) in ('frame_dummy', '__do_global_dtors_aux'):
-            continue
-        label.delete_bloc()
+        l = label.lines
+        if label.section in ('.init_array', '.fini_array') \
+                and len(l) == 2 \
+                and getattr(l[1], 'value', None) == [0] \
+                and getattr(getattr(l[0], 'value', [None])[0], 'name', None) \
+                    in ('frame_dummy', '__do_global_dtors_aux'):
+            label.delete_bloc()
 
 x86_long_nop_bytes = [
     # gcc uses various instructions with no effect
@@ -322,6 +320,7 @@ def x86_long_nop(symbols):
     if data_longnop:
         # Recompute CFG which contained None because the switch table
         # ended with long nop
+        NON_REGRESSION_FOUND
         for label in symbols.symbols:
             if not None in label.cfg: continue
             try:
@@ -423,7 +422,7 @@ def switch_detection_gcc463m32opt_travis(instr):
     # switch table size is unknown
     log.debug("SWITCH GCC 4.6.3-travis %s", label)
     label.switch_table = ('.', 4, None)
-    return False
+    return True
 
 # Hack for gcc 4.1.1, 32-bit ; PIC, not optimized
 def switch_detection_gcc411(instr):
