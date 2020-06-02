@@ -1131,5 +1131,4 @@ def test_switch_array(address):
             ):
             log.debug("SWITCH TABLE %s [%s*4]", L, r1.l.l)
             return r1, L
-    NON_REGRESSION_FOUND
     return None

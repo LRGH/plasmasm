@@ -45,6 +45,14 @@ all_tests = [
     #"switch_x86_macosx_2.s",    "asm", {"cpu":"/AMOCO"}), # very slow, 21s
     ("switch_x86_macosx_2.o",    "asm", {"cpu":"/MIASM"}),
     ("switch_x86_macosx_2.o",    "asm2",{"cpu":"/AMOCO"}),
+    ("switch_x86_macosx_3.s",    "asm", {"cpu":"/MIASM"}),
+    #"switch_x86_macosx_3.s",    "asm", {"cpu":"/AMOCO"}), # slow, 7s
+    ("switch_x86_macosx_3.o",    "asm", {"cpu":"/MIASM"}),
+    ("switch_x86_macosx_3.o",    "asm", {"cpu":"/AMOCO"}),
+    ("switch_x86_macosx_4.s",    "asm", {"cpu":"/MIASM"}),
+    #"switch_x86_macosx_4.s",    "asm", {"cpu":"/AMOCO"}), # slow, 7s
+    ("switch_x86_macosx_4.o",    "asm", {"cpu":"/MIASM"}),
+    ("switch_x86_macosx_4.o",    "asm2",{"cpu":"/AMOCO"}),
     ("switch_x64_linux.att.s",   "asm", {}),
     ("switch_x64_linux.o",       "asm", {}),
     ("switch_x64_linux.out",     "asm", {}),
@@ -61,6 +69,8 @@ all_tests = [
     ("switch_x64_macosx_3.o",    "asm", {}),
     ("switch_x64_macosx_4.s",    "asm", {}), # slow,  5s
     ("switch_x64_macosx_4.o",    "asm", {}),
+    #"switch_x64_macosx_5.s",    "asm", {}), # very slow
+    ("switch_x64_macosx_5.o",    "asm", {}),
     #"switch_x64_macosx_6.s",    "asm", {}), # very slow
     ("switch_x64_macosx_6.o",    "asm", {}),
     #"switch_x64_macosx_7.s",    "asm", {}), # slow
