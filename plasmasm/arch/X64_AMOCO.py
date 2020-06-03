@@ -492,7 +492,7 @@ class Instruction(Line, API_AMOCO):
         if is_relocatable and label.is_symbol() and (
             self.opname == 'jmp'
             or
-            (self.opname == 'lea' and label.bind == 'globl')
+            (self.opname == 'lea' and getattr(label, 'bind', None) == 'globl')
             ):
             # Create a new label, to avoid generating a relocation.
             label = self.symbols.find_symbol(

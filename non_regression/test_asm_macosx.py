@@ -85,6 +85,8 @@ all_tests = [
     ("other_x64_macosx_8.o",    "asm", {}),
     ("other_x64_macosx_9.s",    "asm", {}),
     ("other_x64_macosx_9.o",    "asm", {}),
+    ("other_x64_macosx_10.s",   "asm", {}),
+    ("other_x64_macosx_10.o",   "asm", {}),
     # For coverage of some opcodes
     ("emul_opcodes_x86_macosx.s",  "asmM",{"dead":True,"cpu":"/MIASM"}),
     ("emul_opcodes_x86_macosx.s",  "asmD",{"dead":True,"cpu":"/AMOCO"}),
