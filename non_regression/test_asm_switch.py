@@ -61,6 +61,10 @@ all_tests = [
     ("switch_x64_macosx_3.o",    "asm", {}),
     ("switch_x64_macosx_4.s",    "asm", {}), # slow,  5s
     ("switch_x64_macosx_4.o",    "asm", {}),
+    #"switch_x64_macosx_6.s",    "asm", {}), # very slow
+    ("switch_x64_macosx_6.o",    "asm", {}),
+    #"switch_x64_macosx_7.s",    "asm", {}), # slow
+    ("switch_x64_macosx_7.o",    "asm", {}),
 ]
 
 if sys.version_info[0] == 2 and sys.version_info[1] <= 6:

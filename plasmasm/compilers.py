@@ -993,14 +993,46 @@ def gcc64_label_for_char_array(instr):
 # if -fPIC, the latter being transormed by GNU as into
 # 'leaq x(%rip), %dst'.
 
-def look_backwards(symbols, bloc, opnames, value):
+def look_backwards(symbols, bloc, pos, opnames, value):
+    seen = {}
     lines = []
+    def is_previous(previous, seen):
+        # Checks if 'previous' continues with one of 'seen'
+        if previous.nxt in seen:
+            return seen[previous.nxt]
+        for cfg in previous.cfg:
+            if cfg in seen:
+                return seen[cfg]
+            if cfg is None:
+                return True # benefit of the doubt
+        return False
     while bloc is not None:
+        log.debug("look_backwards %r %r in '%s'", opnames, value, bloc)
         lines = bloc.lines + lines
-        for line in reversed(bloc.lines):
+        while -pos <= len(bloc.lines):
+            line = bloc.lines[pos]
             if line.opname in opnames and line.api_arg_txt(0) == value:
                 return lines, bloc.lines.index(line)-len(lines)
-        bloc = symbols.previous(bloc)
+            if line.opname == 'mov' and line.api_arg_txt(0) == value:
+                if line.api_is_reg_size(1):
+                    log.debug("register changes in %s", line)
+                    value = line.api_arg_txt(1)
+                else:
+                    log.debug("register lost in %s", line)
+                    bloc = None
+                    break
+            pos -= 1
+        if bloc is not None:
+            seen[bloc] = value
+            previous = symbols.previous(bloc)
+            while previous is not None:
+                value = is_previous(previous, seen)
+                if value == False:
+                    previous = symbols.previous(previous)
+                else:
+                    break
+            bloc = previous
+            pos = -1
     return False, None
 
 def switch_detection_clang32(instr):
@@ -1019,8 +1051,9 @@ def switch_detection_clang32(instr):
     if jmp_dst.startswith('[DWORD PTR '):
         jmp_dst = jmp_dst[11:-1]
     # Going backwards, detect which line changes jmp_dst
-    lines, idx = look_backwards(instr.symbols, bloc, ['add', 'mov'], jmp_dst)
-    if lines is None:
+    lines, idx = look_backwards(instr.symbols, bloc, -1, ['add', 'mov'], jmp_dst)
+    if idx is None:
+        log.debug("switch_detection_clang32: line not found for bloc %r", bloc)
         return False
     log.debug("switch_detection_clang32: line found is '%s'",lines[idx])
     line = lines[idx]
@@ -1198,19 +1231,20 @@ def switch_detection_clang64(instr):
         lea_reg = add_reg
     log.debug("lea_reg=%s", lea_reg)
     # We start looking before the pair of lines movslq;add
-    lines, idx = look_backwards(instr.symbols, bloc, ['lea'], lea_reg)
-    if lines is None:
+    lines, idx = look_backwards(instr.symbols, bloc, pos-2, ['lea'], lea_reg)
+    if idx is None:
+        log.debug("switch_detection_clang64: leaq not found for bloc %r", bloc)
         return False
     log.debug("switch_detection_clang64: leaq label at idx=%s",idx)
     for _ in lines[idx:]: log.debug("  %s",_)
     assert idx <= pos-2
     # other lines between leaq and movslq;add
     if idx < pos-2:
-        # Should not change %lea_reg
+        # The value of %lea_reg can change
         for l in lines[idx+1:pos-1]:
             if 'mov' == l.opname and lea_reg == l.api_arg_txt(0):
                 log.debug("register changes in %s", l)
-                return False
+                lea_reg = l.api_arg_txt(1)
     # other lines after movslq;add
     if pos < -1:
         # Should not change %jmp_reg
@@ -1232,12 +1266,18 @@ def switch_detection_clang64(instr):
         assert value is not None
         label, label_dif = value
         assert label_dif is None
-    tbl_size = get_tbl_size(bloc.symbols.previous(bloc))
+    if len(lines) > 3-pos and \
+        'cmp' == lines[pos-3].opname and \
+        'jbe' == lines[pos-2].opname:
+        # The comparison may be just before the movslq
+        tbl_size = 1+lines[pos-3].api_get_imm(1)
+    else:
+        # The previous bloc may end with
+        #   cmpl $tbl_size, %idx
+        #   ja LABEL
+        tbl_size = get_tbl_size(bloc.symbols.previous(bloc))
     label.switch_table = (label, 4, tbl_size)
     instr.dst = [[label]]
-    # Non-regression: c1.o a28-O.o
-    # Non-regression: infback.o from zlib-1.2.8 / clang 700.1.81
-    # Non-regression: inflate.o from zlib-1.2.8 / clang 700.1.81
     log.debug("SWITCH CLANG64 %s (%s lines)", line, tbl_size)
     return True
 
