@@ -996,7 +996,7 @@ def gcc64_label_for_char_array(instr):
 def look_backwards(symbols, bloc, pos, opnames, value):
     seen = {}
     lines = []
-    def is_previous(previous, seen):
+    def is_previous(previous, seen, value):
         # Checks if 'previous' continues with one of 'seen'
         if previous.nxt in seen:
             return seen[previous.nxt]
@@ -1004,7 +1004,7 @@ def look_backwards(symbols, bloc, pos, opnames, value):
             if cfg in seen:
                 return seen[cfg]
             if cfg is None:
-                return True # benefit of the doubt
+                return value # benefit of the doubt
         return False
     while bloc is not None:
         log.debug("look_backwards %r %r in '%s'", opnames, value, bloc)
@@ -1026,7 +1026,7 @@ def look_backwards(symbols, bloc, pos, opnames, value):
             seen[bloc] = value
             previous = symbols.previous(bloc)
             while previous is not None:
-                value = is_previous(previous, seen)
+                value = is_previous(previous, seen, value)
                 if value == False:
                     previous = symbols.previous(previous)
                 else:
