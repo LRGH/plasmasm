@@ -1217,7 +1217,6 @@ def create_switch_table(label, lab_done, job_done, ret_blocs):
     if addr+ptr_size > addr_end:
         # We are beyond the end of the switch table
         # Because the next switch table was not known
-        NON_REGRESSION_FOUND
         log.warning("Switch table %s has %d dummy elements at the end",
             label, (addr-addr_end)//ptr_size)
         for idx in range((addr_end-label.address)//ptr_size, len(label.lines)):
