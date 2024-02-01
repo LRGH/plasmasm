@@ -917,14 +917,16 @@ class Line(object):
             out = (fmt+'STACK:%s') % (out, stack_status)
             fmt = '%-80s # '
         if self.long_display and hasattr(self, 'dead'):
-            dead = self.dead
-            dead = sorted([str(_) for _ in dead])
+            dead = sorted([str(_) for _ in self.dead])
             out = (fmt+' DEAD:%s') % (out, ';'.join(dead))
             if hasattr(self, 'pic'):
                 for pic in self.pic[1]:
                     for reg in dead:
                         if str(reg) in str(pic):
                             out += ' COLLISION'
+        if self.long_display and len(getattr(self, 'dst', [])) > 1:
+            dst = sorted([str(_) for _ in self.dst])
+            out = (fmt+' DST:%s') % (out, ';'.join(dst))
         return out
     def apply_reloc(self, pos, reloc):
         ''' 'reloc' is a relocation at offset 'pos'
