@@ -74,6 +74,8 @@ class current_blocs(object):
             self.b[self.section].set_cfg([label])
         self.b[self.section] = label
     def addline(self, line, **props):
+        if self.section == '.note.gnu.property':
+            return
         if self.section.startswith('.debug'):
             return
         if not self.section in self.b:

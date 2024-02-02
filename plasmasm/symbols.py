@@ -594,7 +594,7 @@ section_types = {
         'plt':    ('.plt', '.got.plt', '.got'),
         None:     ('.debug_frame', '.eh_frame', '.comment', '.group',
             '.debug_str',
-            '.gcc_except_table', '.note.GNU-stack',
+            '.gcc_except_table', '.note.GNU-stack', '.note.gnu.property',
             # arbitrary sections are created by __attribute__ in binutils gold/testsuite
             'section_', '.gold_test', '_foo', '_boo',
             ),
