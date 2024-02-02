@@ -292,6 +292,6 @@ or Ubuntu is python-pyparsing.
 
 ## Development status
 
-[![Build Status](https://travis-ci.org/LRGH/plasmasm.svg?branch=master)](https://travis-ci.org/LRGH/plasmasm)
+[![Build Status](https://github.com/LRGH/plasmasm/actions/workflows/python-package.yml/badge.svg)](https://github.com/LRGH/plasmasm/actions/workflows/python-package.yml)
 [![codecov](https://codecov.io/gh/LRGH/plasmasm/branch/master/graph/badge.svg)](https://codecov.io/gh/LRGH/plasmasm)
 [![Code Quality](https://img.shields.io/lgtm/grade/python/g/LRGH/plasmasm.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LRGH/plasmasm/context:python)
