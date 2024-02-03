@@ -74,6 +74,7 @@ NOSUFFIX = [
         'rep', 'ret', 'sahf', 'scasb', 'scasw', 'sfence', 'stc', 'std', 'sti',
         'stmxcsr', 'stosb', 'stosl', 'stosw', 'ud2', 'wait',
         'xrstor', 'xsave', 'xsaveopt',
+        'endbr32', 'endbr64',
     ]
 
 opcodes = {
