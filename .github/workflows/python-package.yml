@@ -44,43 +44,43 @@ jobs:
     - name: Unit tests errors
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        coverage run -m pytest --durations=10 non_regression/test_errors.py
+        coverage run -a -m pytest --durations=10 non_regression/test_errors.py
     - name: Unit tests asm_basic
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        coverage run -m pytest --durations=10 non_regression/test_asm_basic.py
+        coverage run -a -m pytest --durations=10 non_regression/test_asm_basic.py
     - name: Unit tests asm_macosx
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        coverage run -m pytest --durations=10 non_regression/test_asm_macosx.py
+        coverage run -a -m pytest --durations=10 non_regression/test_asm_macosx.py
     - name: Unit tests asm_switch
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        coverage run -m pytest --durations=10 non_regression/test_asm_switch.py
+        coverage run -a -m pytest --durations=10 non_regression/test_asm_switch.py
     - name: Unit tests asm_other
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        coverage run -m pytest --durations=10 non_regression/test_asm_other.py
+        coverage run -a -m pytest --durations=10 non_regression/test_asm_other.py
     - name: Unit tests bin
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        coverage run -m pytest --durations=10 non_regression/test_bin.py
+        coverage run -a -m pytest --durations=10 non_regression/test_bin.py
     - name: Unit tests display
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        coverage run -m pytest --durations=10 non_regression/test_display.py
+        coverage run -a -m pytest --durations=10 non_regression/test_display.py
     - name: Unit tests lineapi
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        coverage run -m pytest --durations=10 non_regression/test_lineapi.py
+        coverage run -a -m pytest --durations=10 non_regression/test_lineapi.py
     - name: Unit tests objdump
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        coverage run -m pytest --durations=10 non_regression/test_objdump.py
+        coverage run -a -m pytest --durations=10 non_regression/test_objdump.py
     - name: Global tests asm_fullsoftware
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        coverage run -m pytest --durations=10 non_regression/test_asm_fullsoftware.py
+        coverage run -a -m pytest --durations=10 non_regression/test_asm_fullsoftware.py
     - name: Update codecov
       run: |
         codecov
