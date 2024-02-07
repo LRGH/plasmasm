@@ -7,12 +7,12 @@ on:
     branches: [ "master" ]
 
 jobs:
-  non-regression-for-python:
+  os-python:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: ["ubuntu-20.04"] # , "ubuntu-lastest", "macos-latest"]
+        os: ["ubuntu-20.04"] # , "ubuntu-latest", "macos-latest"]
         python-version: ["3.10", "pypy2.7", "pypy3.9"]
     steps:
     - uses: actions/checkout@v3
@@ -160,13 +160,13 @@ jobs:
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         python non_regression/run_tests.py test_asm_fullsoftware
 
-  matrix-with-compilers:
+  gcc-compilers:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: ["ubuntu-20.04"]
-        gcc-version: ["7"] # , "8", "9", "10", "11"]
+        gcc-version: ["7", "8", "9", "10", "11"]
         python-version: ["3.10"]
     steps:
     - uses: actions/checkout@v3
