@@ -483,8 +483,9 @@ def parse_asm_file(symbols, txt):
                 continue
             if directive == 'symver':
                 # Syntax: weakref symbol, alias
-                arguments = re.split(r",\W*", rest)
-                if len(arguments) == 2:
+                r = re.match(r'([^,]*),\s*(.*)', rest)
+                if r:
+                    arguments = r.groups()
                     dst = symbols.find_symbol(name = arguments[1])
                     props = { 'name': arguments[0] }
                     props['data'] = { 'symver': dst }
@@ -493,8 +494,9 @@ def parse_asm_file(symbols, txt):
             if directive == 'weakref':
                 # Syntax: weakref alias, symbol
                 # Renames alias as symbol, that will be its external name
-                arguments = re.split(r",\W*", rest)
-                if len(arguments) == 2:
+                r = re.match(r'([^,]*),\s*(.*)', rest)
+                if r:
+                    arguments = r.groups()
                     dst = symbols.find_symbol(name = arguments[0])
                     props = { 'name': arguments[1] }
                     props['data'] = { 'weakref': dst }
@@ -505,8 +507,9 @@ def parse_asm_file(symbols, txt):
                 # Defines a new symbol, with an expression
                 # Same symbol section, address and type
                 # binding and size can be different
-                arguments = re.split(r",\W*", rest)
-                if len(arguments) == 2:
+                r = re.match(r'([^,]*),\s*(.*)', rest)
+                if r:
+                    arguments = r.groups()
                     dst = symbols.find_symbol(name = arguments[1])
                     props = { 'name': arguments[0] }
                     props['data'] = { 'set': dst }
