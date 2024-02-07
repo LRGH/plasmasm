@@ -204,6 +204,8 @@ all_tests = [
     ("other_x64_linux_19.o",    "asm", {}),
     ("other_x64_linux_20.s",    "asm", {}),
     ("other_x64_linux_20.o",    "asm", {}),
+    ("other_x64_linux_21.s",    "asm", {}),
+    ("other_x64_linux_21.o",    "asm", {}),
     ("other_sparc.s",           "asm", {}),
     ("other_sparc.o",           "asm", {}),
     ("other_sparc_1.s",         "asm", {}),

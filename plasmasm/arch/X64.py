@@ -11,7 +11,7 @@ x64_att_opcodes = set([
         'notq', 'orq', 'xorq', 'andq', 'bsfq', 'bslq', 'bsrq',
         'rolq', 'rorq', 'sarq', 'salq', 'shrq', 'shlq', 'sbbq',
         'negq', 'decq', 'incq', 'adcq', 'addq', 'subq',
-        'mulq', 'divq', 'imulq', 'idivq', 'shldq', 'shrdq',
+        'mulq', 'divq', 'imulq', 'idivq', 'shldq', 'shrdq', 'xchgq',
         'cltq', 'cqto', 'movabsq', 'movsbq', 'movslq', 'movswq',
         'insq', 'movsq', 'outsq', 'lodsq', 'stosq', 'cmpsq', 'scasq',
         'pextrq', 'pinsrq',

@@ -68,6 +68,7 @@ class API_AMOCO(object):
                 'lock':  0xf0,
                 'repne': 0xf2,
                 'rep':   0xf3,
+                'notrack':   0x3e,
                 }[self.amoco.misc['pfx'][0]])
         if self.amoco.misc['pfx'][1] is not None:
             assert 'segreg' == self.amoco.misc['pfx'][1]
