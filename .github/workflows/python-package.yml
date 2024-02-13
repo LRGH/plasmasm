@@ -160,22 +160,32 @@ jobs:
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         python non_regression/run_tests.py test_asm_fullsoftware
 
-  gcc-compilers:
+  gcc:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: ["ubuntu-20.04"]
-        gcc-version: ["7", "8", "9", "10", "11"]
-        python-version: ["3.10"]
+        os: [ubuntu-20.04, ubuntu-22.04]
+        gcc-version: [4.8, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        exclude:
+          - {os: ubuntu-20.04, gcc-version: 4.8}
+          - {os: ubuntu-20.04, gcc-version: 5}
+          - {os: ubuntu-20.04, gcc-version: 6}
+          - {os: ubuntu-20.04, gcc-version: 7}
+          - {os: ubuntu-22.04, gcc-version: 8}
+          - {os: ubuntu-20.04, gcc-version: 9}
+          - {os: ubuntu-20.04, gcc-version: 10}
+          - {os: ubuntu-20.04, gcc-version: 11}
+          - {os: ubuntu-20.04, gcc-version: 12}
+          - {os: ubuntu-20.04, gcc-version: 13}
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: "3.10"
     - name: Set up GCC ${{ matrix.gcc-version }}
-      uses: egor-tensin/setup-gcc@v1
+      uses: LRGH/setup-gcc@v1
       with:
         version: ${{ matrix.gcc-version }}
         platform: x64
