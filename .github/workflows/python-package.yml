@@ -58,6 +58,8 @@ jobs:
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         coverage run -a -m pytest --durations=10 non_regression/test_asm_switch.py
     - name: Unit tests asm_other
+      # pypy on macosx is really too slow
+      if: ${{ ! startsWith(matrix.python-version, 'pypy') || ! startsWith(matrix.os, 'macos') }}
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         coverage run -a -m pytest --durations=10 non_regression/test_asm_other.py
