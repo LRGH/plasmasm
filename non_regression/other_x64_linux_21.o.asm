@@ -726,7 +726,7 @@ inflateBack:
 	movq      %rdx, %r12
 	leaq      lenfix.1(%rip), %rdx
 	pushq     %rbp
-	movd      %rdx, %xmm1
+	movq      %rdx, %xmm1
 	pushq     %rbx
 	subq      $136, %rsp
 	movq      %rsi, (%rsp)
@@ -735,7 +735,7 @@ inflateBack:
 	movq      %fs:40, %rax
 	movq      %rax, 120(%rsp)
 	leaq      distfix.0(%rip), %rax
-	movd      %rax, %xmm2
+	movq      %rax, %xmm2
 	punpcklqdq %xmm2, %xmm1
 	movaps    %xmm1, 32(%rsp)
 	testq     %rdi, %rdi

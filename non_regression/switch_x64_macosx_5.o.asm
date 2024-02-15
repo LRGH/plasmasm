@@ -892,7 +892,7 @@ L00000D4C:
 L00000D55:
 	leaq      L_.str144(%rip), %rax
 L00000D5C:
-	movd      %rax, %xmm0
+	movq      %rax, %xmm0
 	movlhps   %xmm0, %xmm0
 	movaps    %xmm0, _long_time_format(%rip)
 	jmp       L00000D95

@@ -1079,10 +1079,10 @@ L00000F68:
 	movdqa    LC00003910(%rip), %xmm0
 	movq      %rbx, %rcx
 L00000F91:
-	movd      %rsi, %xmm1
+	movq      %rsi, %xmm1
 	pshufd    $68, %xmm1, %xmm1
 	paddq     %xmm0, %xmm1
-	movd      %xmm1, %rbx
+	movq      %xmm1, %rbx
 	movupd    -8(%r15,%rbx,8), %xmm1
 	movdqu    -24(%r15,%rbx,8), %xmm2
 	subq      %rax, %rbx
@@ -2032,10 +2032,10 @@ L00001ED7:
 	decq      %rsi
 	.align 4, 0x90
 L00001F10:
-	movd      %rcx, %xmm0
+	movq      %rcx, %xmm0
 	pshufd    $68, %xmm0, %xmm0
 	paddq     %xmm3, %xmm0
-	movd      %xmm0, %rax
+	movq      %xmm0, %rax
 	movupd    -8(%r14,%rax,8), %xmm0
 	movupd    -24(%r14,%rax,8), %xmm1
 	subq      %rbp, %rax
@@ -2328,10 +2328,10 @@ L00002350:
 	leaq      1(%rdi,%rcx), %rsi
 	andq      $-4, %rsi
 L00002371:
-	movd      %rcx, %xmm0
+	movq      %rcx, %xmm0
 	pshufd    $68, %xmm0, %xmm0
 	paddq     %xmm2, %xmm0
-	movd      %xmm0, %rdi
+	movq      %xmm0, %rdi
 	movupd    -8(%rax,%rdi,8), %xmm0
 	movupd    -24(%rax,%rdi,8), %xmm1
 	subq      %rbp, %rdi
@@ -2560,10 +2560,10 @@ L0000269D:
 	andq      $-4, %rbp
 	movdqa    LC00003910(%rip), %xmm2
 L000026C6:
-	movd      %rsi, %xmm1
+	movq      %rsi, %xmm1
 	pshufd    $68, %xmm1, %xmm1
 	paddq     %xmm2, %xmm1
-	movd      %xmm1, %rdi
+	movq      %xmm1, %rdi
 	movdqu    -8(%rax,%rdi,8), %xmm3
 	movupd    -24(%rax,%rdi,8), %xmm1
 	subq      %rbx, %rdi
@@ -2668,10 +2668,10 @@ L0000282B:
 	andq      $-4, %rbx
 	movq      %rsi, %rbp
 L0000283D:
-	movd      %rbp, %xmm1
+	movq      %rbp, %xmm1
 	pshufd    $68, %xmm1, %xmm1
 	paddq     %xmm2, %xmm1
-	movd      %xmm1, %rcx
+	movq      %xmm1, %rcx
 	movdqu    -8(%rax,%rcx,8), %xmm3
 	movupd    -24(%rax,%rcx,8), %xmm1
 	subq      %rsi, %rcx

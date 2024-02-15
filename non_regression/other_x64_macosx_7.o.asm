@@ -1055,10 +1055,10 @@ L000012D1:
 	subq      %r11, %rdi
 	decq      %rdi
 L00001301:
-	movd      %rsi, %xmm0
+	movq      %rsi, %xmm0
 	pshufd    $68, %xmm0, %xmm0
 	paddq     LC000055C0(%rip), %xmm0
-	movd      %xmm0, %rax
+	movq      %xmm0, %rax
 	movups    -8(%rbx,%rax,8), %xmm0
 	movups    -24(%rbx,%rax,8), %xmm1
 	subq      %rdx, %rax
@@ -1572,10 +1572,10 @@ L00001A97:
 	addq      $-2, %rbp
 	movq      %rsi, %rax
 L00001AB0:
-	movd      %rax, %xmm0
+	movq      %rax, %xmm0
 	pshufd    $68, %xmm0, %xmm0
 	paddq     LC000055C0(%rip), %xmm0
-	movd      %xmm0, %rbx
+	movq      %xmm0, %rbx
 	movups    -8(%rcx,%rbx,8), %xmm0
 	movups    -24(%rcx,%rbx,8), %xmm1
 	subq      %rsi, %rbx
@@ -2728,10 +2728,10 @@ L00002C16:
 	addq      $-2, %rdi
 	movq      %rdx, %rax
 L00002C2F:
-	movd      %rax, %xmm0
+	movq      %rax, %xmm0
 	pshufd    $68, %xmm0, %xmm0
 	paddq     LC000055C0(%rip), %xmm0
-	movd      %xmm0, %rsi
+	movq      %xmm0, %rsi
 	movups    -8(%rbx,%rsi,8), %xmm0
 	movups    -24(%rbx,%rsi,8), %xmm1
 	subq      %rdx, %rsi
@@ -3940,10 +3940,10 @@ L000040BC:
 	subq      %r11, %rbx
 	decq      %rbx
 L000040EC:
-	movd      %rsi, %xmm0
+	movq      %rsi, %xmm0
 	pshufd    $68, %xmm0, %xmm0
 	paddq     LC000055C0(%rip), %xmm0
-	movd      %xmm0, %rax
+	movq      %xmm0, %rax
 	movups    -8(%rcx,%rax,8), %xmm0
 	movups    -24(%rcx,%rax,8), %xmm1
 	subq      %rbp, %rax
@@ -5010,10 +5010,10 @@ L00005354:
 	movq      _bot@GOTPCREL(%rip), %r9
 	.align 4, 0x90
 L000053A0:
-	movd      %rcx, %xmm0
+	movq      %rcx, %xmm0
 	pshufd    $68, %xmm0, %xmm0
 	paddq     %xmm2, %xmm0
-	movd      %xmm0, %rax
+	movq      %xmm0, %rax
 	movdqu    -8(%r12,%rax,8), %xmm0
 	movups    -24(%r12,%rax,8), %xmm1
 	subq      %r15, %rax
@@ -5115,10 +5115,10 @@ L000054EF:
 	movdqa    LC000055D0(%rip), %xmm0
 	.align 4, 0x90
 L00005520:
-	movd      %r13, %xmm1
+	movq      %r13, %xmm1
 	pshufd    $68, %xmm1, %xmm1
 	paddq     %xmm0, %xmm1
-	movd      %xmm1, %rcx
+	movq      %xmm1, %rcx
 	movq      48(%rsp), %rdi
 	movups    -8(%rdi,%rcx,8), %xmm1
 	movdqu    -24(%rdi,%rcx,8), %xmm2

@@ -872,10 +872,10 @@ L00000AEE:
 	movdqa    LC00001140(%rip), %xmm0
 	.align 4, 0x90
 L00000B20:
-	movd      %rcx, %xmm1
+	movq      %rcx, %xmm1
 	pshufd    $68, %xmm1, %xmm1
 	paddq     %xmm0, %xmm1
-	movd      %xmm1, %rdi
+	movq      %xmm1, %rdi
 	movups    -8(%rbx,%rdi,8), %xmm1
 	movups    -24(%rbx,%rdi,8), %xmm2
 	subq      %r13, %rdi

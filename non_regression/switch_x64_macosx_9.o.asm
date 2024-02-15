@@ -825,15 +825,15 @@ L00000C8D:
 L00000C96:
 	leaq      LC0000C394(%rip), %rax
 L00000C9D:
-	movd      %rax, %xmm0
+	movq      %rax, %xmm0
 	pshufd    $68, %xmm0, %xmm0
 	movdqa    %xmm0, _long_time_format(%rip)
 	jmp       L00000CE1
 L00000CB1:
 	leaq      LC0000C3AD(%rip), %rax
-	movd      %rax, %xmm0
+	movq      %rax, %xmm0
 	leaq      LC0000C3A3(%rip), %rax
-	movd      %rax, %xmm1
+	movq      %rax, %xmm1
 	punpcklqdq %xmm0, %xmm1
 	movdqa    %xmm1, _long_time_format(%rip)
 	jmp       L00000CE1
@@ -4037,11 +4037,11 @@ L000037A0:
 	leaq      192(%rcx), %r10
 	leaq      384(%rcx), %r11
 	leaq      576(%rcx), %rbx
-	movd      %rcx, %xmm0
-	movd      %r10, %xmm1
+	movq      %rcx, %xmm0
+	movq      %r10, %xmm1
 	punpcklqdq %xmm1, %xmm0
-	movd      %rbx, %xmm1
-	movd      %r11, %xmm2
+	movq      %rbx, %xmm1
+	movq      %r11, %xmm2
 	punpcklqdq %xmm1, %xmm2
 	movdqu    %xmm0, -16(%rdi)
 	movdqu    %xmm2, (%rdi)
@@ -4103,11 +4103,11 @@ L00003890:
 	leaq      192(%rdx), %rbx
 	leaq      384(%rdx), %r11
 	leaq      576(%rdx), %r14
-	movd      %rdx, %xmm0
-	movd      %rbx, %xmm1
+	movq      %rdx, %xmm0
+	movq      %rbx, %xmm1
 	punpcklqdq %xmm1, %xmm0
-	movd      %r14, %xmm1
-	movd      %r11, %xmm2
+	movq      %r14, %xmm1
+	movq      %r11, %xmm2
 	punpcklqdq %xmm1, %xmm2
 	movdqu    %xmm0, -16(%rax)
 	movdqu    %xmm2, (%rax)
