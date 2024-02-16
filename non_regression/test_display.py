@@ -4,13 +4,14 @@ try:
 except:
     from run_tests import pytest
 import sys, os.path
+from run_tests import python_limitations
 basedir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(basedir)
 from plasmasm.analyze_file import File
 # To be able to import elfesteem in the parent directory, with python3
 sys.path.append(os.path.dirname(basedir)+'/elfesteem')
 
-all_tests = [
+all_tests = python_limitations([
     ("basic_x86_linux.o",       "repr",  {"cpu":"/MIASM"}),
     ("basic_x86_linux.o",       "repr2", {"cpu":"/AMOCO"}),
     ("basic_x86_linux.o",       "reprW", {"cpu":"/MIASM","rw":True}),
@@ -57,14 +58,9 @@ all_tests = [
     ("switch_x64_linux_3.o",    "reprD", {"rw":True,"pic":True,"dead":True}),
     # For coverage of staticasm/dead_registers
     ("switch_x86_linux_4.s",    "reprD", {"rw":True,"pic":True,"dead":True}),
-]
+])
 
 if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
-    # Cannot use amoco, no OrderedDict
-    all_tests = [ (f,s,k) for (f,s,k) in all_tests
-                  if  not '_x64_' in f
-                  and not '_sparc' in f
-                  and k.get("cpu",None) != "/AMOCO" ]
     try:    
         from plasmasm.python.compatibility import sorted, reversed
     except ImportError:

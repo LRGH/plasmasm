@@ -4,6 +4,7 @@ try:
 except:
     from run_tests import pytest
 import sys, os.path
+from run_tests import can_use_amoco
 basedir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(basedir)
 from plasmasm.analyze_file import File
@@ -23,7 +24,7 @@ def i_x86_amoco(s):
 def i_x64_amoco(s):
     return X64_AMOCO.Instruction(pool).from_txt(s)
 i_list.append(i_x86_miasm)
-if not (sys.version_info[0] == 2 and sys.version_info[1] <= 6):
+if can_use_amoco():
     from plasmasm.arch import I386_AMOCO, X64_AMOCO
     i_list.append(i_x86_amoco)
     i_list.append(i_x64_amoco)

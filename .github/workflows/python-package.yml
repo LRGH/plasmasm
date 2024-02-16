@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         os: ["ubuntu-20.04", "ubuntu-latest", "macos-latest"]
-        python-version: ["3.10", "pypy2.7", "pypy3.9"]
+        python-version: ["3.10", "pypy2.7", "pypy3.9", "graalpy-22.3"]
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
@@ -30,13 +30,24 @@ jobs:
         echo > amoco/amoco/__init__.py # don't import grandalf
         cat plasmasm/python/amoco-config.py > amoco/amoco/config.py # avoid dependency on traitlets
         mv elfesteem miasmX amoco crysp ..
+    - name: Test MIASM dependency
+      run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
-        echo '** Simple tests to verify that dependencies are working'
         python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s
         python tools/disass.py -c /MIASM non_regression/basic_x86_linux.att.s
         python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o
+    - name: Test AMOCO dependency
+      if: ${{ ! startsWith(matrix.python-version, 'graalpy') }}
+      run: |
+        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.att.s
         python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.o
+    - name: Coverage does not work with graalpy
+      if: ${{ startsWith(matrix.python-version, 'graalpy') }}
+      run: |
+        echo '#! /bin/sh' > `which coverage`
+        echo 'shift; shift; python "$@"' >> `which coverage`
+        echo '#! /bin/sh' > `which codecov`
     - name: Unit tests asm_basic (without using pytest module)
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp

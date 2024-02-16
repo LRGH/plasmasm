@@ -4,13 +4,14 @@ try:
 except:
     from run_tests import pytest
 import sys, os.path
+from run_tests import python_limitations
 basedir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(basedir)
 from plasmasm.analyze_file import File
 # To be able to import elfesteem in the parent directory, with python3
 sys.path.append(os.path.dirname(basedir)+'/elfesteem')
 
-all_tests = [
+all_tests = python_limitations([
     ("other_x86_macosx.s",      "asm", {"cpu":"/MIASM"}),
     ("other_x86_macosx.s",      "asm2",{"cpu":"/AMOCO"}),
     ("other_x86_macosx.o",      "asm", {"cpu":"/MIASM"}),
@@ -94,13 +95,8 @@ all_tests = [
     ("emul_opcodes_x86_macosx.o",  "asmD",{"dead":True,"cpu":"/AMOCO"}),
     ("emul_opcodes_x64_macosx.s",  "asmD",{"dead":True}),
     ("emul_opcodes_x64_macosx.o",  "asmD",{"dead":True}),
-]
+])
 
-if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
-    # Cannot use amoco, no OrderedDict
-    all_tests = [ (f,s,k) for (f,s,k) in all_tests
-                  if  not '_x64_' in f
-                  and k.get("cpu",None) != "/AMOCO" ]
 if sys.version_info[0] == 2 and sys.version_info[1] <= 3:
     # Display of negative int make some tests fail
     all_tests = [ (f,s,k) for (f,s,k) in all_tests

@@ -4,13 +4,14 @@ try:
 except:
     from run_tests import pytest
 import sys, os.path
+from run_tests import python_limitations
 basedir = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(basedir)
 from plasmasm.analyze_file import File
 # To be able to import elfesteem in the parent directory, with python3
 sys.path.append(os.path.dirname(basedir)+'/elfesteem')
 
-all_tests = [
+all_tests = python_limitations([
     # /bin/sh from Ubuntu 12.04
     ("sh_x86_linux_ubuntu1204", "asm", {"cpu":"/MIASM"}), # very slow, 22s
     ("sh_x86_linux_ubuntu1204", "asm2",{"cpu":"/AMOCO"}), # very slow, 21s
@@ -23,14 +24,7 @@ all_tests = [
     # aspell 0.60.6.1 compiled for Debian 8.3
     ("aspell_x86_linux", "asm", {"cpu":"/MIASM"}), # extremely slow, 77s
     ("aspell_x86_linux", "asm", {"cpu":"/AMOCO"}), # very slow, 36s
-]
-
-if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
-    # Cannot use amoco, no OrderedDict
-    all_tests = [ (f,s,k) for (f,s,k) in all_tests
-                  if  not '_x64_' in f
-                  and not '_sparc' in f
-                  and k.get("cpu",None) != "/AMOCO" ]
+])
 
 def test_io(file, suffix, kargs):
     fd = open("non_regression/"+file,"rb")

@@ -18,6 +18,23 @@ def import_by_name(name):
         if fp is not None: fp.close()
     return module
 
+def can_use_amoco():
+    if sys.version_info[0] == 2 and sys.version_info[1] <= 6:
+        # Cannot use amoco, no OrderedDict
+        return False
+    if "Graal" in sys.version:
+        # Cannot use amoco with GraalPy, bug with pyparsing
+        return False
+    return True
+
+def python_limitations(all_tests):
+    if not can_use_amoco():
+        all_tests = [ (f,s,k) for (f,s,k) in all_tests
+                      if  not '_x64_' in f
+                      and not '_sparc' in f
+                      and k.get("cpu",None) != "/AMOCO" ]
+    return all_tests
+
 def run_test(test_file):
     module = import_by_name(test_file)
     for file, suffix, kargs in module.all_tests:
