@@ -126,8 +126,9 @@ def update_value(line, value, str_copy):
         reg = dst[-5:-1]
         if reg in value[0]: # registers
             imm = dst[:-6]
-            if imm == '': imm = 0
-            else:         imm = int(imm)
+            if '(' in imm:  return False, set() # shift value depend on another register
+            elif imm == '': imm = 0
+            else:           imm = int(imm)
             positions = value[1].union(set([imm+_ for _ in value[0][reg]]))
             return value[0], positions
         else:

@@ -209,6 +209,8 @@ all_tests = python_limitations([
     ("other_x64_linux_21.o",    "asm", {}),
     ("other_x64_linux_22.s",    "asm", {"dead":True}),
     ("other_x64_linux_22.o",    "asm", {"dead":True}),
+    ("other_x64_linux_23.s",    "asm", {"dead":True}),
+    ("other_x64_linux_23.o",    "asm", {"dead":True}),
     ("other_sparc.s",           "asm", {}),
     ("other_sparc.o",           "asm", {}),
     ("other_sparc_1.s",         "asm", {}),
