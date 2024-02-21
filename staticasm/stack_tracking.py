@@ -102,6 +102,9 @@ def update_value(line, value, str_copy):
             return value[0], positions
         else:
             return value
+    # First form of movsd (0xA5)
+    if line.opname == 'movsd' and line.api_nb_arg() == 0:
+        return value
     # Use of the red zone starting from %rsp
     if line.opname in   ('mov', 'movss', 'movsd',
                          'movaps', 'movups', 'movlps',

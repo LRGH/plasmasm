@@ -207,6 +207,8 @@ all_tests = python_limitations([
     ("other_x64_linux_20.o",    "asm", {}),
     ("other_x64_linux_21.s",    "asm", {}),
     ("other_x64_linux_21.o",    "asm", {}),
+    ("other_x64_linux_22.s",    "asm", {"dead":True}),
+    ("other_x64_linux_22.o",    "asm", {"dead":True}),
     ("other_sparc.s",           "asm", {}),
     ("other_sparc.o",           "asm", {}),
     ("other_sparc_1.s",         "asm", {}),
@@ -234,5 +236,9 @@ def test_io(file, suffix, kargs):
     res = fd.read()
     fd.close()
     pool = File().from_raw(raw, rw=True, **kargs)
+    if "dead" in kargs:
+        from staticasm.dead_registers import analyze_dead
+        analyze_dead(pool)
+        pool.arch.long_display = True
     assert pool.to_asm() == res
 test_io = pytest.mark.parametrize("file, suffix, kargs", all_tests)(test_io)
