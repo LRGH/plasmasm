@@ -91,6 +91,8 @@ jobs:
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         coverage run -a -m pytest --durations=10 non_regression/test_objdump.py
     - name: Global tests asm_fullsoftware
+      # pypy on macosx is really too slow
+      if: ${{ ! startsWith(matrix.python-version, 'pypy') || ! startsWith(matrix.os, 'macos') }}
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         coverage run -a -m pytest --durations=10 non_regression/test_asm_fullsoftware.py
