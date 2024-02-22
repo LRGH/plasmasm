@@ -225,7 +225,7 @@ or Ubuntu is python-pyparsing.
 
 - `write_asm.py`
   Outputs the internal representation in asm, that can be input to GNU as.
-  Outputs the internal represenattion in an objdump-lile format.
+  Outputs the internal representation in an objdump-lile format.
 
 - `parse_bin.py`
   Parser for binary files.
@@ -292,6 +292,7 @@ or Ubuntu is python-pyparsing.
 
 ## Development status
 
-[![Build Status](https://github.com/LRGH/plasmasm/actions/workflows/python-package.yml/badge.svg)](https://github.com/LRGH/plasmasm/actions/workflows/python-package.yml)
+[![Portability](https://github.com/LRGH/plasmasm/actions/workflows/portability.yml/badge.svg)](https://github.com/LRGH/plasmasm/actions/workflows/portability.yml)  
+[![Usage](https://github.com/LRGH/plasmasm/actions/workflows/usage.yml/badge.svg)](https://github.com/LRGH/plasmasm/actions/workflows/usage.yml)  
 [![codecov](https://codecov.io/gh/LRGH/plasmasm/branch/master/graph/badge.svg)](https://codecov.io/gh/LRGH/plasmasm)
 [![Code Quality](https://img.shields.io/lgtm/grade/python/g/LRGH/plasmasm.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/LRGH/plasmasm/context:python)

@@ -1,4 +1,4 @@
-name: Non-regression testing
+name: Testing portability (OS and python version)
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  os-python:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -172,73 +172,3 @@ jobs:
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         python non_regression/run_tests.py test_asm_fullsoftware
-
-  gcc:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-20.04, ubuntu-22.04]
-        gcc-version: [4.4, 4.6, 4.8, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-        exclude:
-          - {os: ubuntu-22.04, gcc-version: 4.4}
-          - {os: ubuntu-22.04, gcc-version: 4.6}
-          - {os: ubuntu-20.04, gcc-version: 4.8}
-          - {os: ubuntu-20.04, gcc-version: 5}
-          - {os: ubuntu-20.04, gcc-version: 6}
-          - {os: ubuntu-20.04, gcc-version: 7}
-          - {os: ubuntu-22.04, gcc-version: 8}
-          - {os: ubuntu-20.04, gcc-version: 9}
-          - {os: ubuntu-20.04, gcc-version: 10}
-          - {os: ubuntu-20.04, gcc-version: 11}
-          - {os: ubuntu-20.04, gcc-version: 12}
-          - {os: ubuntu-20.04, gcc-version: 13}
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.10"
-    - name: Set up GCC ${{ matrix.gcc-version }}
-      uses: LRGH/setup-gcc@v2
-      with:
-        version: ${{ matrix.gcc-version }}
-        platform: x64
-    - name: Install dependencies
-      run: |
-        python -m pip install pytest pyparsing coverage codecov
-        git clone https://github.com/LRGH/elfesteem
-        git clone https://github.com/LRGH/miasmX
-        git clone https://github.com/LRGH/crysp
-        git clone https://github.com/LRGH/amoco
-        echo > amoco/amoco/__init__.py # don't import grandalf
-        cat plasmasm/python/amoco-config.py > amoco/amoco/config.py # avoid dependency on traitlets
-        mv elfesteem miasmX amoco crysp ..
-        export PYTHONPATH=../elfesteem:../miasmx:../amoco:../crysp
-        echo '** Simple tests to verify that dependencies are working'
-        python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
-        python tools/disass.py -c /MIASM non_regression/basic_x86_linux.att.s || true
-        python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o || true
-        python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.att.s || true
-        python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.o || true
-    - name: Testing compile.py with a minimal program
-      run: |
-        export PATH=$(pwd)/tools:$PATH
-        echo 'int main() { return 10; }' > a.c
-        compile.py -parse_asm gcc a.c
-        compile.py -parse_asm -rw -dead gcc a.c
-        compile.py -parse_obj gcc a.c
-        compile.py -change gcc a.c
-    - name: Testing compile.py with zlib
-      run: |
-        export PATH=$(pwd)/tools:$PATH
-        curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
-        tar xzf zlib-1.2.8.tar.gz
-        cd zlib-1.2.8
-        gcc --version
-        ./configure
-        make clean; make test CC='gcc'
-        make clean; make test CC='compile.py -parse_asm gcc'
-        make clean; make test CC='compile.py -parse_asm -rw -dead gcc'
-        make clean; make test CC='compile.py -parse_obj gcc'
-        make clean; make test CC='compile.py -change gcc'
