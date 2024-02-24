@@ -8,18 +8,22 @@ on:
 
 jobs:
   gcc:
-    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
+        platform: [x86, x64]
         os: [ubuntu-20.04, ubuntu-22.04]
         gcc-version: [4.4, 4.6, 4.8, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+        backend: [AMOCO, MIASM]
         exclude:
           - {os: ubuntu-22.04, gcc-version: 4.4}
           - {os: ubuntu-22.04, gcc-version: 4.6}
+          - {os: ubuntu-22.04, gcc-version: 4.8, platform: x86}
           - {os: ubuntu-20.04, gcc-version: 4.8}
           - {os: ubuntu-20.04, gcc-version: 5}
+          - {os: ubuntu-22.04, gcc-version: 5, platform: x86}
           - {os: ubuntu-20.04, gcc-version: 6}
+          - {os: ubuntu-22.04, gcc-version: 6, platform: x86}
           - {os: ubuntu-20.04, gcc-version: 7}
           - {os: ubuntu-22.04, gcc-version: 8}
           - {os: ubuntu-20.04, gcc-version: 9}
@@ -27,6 +31,26 @@ jobs:
           - {os: ubuntu-20.04, gcc-version: 11}
           - {os: ubuntu-20.04, gcc-version: 12}
           - {os: ubuntu-20.04, gcc-version: 13}
+          - {backend: MIASM, platform: x64}
+          # exclusions below to disappear when miasm will parse endbr
+          - {backend: MIASM, gcc-version: 8}
+          - {backend: MIASM, gcc-version: 9}
+          - {backend: MIASM, gcc-version: 10}
+          - {backend: MIASM, gcc-version: 11}
+          - {backend: MIASM, gcc-version: 12}
+          - {backend: MIASM, gcc-version: 13}
+          # exclusions below to disappear when gcc -m32 supports #include <errno.h>
+          - {platform: x86, gcc-version: 8}
+          - {platform: x86, gcc-version: 9}
+          - {platform: x86, gcc-version: 10}
+          - {platform: x86, gcc-version: 11}
+          - {platform: x86, gcc-version: 12}
+          - {platform: x86, gcc-version: 13}
+    runs-on: ${{ matrix.os }}
+    name: '${{ matrix.os }} / gcc ${{ matrix.gcc-version }} ${{ matrix.platform }} / ${{ matrix.backend }}'
+    env:
+      PLATFORM: ${{ matrix.platform }}
+      BACKEND: ${{ matrix.backend }}
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python
@@ -34,10 +58,10 @@ jobs:
       with:
         python-version: "3.10"
     - name: Set up GCC ${{ matrix.gcc-version }}
-      uses: LRGH/setup-gcc@v2
+      uses: LRGH/setup-gcc@v3
       with:
         version: ${{ matrix.gcc-version }}
-        platform: x64
+        platform: ${{ matrix.platform }}
     - name: Install dependencies
       run: |
         python -m pip install pytest pyparsing coverage codecov
@@ -50,29 +74,37 @@ jobs:
         mv elfesteem miasmX amoco crysp ..
         export PYTHONPATH=../elfesteem:../miasmx:../amoco:../crysp
         echo '** Simple tests to verify that dependencies are working'
-        python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s || true
-        python tools/disass.py -c /MIASM non_regression/basic_x86_linux.att.s || true
-        python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o || true
-        python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.att.s || true
-        python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.o || true
+        test ${{ matrix.backend }} = MIASM && \
+        python tools/disass.py -c /${{ matrix.backend }} non_regression/basic_x86_linux.intel.s
+        python tools/disass.py -c /${{ matrix.backend }} non_regression/basic_x86_linux.att.s
+        python tools/disass.py -c /${{ matrix.backend }} non_regression/basic_x86_linux.o
+    - name: Testing gcc
+      run: |
+        if test 'x86' = $PLATFORM; then flags=-m32; else flags=; fi
+        echo 'int main() { return 0; }' > a.c
+        gcc --version
+        gcc $flags a.c
+        file a.out
+        ./a.out
     - name: Testing compile.py with a minimal program
       run: |
+        if test 'x86' = $PLATFORM; then flags=-m32; else flags=; fi
         export PATH=$(pwd)/tools:$PATH
-        echo 'int main() { return 10; }' > a.c
-        compile.py -parse_asm gcc a.c
-        compile.py -parse_asm -rw -dead gcc a.c
-        compile.py -parse_obj gcc a.c
-        compile.py -change gcc a.c
+        compile.py -parse_asm -c/${{ matrix.backend }} gcc $flags a.c
+        compile.py -parse_asm -c/${{ matrix.backend }} -rw -dead gcc $flags a.c
+        compile.py -parse_obj -c/${{ matrix.backend }} gcc $flags a.c
+        compile.py -change -c/${{ matrix.backend }} gcc $flags a.c
     - name: Testing compile.py with zlib
       run: |
         export PATH=$(pwd)/tools:$PATH
         curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
         tar xzf zlib-1.2.8.tar.gz
         cd zlib-1.2.8
-        gcc --version
         ./configure
-        make clean; make test CC='gcc'
-        make clean; make test CC='compile.py -parse_asm gcc'
-        make clean; make test CC='compile.py -parse_asm -rw -dead gcc'
-        make clean; make test CC='compile.py -parse_obj gcc'
-        make clean; make test CC='compile.py -change gcc'
+        flags="-O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN"
+        if test 'x86' = $PLATFORM; then flags="-m32 $flags"; fi
+        make clean; make test CFLAGS="$flags" SFLAGS="-fPIC $flags -DPIC" CC='gcc'
+        make clean; make test CFLAGS="$flags" SFLAGS="-fPIC $flags -DPIC" CC='compile.py -parse_asm -c/${{ matrix.backend }} gcc'
+        make clean; make test CFLAGS="$flags" SFLAGS="-fPIC $flags -DPIC" CC='compile.py -parse_asm -c/${{ matrix.backend }} -rw -dead gcc'
+        make clean; make test CFLAGS="$flags" SFLAGS="-fPIC $flags -DPIC" CC='compile.py -parse_obj -c/${{ matrix.backend }} gcc'
+        make clean; make test CFLAGS="$flags" SFLAGS="-fPIC $flags -DPIC" CC='compile.py -change -c/${{ matrix.backend }} gcc'
