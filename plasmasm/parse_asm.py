@@ -459,6 +459,8 @@ def parse_asm_file(symbols, txt):
                 # Recent versions of clang, e.g. clang-801
                 symbols.set_meta(compiler = "clang")
                 continue
+            if directive in ['weak_definition']:
+                continue
             if directive in ['hidden', 'protected', 'internal', 'private_extern', 'weak_def_can_be_hidden']:
                 symbols.find_symbol(name = rest)
                 symbols.setattr(name = rest, visibility = directive)
