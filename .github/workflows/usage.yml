@@ -32,20 +32,6 @@ jobs:
           - {os: ubuntu-20.04, gcc-version: 12}
           - {os: ubuntu-20.04, gcc-version: 13}
           - {backend: MIASM, platform: x64}
-          # exclusions below to disappear when miasm will parse endbr
-          - {backend: MIASM, gcc-version: 8}
-          - {backend: MIASM, gcc-version: 9}
-          - {backend: MIASM, gcc-version: 10}
-          - {backend: MIASM, gcc-version: 11}
-          - {backend: MIASM, gcc-version: 12}
-          - {backend: MIASM, gcc-version: 13}
-          # exclusions below to disappear when gcc -m32 supports #include <errno.h>
-          - {platform: x86, gcc-version: 8}
-          - {platform: x86, gcc-version: 9}
-          - {platform: x86, gcc-version: 10}
-          - {platform: x86, gcc-version: 11}
-          - {platform: x86, gcc-version: 12}
-          - {platform: x86, gcc-version: 13}
     runs-on: ${{ matrix.os }}
     name: '${{ matrix.os }} / gcc ${{ matrix.gcc-version }} ${{ matrix.platform }} / ${{ matrix.backend }}'
     env:
