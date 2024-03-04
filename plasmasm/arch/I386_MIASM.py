@@ -270,7 +270,11 @@ class Instruction(Line, API_MIASM):
         self.miasm = x86_mn()
         if asm_format.startswith('att_syntax'):
             if asm_format == 'att_syntax': asm_format = 'att_syntax binutils'
-            from miasmX.arch.ia32_att import parse_asm_x86, parse_args
+            try:
+                from miasmX.arch.ia32_att import parse_asm_x86
+            except ImportError:
+                from miasmX.arch.ia32_arch import parse_asm_x86
+            from miasmX.arch.ia32_att import parse_args
             from miasmX.arch.ia32_arch import mnemo_from_att
             prefix, name, l_args = parse_asm_x86(line)
             args = parse_args(l_args)
