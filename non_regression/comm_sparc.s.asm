@@ -68,105 +68,105 @@ p:
 	.type	y, #function
 	.proc	04
 y:
-	save  %sp, -96, %sp
-	st  %i0, [%fp+68]
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g1], %g1
-	ld  [%g1+8], %g1
-	ld  [%g1+8], %g2
-	inc  -0x1, %g2
-	st  %g2, [%g1+8]
-	ld  [%g1+8], %g1
-	cmp  %g1, 0
-	bge  .LL2
+	save    %sp, -96, %sp
+	st      %i0, [%fp+68]
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g1], %g1
+	ld      [%g1+8], %g1
+	ld      [%g1+8], %g2
+	inc     -1, %g2
+	st      %g2, [%g1+8]
+	ld      [%g1+8], %g1
+	cmp     %g1, 0, %g0
+	bge     .LL2
 	nop
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g1], %g1
-	ld  [%g1+8], %g1
-	ld  [%g1+8], %g2
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g1], %g1
-	ld  [%g1+8], %g1
-	ld  [%g1+24], %g1
-	cmp  %g2, %g1
-	bl  .LL3
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g1], %g1
+	ld      [%g1+8], %g1
+	ld      [%g1+8], %g2
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g1], %g1
+	ld      [%g1+8], %g1
+	ld      [%g1+24], %g1
+	cmp     %g2, %g1, %g0
+	bl      .LL3
 	nop
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g1], %g1
-	ld  [%g1+8], %g1
-	ld  [%g1], %g1
-	ld  [%fp+68], %g2
-	stb  %g2, [%g1]
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g1], %g1
-	ld  [%g1+8], %g1
-	ld  [%g1], %g1
-	ldub  [%g1], %g1
-	and  %g1, 0xff, %g1
-	cmp  %g1, 10
-	be  .LL4
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g1], %g1
+	ld      [%g1+8], %g1
+	ld      [%g1], %g1
+	ld      [%fp+68], %g2
+	stb     %g2, [%g1]
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g1], %g1
+	ld      [%g1+8], %g1
+	ld      [%g1], %g1
+	ldub    [%g1], %g1
+	and     %g1, 0xff, %g1
+	cmp     %g1, 10, %g0
+	be      .LL4
 	nop
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g1], %g1
-	ld  [%g1+8], %g2
-	ld  [%g2], %g3
-	ldub  [%g3], %g1
-	and  %g1, 0xff, %g1
-	inc  %g3
-	st  %g3, [%g2]
-	ba  .LL5
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g1], %g1
+	ld      [%g1+8], %g2
+	ld      [%g2], %g3
+	ldub    [%g3], %g1
+	and     %g1, 0xff, %g1
+	inc     %g3, %g3
+	st      %g3, [%g2]
+	ba      .LL5
 	nop
 .LL4:
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g1], %g1
-	ld  [%g1+8], %g1
-	mov  0xa, %o0
-	mov  %g1, %o1
-	call  __swbuf, 0
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g1], %g1
+	ld      [%g1+8], %g1
+	mov     0xa, %o0
+	mov     %g1, %o1
+	call    __swbuf, 0
 	nop
-	mov  %o0, %g1
+	mov     %o0, %g1
 .LL5:
-	ba  .LL6
+	ba      .LL6
 	nop
 .LL3:
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g1], %g1
-	ld  [%g1+8], %g1
-	ld  [%fp+68], %o0
-	mov  %g1, %o1
-	call  __swbuf, 0
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g1], %g1
+	ld      [%g1+8], %g1
+	ld      [%fp+68], %o0
+	mov     %g1, %o1
+	call    __swbuf, 0
 	nop
-	mov  %o0, %g1
+	mov     %o0, %g1
 .LL6:
-	ba  .LL7
+	ba      .LL7
 	nop
 .LL2:
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g1], %g1
-	ld  [%g1+8], %g1
-	ld  [%g1], %g1
-	ld  [%fp+68], %g2
-	stb  %g2, [%g1]
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g1], %g1
-	ld  [%g1+8], %g2
-	ld  [%g2], %g3
-	ldub  [%g3], %g1
-	and  %g1, 0xff, %g1
-	inc  %g3
-	st  %g3, [%g2]
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g1], %g1
+	ld      [%g1+8], %g1
+	ld      [%g1], %g1
+	ld      [%fp+68], %g2
+	stb     %g2, [%g1]
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g1], %g1
+	ld      [%g1+8], %g2
+	ld      [%g2], %g3
+	ldub    [%g3], %g1
+	and     %g1, 0xff, %g1
+	inc     %g3, %g3
+	st      %g3, [%g2]
 .LL7:
-	mov  %g1, %i0
+	mov     %g1, %i0
 	restore
 	retl
 	nop
@@ -178,24 +178,24 @@ y:
 	.type	r, #function
 	.proc	04
 r:
-	save  %sp, -96, %sp
-	st  %i0, [%fp+68]
-	sethi  %hi(p), %g1
-	bset   %lo(p), %g1
-	ld  [%g1], %g1
-	ldub  [%g1], %g1
-	sll  %g1, 24, %g1
-	sra  %g1, 24, %g1
-	sethi  %hi(.LLC1), %g2
-	bset   %lo(.LLC1), %g2
-	ldub  [%g1+%g2], %g1
-	sll  %g1, 24, %g1
-	sra  %g1, 24, %g1
-	mov  %g1, %o0
-	call  y, 0
+	save    %sp, -96, %sp
+	st      %i0, [%fp+68]
+	sethi   %hi(p), %g1
+	bset    %lo(p), %g1
+	ld      [%g1], %g1
+	ldub    [%g1], %g1
+	sll     %g1, 24, %g1
+	sra     %g1, 24, %g1
+	sethi   %hi(.LLC1), %g2
+	bset    %lo(.LLC1), %g2
+	ldub    [%g1+%g2], %g1
+	sll     %g1, 24, %g1
+	sra     %g1, 24, %g1
+	mov     %g1, %o0
+	call    y, 0
 	nop
-	mov  %o0, %g1
-	mov  %g1, %i0
+	mov     %o0, %g1
+	mov     %g1, %i0
 	restore
 	retl
 	nop
@@ -207,22 +207,22 @@ r:
 	.type	X, #function
 	.proc	04
 X:
-	save  %sp, -96, %sp
-	st  %i0, [%fp+68]
-	mov  0x0, %o0
-	call  time, 0
+	save    %sp, -96, %sp
+	st      %i0, [%fp+68]
+	mov     0x0, %o0
+	call    time, 0
 	nop
-	mov  %o0, %g3
-	sethi  %hi(b), %g1
-	bset   %lo(b), %g1
-	ld  [%g1], %g2
-	mov  0x1, %g1
-	cmp  %g3, %g2
-	bg  .LL12
+	mov     %o0, %g3
+	sethi   %hi(b), %g1
+	bset    %lo(b), %g1
+	ld      [%g1], %g2
+	mov     0x1, %g1
+	cmp     %g3, %g2, %g0
+	bg      .LL12
 	nop
-	mov  0x0, %g1
+	mov     0x0, %g1
 .LL12:
-	mov  %g1, %i0
+	mov     %g1, %i0
 	restore
 	retl
 	nop
@@ -234,9 +234,9 @@ X:
 	.type	main, #function
 	.proc	04
 main:
-	save  %sp, -96, %sp
-	mov  0x0, %g1
-	mov  %g1, %i0
+	save    %sp, -96, %sp
+	mov     0x0, %g1
+	mov     %g1, %i0
 	restore
 	retl
 	nop

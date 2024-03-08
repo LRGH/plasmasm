@@ -149,7 +149,7 @@ class API_AMOCO(object):
     def api_is_address(self, pos):
         ''' True if the argument 'pos' is an address '''
         arg = self.amoco.operands[pos]
-        return arg is not None and arg._is_mem
+        return arg is not None and bool(arg._is_mem)
     def api_is_arg_size(self, pos, size):
         ''' True if the argument 'pos' is a size-bit argument '''
         arg = self.amoco.operands[pos]

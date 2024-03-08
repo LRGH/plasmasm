@@ -57,6 +57,8 @@ jobs:
         git clone https://github.com/LRGH/amoco
         echo > amoco/amoco/__init__.py # don't import grandalf
         cat plasmasm/python/amoco-config.py > amoco/amoco/config.py # avoid dependency on traitlets
+        echo > amoco/amoco/ui/app.py # avoid dependency on blessed
+        echo 'mmapView = lambda x:None; mapperView = mmapView' > amoco/amoco/ui/views.py # avoid dependency on blessed
         mv elfesteem miasmX amoco crysp ..
         export PYTHONPATH=../elfesteem:../miasmx:../amoco:../crysp
         echo '** Simple tests to verify that dependencies are working'

@@ -2,177 +2,177 @@
 	.globl	y
 	.type	y, #function
 y:
-	save  %sp, -96, %sp
-	st  %i0, [%fp+68]
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%g1+8], %g1
-	ld  [%g1+8], %g2
-	inc  -0x1, %g2
-	st  %g2, [%g1+8]
-	ld  [%g1+8], %g1
-	cmp  %g1, 0
-	bge  .L400012CC
-	nop  
+	save    %sp, -96, %sp
+	st      %i0, [%fp+68]
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%g1+8], %g1
+	ld      [%g1+8], %g2
+	inc     -1, %g2
+	st      %g2, [%g1+8]
+	ld      [%g1+8], %g1
+	cmp     %g1, 0, %g0
+	bge     .L400012CC
+	nop     
 .L400011D0:
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%g1+8], %g1
-	ld  [%g1+8], %g2
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%g1+8], %g1
-	ld  [%g1+24], %g1
-	cmp  %g2, %g1
-	bl  .L400012A0
-	nop  
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%g1+8], %g1
+	ld      [%g1+8], %g2
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%g1+8], %g1
+	ld      [%g1+24], %g1
+	cmp     %g2, %g1, %g0
+	bl      .L400012A0
+	nop     
 .L40001204:
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%g1+8], %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%fp+68], %g2
-	stb  %g2, [%g0+%g1]0
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%g1+8], %g1
-	ld  [%g0+%g1]0, %g1
-	ldub  [%g0+%g1]0, %g1
-	and  %g1, 0xff, %g1
-	cmp  %g1, 10
-	be  .L40001274
-	nop  
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%g1+8], %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%fp+68], %g2
+	stb     %g2, [%g0+%g1]0
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%g1+8], %g1
+	ld      [%g0+%g1]0, %g1
+	ldub    [%g0+%g1]0, %g1
+	and     %g1, 0xff, %g1
+	cmp     %g1, 10, %g0
+	be      .L40001274
+	nop     
 .L40001248:
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%g1+8], %g2
-	ld  [%g0+%g2]0, %g3
-	ldub  [%g0+%g3]0, %g1
-	and  %g1, 0xff, %g1
-	inc  %g3
-	st  %g3, [%g0+%g2]0
-	ba  .L40001298
-	nop  
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%g1+8], %g2
+	ld      [%g0+%g2]0, %g3
+	ldub    [%g0+%g3]0, %g1
+	and     %g1, 0xff, %g1
+	inc     %g3, %g3
+	st      %g3, [%g0+%g2]0
+	ba      .L40001298
+	nop     
 .L40001274:
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%g1+8], %g1
-	mov  0xa, %o0
-	mov  %g1, %o1
-	call  __swbuf, 0
-	nop  
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%g1+8], %g1
+	mov     0xa, %o0
+	mov     %g1, %o1
+	call    __swbuf, 0
+	nop     
 .L40001294:
-	mov  %o0, %g1
+	mov     %o0, %g1
 .L40001298:
-	ba  .L400012C4
-	nop  
+	ba      .L400012C4
+	nop     
 .L400012A0:
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%g1+8], %g1
-	ld  [%fp+68], %o0
-	mov  %g1, %o1
-	call  __swbuf, 0
-	nop  
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%g1+8], %g1
+	ld      [%fp+68], %o0
+	mov     %g1, %o1
+	call    __swbuf, 0
+	nop     
 .L400012C0:
-	mov  %o0, %g1
+	mov     %o0, %g1
 .L400012C4:
-	ba  .L4000130C
-	nop  
+	ba      .L4000130C
+	nop     
 .L400012CC:
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%g1+8], %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%fp+68], %g2
-	stb  %g2, [%g0+%g1]0
-	sethi  %hi(_impure_ptr), %g1
-	bset   %lo(_impure_ptr), %g1
-	ld  [%g0+%g1]0, %g1
-	ld  [%g1+8], %g2
-	ld  [%g0+%g2]0, %g3
-	ldub  [%g0+%g3]0, %g1
-	and  %g1, 0xff, %g1
-	inc  %g3
-	st  %g3, [%g0+%g2]0
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%g1+8], %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%fp+68], %g2
+	stb     %g2, [%g0+%g1]0
+	sethi   %hi(_impure_ptr), %g1
+	bset    %lo(_impure_ptr), %g1
+	ld      [%g0+%g1]0, %g1
+	ld      [%g1+8], %g2
+	ld      [%g0+%g2]0, %g3
+	ldub    [%g0+%g3]0, %g1
+	and     %g1, 0xff, %g1
+	inc     %g3, %g3
+	st      %g3, [%g0+%g2]0
 .L4000130C:
-	mov  %g1, %i0
+	mov     %g1, %i0
 	restore
 	retl
-	nop  
+	nop     
 	.size	y, .-y
 # ----------------------
 	.globl	r
 	.type	r, #function
 r:
-	save  %sp, -96, %sp
-	st  %i0, [%fp+68]
-	sethi  %hi(p), %g1
-	bset   %lo(p), %g1
-	ld  [%g0+%g1]0, %g1
-	ldub  [%g0+%g1]0, %g1
-	sll  %g1, 24, %g1
-	sra  %g1, 24, %g1
-	sethi  %hi(.LC40005D08), %g2
-	bset   %lo(.LC40005D08), %g2
-	ldub  [%g1+%g2]0, %g1
-	sll  %g1, 24, %g1
-	sra  %g1, 24, %g1
-	mov  %g1, %o0
-	call  y, 0
-	nop  
+	save    %sp, -96, %sp
+	st      %i0, [%fp+68]
+	sethi   %hi(p), %g1
+	bset    %lo(p), %g1
+	ld      [%g0+%g1]0, %g1
+	ldub    [%g0+%g1]0, %g1
+	sll     %g1, 24, %g1
+	sra     %g1, 24, %g1
+	sethi   %hi(.LC40005D08), %g2
+	bset    %lo(.LC40005D08), %g2
+	ldub    [%g1+%g2]0, %g1
+	sll     %g1, 24, %g1
+	sra     %g1, 24, %g1
+	mov     %g1, %o0
+	call    y, 0
+	nop     
 .L4000135C:
-	mov  %o0, %g1
-	mov  %g1, %i0
+	mov     %o0, %g1
+	mov     %g1, %i0
 	restore
 	retl
-	nop  
+	nop     
 	.size	r, .-r
 # ----------------------
 	.globl	X
 	.type	X, #function
 X:
-	save  %sp, -96, %sp
-	st  %i0, [%fp+68]
-	mov  0x0, %o0
-	call  time, 0
-	nop  
+	save    %sp, -96, %sp
+	st      %i0, [%fp+68]
+	mov     0x0, %o0
+	call    time, 0
+	nop     
 .L40001384:
-	mov  %o0, %g3
-	sethi  %hi(b), %g1
-	bset   %lo(b), %g1
-	ld  [%g0+%g1]0, %g2
-	mov  0x1, %g1
-	cmp  %g3, %g2
-	bg  .L400013A8
-	nop  
+	mov     %o0, %g3
+	sethi   %hi(b), %g1
+	bset    %lo(b), %g1
+	ld      [%g0+%g1]0, %g2
+	mov     0x1, %g1
+	cmp     %g3, %g2, %g0
+	bg      .L400013A8
+	nop     
 .L400013A4:
-	mov  0x0, %g1
+	mov     0x0, %g1
 .L400013A8:
-	mov  %g1, %i0
+	mov     %g1, %i0
 	restore
 	retl
-	nop  
+	nop     
 	.size	X, .-X
 # ----------------------
 	.globl	main
 	.type	main, #function
 main:
-	save  %sp, -96, %sp
-	mov  0x0, %g1
-	mov  %g1, %i0
+	save    %sp, -96, %sp
+	mov     0x0, %g1
+	mov     %g1, %i0
 	restore
 	retl
-	nop  
+	nop     
 	.size	main, .-main
 # ----------------------
 	.data

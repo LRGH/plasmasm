@@ -68,105 +68,105 @@ p:
 	.type	y, #function
 	.proc	04
 y:
-	save  %sp, -96, %sp                                ##  DEAD:g1;g2
-	st  %i0, [%fp+68]                                  ##  DEAD:g1;g2;psr
-	sethi  %hi(_impure_ptr), %g1                       ##  DEAD:g1;g2;psr
-	bset   %lo(_impure_ptr), %g1                       ##  DEAD:g2;psr
-	ld  [%g1], %g1                                     ##  DEAD:g2;psr
-	ld  [%g1+8], %g1                                   ##  DEAD:g2;psr
-	ld  [%g1+8], %g2                                   ##  DEAD:g2;psr
-	inc  -0x1, %g2                                     ##  DEAD:psr
-	st  %g2, [%g1+8]                                   ##  DEAD:psr
-	ld  [%g1+8], %g1                                   ##  DEAD:psr
-	cmp  %g1, 0                                        ##  DEAD:psr
-	bge  .LL2                                          ##  DEAD:
+	save    %sp, -96, %sp                              ##  DEAD:g1;g2
+	st      %i0, [%fp+68]                              ##  DEAD:g1;g2;psr
+	sethi   %hi(_impure_ptr), %g1                      ##  DEAD:g1;g2;psr
+	bset    %lo(_impure_ptr), %g1                      ##  DEAD:g2;psr
+	ld      [%g1], %g1                                 ##  DEAD:g2;psr
+	ld      [%g1+8], %g1                               ##  DEAD:g2;psr
+	ld      [%g1+8], %g2                               ##  DEAD:g2;psr
+	inc     -1, %g2                                    ##  DEAD:psr
+	st      %g2, [%g1+8]                               ##  DEAD:psr
+	ld      [%g1+8], %g1                               ##  DEAD:psr
+	cmp     %g1, 0, %g0                                ##  DEAD:psr
+	bge     .LL2                                       ##  DEAD:
 	nop                                                ##  DEAD:
-	sethi  %hi(_impure_ptr), %g1                       ##  DEAD:g1;g2;psr
-	bset   %lo(_impure_ptr), %g1                       ##  DEAD:g2;psr
-	ld  [%g1], %g1                                     ##  DEAD:g2;psr
-	ld  [%g1+8], %g1                                   ##  DEAD:g2;psr
-	ld  [%g1+8], %g2                                   ##  DEAD:g2;psr
-	sethi  %hi(_impure_ptr), %g1                       ##  DEAD:g1;psr
-	bset   %lo(_impure_ptr), %g1                       ##  DEAD:psr
-	ld  [%g1], %g1                                     ##  DEAD:psr
-	ld  [%g1+8], %g1                                   ##  DEAD:psr
-	ld  [%g1+24], %g1                                  ##  DEAD:psr
-	cmp  %g2, %g1                                      ##  DEAD:psr
-	bl  .LL3                                           ##  DEAD:
+	sethi   %hi(_impure_ptr), %g1                      ##  DEAD:g1;g2;psr
+	bset    %lo(_impure_ptr), %g1                      ##  DEAD:g2;psr
+	ld      [%g1], %g1                                 ##  DEAD:g2;psr
+	ld      [%g1+8], %g1                               ##  DEAD:g2;psr
+	ld      [%g1+8], %g2                               ##  DEAD:g2;psr
+	sethi   %hi(_impure_ptr), %g1                      ##  DEAD:g1;psr
+	bset    %lo(_impure_ptr), %g1                      ##  DEAD:psr
+	ld      [%g1], %g1                                 ##  DEAD:psr
+	ld      [%g1+8], %g1                               ##  DEAD:psr
+	ld      [%g1+24], %g1                              ##  DEAD:psr
+	cmp     %g2, %g1, %g0                              ##  DEAD:psr
+	bl      .LL3                                       ##  DEAD:
 	nop                                                ##  DEAD:
-	sethi  %hi(_impure_ptr), %g1                       ##  DEAD:g1;g2;psr
-	bset   %lo(_impure_ptr), %g1                       ##  DEAD:g2;psr
-	ld  [%g1], %g1                                     ##  DEAD:g2;psr
-	ld  [%g1+8], %g1                                   ##  DEAD:g2;psr
-	ld  [%g1], %g1                                     ##  DEAD:g2;psr
-	ld  [%fp+68], %g2                                  ##  DEAD:g2;psr
-	stb  %g2, [%g1]                                    ##  DEAD:psr
-	sethi  %hi(_impure_ptr), %g1                       ##  DEAD:g1;psr
-	bset   %lo(_impure_ptr), %g1                       ##  DEAD:psr
-	ld  [%g1], %g1                                     ##  DEAD:psr
-	ld  [%g1+8], %g1                                   ##  DEAD:psr
-	ld  [%g1], %g1                                     ##  DEAD:psr
-	ldub  [%g1], %g1                                   ##  DEAD:psr
-	and  %g1, 0xff, %g1                                ##  DEAD:psr
-	cmp  %g1, 10                                       ##  DEAD:psr
-	be  .LL4                                           ##  DEAD:
+	sethi   %hi(_impure_ptr), %g1                      ##  DEAD:g1;g2;psr
+	bset    %lo(_impure_ptr), %g1                      ##  DEAD:g2;psr
+	ld      [%g1], %g1                                 ##  DEAD:g2;psr
+	ld      [%g1+8], %g1                               ##  DEAD:g2;psr
+	ld      [%g1], %g1                                 ##  DEAD:g2;psr
+	ld      [%fp+68], %g2                              ##  DEAD:g2;psr
+	stb     %g2, [%g1]                                 ##  DEAD:psr
+	sethi   %hi(_impure_ptr), %g1                      ##  DEAD:g1;psr
+	bset    %lo(_impure_ptr), %g1                      ##  DEAD:psr
+	ld      [%g1], %g1                                 ##  DEAD:psr
+	ld      [%g1+8], %g1                               ##  DEAD:psr
+	ld      [%g1], %g1                                 ##  DEAD:psr
+	ldub    [%g1], %g1                                 ##  DEAD:psr
+	and     %g1, 0xff, %g1                             ##  DEAD:psr
+	cmp     %g1, 10, %g0                               ##  DEAD:psr
+	be      .LL4                                       ##  DEAD:
 	nop                                                ##  DEAD:
-	sethi  %hi(_impure_ptr), %g1                       ##  DEAD:g1;g2;g3;i0
-	bset   %lo(_impure_ptr), %g1                       ##  DEAD:g2;g3;i0
-	ld  [%g1], %g1                                     ##  DEAD:g2;g3;i0
-	ld  [%g1+8], %g2                                   ##  DEAD:g2;g3;i0
-	ld  [%g2], %g3                                     ##  DEAD:g1;g3;i0
-	ldub  [%g3], %g1                                   ##  DEAD:g1;i0
-	and  %g1, 0xff, %g1                                ##  DEAD:i0
-	inc  %g3                                           ##  DEAD:i0
-	st  %g3, [%g2]                                     ##  DEAD:i0
-	ba  .LL5                                           ##  DEAD:i0
+	sethi   %hi(_impure_ptr), %g1                      ##  DEAD:g1;g2;g3;i0
+	bset    %lo(_impure_ptr), %g1                      ##  DEAD:g2;g3;i0
+	ld      [%g1], %g1                                 ##  DEAD:g2;g3;i0
+	ld      [%g1+8], %g2                               ##  DEAD:g2;g3;i0
+	ld      [%g2], %g3                                 ##  DEAD:g1;g3;i0
+	ldub    [%g3], %g1                                 ##  DEAD:g1;i0
+	and     %g1, 0xff, %g1                             ##  DEAD:i0
+	inc     %g3, %g3                                   ##  DEAD:i0
+	st      %g3, [%g2]                                 ##  DEAD:i0
+	ba      .LL5                                       ##  DEAD:i0
 	nop                                                ##  DEAD:i0
 .LL4:
-	sethi  %hi(_impure_ptr), %g1                       ##  DEAD:g1;o0;o1;o7
-	bset   %lo(_impure_ptr), %g1                       ##  DEAD:o0;o1;o7
-	ld  [%g1], %g1                                     ##  DEAD:o0;o1;o7
-	ld  [%g1+8], %g1                                   ##  DEAD:o0;o1;o7
-	mov  0xa, %o0                                      ##  DEAD:o0;o1;o7
-	mov  %g1, %o1                                      ##  DEAD:o1;o7
-	call  __swbuf, 0                                   ##  DEAD:o7
+	sethi   %hi(_impure_ptr), %g1                      ##  DEAD:g1;o0;o1;o7
+	bset    %lo(_impure_ptr), %g1                      ##  DEAD:o0;o1;o7
+	ld      [%g1], %g1                                 ##  DEAD:o0;o1;o7
+	ld      [%g1+8], %g1                               ##  DEAD:o0;o1;o7
+	mov     0xa, %o0                                   ##  DEAD:o0;o1;o7
+	mov     %g1, %o1                                   ##  DEAD:o1;o7
+	call    __swbuf, 0                                 ##  DEAD:o7
 	nop                                                ##  DEAD:o7
-	mov  %o0, %g1                                      ##  DEAD:g1;i0
+	mov     %o0, %g1                                   ##  DEAD:g1;i0
 .LL5:
-	ba  .LL6                                           ##  DEAD:i0
+	ba      .LL6                                       ##  DEAD:i0
 	nop                                                ##  DEAD:i0
 .LL3:
-	sethi  %hi(_impure_ptr), %g1                       ##  DEAD:g1;o0;o1;o7
-	bset   %lo(_impure_ptr), %g1                       ##  DEAD:o0;o1;o7
-	ld  [%g1], %g1                                     ##  DEAD:o0;o1;o7
-	ld  [%g1+8], %g1                                   ##  DEAD:o0;o1;o7
-	ld  [%fp+68], %o0                                  ##  DEAD:o0;o1;o7
-	mov  %g1, %o1                                      ##  DEAD:o1;o7
-	call  __swbuf, 0                                   ##  DEAD:o7
+	sethi   %hi(_impure_ptr), %g1                      ##  DEAD:g1;o0;o1;o7
+	bset    %lo(_impure_ptr), %g1                      ##  DEAD:o0;o1;o7
+	ld      [%g1], %g1                                 ##  DEAD:o0;o1;o7
+	ld      [%g1+8], %g1                               ##  DEAD:o0;o1;o7
+	ld      [%fp+68], %o0                              ##  DEAD:o0;o1;o7
+	mov     %g1, %o1                                   ##  DEAD:o1;o7
+	call    __swbuf, 0                                 ##  DEAD:o7
 	nop                                                ##  DEAD:o7
-	mov  %o0, %g1                                      ##  DEAD:g1;i0
+	mov     %o0, %g1                                   ##  DEAD:g1;i0
 .LL6:
-	ba  .LL7                                           ##  DEAD:i0
+	ba      .LL7                                       ##  DEAD:i0
 	nop                                                ##  DEAD:i0
 .LL2:
-	sethi  %hi(_impure_ptr), %g1                       ##  DEAD:g1;g2;g3;i0
-	bset   %lo(_impure_ptr), %g1                       ##  DEAD:g2;g3;i0
-	ld  [%g1], %g1                                     ##  DEAD:g2;g3;i0
-	ld  [%g1+8], %g1                                   ##  DEAD:g2;g3;i0
-	ld  [%g1], %g1                                     ##  DEAD:g2;g3;i0
-	ld  [%fp+68], %g2                                  ##  DEAD:g2;g3;i0
-	stb  %g2, [%g1]                                    ##  DEAD:g3;i0
-	sethi  %hi(_impure_ptr), %g1                       ##  DEAD:g1;g2;g3;i0
-	bset   %lo(_impure_ptr), %g1                       ##  DEAD:g2;g3;i0
-	ld  [%g1], %g1                                     ##  DEAD:g2;g3;i0
-	ld  [%g1+8], %g2                                   ##  DEAD:g2;g3;i0
-	ld  [%g2], %g3                                     ##  DEAD:g1;g3;i0
-	ldub  [%g3], %g1                                   ##  DEAD:g1;i0
-	and  %g1, 0xff, %g1                                ##  DEAD:i0
-	inc  %g3                                           ##  DEAD:i0
-	st  %g3, [%g2]                                     ##  DEAD:i0
+	sethi   %hi(_impure_ptr), %g1                      ##  DEAD:g1;g2;g3;i0
+	bset    %lo(_impure_ptr), %g1                      ##  DEAD:g2;g3;i0
+	ld      [%g1], %g1                                 ##  DEAD:g2;g3;i0
+	ld      [%g1+8], %g1                               ##  DEAD:g2;g3;i0
+	ld      [%g1], %g1                                 ##  DEAD:g2;g3;i0
+	ld      [%fp+68], %g2                              ##  DEAD:g2;g3;i0
+	stb     %g2, [%g1]                                 ##  DEAD:g3;i0
+	sethi   %hi(_impure_ptr), %g1                      ##  DEAD:g1;g2;g3;i0
+	bset    %lo(_impure_ptr), %g1                      ##  DEAD:g2;g3;i0
+	ld      [%g1], %g1                                 ##  DEAD:g2;g3;i0
+	ld      [%g1+8], %g2                               ##  DEAD:g2;g3;i0
+	ld      [%g2], %g3                                 ##  DEAD:g1;g3;i0
+	ldub    [%g3], %g1                                 ##  DEAD:g1;i0
+	and     %g1, 0xff, %g1                             ##  DEAD:i0
+	inc     %g3, %g3                                   ##  DEAD:i0
+	st      %g3, [%g2]                                 ##  DEAD:i0
 .LL7:
-	mov  %g1, %i0                                      ##  DEAD:i0
+	mov     %g1, %i0                                   ##  DEAD:i0
 	restore                                            ##  DEAD:
 	retl                                               ##  DEAD:
 	nop                                                ##  DEAD:
@@ -178,24 +178,24 @@ y:
 	.type	r, #function
 	.proc	04
 r:
-	save  %sp, -96, %sp                                ##  DEAD:g1;g2
-	st  %i0, [%fp+68]                                  ##  DEAD:g1;g2;o0;o7
-	sethi  %hi(p), %g1                                 ##  DEAD:g1;g2;o0;o7
-	bset   %lo(p), %g1                                 ##  DEAD:g2;o0;o7
-	ld  [%g1], %g1                                     ##  DEAD:g2;o0;o7
-	ldub  [%g1], %g1                                   ##  DEAD:g2;o0;o7
-	sll  %g1, 24, %g1                                  ##  DEAD:g2;o0;o7
-	sra  %g1, 24, %g1                                  ##  DEAD:g2;o0;o7
-	sethi  %hi(.LLC1), %g2                             ##  DEAD:g2;o0;o7
-	bset   %lo(.LLC1), %g2                             ##  DEAD:o0;o7
-	ldub  [%g1+%g2], %g1                               ##  DEAD:o0;o7
-	sll  %g1, 24, %g1                                  ##  DEAD:g2;o0;o7
-	sra  %g1, 24, %g1                                  ##  DEAD:g2;o0;o7
-	mov  %g1, %o0                                      ##  DEAD:g2;o0;o7
-	call  y, 0                                         ##  DEAD:g1;g2;o7
+	save    %sp, -96, %sp                              ##  DEAD:g1;g2
+	st      %i0, [%fp+68]                              ##  DEAD:g1;g2;o0;o7
+	sethi   %hi(p), %g1                                ##  DEAD:g1;g2;o0;o7
+	bset    %lo(p), %g1                                ##  DEAD:g2;o0;o7
+	ld      [%g1], %g1                                 ##  DEAD:g2;o0;o7
+	ldub    [%g1], %g1                                 ##  DEAD:g2;o0;o7
+	sll     %g1, 24, %g1                               ##  DEAD:g2;o0;o7
+	sra     %g1, 24, %g1                               ##  DEAD:g2;o0;o7
+	sethi   %hi(.LLC1), %g2                            ##  DEAD:g2;o0;o7
+	bset    %lo(.LLC1), %g2                            ##  DEAD:o0;o7
+	ldub    [%g1+%g2], %g1                             ##  DEAD:o0;o7
+	sll     %g1, 24, %g1                               ##  DEAD:g2;o0;o7
+	sra     %g1, 24, %g1                               ##  DEAD:g2;o0;o7
+	mov     %g1, %o0                                   ##  DEAD:g2;o0;o7
+	call    y, 0                                       ##  DEAD:g1;g2;o7
 	nop                                                ##  DEAD:g1;g2;o7
-	mov  %o0, %g1                                      ##  DEAD:g1;i0
-	mov  %g1, %i0                                      ##  DEAD:i0
+	mov     %o0, %g1                                   ##  DEAD:g1;i0
+	mov     %g1, %i0                                   ##  DEAD:i0
 	restore                                            ##  DEAD:
 	retl                                               ##  DEAD:
 	nop                                                ##  DEAD:
@@ -207,22 +207,22 @@ r:
 	.type	X, #function
 	.proc	04
 X:
-	save  %sp, -96, %sp                                ##  DEAD:
-	st  %i0, [%fp+68]                                  ##  DEAD:o0;o7
-	mov  0x0, %o0                                      ##  DEAD:o0;o7
-	call  time, 0                                      ##  DEAD:o7
+	save    %sp, -96, %sp                              ##  DEAD:
+	st      %i0, [%fp+68]                              ##  DEAD:o0;o7
+	mov     0x0, %o0                                   ##  DEAD:o0;o7
+	call    time, 0                                    ##  DEAD:o7
 	nop                                                ##  DEAD:o7
-	mov  %o0, %g3                                      ##  DEAD:g1;g2;g3;psr
-	sethi  %hi(b), %g1                                 ##  DEAD:g1;g2;psr
-	bset   %lo(b), %g1                                 ##  DEAD:g2;psr
-	ld  [%g1], %g2                                     ##  DEAD:g2;psr
-	mov  0x1, %g1                                      ##  DEAD:g1;psr
-	cmp  %g3, %g2                                      ##  DEAD:psr
-	bg  .LL12                                          ##  DEAD:
+	mov     %o0, %g3                                   ##  DEAD:g1;g2;g3;psr
+	sethi   %hi(b), %g1                                ##  DEAD:g1;g2;psr
+	bset    %lo(b), %g1                                ##  DEAD:g2;psr
+	ld      [%g1], %g2                                 ##  DEAD:g2;psr
+	mov     0x1, %g1                                   ##  DEAD:g1;psr
+	cmp     %g3, %g2, %g0                              ##  DEAD:psr
+	bg      .LL12                                      ##  DEAD:
 	nop                                                ##  DEAD:
-	mov  0x0, %g1                                      ##  DEAD:g1;i0
+	mov     0x0, %g1                                   ##  DEAD:g1;i0
 .LL12:
-	mov  %g1, %i0                                      ##  DEAD:i0
+	mov     %g1, %i0                                   ##  DEAD:i0
 	restore                                            ##  DEAD:
 	retl                                               ##  DEAD:
 	nop                                                ##  DEAD:
@@ -234,9 +234,9 @@ X:
 	.type	main, #function
 	.proc	04
 main:
-	save  %sp, -96, %sp                                ##  DEAD:g1
-	mov  0x0, %g1                                      ##  DEAD:g1;i0
-	mov  %g1, %i0                                      ##  DEAD:i0
+	save    %sp, -96, %sp                              ##  DEAD:g1
+	mov     0x0, %g1                                   ##  DEAD:g1;i0
+	mov     %g1, %i0                                   ##  DEAD:i0
 	restore                                            ##  DEAD:
 	retl                                               ##  DEAD:
 	nop                                                ##  DEAD:

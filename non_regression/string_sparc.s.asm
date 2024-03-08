@@ -30,26 +30,26 @@ s:
 	.type	main, #function
 	.proc	04
 main:
-	save  %sp, -112, %sp
-	sethi  %hi(.LLC1), %g1
-	bset   %lo(.LLC1), %g1
-	st  %g1, [%fp+-12]
-	sethi  %hi(a), %g1
-	bset   %lo(a), %g1
-	ld  [%g1], %g1
-	inc  0xd, %g1
-	st  %g1, [%fp+-8]
-	ld  [%fp+-12], %g1
-	st  %g1, [%fp+-4]
-	ld  [%fp+-8], %g1
-	inc  %g1
-	st  %g1, [%fp+-8]
-	sethi  %hi(s), %g1
-	bset   %lo(s), %g1
-	ld  [%g1], %g1
-	st  %g1, [%fp+-4]
-	ld  [%fp+-8], %g1
-	mov  %g1, %i0
+	save    %sp, -112, %sp
+	sethi   %hi(.LLC1), %g1
+	bset    %lo(.LLC1), %g1
+	st      %g1, [%fp+-12]
+	sethi   %hi(a), %g1
+	bset    %lo(a), %g1
+	ld      [%g1], %g1
+	inc     13, %g1
+	st      %g1, [%fp+-8]
+	ld      [%fp+-12], %g1
+	st      %g1, [%fp+-4]
+	ld      [%fp+-8], %g1
+	inc     %g1, %g1
+	st      %g1, [%fp+-8]
+	sethi   %hi(s), %g1
+	bset    %lo(s), %g1
+	ld      [%g1], %g1
+	st      %g1, [%fp+-4]
+	ld      [%fp+-8], %g1
+	mov     %g1, %i0
 	restore
 	retl
 	nop
