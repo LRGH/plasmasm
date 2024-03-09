@@ -118,21 +118,17 @@ jobs:
         # cf. https://bugs.launchpad.net/ubuntu/+source/gcc-defaults/+bug/286334
         ./configure BASECFLAGS=-U_FORTIFY_SOURCE
         make
-        export PATH=$(pwd):$PATH
-        cd ../plasmasm
+        sudo ln -fs $(pwd)/python /usr/local/bin/python
+    - name: Test python version
+      run: |
         python -c 'import sys;print(sys.version)'
+        python -V
     - name: Install dependencies
       run: |
         git clone https://github.com/LRGH/elfesteem
         git clone https://github.com/LRGH/miasmX
-        git clone https://github.com/LRGH/crysp
-        git clone https://github.com/LRGH/amoco
-        echo > amoco/amoco/__init__.py # don't import grandalf
-        cat plasmasm/python/amoco-config.py > amoco/amoco/config.py # avoid dependency on traitlets
-        echo > amoco/amoco/ui/app.py # avoid dependency on blessed
-        echo 'mmapView = lambda x:None; mapperView = mmapView' > amoco/amoco/ui/views.py # avoid dependency on blessed
-        mv elfesteem miasmX amoco crysp ..
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        mv elfesteem miasmX ..
+        export PYTHONPATH=../elfesteem:../miasmX
         echo '** Simple tests to verify that dependencies are working'
         # NB: amoco is not compatible with python2.3
         python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s
@@ -140,41 +136,41 @@ jobs:
         python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o
     - name: Unit tests errors (pytest is not compatible with python2.3)
       run: |
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX
         true # python non_regression/run_tests.py test_errors
     - name: Unit tests asm_basic
       run: |
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX
         python non_regression/run_tests.py test_asm_basic
     - name: Unit tests asm_macosx
       run: |
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX
         python non_regression/run_tests.py test_asm_macosx
     - name: Unit tests asm_switch
       run: |
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX
         python non_regression/run_tests.py test_asm_switch
     - name: Unit tests asm_other
       run: |
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX
         python non_regression/run_tests.py test_asm_other
     - name: Unit tests bin
       run: |
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX
         python non_regression/run_tests.py test_bin
     - name: Unit tests display
       run: |
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX
         python non_regression/run_tests.py test_display
     - name: Unit tests lineapi
       run: |
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX
         true # python non_regression/run_tests.py test_lineapi
     - name: Unit tests objdump
       run: |
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX
         python non_regression/run_tests.py test_objdump
     - name: Global tests asm_fullsoftware
       run: |
-        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX
         python non_regression/run_tests.py test_asm_fullsoftware
