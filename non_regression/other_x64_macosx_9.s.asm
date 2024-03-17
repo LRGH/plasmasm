@@ -35,7 +35,6 @@ Lcfi7:
 	xorl      %eax, %eax
 	andq      $3, %r10
 	je        LBB0_3
-# ----------------------
 	.p2align 4, 0x90
 LBB0_2:
 	movzwl    (%rsi,%rax,2), %ebx
@@ -48,7 +47,6 @@ LBB0_3:
 	jb        LBB0_6
 	subq      %rax, %r14
 	leaq      6(%rsi,%rax,2), %rbx
-# ----------------------
 	.p2align 4, 0x90
 LBB0_5:
 	movzwl    -6(%rbx), %eax
@@ -141,7 +139,6 @@ LBB0_10:
 	cmpl      %r14d, %r11d
 	cmova     %r14d, %r11d
 	movl      $1, %ebx
-# ----------------------
 	.p2align 4, 0x90
 LBB0_11:
 	cmpw      $0, -80(%rbp,%rbx,2)
@@ -437,7 +434,6 @@ LBB0_89:
 	shrl      %cl, %r12d
 	subl      %r10d, %r12d
 	movl      -128(%rbp), %ecx
-# ----------------------
 	.p2align 4, 0x90
 LBB0_90:
 	leal      (%r12,%rcx), %r15d
@@ -449,7 +445,6 @@ LBB0_90:
 	leal      -1(%rbx), %ecx
 	movl      $1, %edi
 	shll      %cl, %edi
-# ----------------------
 	.p2align 4, 0x90
 LBB0_92:
 	movl      %edi, %eax
@@ -566,7 +561,6 @@ LBB0_60:
 	shrl      %cl, %r12d
 	subl      %edi, %r12d
 	movl      -116(%rbp), %ecx
-# ----------------------
 	.p2align 4, 0x90
 LBB0_61:
 	leal      (%r12,%rcx), %r15d
@@ -578,7 +572,6 @@ LBB0_61:
 	leal      -1(%rbx), %ecx
 	movl      $1, %edi
 	shll      %cl, %edi
-# ----------------------
 	.p2align 4, 0x90
 LBB0_63:
 	movl      %edi, %eax

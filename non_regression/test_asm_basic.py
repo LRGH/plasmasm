@@ -105,6 +105,8 @@ all_tests = python_limitations([
     ("p2align_x86_linux.out",     "asm", {}),
     ("p2align_x86_macosx.s",      "asm", {}),
     ("p2align_x86_macosx.o",      "asm", {}),
+    ("p2align_x64_macosx.s",      "asm", {}),
+    ("p2align_x64_macosx.o",      "asm", {}),
     ("weak_x86_linux.att.s",      "asm", {}),
     ("weak_x86_linux.o",          "asm", {}),
     ("weak_x86_linux.out",        "asm", {}),

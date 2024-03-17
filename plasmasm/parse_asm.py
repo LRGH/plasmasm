@@ -466,6 +466,10 @@ def parse_asm_file(symbols, txt):
                 symbols.setattr(name = rest, visibility = directive)
                 continue
             if directive.startswith('cfi_'):
+                if directive in ['cfi_startproc']:
+                    in_function = True
+                if directive in ['cfi_endproc']:
+                    in_function = False
                 if directive in ['cfi_personality', 'cfi_lsda']:
                     bloc.set_data_props(**{ directive: rest })
                 if directive in ['cfi_sections']:
