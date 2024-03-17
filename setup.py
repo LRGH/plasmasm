@@ -5,9 +5,9 @@ from distutils.core import setup
 setup(
     name = 'PlasmASM',
     version = '0.1',    
-    packages = ['.'],
+    packages = ['plasmasm', 'plasmasm.arch', 'plasmasm.python', 'staticasm', 'tools'],
     requires = ['python (>= 2.3)'],
-    scripts = [],
+    scripts = ['tools/disass.py', 'tools/compile.py'],
     # Metadata
     author = 'Louis Granboulan',
     author_email = 'Louis.Granboulan(at)airbus.com',
