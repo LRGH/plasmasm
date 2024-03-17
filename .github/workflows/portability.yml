@@ -94,13 +94,47 @@ jobs:
         coverage run -a -m pytest --durations=10 non_regression/test_objdump.py
     - name: Global tests asm_fullsoftware
       # pypy on macosx is really too slow
-      if: ${{ ! startsWith(matrix.python-version, 'pypy') || ! startsWith(matrix.os, 'macos') }}
+      if: ${{ ! startsWith(matrix.python-version, 'pypy') }}
       run: |
         export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         coverage run -a -m pytest --durations=10 non_regression/test_asm_fullsoftware.py
     - name: Update codecov
       run: |
         codecov
+
+  pip-install:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-20.04", "ubuntu-latest", "macos-latest"]
+        python-version: ["3.10", "pypy2.7", "pypy3.9", "graalpy-22.3"]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies using pip
+      run: |
+        python -m pip install pytest pyparsing coverage codecov
+        python -m pip install git+https://github.com/LRGH/elfesteem
+        python -m pip install git+https://github.com/LRGH/miasmX
+        python -m pip install git+https://github.com/LRGH/amoco
+    - name: Test MIASM dependency
+      run: |
+        python tools/disass.py -c /MIASM non_regression/basic_x86_linux.intel.s
+        python tools/disass.py -c /MIASM non_regression/basic_x86_linux.att.s
+        python tools/disass.py -c /MIASM non_regression/basic_x86_linux.o
+    - name: Test AMOCO dependency
+      if: ${{ matrix.python-version != 'graalpy-22.3' && matrix.python-version != 'pypy2.7' }}
+      run: |
+        python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.att.s
+        python tools/disass.py -c /AMOCO non_regression/basic_x86_linux.o
+    - name: Unit tests asm_basic (without using pytest module)
+      if: ${{ matrix.python-version != 'graalpy-22.3' && matrix.python-version != 'pypy2.7' }}
+      run: |
+        python non_regression/run_tests.py test_asm_basic
 
   python23:
     runs-on: "ubuntu-latest"
