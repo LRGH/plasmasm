@@ -1,11 +1,11 @@
 # Copyright (C) 2011-2020 Airbus, Louis.Granboulan@airbus.com
-# If miasmX is not installed system-wide, it is recommended to install it
+# If MiasmX is not installed system-wide, it is recommended to install it
 # in the parent directory of plasmasm.
 basedir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 if basedir == '': basedir = '.'
-sys.path.append(basedir+'/miasmX')
-from miasmX.arch.ppc_arch import ppc_mn
-from miasmX.arch.ia32_arch import x86_afs
+sys.path.append(basedir+'/miasmx')
+from miasmx.arch.ppc_arch import ppc_mn
+from miasmx.arch.ia32_arch import x86_afs
 
 import logging
 console_handler = logging.StreamHandler()
@@ -96,8 +96,8 @@ class InstructionCFG(Instruction):
 
 """
 # No PPC semantic in miasm1
-from miasmX.arch import ppc_sem
-from miasmX.expression import expression
+from miasmx.arch import ppc_sem
+from miasmx.expression import expression
 
 class InstructionRW(InstructionCFG):
     __slots__ = ('rw',)

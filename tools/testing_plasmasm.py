@@ -117,7 +117,7 @@ def hook_for_as_bugs(symbols):
     major, minor, as_v = get_as_version(symbols)
     if major != 2 or not minor in (14, 15):
         return
-    from miasmX.arch.ia32_arch import is_reg
+    from miasmx.arch.ia32_arch import is_reg
     for label in symbols.blocs:
         for l in label.lines:
             # Bug of old GNU as, args of test %reg, %reg are swapped

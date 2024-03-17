@@ -3,16 +3,16 @@ import sys, os
 import struct
 import logging
 log = logging.getLogger("plasmasm")
-# If miasmX is not installed system-wide, it is recommended to install it
+# If MiasmX is not installed system-wide, it is recommended to install it
 # in the parent directory of plasmasm.
 basedir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 if basedir == '': basedir = '.'
-sys.path.append(basedir+'/miasmX')
-from miasmX.arch.ia32_arch import x86_mn, x86_afs, dict_to_ad
-from miasmX.arch.ia32_arch import is_reg
-from miasmX.arch import ia32_sem
-from miasmX.core.parse_ad import parse_ad
-from miasmX.expression import expression
+sys.path.append(basedir+'/miasmx')
+from miasmx.arch.ia32_arch import x86_mn, x86_afs, dict_to_ad
+from miasmx.arch.ia32_arch import is_reg
+from miasmx.arch import ia32_sem
+from miasmx.core.parse_ad import parse_ad
+from miasmx.expression import expression
 try:
     from plasmasm.python.compatibility import set, sorted, one, reversed
 except ImportError:
@@ -271,11 +271,11 @@ class Instruction(Line, API_MIASM):
         if asm_format.startswith('att_syntax'):
             if asm_format == 'att_syntax': asm_format = 'att_syntax binutils'
             try:
-                from miasmX.arch.ia32_att import parse_asm_x86
+                from miasmx.arch.ia32_att import parse_asm_x86
             except ImportError:
-                from miasmX.arch.ia32_arch import parse_asm_x86
-            from miasmX.arch.ia32_att import parse_args
-            from miasmX.arch.ia32_arch import mnemo_from_att
+                from miasmx.arch.ia32_arch import parse_asm_x86
+            from miasmx.arch.ia32_att import parse_args
+            from miasmx.arch.ia32_arch import mnemo_from_att
             prefix, name, l_args = parse_asm_x86(line)
             args = parse_args(l_args)
             prefix, name = mnemo_from_att(prefix, name, args, asm_format)
@@ -679,8 +679,8 @@ class InstructionCFG(Instruction):
     def evaluate_lines(self, lines, in_str):
         return evaluate_lines(self, lines, in_str)
 
-from miasmX.tools.modint import uint32, int32
-from miasmX.tools.emul_helper import get_instr_expr
+from miasmx.tools.modint import uint32, int32
+from miasmx.tools.emul_helper import get_instr_expr
 def get_rw(cpu_sem, line):
     my_eip = cpu_sem.ExprInt(uint32(line.miasm.offset))
     exprs = get_instr_expr(line.miasm, my_eip, [])
@@ -699,8 +699,8 @@ def get_rw(cpu_sem, line):
 try:
     ia32_sem.symb_to_Expr({'x':1})
 except AttributeError:
-    log.error("Upgrade miasmX, the current version is too old")
-    raise ImportError("Upgrade miasmX, the current version is too old")
+    log.error("Upgrade MiasmX, the current version is too old")
+    raise ImportError("Upgrade MiasmX, the current version is too old")
 ia32_reg_id = [id(x) for x in ia32_sem.all_registers]
 
 class InstructionRW(InstructionCFG):
@@ -741,8 +741,8 @@ class InstructionDEAD(InstructionRW):
 
 #########################################################################
 
-from miasmX.tools import emul_helper
-from miasmX.expression import expression_helper
+from miasmx.tools import emul_helper
+from miasmx.expression import expression_helper
 def evaluate_lines(instr, lines, in_str):
     machine = emul_helper.x86_machine()
     def print_machine(machine):

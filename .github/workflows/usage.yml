@@ -60,7 +60,7 @@ jobs:
         echo > amoco/amoco/ui/app.py # avoid dependency on blessed
         echo 'mmapView = lambda x:None; mapperView = mmapView' > amoco/amoco/ui/views.py # avoid dependency on blessed
         mv elfesteem miasmX amoco crysp ..
-        export PYTHONPATH=../elfesteem:../miasmx:../amoco:../crysp
+        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         echo '** Simple tests to verify that dependencies are working'
         test ${{ matrix.backend }} = MIASM && \
         python tools/disass.py -c /${{ matrix.backend }} non_regression/basic_x86_linux.intel.s
@@ -77,6 +77,7 @@ jobs:
     - name: Testing compile.py with a minimal program
       run: |
         if test 'x86' = $PLATFORM; then flags=-m32; else flags=; fi
+        export PYTHONPATH=../elfesteem:../miasmX:../amoco:../crysp
         export PATH=$(pwd)/tools:$PATH
         compile.py -parse_asm -c/${{ matrix.backend }} gcc $flags a.c
         compile.py -parse_asm -c/${{ matrix.backend }} -rw -dead gcc $flags a.c
@@ -88,6 +89,7 @@ jobs:
         curl -O https://zlib.net/fossils/zlib-1.2.8.tar.gz
         tar xzf zlib-1.2.8.tar.gz
         cd zlib-1.2.8
+        export PYTHONPATH=../../elfesteem:../../miasmX:../../amoco:../../crysp
         ./configure
         flags="-O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN"
         if test 'x86' = $PLATFORM; then flags="-m32 $flags"; fi

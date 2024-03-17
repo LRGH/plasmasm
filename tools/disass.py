@@ -133,9 +133,9 @@ if dot_file != None:
     dot_file_fd.write("\n")
     dot_file_fd.close()
 if output == 0:
-    raise ValueError("miasmX graph module disabled")
+    raise ValueError("MiasmX graph module disabled")
     """
-    from miasmX.graph.graph_qt import graph_blocs
+    from miasmx.graph.graph_qt import graph_blocs
     class SymbolsForGraph(object):
         pass
     pool_for_graph = SymbolsForGraph()

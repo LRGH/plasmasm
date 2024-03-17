@@ -153,7 +153,7 @@ never_dead = ['MEM','fpu_status','fpu_control']
 def set_dead_reg(l, d):
     r, w = l.rw[0], l.rw[1]
     if l.CPU == 'I386' and hasattr(l, 'miasm'):
-        from miasmX.expression import expression
+        from miasmx.expression import expression
         w = set([reg for reg in w if isinstance(reg, expression.ExprId)])
     else:
         w = set([reg for reg in w if not str(reg) in never_dead])
