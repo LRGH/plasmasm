@@ -1,6 +1,7 @@
 # Copyright (C) 2020 Airbus, Louis.Granboulan@airbus.com
 from tools.step2 import Step2Base
 from staticasm.dead_registers import add_line_update_dead
+from plasmasm.constants import Constant1Byte
 import sys
 __all__ = [ ]
 
@@ -47,6 +48,17 @@ def change_ret(symbols):
                 "jmp *%s" % pop_reg,
                 ], pos=len(label.lines)-1)
 
+def pad_ender(symbols):
+    if not getattr(symbols.arch, 'CPU', None) in ('I386', 'X64'):
+        return
+    # Add an invalid instruction to all ender blocs.
+    # This is does not really obfuscate, it serves as a test that
+    # plasmasm's ender detection has no false positive.
+    for label in symbols.blocs:
+        if not label.ender:
+            continue
+        label.lines.append(Constant1Byte(symbols, 0xFE))
+
 class Step2_change(Step2Base):
     keyword = '-change'
     help = "Simple modification of assembly file"
@@ -69,5 +81,6 @@ class Step2_change(Step2Base):
             from staticasm.dead_registers import analyze_dead
             analyze_dead(symbols)
         change_ret(symbols)
+        pad_ender(symbols)
         symbols.to_asm(output_filename=output)
         return output
