@@ -38,9 +38,11 @@ generation.
 Another use case is conversion of x86 assembly from AT&T syntax
 to Intel syntax, or the reverse.
 
-When binary is input and binary is output, a use case is the
-modification of a binary of unknown source. Note that because
-PlasmASM binary generation is still full of bugs, it is often
+When binary is input, a use case is the modification of a binary
+of unknown source. Note that object files are usually easier to
+parse than executable binaries.
+
+Note that PlasmASM can output a binary, but it is often
 more robust to have PlasmASM generate assembly and then to
 have as generate the binary.
 
@@ -53,6 +55,11 @@ PlasmASM: read asm or binary, output to asm that can be assembled
 by GNU as, output to objdump-like syntax which can be used to
 check the results of the binary parser, output of the internal
 representation of symbols and basic blocs
+
+The reliability of PlasmASM depends on the version of the compiler
+and of the operating system. Automatic github action
+[usage.yml](.github/workflows/usage.yml) shows a list of
+supported compilers.
 
 Example, on a small program:
 ```
@@ -81,7 +88,9 @@ python tools/disass.py -a a64.o # input object, output asm
 python tools/disass.py -a a64.out # input executable, output asm
 ```
 
-This is more complicated on a larger program
+PlasmASM does not work as well on a larger program, because automatic
+generation of a valid assembly from a binary needs to take into account
+many side effects:
 ```
 # Default /bin/sh on Ubuntu 12.04
 python tools/disass.py -a /bin/sh > sh.s
@@ -101,20 +110,28 @@ gcc -o ls ls.s -lrt -lacl -lselinux
 # NB: seems to work when run in gdb
 ```
 
-The file `testing_plasmasm.py` is very useful for non-regression tests.
-If takes .s or .o files as arguments, uses the parser of PlasmASM and
-creates an assembly file with the `write_asm` module of PlasmASM.
-Then it uses the native compiler to create object files, and compares
-these object files with `objdump -drt` or `otool -tvj`
-Note that sometimes the assembler has bugs (e.g. GNU as 2.14 or 2.15
-changes the order of the arguments of `test %reg, %reg`, while the same
-version of objdump is OK) and therefore there are special cases to make
-`testing_plasmasm.py` succeed in case of assembler bugs.
-
 ## Use of PlasmASM as a framework
 
 Once PlasmASM has generated an internal representation of its input,
 this representation can be modified before generating some output.
+
+This can be done interactively with python.
+The following example, where a very simple modification of the shell
+from Ubuntu 12.04 is made, results in a valid modified binary that
+can be used on Ubuntu 21.10.
+```
+>>> from plasmasm.analyze_file import File
+>>> from tools.step2_change import change_ret
+>>> f = './non_regression/sh_x86_linux_ubuntu1204'
+>>> pool = File().from_filename(f, rw=True, dead=True)
+>>> pool.arch.set_asm_format('att_syntax')
+>>> change_ret(pool)
+>>> pool.to_asm('/tmp/a.s')
+gcc -m32 -o /tmp/sh /tmp/a.s
+/tmp/sh -c 'for i in a b c; do echo x$i; done'
+```
+
+## Use of PlasmASM for automatic software obfuscation
 
 `compile.py` aims at making it easier to use PlasmASM in a compilation
 chain, where the intermediate result (assembly or object) of the
@@ -130,48 +147,28 @@ included in `tools.step2_change`, which can be used in a compilation chain:
 ```
 make test CC='compile.py -change gcc'
 ```
-Or interactively with python:
-```
->>> from plasmasm.analyze_file import File
->>> from tools.step2_change import change_ret
->>> f = './non_regression/sh_x86_linux_ubuntu1204'
->>> pool = File().from_filename(f, rw=True, dead=True)
->>> pool.arch.set_asm_format('att_syntax')
->>> change_ret(pool)
->>> pool.to_asm('/tmp/a.s')
-gcc -o /tmp/sh /tmp/a.s
-/tmp/sh -c 'for i in a b c; do echo x$i; done'
-```
 
-## .plasmasm helper files
+Non-regression tests in [usage.yml](.github/workflows/usage.yml) show
+how to use this approach to obfuscate a full software. Note what is
+produced in this example is not a solid obfuscation: the obfuscation
+primitives are very simple, and one should always strip the symbols after
+the executable is generated.
 
-If there exist a file having the same name as the input file, plus `.plasmasm`,
-this file is used to describe how to complete the parsing of the input file.
-Ideally, these helper file should not be useful, because everything should be
-automatically deduced. However, there are cases where automatic deduction is
-not possible : for example, when compiling C to an ELF object file, if a
-global variable is unitialised, then it is in the COM section, and if this
-global variable is initialised to zero, then it is in the .bss section. But
-after linking with ld, both are in the .bss section: there is no way to
-know what was in the C source.
-
-The .plasmasm helper file should contain a function named "helper" with
-an argument, the symbol pool. This function can make any modification to
-the symbol pool.
-
-# Requirements
+# Installation
 
 ## Python
 
 PlasmASM can work with python >= 2.3, including python 3.
 But some dependencies of PlasmASM need recent python.
+It has been tested with multiple versions of CPython, PyPy or GraalPy.
 
 ## Dependencies
 
-PlasmASM by itself does not include the analysis engine for any
-type of CPU: additional modules are needed.
-If they are not installed system-wide, it is recommended to install
-them in the parent directory of PlasmASM.
+Depending on which dependencies are installed, the capability of
+PlasmASM can be limited.
+
+For example, if only amoco is present, then only assembly manipulation
+for the CPUs supported by amoco is possible.
 
 - elfesteem
 
@@ -184,8 +181,10 @@ them in the parent directory of PlasmASM.
 
     Used when working with IA32, X86_64 or SPARC.
     Available at https://github.com/LRGH/amoco ;
-    Depends on https://github.com/LRGH/crysp , which should be installed too.
-    It works for python >= 2.7.
+    It works for python >= 2.7, if https://github.com/LRGH/crysp is installed.
+
+    Note that amoco needs pyparsing, and that there are changes of
+    interface between old and recent versions of pyparsing.
 
 - miasmX
 
@@ -202,17 +201,18 @@ them in the parent directory of PlasmASM.
 
     Also includes a patched version of ply.
 
+## Installation procedure
 
-## Requirements
+Dependencies can be installed using `pip` or manually,
+as done for example in
+[portability.yml](.github/workflows/portability.yml)
 
-Note that to be able to do 32-bit compilations on 64-bit Linux, it depends
-one the distribution. A list of required packages is collected at
-http://www.cyberciti.biz/tips/compile-32bit-application-using-gcc-64-bit-linux.html
+Manual installation with manual modifications of amoco is
+recommended if one wants to minimize the number of dependencies.
 
-Note also that amoco needs pyparsing. The name of the package for Debian
-or Ubuntu is python-pyparsing.
+# Software architecture
 
-# Quick documentation: description of each file
+## Quick documentation: description of each file of the module `plasmasm`
 
 - `analyze_file.py`
   Recognizes the file type (asm or binary -- ELF, PE, Mach-O).
@@ -275,6 +275,13 @@ or Ubuntu is python-pyparsing.
     contain the CPU implementations; the filename is `CPU_BACKEND.py`
     for an implementation of CPU based on BACKEND.
 
+## The module `staticasm`
+
+Static analysis to infer some local properties.
+Using these functions increases the running time, but is necessary
+in most cases where an automated modification shall not change the
+semantics of the software.
+
 - `pic_tracking.py`
   When Position Independ Code is generated, there is a register that
   is used to memorize where the code has been loaded. The way it is
@@ -289,6 +296,39 @@ or Ubuntu is python-pyparsing.
 - `dead_registers.py`
   Dead registers are registers that are not used, and therefore
   can be used when modifying the code.
+
+## The tools
+
+In addition to `disass.py`and `compile.py` mentioned above,
+the tool `testing_plasmasm.py` is very useful for understanding
+why plasmasm sometimes fails to generate the right assembly when
+parsing a binary.
+
+If takes .s or .o files as arguments, this tool uses the parser of PlasmASM
+and creates an assembly file with the `write_asm` module of PlasmASM.
+Then it uses the native compiler to create object files, and compares
+these object files with `objdump -drt` or `otool -tvj`
+Note that sometimes the assembler has bugs (e.g. GNU as 2.14 or 2.15
+changes the order of the arguments of `test %reg, %reg`, while the same
+version of objdump is OK) and therefore there are special cases to make
+`testing_plasmasm.py` succeed in case of assembler bugs.
+
+## .plasmasm helper files
+
+If there exist a file having the same name as the input file, plus `.plasmasm`,
+this file is used to describe how to complete the parsing of the input file.
+Ideally, these helper file should not be useful, because everything should be
+automatically deduced. However, there are cases where automatic deduction is
+not possible : for example, when compiling C to an ELF object file, if a
+global variable is unitialised, then it is in the COM section, and if this
+global variable is initialised to zero, then it is in the .bss section. But
+after linking with ld, both are in the .bss section: there is no way to
+know what was in the C source.
+
+The .plasmasm helper file should contain a function named "helper" with
+an argument, the symbol pool. This function can make any modification to
+the symbol pool.
+
 
 ## Development status
 
