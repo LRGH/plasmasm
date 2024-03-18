@@ -14,47 +14,43 @@ from plasmasm.python.utils import popen, popen_read_err, mkstemp, spawn, call
 def print_red(string):
     print("\033[01;31m%s\033[00m"%string)
 
-import struct
-def bstring(s):
-    return struct.pack('%dB'%len(s), *[ord(_) for _ in s])
-
 def parse_objdump(file, quick=False):
     if sys.platform == 'darwin':
-        symbols = [_ for _ in popen(['nm', file])]
-        dump = [_ for _ in popen(['otool', '-tvj', file])]
+        symbols = [str(_.decode('latin1')) for _ in popen(['nm', file])]
+        dump = [str(_.decode('latin1')) for _ in popen(['otool', '-tvj', file])]
         if quick:
             dump = [_[9:] for _ in dump]
         return symbols, dump[1:]
     else: # linux
-        dump = [_ for _ in popen(['objdump', '-drt', file])]
+        dump = [str(_.decode('latin1')) for _ in popen(['objdump', '-drt', file])]
         def check_line(dump, idx, value):
             if dump[idx] != value:
                 print_red("Objdump line %d is %r"%(idx, dump[idx]))
                 sys.exit(1)
-        check_line(dump, 0, bstring('\n'))
-        check_line(dump, 2, bstring('\n'))
-        check_line(dump, 3, bstring('SYMBOL TABLE:\n'))
+        check_line(dump, 0, '\n')
+        check_line(dump, 2, '\n')
+        check_line(dump, 3, 'SYMBOL TABLE:\n')
         for eof_symbols in range(4,len(dump)):
-            if dump[eof_symbols] == bstring('\n'):
+            if dump[eof_symbols] == '\n':
                 break
         else:
             print_red("Objdump output invalid")
             sys.exit(1)
         trash_symbols = [
             # If executable, eh_frame section does not have the same length
-            bstring('__FRAME_END__'),
-            bstring('.gcc_except_table'),
-                bstring('.eh_frame'),
+            '__FRAME_END__',
+            '.gcc_except_table',
+            '.eh_frame',
             # .loc directives are deleted by plasmasm
-            bstring('.debug_'),
+            '.debug_',
             # gcc 3.x creates global symbols with no content
-            bstring('__moddi3'),
-            bstring('__divdi3'),
-            bstring('__umoddi3'),
-            bstring('__udivdi3'),
+            '__moddi3',
+            '__divdi3',
+            '__umoddi3',
+            '__udivdi3',
             # gcc 4.x with -g may creates this symbol because of the content
             # of .debug_info but plasmasm removes .debug_info
-            bstring('_GLOBAL_OFFSET_TABLE_'),
+            '_GLOBAL_OFFSET_TABLE_',
             ]
         def keep_symbol(line):
             for _ in trash_symbols:
